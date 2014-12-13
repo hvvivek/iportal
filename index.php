@@ -1,3 +1,22 @@
+<?php session_start();    
+require 'includes/oauth_config.php';
+require 'includes/oauth.php';
+$oauth = new OAuth();
+$oauth->init();
+if($oauth->authCode){
+$_SESSION['authcode'] = $oauth->authCode;
+
+}
+if($oauth->user['loggedIn']){
+  $_SESSION['user_id'] = $oauth->user['id'];
+  $_SESSION['username'] = $oauth->user['username'];
+}
+else {
+  //echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +45,11 @@
 	 <li><a href="#">Other details</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+         
+          <?php if($_SESSION)
+          { ?>
           <li class="dropdown">
-          <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> My name <b class="caret"></b></a>
+          <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
           <ul class="dropdown-menu signin_div">
             <li class="shit"><a href="#">My profile</a></li>
             <li class="shit"><a href="#">Settings</a></li>
@@ -35,6 +57,9 @@
             <li class="shit"><a href="#">Sign Out</a></li>
           </ul>
           </li>
+          <?php  } else{ ?>
+          <li><a href="<?php echo $oauth->signinURL; ?>">Signin</a></li>
+          <?php  }?>
         </ul>
     </div>
 </div>
