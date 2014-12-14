@@ -4,14 +4,14 @@ $user="root";
 $pwd="ragasree";
 $db="Hostel";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
-$sql1="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=1";
-$sql2="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=2";
-$sql3="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=3";
-$sql4="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=4";
-$sql5="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=5";
-$sql6="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=6";
-$sql7="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=7";
-$sql8="SELECT * FROM Contacts WHERE Hostel_id=8 and S_no=8";
+$sql1="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=1";
+$sql2="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=2";
+$sql3="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=3";
+$sql4="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=4";
+$sql5="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=5";
+$sql6="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=6";
+$sql7="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=7";
+$sql8="SELECT * FROM Contacts WHERE Hostel_id=5 and S_no=8";
 $data1=mysqli_query($conn,$sql1);
 $row1=mysqli_fetch_assoc($data1);
 $data2=mysqli_query($conn,$sql2);
@@ -34,17 +34,17 @@ $row8=mysqli_fetch_assoc($data8);
 	<head>
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Godavari hostel</title>
+		<title>Narmada hostel</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/tapti.css" rel="stylesheet">
-		<script type="text/javascript" src="js/tapti.js"></script>
+		<link href="css/narmad.css" rel="stylesheet">
+		<script type="text/javascript" src="js/godav.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
-		<script src="js/tapti.js"></script>
+		<script src="js/narmad.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script >
-		var myCenter=new google.maps.LatLng(12.984513, 80.235137);
+		var myCenter=new google.maps.LatLng(12.985579, 80.235429);
 
 function initialize()
 {
@@ -62,7 +62,7 @@ var marker=new google.maps.Marker({
 
 marker.setMap(map);
 var infowindow = new google.maps.InfoWindow({
-  content:"Tapti"
+  content:"Narmada"
   });
 
 infowindow.open(map,marker);
@@ -100,8 +100,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<div id="godav" class="carousel slide">
 			<ol class="carousel-indicators">
 				<li data-target="#godav" data-slide-to="0" class="active"></li>
-				<li data-target="#godav" data-slide-to="1"></li>
-				<li data-target="#godav" data-slide-to="2"></li>
+			<!--	<li data-target="#godav" data-slide-to="1"></li>
+				<li data-target="#godav" data-slide-to="2"></li>-->
 			</ol>
 			<div class="carousel-inner">
 
@@ -111,31 +111,31 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					</div>
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>TAPTI INFO PAGE</h1>
+							<h1>NARMADA INFO PAGE</h1>
+						</div>
+					</div>
+				</div>
+			<!--	<div class="item">
+					<div class="container">
+						<img src="img/slide2.jpg" class="image">
+					</div>
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>GODAVARI INFO PAGE</h1>
 						</div>
 					</div>
 				</div>
 				<div class="item">
 					<div class="container">
-						<img src="img/2.jpg" class="image">
+						<img src="img/slide3.jpg" class="image">
 					</div>
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>TAPTI INFO PAGE</h1>
+							<h1>GODAVARI INFO PAGE</h1>
 						</div>
 					</div>
 				</div>
-				<div class="item">
-					<div class="container">
-						<img src="img/3.jpg" class="image">
-					</div>
-					<div class="container">
-						<div class="carousel-caption">
-							<h1>TAPTI INFO PAGE</h1>
-						</div>
-					</div>
-				</div>
-			</div>
+			</div>-->
 			<a class="left carousel-control" href="#godav" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left"></span>
 			</a>
