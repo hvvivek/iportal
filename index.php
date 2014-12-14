@@ -1,6 +1,7 @@
 <?php session_start();    
 require 'includes/oauth_config.php';
 require 'includes/oauth.php';
+require  'config.php';
 $oauth = new OAuth();
 $oauth->init();
 if($oauth->authCode){
@@ -10,6 +11,10 @@ $_SESSION['authcode'] = $oauth->authCode;
 if($oauth->user['loggedIn']){
   $_SESSION['user_id'] = $oauth->user['id'];
   $_SESSION['username'] = $oauth->user['username'];
+  $userdetails=getuserdetails($oauth->user['username'],$con);
+  $_SESSION['hostel']= $userdetails['hostel'];
+  $_SESSION['email']= $userdetails['email'];
+  mysqli_close($con);
 }
 else {
   //echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
@@ -54,7 +59,7 @@ else {
             <li class="shit"><a href="#">My profile</a></li>
             <li class="shit"><a href="#">Settings</a></li>
             <li class="divider"></li>
-            <li class="shit"><a href="#">Sign Out</a></li>
+            <li class="shit"><a href="includes/signout.php">Sign Out</a></li>
           </ul>
           </li>
           <?php  } else{ ?>
