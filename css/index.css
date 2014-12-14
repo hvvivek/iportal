@@ -94,6 +94,7 @@ z-index: 100;
 box-shadow: 0 0 50px #fff;
 -webkit-transition: all .2s;
 transition: all .2s;
+-webkit-transform: scale(1.25,1.25);
 }
 .text
 
