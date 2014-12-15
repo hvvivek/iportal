@@ -32,7 +32,7 @@ if(!mysqli_fetch_assoc($query1))
 	}
 </style>
 </head>
-<body>
+<body style="background:white !important;">
 <div class="container ">
 <div class="col-lg-8 col-lg-offset-2">
 <form role="form" action="" method="post">

@@ -1,8 +1,9 @@
 <?php
+session_start();
 $server="localhost";
 $user="root";
-$pwd="ragasree";
-$db="Hostel";
+$pwd="sai";
+$db="blog";
 $conn = mysqli_connect($server,$user,$pwd,$db) ;//or die("Error connecting server");
 $sql1="SELECT * FROM Contacts WHERE Hostel_id=4 and S_no=1";
 $sql2="SELECT * FROM Contacts WHERE Hostel_id=4 and S_no=2";
@@ -85,15 +86,30 @@ google.maps.event.addDomListener(window, 'load', initialize);
       				<ul class="nav navbar-nav">
       					<li><a href="#">Home</a></li>
       				</ul>
-      				<ul class="nav navbar-nav navbar-right">
-        				<li><a href="#">Signout</a></li>
-        			</ul>
-        			<form class="navbar-form navbar-right" role="search">
+      				<form class="navbar-form navbar-left" role="search">
         				<div class="form-group">
        	   					<input type="text" class="form-control" placeholder="Search">
        					</div>
         				<button type="submit" class="btn btn-success" style="display:none">Submit</button>
       				</form>
+      				  <ul class="nav navbar-nav navbar-right">
+         
+			     <?php if($_SESSION)
+			          { ?>
+			          <li class="dropdown">
+			          <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
+			          <ul class="dropdown-menu signin_div">
+			            <li class="shit"><a href="#">My profile</a></li>
+			            <li class="shit"><a href="#">Settings</a></li>
+			            <li class="divider"></li>
+			            <li class="shit"><a href="../../includes/signout.php">Sign Out</a></li>
+			          </ul>
+			          </li>
+			          <?php  } else{ ?>
+			          <li><a href="../includes/signin.php">Signin</a></li>
+			          <?php  }?>
+        		</ul>
+        			
       			</div>	
     		</div>
 		</nav>
@@ -192,7 +208,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-2 rect1 r19">
+				<div class="col-md-2 rect1 r19 col-md-offset-5">
 					<p class="text2">Alumni Affairs Secretary</p>
 					<a href="#alu" class="btn btn-default btn-success bt9" data-toggle="modal">Details</a>
 				</div>

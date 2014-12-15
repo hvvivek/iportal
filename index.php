@@ -1,9 +1,6 @@
 <?php session_start();    
-require 'includes/oauth_config.php';
-require 'includes/oauth.php';
+require 'includes/signin.php';
 require  'config.php';
-$oauth = new OAuth();
-$oauth->init();
 if($oauth->authCode){
 $_SESSION['authcode'] = $oauth->authCode;
 
@@ -73,9 +70,9 @@ else {
   </nav>
  <br>
 <div class="contain">
-<div class="big" id="one"></div>
-<div class="big" id="two"><p class="text">Eateries</p></div>
-<div class="big" id="thr"><p class="text">Others</p></div>
+<div class="big" id="one"><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>
+<div class="big" id="two"></div>
+<div class="big" id="thr"> <span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span></div>
 </div>
 <div class="container1">
 <div class="contain2">

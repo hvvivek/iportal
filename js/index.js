@@ -6,6 +6,8 @@ $(document).ready(function(){
 		$(".contain4").hide();
 		$(".contain3").hide();
 		$(".contain2").show();
+		//$(".contain2").css({''});
+		
 		//$("#thr").css("background-color","lightgray");
 		//$("#two").css("background-color","lightgray");
 		//$("#four").css("background-color","lightgray");
@@ -17,6 +19,7 @@ $(document).ready(function(){
 		$(".contain2").hide();
 		$(".contain4").hide();
 		$(".contain3").show();
+		
 		//$("#one").css("background-color","lightgray");
 		//$("#thr").css("background-color","lightgray");
 		//$("#four").css("background-color","lightgray");
