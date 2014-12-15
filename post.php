@@ -1,9 +1,19 @@
 <?php
 session_start();
+require 'config.php';
 if (!$_SESSION)
 {
 	header("Location:index.php");
 }
+$value=$_SESSION['username'];
+$sql1="SELECT * FROM `Sec` WHERE username='$value' ";
+$query1=mysqli_query($con,$sql1);
+if(!mysqli_fetch_assoc($query1))
+{
+	mysqli_close($con);
+	header("Location:index.php");
+}
+
 ?>
 
 <html>
@@ -50,13 +60,9 @@ if (!$_SESSION)
 <body>
 </html>
 <?php
+
 if($_POST)
 {
-$host="localhost";  
-$username="root";  
-$password="sai"; 
-$con=mysqli_connect($host,$username,$password,"blog") or die('can not connect');
-
 
 
 $content=$_POST['content'];

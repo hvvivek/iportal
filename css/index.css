@@ -8,15 +8,16 @@ ul{
   padding-top: 50px;
 }
 .navbar a {
-  color:#333A3F;
+  color: white;
 }
 .navbar
 { 
   height:50px;
-  background-color:#9B59B6 !important;
+  background-color:#2ecc71 !important;
   min-width:100%;
   margin:auto;
   box-shadow:0 3px 5px -2px #9B59B6 !important;
+
 }
 .glyphicon-bell {
   font-size:1.2em;
@@ -45,15 +46,15 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background:#34495e!important;
+  background:;
   height: 740px;
 overflow:hidden;
+background:#34495E !important;
   /* The html and body elements cannot have any padding or margin. */
 }
 .holy
 {
 text-decoration:none;
-font-weight:bold;
 }
 a:link {
     text-decoration:none;
@@ -95,7 +96,7 @@ z-index: 100;
 box-shadow: 0 0 50px #fff;
 -webkit-transition: all .2s;
 transition: all .2s;
--webkit-transform: scale(1.25,1.25);
+-webkit-transform: scale(1.05);
 }
 .text
 
