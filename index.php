@@ -76,6 +76,7 @@ else {
 <div class="big" id="one"><p class="text">Hostel</p></div>
 <div class="big" id="two"><p class="text">Eateries</p></div>
 <div class="big" id="thr"><p class="text">Others</p></div>
+</div>
 <div class="container1">
 <div class="contain2">
 <div class="blurmenu" ></div>

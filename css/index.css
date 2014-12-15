@@ -49,7 +49,7 @@ body {
   background:;
   height: 740px;
 overflow:hidden;
-background:#34495E !important;
+background:white !important;
   /* The html and body elements cannot have any padding or margin. */
 }
 .holy

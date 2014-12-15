@@ -2,8 +2,8 @@
 
 $host="localhost";  
 $username="root";  
-$password="sai"; 
-$con=mysqli_connect($host,$username,$password,"blog") or die('can not connect');
+$password="ragasree"; 
+$con=mysqli_connect($host,$username,$password,"Blog") or die('can not connect');
 
 function getuserdetails($value,$con)
 {
