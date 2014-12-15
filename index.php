@@ -77,6 +77,7 @@ else {
 <div class="big" id="four"><p class="text">Some</p></div></div>
 <div class="container1">
 <div class="contain2">
+<div class="blurmenu" ></div>
 <a href="hostel/alak/alak.php"><div class="small2"><p class="smtext2">Alak</p></div></a>
 <a href="hostel/godav/godav.php"><div class="small2"><p class="smtext2">God</p></div></a>
 <a href="hostel/sharav/sharav.php"><div class="small2"><p class="smtext2">Sha</p></div></a>
@@ -87,6 +88,7 @@ else {
 <a href="hostel/tapti/tapti.php"><div class="small2"><p class="smtext2">Tpt</p></div></a>
 </div>
 <div class="contain3">
+<div class="blurmenu" ></div>
 <a href="#"><div class="small3"><p class="smtext3">GFC</p></div></a>
 <a href="#"><div class="small3"><p class="smtext3">Irctc</p></div></a>
 <a href="#"><div class="small3"><p class="smtext3">Kick</p></div></a>
@@ -97,6 +99,7 @@ else {
 <a href="#"><div class="small3"><p class="smtext3">CC</p></div></a>
 </div>
 <div class="contain4">
+<div class="blurmenu" ></div>
 <a href="#"><div class="small4"><p class="smtext4">travel</p></div></a>
 <a href="#"><div class="small4"><p class="smtext4">xerox</p></div></a>
 <a href="#"><div class="small4"><p class="smtext4">gift</p></div></a>

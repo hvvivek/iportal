@@ -13,10 +13,10 @@ ul{
 .navbar
 { 
   height:50px;
-  background-color:#2ecc71;
+  background-color:#9B59B6 !important;
   min-width:100%;
   margin:auto;
-  box-shadow:0 3px 5px -2px #2ecc71 !important;
+  box-shadow:0 3px 5px -2px #9B59B6 !important;
 }
 .glyphicon-bell {
   font-size:1.2em;
@@ -41,6 +41,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
   margin: 0 auto -50px;
   /* Pad bottom by footer height */
   padding: 0 0 75px;
+
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -126,7 +127,7 @@ color:white;
 .smtext2
 {
 padding-top:20%;
-font-weight:bold;
+font-weight:;
 font-size:150%;
 }
 .small2:hover
@@ -136,7 +137,7 @@ border:.5px solid #274cf0;
 }
 .contain2
 {
-background-color:#7da7e6;
+background-color:transparent;
 position:relative;
 margin-top:4%;
 margin-left:6%;
@@ -164,7 +165,7 @@ color:white;
 .smtext3
 {
 padding-top:20%;
-font-weight:bold;
+font-weight:;
 font-size:150%;
 }
 .small3:hover
@@ -174,7 +175,7 @@ border:.5px solid #274cf0;
 }
 .contain3
 {
-background-color:#7da7e6;
+background-color:transparent;
 position:relative;
 margin-top:4%;
 margin-left:6%;
@@ -204,7 +205,6 @@ left:18%;
 .smtext4
 {
 padding-top:20%;
-font-weight:bold;
 font-size:150%;
 }
 .small4:hover
@@ -214,7 +214,7 @@ border:.5px solid #274cf0;
 }
 .contain4
 {
-background-color:#7da7e6;
+background-color:transparent;
 position:relative;
 margin-top:4%;
 margin-left:16%;
@@ -229,5 +229,17 @@ box-shadow: 0 0 20px #fff;
 -webkit-transition: all .2s;
 transition: all .2s;
 -webkit-transform: scale(1.1);
+}
+.blurmenu
+{
+
+width: 100%;
+position: absolute;
+background: rgb(173, 216, 230);
+height: 100%;
+z-index: -1000;
+opacity: .4;
+-webkit-filter:blur(6px);
+filter:blur(6px);
 }
 

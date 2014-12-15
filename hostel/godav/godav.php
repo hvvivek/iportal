@@ -3,7 +3,7 @@ $server="localhost";
 $user="root";
 $pwd="ragasree";
 $db="Hostel";
-$conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
+$conn = mysqli_connect($server,$user,$pwd,$db) ;//or die("Error connecting server");
 $sql1="SELECT * FROM Contacts WHERE Hostel_id=4 and S_no=1";
 $sql2="SELECT * FROM Contacts WHERE Hostel_id=4 and S_no=2";
 $sql3="SELECT * FROM Contacts WHERE Hostel_id=4 and S_no=3";
@@ -92,7 +92,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         				<div class="form-group">
        	   					<input type="text" class="form-control" placeholder="Search">
        					</div>
-        				<button type="submit" class="btn btn-success">Submit</button>
+        				<button type="submit" class="btn btn-success" style="display:none">Submit</button>
       				</form>
       			</div>	
     		</div>

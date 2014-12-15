@@ -5,7 +5,7 @@ $(document).ready(function(){
 		$(this).css("background-color","lightblue");
 		$(".contain4").hide();
 		$(".contain3").hide();
-		$(".contain2").show(500);
+		$(".contain2").show();
 		$("#thr").css("background-color","lightgray");
 		$("#two").css("background-color","lightgray");
 		$("#four").css("background-color","lightgray")});
@@ -15,7 +15,7 @@ $(document).ready(function(){
 		$(this).css("background-color","lightblue");
 		$(".contain2").hide();
 		$(".contain4").hide();
-		$(".contain3").show(500);
+		$(".contain3").show();
 		$("#one").css("background-color","lightgray");
 		$("#thr").css("background-color","lightgray");
 		$("#four").css("background-color","lightgray")});
@@ -25,7 +25,7 @@ $(document).ready(function(){
 		$(this).css("background-color","lightblue");
 		$(".contain2").hide();
 		$(".contain3").hide();
-		$(".contain4").show(500);
+		$(".contain4").show();
 		$("#two").css("background-color","lightgray");
 		$("#one").css("background-color","lightgray");
 		$("#four").css("background-color","lightgray")});
