@@ -69,6 +69,8 @@ else {
 </div>
   </nav>
  <br>
+ <div class="container-fluid containt">
+ </div>
 <div class="contain">
 <div class="big" id="one"><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>
 <div class="big" id="two"></div>
