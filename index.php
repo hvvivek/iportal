@@ -70,10 +70,11 @@ else {
   </nav>
  <br>
 <div class="contain">
-<div class="big" id="one"><div class="inbig"></div><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>
-<div class="big" id="two"><span class="glyphicon glyphicon-cutlery editgly" aria-hidden="true"></span></div>
-<div class="big" id="thr"> <span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span></div>
+<div class="big" id="one"><div class="menutitle"></div><div class="inbig"></div><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>
+<div class="big" id="two"><div class="menutitle"></div><div class="inbig"></div><span class="glyphicon glyphicon-cutlery editgly" aria-hidden="true"></span></div>
+<div class="big" id="thr"> <div class="menutitle"></div><div class="inbig"></div><span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span></div>
 </div>
+<div class="loading"></div>
 <div class="container1">
 <div class="contain2">
 <div class="blurmenu" ></div>
