@@ -45,9 +45,11 @@ else {
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Hostel</a></li>
-        <li><a href="#">Eateries</a></li>
-	 <li><a href="#">Other details</a></li>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
       </ul>
       <ul class="nav navbar-nav navbar-right">
          
@@ -74,7 +76,6 @@ else {
 <div class="big" id="one"><p class="text">Hostel</p></div>
 <div class="big" id="two"><p class="text">Eateries</p></div>
 <div class="big" id="thr"><p class="text">Others</p></div>
-<div class="big" id="four"><p class="text">Some</p></div></div>
 <div class="container1">
 <div class="contain2">
 <div class="blurmenu" ></div>
