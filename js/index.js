@@ -1,50 +1,45 @@
 $(document).ready(function(){
 	$("#one").hover(function()
 		{
-	//	$(this).delay(250).queue(function(next){$(this).css("background-color","lightblue");next();});
-		//$(this).css("background-color","lightblue");
+	
+		//$("#one>.inbig").addClass('hov');
 		$(".contain4").hide();
 		$(".contain3").hide();
 		$(".contain2").show();
-		//$(".contain2").css({''});
+		setTimeout(function(){$(".contain2").css({'margin-top':'0%'});},10);
 		
-		//$("#thr").css("background-color","lightgray");
-		//$("#two").css("background-color","lightgray");
-		//$("#four").css("background-color","lightgray");
 	});
 	$("#two").hover(function()
 		{
-	//	$(this).delay(250).queue(function(next){$(this).css("background-color","lightblue");next();});
-		//$(this).css("background-color","lightblue");
+		
 		$(".contain2").hide();
 		$(".contain4").hide();
 		$(".contain3").show();
+		setTimeout(function(){$(".contain3").css({'margin-top':'0%'});},10);
 		
-		//$("#one").css("background-color","lightgray");
-		//$("#thr").css("background-color","lightgray");
-		//$("#four").css("background-color","lightgray");
 	});
 	$("#thr").hover(function()
 		{
-	//	$(this).delay(250).queue(function(next){$(this).css("background-color","lightblue");next();});
-		//$(this).css("background-color","lightblue");
+		
 		$(".contain2").hide();
 		$(".contain3").hide();
 		$(".contain4").show();
-		//$("#two").css("background-color","lightgray");
-		//$("#one").css("background-color","lightgray");
-		//$("#four").css("background-color","lightgray");
+		setTimeout(function(){$(".contain4").css({'margin-top':'0%'});},10);
+		
 	});
 	$("#four").hover(function()
 		{
-	//	$(this).delay(250).queue(function(next){$(this).css("background-color","lightblue");next();});
-		//$(this).css("background-color","lightblue");
+	
 		$(".contain2").hide();
 		$(".contain3").hide();
 		$(".contain4").hide();
-		//$("#two").css("background-color","lightgray");
-		//$("#one").css("background-color","lightgray");
-		//$("#thr").css("background-color","lightgray");
+		
+	});
+	$("#one").mouseover(function(){
+			$("#one>.inbig").addClass('hov');
+	});
+	$("#one").mouseout(function(){
+			$("#one>.inbig").removeClass('hov');
 	});
 	/*$("#thr").mouseout(function()
 	{

@@ -22,7 +22,7 @@ else {
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/index.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
@@ -70,8 +70,8 @@ else {
   </nav>
  <br>
 <div class="contain">
-<div class="big" id="one"><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>
-<div class="big" id="two"></div>
+<div class="big" id="one"><div class="inbig"></div><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>
+<div class="big" id="two"><span class="glyphicon glyphicon-cutlery editgly" aria-hidden="true"></span></div>
 <div class="big" id="thr"> <span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span></div>
 </div>
 <div class="container1">
