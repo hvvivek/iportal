@@ -1,4 +1,5 @@
 <?php
+session_start();
 $server="localhost";
 $user="root";
 $pwd="ragasree";
@@ -34,6 +35,25 @@ $data8=mysqli_query($conn,$sql8);
 $row8=mysqli_fetch_assoc($data8);
 ?>							
 <!DOCTYPE html>
+<?php     
+require '../includes/signin.php';
+require  '../config.php';
+if($oauth->authCode){
+$_SESSION['authcode'] = $oauth->authCode;
+
+}
+if($oauth->user['loggedIn']){
+  $_SESSION['user_id'] = $oauth->user['id'];
+  $_SESSION['username'] = $oauth->user['username'];
+  $userdetails=getuserdetails($oauth->user['username'],$con);
+  $_SESSION['hostel']= $userdetails['hostel'];
+  $_SESSION['email']= $userdetails['email'];
+  mysqli_close($con);
+}
+else {
+  //echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
+}
+?>
 <html>
 	<head>
 		<meta chaset="utf-8">
@@ -44,12 +64,12 @@ $row8=mysqli_fetch_assoc($data8);
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
 		<script src="js/bootstrap.js"></script>
+
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
 var myCenter=new google.maps.LatLng(lat,lng);
-
 function initialize()
 {
 var mapProp = {
@@ -84,18 +104,32 @@ google.maps.event.addDomListener(window, 'load', initialize);
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span><!--still unresponsive-->
       				</button>
-      				<a class="navbar-brand" id="head" href="#">INFORMATIONPORTAL</a>
+      				<a class="navbar-brand" id="head" href="/iportal/index.php">INFORMATIONPORTAL</a>
     			</div>
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      				<ul class="nav navbar-nav navbar-right">
-        				<li><a href="#">Signin</a></li>
-        			</ul>
         			<form class="navbar-form navbar-left" role="search">
         				<div class="form-group">
        	   					<input type="text" class="form-control" placeholder="Search">
        					</div>
         			<!--	<button type="submit" class="btn btn-success">Submit</button>-->
       				</form>
+      				<ul class="nav navbar-nav navbar-right">
+         
+          <?php if($_SESSION)
+          { ?>
+          <li class="dropdown">
+          <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
+          <ul class="dropdown-menu signin_div">
+            <li class="shit"><a href="#">My profile</a></li>
+            <li class="shit"><a href="#">Settings</a></li>
+            <li class="divider"></li>
+            <li class="shit"><a href="../includes/signout.php">Sign Out</a></li>
+          </ul>
+          </li>
+          <?php  } else{ ?>
+          <li><a href="<?php echo $oauth->signinURL; ?>">Signin</a></li>
+          <?php  }?>
+        </ul>
       			</div>	
     		</div>
 		</nav>
@@ -104,14 +138,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='#'>Hostel secretaries details</a></li>
-						<li class="bull"><a href='#'>Hostel office-details</a></li>
-						<li class="bull"><a href='#'>Hostel services</a></li>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<li class="bull"><a href='#' id="hos"><?php echo $name;?></a></li>
+						<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
+						<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>
+						<li class="bull"><a href='#' class="kill">Hostel services</a></li>
+						<li class="bull"><a href='#' class="kill">Litsoc</a></li>
+						<li class="bull"><a href='#' class="kill">Techsoc</a></li>
+						<li class="bull"><a href='#' class="kill">Schroeter</a></li>
+						<li class="bull"><a href='#' class="kill">Alumni</a></li>
+						<br><br><br><br><br><br>
 						<li ><div id="googleMap"></div></li>
 					</ul>
 				</div>
-				<div class="col-md-3 screen1 col-lg-3">
+				<div class="col-md-3 screen1 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">General Secretary</h4>
 					</div>
@@ -123,16 +162,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
+									<p>Roll no:<?php
+										echo $row1["username"];?></p>
+									<p>Room no:<?php
+										echo $row1["Room"];?></p>
 									<p>Contact no:<?php
 										echo $row1["Contact_no"];?></p>
 									<p>Email id:<?php
 										echo $row1["Email_id"];?></p>
-									<a href="#" class="btn btn-default" >Go to Blog</a>
 								</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen2 col-lg-3">
+				<div class="col-md-3 screen2 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Mess Secretary</h4>
 					</div>
@@ -144,16 +186,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
-								<p>Contact no:<?php
+								<p>Roll no:<?php
+										echo $row2["username"];?></p>
+									<p>Room no:<?php
+										echo $row2["Room"];?></p>
+									<p>Contact no:<?php
 										echo $row2["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row2["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen3 col-lg-3">
+				<div class="col-md-3 screen3 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Sports Secretary</h4>
 					</div>
@@ -165,16 +210,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
-								<p>Contact no:<?php
+								<p>Roll no:<?php
+										echo $row3["username"];?></p>
+									<p>Room no:<?php
+										echo $row3["Room"];?></p>
+									<p>Contact no:<?php
 										echo $row3["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row3["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen1 col-lg-3">
+				<div class="col-md-3 screen1 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Technical Affairs Secretary</h4>
 					</div>
@@ -186,16 +234,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
-								<p>Contact no:<?php
+								<p>Roll no:<?php
+										echo $row4["username"];?></p>
+									<p>Room no:<?php
+										echo $row4["Room"];?></p>
+									<p>Contact no:<?php
 										echo $row4["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row4["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen2 col-lg-3">
+				<div class="col-md-3 screen2 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Literary Affairs Secretary</h4>
 					</div>
@@ -207,16 +258,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
-								<p>Contact no:<?php
+								<p>Roll no:<?php
+										echo $row5["username"];?></p>
+									<p>Room no:<?php
+										echo $row5["Room"];?></p>
+									<p>Contact no:<?php
 										echo $row5["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row5["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen3 col-lg-3">
+				<div class="col-md-3 screen3 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Social Affairs Secretary</h4>
 					</div>
@@ -228,16 +282,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
-								<p>Contact no:<?php
+								<p>Roll no:<?php
+										echo $row6["username"];?></p>
+									<p>Room no:<?php
+										echo $row6["Room"];?></p>
+									<p>Contact no:<?php
 										echo $row6["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row6["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen1 col-lg-3">
+				<div class="col-md-3 screen1 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Garden Secretary</h4>
 					</div>
@@ -249,16 +306,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
-								<p>Contact no:<?php
+								<p>Roll no:<?php
+										echo $row7["username"];?></p>
+									<p>Room no:<?php
+										echo $row7["Room"];?></p>
+									<p>Contact no:<?php
 										echo $row7["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row7["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen2 col-lg-3">
+				<div class="col-md-3 screen2 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Alumni Affairs Secretary</h4>
 					</div>
@@ -270,11 +330,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal">
-								<p>Contact no:<?php
+								<p>Roll no:<?php
+										echo $row8["username"];?></p>
+									<p>Room no:<?php
+										echo $row8["Room"];?></p>
+									<p>Contact no:<?php
 										echo $row8["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row8["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
 							</div>
 						</div>
@@ -282,7 +345,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			</div>
 		</div>
 		<div id="footer">
-			<div class="footer-container">
+			<div class="container-fluid footer-container">
       				<ul class="nav navbar-nav navbar-left done">
         				<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
         				<li class="book"><a href="#">About us</a></li>

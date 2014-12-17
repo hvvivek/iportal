@@ -50,12 +50,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   height: 740px;
 overflow:hidden;
-<<<<<<< HEAD
-background:white!important;
-=======
 background:white !important;
->>>>>>> 970862bc3c738786c70d2dbcd9533cc9fd847f98
-  /* The html and body elements cannot have any padding or margin. */
+  
 }
 .holy
 {
@@ -146,9 +142,27 @@ border:.5px solid #274cf0;
 background-color:transparent;
 position:absolute;
 width: 80%;
-margin-left: 10%;
+margin-left: 15%;
 margin-right:10%;
 height:100px;
+}
+.contain3
+{
+background-color:transparent;
+position:absolute;
+margin-left:10%;
+margin-right:10%;
+height:100px;
+width: 80%;
+}
+.contain4
+{
+background-color:transparent;
+position:absolute;
+margin-left:26.5%;
+margin-right:16%;
+height:100px;
+width:40%;
 }
 .small2:hover
 {
@@ -178,15 +192,7 @@ font-size:150%;
 color:#274cf0;
 border:.5px solid #274cf0;
 }
-.contain3
-{
-background-color:transparent;
-position:absolute;
-margin-left:10%;
-margin-right:10%;
-height:100px;
-width: 80%;
-}
+
 .small3:hover
 {
 -webkit-transform: scale(1.5,1.5);
@@ -217,15 +223,7 @@ font-size:150%;
 color:#274cf0;
 border:.5px solid #274cf0;
 }
-.contain4
-{
-background-color:transparent;
-position:absolute;
-margin-left:26.5%;
-margin-right:16%;
-height:100px;
-width:40%;
-}
+
 .small4:hover,.small3:hover,.small2:hover
 {
   z-index: 100;
@@ -269,13 +267,6 @@ font-weight: bold;
   margin-top: -6%;
   display: none;
 }
-.containt
-{
-  background-color: #27AE60;
-  height:40px;
-  opactiy:0;
-}
-
 .inbig
 {
 position: relative;
@@ -346,4 +337,33 @@ position:absolute;
 .input
 {
   display:none;
+}
+form
+{
+  display: inline-block;
+  width: 10%;
+}
+#footer
+{
+width: 100%;
+bottom:0%;
+background-color: #2ECC71;
+position: fixed;
+box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
+}
+.done a{
+  color: white;
+}
+.done a:hover{
+  color: black;
+  background-color: white!important;
+}
+.book
+{
+  text-decoration:none;
+  display:inline-block;
+}
+#fid10
+{
+  margin-left: 5%;
 }

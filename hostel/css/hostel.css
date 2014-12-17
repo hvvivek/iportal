@@ -50,14 +50,15 @@ body
 }
 #googleMap
 {
-	width:180px;
-	height:150px;
+	width:106%;
+	height:200px!important;
 	position: relative;
 	border:2px solid black;
 	color:black !important;
 	text-align: center;
 	position: relative;
 	left:5%;
+	margin-left:-4%;
 }
 .foot
 {
@@ -121,38 +122,38 @@ body
     width:100%;
     height:20%;
     text-align:center;
-    background-color:#27AE60;
+    background-color:white;
+    border-bottom:2px solid #2ECC71;
+    color:#2ECC71;
 }
 .img-circle {
     width:64px!important;
     height:64px!important;
-    border-radius:50%!important;
-    margin-top:20px;
-    margin-left: 120px;
+    border-radius:100%!important;
+    margin:auto;
+    margin-top: 8%;
     border:2px solid #fff;
     box-shadow:0px 1px 2px rgba(0, 0, 0, 0.5);
 }
 .screen1,.screen2,.screen3 {
-	background-color:#2ECC71!important;
+	background-color:white!important;
     box-shadow: 0px 2px 6px #999;
     position:relative;
     overflow:hidden;
-    background:#333;
-    color:white!important;
+    color:#2ECC71!important;
     margin-top: 1%;
-    left:18%!important;
-}
-.screen2,.screen3
-{
-	margin-left:1%;
+    left:22%!important;
+    width:24%!important;
+    border:2px solid #2ECC71;
+    margin-right: 7%;
 }
 .slider:hover {
-    left:-320px;
+    left:-100%;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 .slider {
-    width:640px;
+    width:200%;
     float:left;
     left:0;
     position:relative;
@@ -161,15 +162,19 @@ body
 }
 .header1, .header2 {
     text-align:center;
-    width:320px;
+    width:50%;
     float:left;
     height:140px;
-    color:#fff;
+    color:#2ECC71;
     position:relative;
+}
+.header2
+{
+	float:left;
 }
 .heal
 {
-	margin-top: 8%;
+	margin-top: 3%;
 }
 .oned{
 	position:relative;
@@ -182,9 +187,12 @@ body
 }
 .sidebar
 {
-	background-color: black;
+	background-color: #3498DB;
 	margin-left: -20px;
-	position: fixed!important;
+	position:fixed!important;
+	border: 2px solid green;
+	height: 100%;
+	width:20%!important;
 }
 .sidebar a
 {
@@ -196,16 +204,14 @@ body
 }
 .bull
 {
-	width:210px;
+	width:100%!important;
 }
 #footer
 {
-height: 44px;
-margin: auto;
-max-width: 1200px;
+width: 100%;
+bottom:-20%;
 background-color: #2ECC71;
-position: relative;
-top:100px;
+position: absolute;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 .done a{
@@ -213,4 +219,40 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 .done a:hover{
 	color: black;
+}
+.slum
+{
+	width:20%!important;
+}
+.heal
+{
+	margin-left: 20px;
+}
+.nav-sidebar>li>a
+{
+	color: white;
+	
+	padding-left: 60px!important;
+	margin-right:-6%;
+}
+.nav-sidebar>li>a:hover
+{
+	background-color: #27AE60 !important;
+}
+#hos
+{
+	color:white;
+	font-weight: bold;
+	font-size: 120%;
+	padding-left: 20px;
+}
+#hos:hover
+{
+	text-decoration: none;
+	background-color: transparent!important;
+}
+
+.navbar a:hover
+{
+	background-color: #27AE60 !important;
 }
