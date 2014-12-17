@@ -71,9 +71,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 	</head>
 	<body>
-	<div>
+		<div class="container-fluid contain">
 		<nav class="navbar navbar-fixed-top" role="navigation">
-		  	<div class="container-fluid">
+		  	<div class="container-fluid did">
 		    	<div class="navbar-header">
 		    		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         				<span class="sr-only">Toggle navigation</span>
@@ -95,21 +95,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
       			</div>	
     		</div>
 		</nav>
-		<div class="container-fluid containt">
-		</div>
 	</div>
-	<div class="sidebar col-md-1">
-					<ul class="sidebar-nav">
-						<li><a href='#'>Hostel secretaries details</a></li>
-						<li><a href='#'>Hostel office-details</a></li>
-						<li><a href='#'>Hostel services</a></li>
-						<br><br><br><br><br><br><br><br><br>
-						<li id="dude">Hostel location</li>
-						<div id="googleMap"></div>
-					</ul>
-				</div>
 		<div class="container-fluid contain1">
 			<div class="row">
+				<div class="sidebar col-md-2 col-lg-2 ">
+					<ul class="nav nav-sidebar">
+						<li class="bull"><a href='#'>Hostel secretaries details</a></li>
+						<li class="bull"><a href='#'>Hostel office-details</a></li>
+						<li class="bull"><a href='#'>Hostel services</a></li>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<li ><div id="googleMap"></div></li>
+					</ul>
+				</div>
 				<div class="col-md-3 screen1 col-lg-3">
 					<div class="header">
 						<h4 class="oned">General Secretary</h4>
@@ -121,16 +118,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row1["Name"];?></h4>
 							</div>
 							<div class="header2">
-								<p>Contact no:<?php
+								<div class="heal">
+									<p>Contact no:<?php
 										echo $row1["Contact_no"];?></p>
-								<p>Email id:<?php
+									<p>Email id:<?php
 										echo $row1["Email_id"];?></p>
-								<a href="#" class="btn btn-default" >Go to Blog</a>
+									<a href="#" class="btn btn-default" >Go to Blog</a>
+								</div>
 							</div>
 						</div>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-3 screen2">
+				<div class="col-md-3 screen2 col-lg-3">
 					<div class="header">
 						<h4 class="oned">Mess Secretary</h4>
 					</div>
@@ -141,16 +139,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row2["Name"];?></h4>
 							</div>
 							<div class="header2">
+								<div class="heal">
 								<p>Contact no:<?php
 										echo $row2["Contact_no"];?></p>
 								<p>Email id:<?php
 										echo $row2["Email_id"];?></p>
 								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
+							</div>
 						</div>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-3 screen3">
+				<div class="col-md-3 screen3 col-lg-3">
 					<div class="header">
 						<h4 class="oned">Sports Secretary</h4>
 					</div>
@@ -161,15 +160,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row3["Name"];?></h4>
 							</div>
 							<div class="header2">
+								<div class="heal">
 								<p>Contact no:<?php
 										echo $row3["Contact_no"];?></p>
 								<p>Email id:<?php
 										echo $row3["Email_id"];?></p>
 								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
+							</div>
 						</div>
 				</div>
-				<div class="col-md-3 screen1">
+				<div class="col-md-3 screen1 col-lg-3">
 					<div class="header">
 						<h4 class="oned">Technical Affairs Secretary</h4>
 					</div>
@@ -180,16 +181,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row4["Name"];?></h4>
 							</div>
 							<div class="header2">
+								<div class="heal">
 								<p>Contact no:<?php
 										echo $row4["Contact_no"];?></p>
 								<p>Email id:<?php
 										echo $row4["Email_id"];?></p>
 								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
+							</div>
 						</div>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-3 screen2">
+				<div class="col-md-3 screen2 col-lg-3">
 					<div class="header">
 						<h4 class="oned">Literary Affairs Secretary</h4>
 					</div>
@@ -200,16 +202,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row5["Name"];?></h4>
 							</div>
 							<div class="header2">
+								<div class="heal">
 								<p>Contact no:<?php
 										echo $row5["Contact_no"];?></p>
 								<p>Email id:<?php
 										echo $row5["Email_id"];?></p>
 								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
+							</div>
 						</div>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-3 screen3">
+				<div class="col-md-3 screen3 col-lg-3">
 					<div class="header">
 						<h4 class="oned">Social Affairs Secretary</h4>
 					</div>
@@ -220,16 +223,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row6["Name"];?></h4>
 							</div>
 							<div class="header2">
+								<div class="heal">
 								<p>Contact no:<?php
 										echo $row6["Contact_no"];?></p>
 								<p>Email id:<?php
 										echo $row6["Email_id"];?></p>
 								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
+							</div>
 						</div>
 				</div>
-				<div class="col-md-2"></div>
-				<div class="col-md-3 screen1">
+				<div class="col-md-3 screen1 col-lg-3">
 					<div class="header">
 						<h4 class="oned">Garden Secretary</h4>
 					</div>
@@ -240,16 +244,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row7["Name"];?></h4>
 							</div>
 							<div class="header2">
+								<div class="heal">
 								<p>Contact no:<?php
 										echo $row7["Contact_no"];?></p>
 								<p>Email id:<?php
 										echo $row7["Email_id"];?></p>
 								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
+							</div>
 						</div>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-3 screen2">
+				<div class="col-md-3 screen2 col-lg-3">
 					<div class="header">
 						<h4 class="oned">Alumni Affairs Secretary</h4>
 					</div>
@@ -260,18 +265,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
 										echo $row8["Name"];?></h4>
 							</div>
 							<div class="header2">
+								<div class="heal">
 								<p>Contact no:<?php
 										echo $row8["Contact_no"];?></p>
 								<p>Email id:<?php
 										echo $row8["Email_id"];?></p>
 								<a href="#" class="btn btn-default" >Go to Blog</a>
 							</div>
+							</div>
 						</div>
 				</div>
 			</div>
 		</div>
 		<div id="footer">
-			<div class="footer-container"
+			<div class="footer-container">
       				<ul class="nav navbar-nav navbar-left">
         				<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
         				<li class="book"><a href="#">About us</a></li>
