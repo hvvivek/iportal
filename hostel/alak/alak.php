@@ -103,12 +103,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<li class="bull"><a href='#'>Hostel secretaries details</a></li>
 						<li class="bull"><a href='#'>Hostel office-details</a></li>
 						<li class="bull"><a href='#'>Hostel services</a></li>
-						<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 						<li ><div id="googleMap"></div></li>
 					</ul>
 				</div>
-				<div class="panel panel-default">
-					<div class="panel-body">
 				<div class="col-md-3 screen1 col-lg-3">
 					<div class="header">
 						<h4 class="oned">General Secretary</h4>
@@ -276,8 +274,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							</div>
 						</div>
-				</div>
-			</div>
 		</div>
 			</div>
 		</div>
