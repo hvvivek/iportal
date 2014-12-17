@@ -107,6 +107,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<li ><div id="googleMap"></div></li>
 					</ul>
 				</div>
+				<div class="panel panel-default">
+					<div class="panel-body">
 				<div class="col-md-3 screen1 col-lg-3">
 					<div class="header">
 						<h4 class="oned">General Secretary</h4>
@@ -277,9 +279,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				</div>
 			</div>
 		</div>
+			</div>
+		</div>
 		<div id="footer">
 			<div class="footer-container">
-      				<ul class="nav navbar-nav navbar-left">
+      				<ul class="nav navbar-nav navbar-left done">
         				<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
         				<li class="book"><a href="#">About us</a></li>
         				<li class="book"><a href="#">Contact us</a></li>
