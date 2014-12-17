@@ -4,14 +4,18 @@ $user="root";
 $pwd="ragasree";
 $db="Hostel";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
-$sql1="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=1";
-$sql2="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=2";
-$sql3="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=3";
-$sql4="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=4";
-$sql5="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=5";
-$sql6="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=6";
-$sql7="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=7";
-$sql8="SELECT * FROM Contacts WHERE Hostel_id=1 and S_no=8";
+$id=$_GET["id"];
+$name=$_GET["name"];
+$lat=$_GET["lat"];
+$lng=$_GET["lng"];
+$sql1="SELECT * FROM Contacts WHERE Hostel_id='{$id}' and S_no=1";
+$sql2="SELECT * FROM Contacts WHERE Hostel_id='{$id}' and S_no=2";
+$sql3="SELECT * FROM Contacts WHERE Hostel_id='{$id}' and S_no=3";
+$sql4="SELECT * FROM Contacts WHERE Hostel_id='{$id}' and S_no=4";
+$sql5="SELECT * FROM Contacts WHERE Hostel_id='{$id}'and S_no=5";
+$sql6="SELECT * FROM Contacts WHERE Hostel_id='{$id}' and S_no=6";
+$sql7="SELECT * FROM Contacts WHERE Hostel_id='{$id}' and S_no=7";
+$sql8="SELECT * FROM Contacts WHERE Hostel_id='{$id}' and S_no=8";
 $data1=mysqli_query($conn,$sql1);
 $row1=mysqli_fetch_assoc($data1);
 $data2=mysqli_query($conn,$sql2);
@@ -34,17 +38,17 @@ $row8=mysqli_fetch_assoc($data8);
 	<head>
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Alakananda hostel</title>
+		<title><?php echo $name;?> hostel</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/alak.css" rel="stylesheet">
-		<script type="text/javascript" src="js/godav.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
+		<link href="css/hostel.css" rel="stylesheet">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
 		<script src="js/bootstrap.js"></script>
-		<script src="js/alak.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script>
-var myCenter=new google.maps.LatLng(12.985400, 80.238982);
+		var lat='<?php echo $lat;?>';
+		var lng='<?php echo $lng;?>';
+var myCenter=new google.maps.LatLng(lat,lng);
 
 function initialize()
 {
@@ -62,7 +66,7 @@ var marker=new google.maps.Marker({
 
 marker.setMap(map);
 var infowindow = new google.maps.InfoWindow({
-  content:"Alakananda"
+  content:'<?php echo $name;?>'
   });
 
 infowindow.open(map,marker);

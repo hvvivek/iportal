@@ -343,3 +343,7 @@ position:absolute;
   opacity: 0;
   transition:1s;
 }
+.input
+{
+  display:none;
+}

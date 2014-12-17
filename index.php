@@ -32,14 +32,62 @@ require 'partials/navbar.php';
 <div class="container1">
 <div class="contain2">
 <div class="blurmenu" ></div>
-<a href="hostel/alak/alak.php"><div class="small2"><p class="smtext2">Alak</p></div></a>
-<a href="hostel/godav/godav.php"><div class="small2"><p class="smtext2">God</p></div></a>
-<a href="hostel/sharav/sharav.php"><div class="small2"><p class="smtext2">Sha</p></div></a>
-<a href="hostel/saras/saras.php"><div class="small2"><p class="smtext2">Sar</p></div></a>
-<a href="hostel/ganga/ganga.php"><div class="small2"><p class="smtext2">Gan</p></div></a>
-<a href="hostel/narmad/narmad.php"><div class="small2"><p class="smtext2">Nar</p></div></a>
-<a href="hostel/cvery/cvery.php"><div class="small2"><p class="smtext2">Cav</p></div></a>
-<a href="hostel/tapti/tapti.php"><div class="small2"><p class="smtext2">Tpt</p></div></a>
+<form id="fid1" action="hostel/hostel.php">
+	<input class="input" name="id" value=1>
+	<input class="input" name="name" value="Alakananda">
+	<input class="input" name="lat" value=12.985400>
+	<input class="input" name="lng" value=80.238982>
+	<a href="#" onclick="document.getElementById('fid1').submit();"><div class="small2"><p class="smtext2">Alak</p></div></a>
+</form>
+<form id="fid2" action="hostel/hostel.php">
+	<input class="input" name="id" value=2>
+	<input class="input" name="name" value="Cauvery">
+	<input class="input" name="lat" value=12.985749>
+	<input class="input" name="lng" value=80.234003>
+	<a href="#" onclick="document.getElementById('fid2').submit();"><div class="small2"><p class="smtext2">cav</p></div></a>
+</form>
+<form id="fid3" action="hostel/hostel.php">
+	<input class="input" name="id" value=3>
+	<input class="input" name="name" value="Ganga">
+	<input class="input" name="lat" value=12.987124>
+	<input class="input" name="lng" value=80.238547>
+	<a href="#" onclick="document.getElementById('fid3').submit();"><div class="small2"><p class="smtext2">god</p></div></a>
+</form>
+<form id="fid4" action="hostel/hostel.php">
+	<input class="input" name="id" value=4>
+	<input class="input" name="name" value="Godavari">
+	<input class="input" name="lat" value=12.985892>
+	<input class="input" name="lng" value=80.237070>
+	<a href="#" onclick="document.getElementById('fid4').submit();"><div class="small2"><p class="smtext2">gan</p></div></a>
+</form>
+<form id="fid5" action="hostel/hostel.php">
+	<input class="input" name="id" value=5>
+	<input class="input" name="name" value="Narmada">
+	<input class="input" name="lat" value=12.985579>
+	<input class="input" name="lng" value=80.235429>
+	<a href="#" onclick="document.getElementById('fid5').submit();"><div class="small2"><p class="smtext2">nar</p></div></a>
+</form>
+<form id="fid6" action="hostel/hostel.php">
+	<input class="input" name="id" value=6>
+	<input class="input" name="name" value="Saraswathi">
+	<input class="input" name="lat" value=12.984942>
+	<input class="input" name="lng" value=80.236520>
+	<a href="#" onclick="document.getElementById('fid6').submit();"><div class="small2"><p class="smtext2">sar</p></div></a>
+</form>
+<form id="fid7" action="hostel/hostel.php">
+	<input class="input" name="id" value=7>
+	<input class="input" name="name" value="Sharavathi">
+	<input class="input" name="lat" value=12.990080>
+	<input class="input" name="lng" value=80.234510>
+	<a href="#" onclick="document.getElementById('fid7').submit();"><div class="small2"><p class="smtext2">sha</p></div></a>
+</form>
+<form id="fid8" action="hostel/hostel.php">
+	<input class="input" name="id" value=8>
+	<input class="input" name="name" value="Tapti">
+	<input class="input" name="lat" value=12.984513>
+	<input class="input" name="lng" value=80.235137>
+	<a href="#" onclick="document.getElementById('fid8').submit();"><div class="small2"><p class="smtext2">tpt</p></div></a>
+</form>
 </div>
 <div class="contain3">
 <div class="blurmenu" ></div>
