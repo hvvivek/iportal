@@ -163,14 +163,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						</div>
 							<div class="header2">
 								<div class="heal" id="h1" class="hid">
-									<p>Roll no:<?php
-										echo $row1["username"];?></p>
-									<p>Room no:<?php
-										echo $row1["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row1["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row1["Email_id"];?></p>
+									<p>
+									<?php
+										if(strlen($row1["username"])!=0){echo "Roll no:".$row1["username"];}?></p>
+									<p><?php
+										if(strlen($row1["Room"])!=0){echo "Room no:".$row1["Room"];}?></p>
+									<p><?php
+										if(strlen($row1["Contact_no"])!=0){echo "Contact no:".$row1["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row1["Email_id"])!=0){echo "Email id:".$row1["Email_id"];}?></p>
 								</div>
 							</div>
 						</div>
@@ -187,14 +188,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2" id="h2">
 								<div class="heal">
-								<p>Roll no:<?php
-										echo $row2["username"];?></p>
-									<p>Room no:<?php
-										echo $row2["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row2["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row2["Email_id"];?></p>
+
+								<p>
+									<?php
+										if(strlen($row2["username"])!=0){echo "Roll no:".$row2["username"];}?></p>
+									<p><?php
+										if(strlen($row2["Room"])!=0){echo "Room no:".$row2["Room"];}?></p>
+									<p><?php
+										if(strlen($row2["Contact_no"])!=0){echo "Contact no:".$row2["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row2["Email_id"])!=0){echo "Email id:".$row2["Email_id"];}?></p>
 							</div>
 							</div>
 						</div>
@@ -211,14 +214,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal" id="h3">
-								<p>Roll no:<?php
-										echo $row3["username"];?></p>
-									<p>Room no:<?php
-										echo $row3["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row3["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row3["Email_id"];?></p>
+								<p>
+									<?php
+										if(strlen($row3["username"])!=0){echo "Roll no:".$row3["username"];}?></p>
+									<p><?php
+										if(strlen($row3["Room"])!=0){echo "Room no:".$row3["Room"];}?></p>
+									<p><?php
+										if(strlen($row3["Contact_no"])!=0){echo "Contact no:".$row3["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row3["Email_id"])!=0){echo "Email id:".$row3["Email_id"];}?></p>
 							</div>
 							</div>
 						</div>
@@ -239,14 +243,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						</div>
 							<div class="header2">
 								<div class="heal" id="h4" class="hid">
-								<p>Roll no:<?php
-										echo $row4["username"];?></p>
-									<p>Room no:<?php
-										echo $row4["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row4["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row4["Email_id"];?></p>
+								<p>
+									<?php
+										if(strlen($row4["username"])!=0){echo "Roll no:".$row4["username"];}?></p>
+									<p><?php
+										if(strlen($row4["Room"])!=0){echo "Room no:".$row4["Room"];}?></p>
+									<p><?php
+										if(strlen($row4["Contact_no"])!=0){echo "Contact no:".$row4["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row4["Email_id"])!=0){echo "Email id:".$row4["Email_id"];}?></p>
 							</div>
 							</div>
 						</div>
@@ -263,14 +268,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal" id="h5">
-								<p>Roll no:<?php
-										echo $row5["username"];?></p>
-									<p>Room no:<?php
-										echo $row5["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row5["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row5["Email_id"];?></p>
+								<p>
+									<?php
+										if(strlen($row5["username"])!=0){echo "Roll no:".$row5["username"];}?></p>
+									<p><?php
+										if(strlen($row5["Room"])!=0){echo "Room no:".$row5["Room"];}?></p>
+									<p><?php
+										if(strlen($row5["Contact_no"])!=0){echo "Contact no:".$row5["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row5["Email_id"])!=0){echo "Email id:".$row5["Email_id"];}?></p>
 							</div>
 							</div>
 						</div>
@@ -287,14 +293,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal" id="h6">
-								<p>Roll no:<?php
-										echo $row6["username"];?></p>
-									<p>Room no:<?php
-										echo $row6["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row6["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row6["Email_id"];?></p>
+								<p>
+									<?php
+										if(strlen($row6["username"])!=0){echo "Roll no:".$row6["username"];}?></p>
+									<p><?php
+										if(strlen($row6["Room"])!=0){echo "Room no:".$row6["Room"];}?></p>
+									<p><?php
+										if(strlen($row6["Contact_no"])!=0){echo "Contact no:".$row6["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row6["Email_id"])!=0){echo "Email id:".$row6["Email_id"];}?></p>
 							</div>
 							</div>
 						</div>
@@ -313,14 +320,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal" id="h7">
-								<p>Roll no:<?php
-										echo $row7["username"];?></p>
-									<p>Room no:<?php
-										echo $row7["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row7["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row7["Email_id"];?></p>
+								<p>
+									<?php
+										if(strlen($row7["username"])!=0){echo "Roll no:".$row7["username"];}?></p>
+									<p><?php
+										if(strlen($row7["Room"])!=0){echo "Room no:".$row7["Room"];}?></p>
+									<p><?php
+										if(strlen($row7["Contact_no"])!=0){echo "Contact no:".$row7["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row7["Email_id"])!=0){echo "Email id:".$row7["Email_id"];}?></p>
 							</div>
 							</div>
 						</div>
@@ -337,14 +345,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							<div class="header2">
 								<div class="heal" id="h8">
-								<p>Roll no:<?php
-										echo $row8["username"];?></p>
-									<p>Room no:<?php
-										echo $row8["Room"];?></p>
-									<p>Contact no:<?php
-										echo $row8["Contact_no"];?></p>
-									<p>Email id:<?php
-										echo $row8["Email_id"];?></p>
+								<p>
+									<?php
+										if(strlen($row8["username"])!=0){echo "Roll no:".$row8["username"];}?></p>
+									<p><?php
+										if(strlen($row8["Room"])!=0){echo "Room no:".$row8["Room"];}?></p>
+									<p><?php
+										if(strlen($row8["Contact_no"])!=0){echo "Contact no:".$row8["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row8["Email_id"])!=0){echo "Email id:".$row8["Email_id"];}?></p>
 							</div>
 							</div>
 						</div>
