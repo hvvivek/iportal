@@ -102,7 +102,7 @@ $(document).ready(function(){
 //	$(".hostel1").mouseover(function(){
 //		$(this).css("width":"100px","height":"100px")});
 
-
+/*
     $("#ajaxcomment").submit(function(e)
 {
    e.preventDefault();
@@ -126,7 +126,7 @@ $(document).ready(function(){
   
 $("#ajaxcomment").submit(); 
 
-
+*/
 
 
 });

@@ -1,7 +1,7 @@
 <?php session_start();?><html>
 
 <body style="
-    padding-top: 70px;
+    padding-top: 70px;overflow:scroll;
 ">
 <?php require 'partials/header.php';
   require 'partials/navbar.php';
@@ -15,7 +15,7 @@ require 'config.php';
 if($_SESSION)
 {
 $hostel=$_SESSION['hostel'];
-$sql="SELECT * FROM `posts` LIMIT 20";
+$sql="SELECT * FROM `posts` WHERE hostel='$hostel'";
 }
 else
 {
@@ -37,30 +37,8 @@ while($result=mysqli_fetch_assoc($query))
 		 </div>
 	</div>
   <div class="comment_block">
-<?php 
-        $post_id=$result["id"];
-        $sql="SELECT * FROM `comments` WHERE `post_id`='$post_id' LIMIT 10 "; 
-}
-$query=mysqli_query($con,$sql);
-echo "<div class='container'>";
-while($comment_result=mysqli_fetch_assoc($query))
-{
-  ?>
-<div class="well col-lg-8">
-<?php   
-
- echo $comment_result['comment'];
-?>
-<div class="pull-right">
-<?php   
- echo $comment_result['commented_by'];
-?></div>
-</div>
-
-
-  <?php } ?>
-
- </div>
+<?php  require 'partials/comments.php';?>
+  </div>
   <div class="comment">
     <form role="form" method="post"  action="comment.php" id="ajaxcomment">
       <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>
@@ -74,8 +52,41 @@ while($comment_result=mysqli_fetch_assoc($query))
 
   </div>
 </div>
+	<?php
+}
 
+?>
 </br></div>
 
 
 
+<script>
+
+$(document).ready(function(){
+
+    $("#ajaxcomment").submit(function(e)
+{
+   e.preventDefault();
+  var postdata = $(this).serializeArray();
+  $.ajax(
+  {
+    url : 'comment.php',
+    type: "POST",
+    data : postdata,
+    success:function(data) 
+    {
+       console.log(data);
+       $('.comment_block').append(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) 
+    {
+    }
+  });
+});
+  
+$("#ajaxcomment").submit(); 
+
+
+
+});
+</script>

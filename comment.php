@@ -23,10 +23,12 @@ if (isset( $_POST) AND isset($_SESSION))
 	mysqli_close($con);
 ?>
 
-<div class="well col-lg-8">
-<?php  	
-if(isset($comment))
- echo $comment;
+
+<?php  
+if(isset($comment)){
+echo '<div class="well col-lg-8">';	
+
+ echo $comment;}
 ?>
 <div class="pull-right">
 <?php  	
@@ -35,4 +37,4 @@ if(isset($commented_by))
 ?></div>
 </div>
 
-<?php   };	?>
+<?php   }	?>
