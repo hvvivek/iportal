@@ -138,7 +138,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='#' id="hos"><?php echo $name;?></a></li>
+						<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 						<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 						<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>
 						<li class="bull"><a href='#' class="kill">Hostel services</a></li>
@@ -146,12 +146,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<li class="bull"><a href='#' class="kill">Techsoc</a></li>
 						<li class="bull"><a href='#' class="kill">Schroeter</a></li>
 						<li class="bull"><a href='#' class="kill">Alumni</a></li>
-						<br><br><br><br><br><br>
-						<li ><div id="googleMap"></div></li>
+						<li ><div id="googleMap" class="col-md-12"></div></li>
 					</ul>
 				</div>
+				<div class="row">
 				<div class="col-md-3 screen1 col-lg-3 slum">
-					<div class="header">
+					<div class="header ">
 						<h4 class="oned">General Secretary</h4>
 					</div>
 						<div class="slider">
@@ -222,6 +222,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 						</div>
 				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-3 screen1 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Technical Affairs Secretary</h4>
@@ -294,6 +296,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 						</div>
 				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-3 screen1 col-lg-3 slum">
 					<div class="header">
 						<h4 class="oned">Garden Secretary</h4>
@@ -341,6 +345,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							</div>
 							</div>
 						</div>
+					</div>
 		</div>
 			</div>
 		</div>

@@ -5,10 +5,13 @@
 #head
 {
 	text-decoration:none;
+	font-weight: bold;
 	color:white;
+	padding-left: 22%;
 }
 #head:hover
 {
+	background-color: transparent !important;
 	color:white;
 }
 #head:visited
@@ -50,15 +53,12 @@ body
 }
 #googleMap
 {
-	width:106%;
 	height:200px!important;
-	position: relative;
 	border:2px solid black;
 	color:black !important;
 	text-align: center;
-	position: relative;
-	left:5%;
-	margin-left:-4%;
+	margin-left: 3%;
+	margin-top: 10%;
 }
 .foot
 {
@@ -119,7 +119,7 @@ body
 	color:white;
 }
 .header {
-    width:100%;
+    width:100%  !important;
     height:20%;
     text-align:center;
     background-color:white;
@@ -135,6 +135,10 @@ body
     border:2px solid #fff;
     box-shadow:0px 1px 2px rgba(0, 0, 0, 0.5);
 }
+.row
+{
+	overflow:hidden!important;
+}
 .screen1,.screen2,.screen3 {
 	background-color:white!important;
     box-shadow: 0px 2px 6px #999;
@@ -142,10 +146,13 @@ body
     overflow:hidden;
     color:#2ECC71!important;
     margin-top: 1%;
-    left:22%!important;
+    left:28%;
     width:24%!important;
     border:2px solid #2ECC71;
-    margin-right: 7%;
+}
+.screen2,.screen3
+{
+	margin-left: 4%;
 }
 .slider:hover {
     left:-100%;
@@ -187,16 +194,17 @@ body
 }
 .sidebar
 {
-	background-color: #3498DB;
+	background-color: white;
 	margin-left: -20px;
 	position:fixed!important;
-	border: 2px solid green;
+	border-right: 2px solid #27AE60;
 	height: 100%;
-	width:20%!important;
+	width:25%!important;
+	color:#2ECC71;
 }
 .sidebar a
 {
-	color:white;
+	color:#2ECC71;
 }
 .sidebar a:hover
 {
@@ -214,10 +222,10 @@ background-color: #2ECC71;
 position: absolute;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
-.done a{
+.done>li>a{
 	color: white;
 }
-.done a:hover{
+.done>li>a:hover{
 	color: black;
 }
 .slum
@@ -230,10 +238,10 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 .nav-sidebar>li>a
 {
-	color: white;
-	
+	color:#2ECC71;
 	padding-left: 60px!important;
-	margin-right:-6%;
+	margin-right:-5.5%;
+	font-size: 120%;
 }
 .nav-sidebar>li>a:hover
 {
@@ -241,9 +249,9 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 #hos
 {
-	color:white;
+	color:#2ECC71;
 	font-weight: bold;
-	font-size: 120%;
+	font-size: 140%;
 	padding-left: 20px;
 }
 #hos:hover
