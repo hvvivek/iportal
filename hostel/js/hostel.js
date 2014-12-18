@@ -1,8 +1,14 @@
 $(document).ready(function(){
-	$(".header1").mouseover(function(){
-			$(".header2").css("visibility","visible");
+	$("#s1").mouseover(function(){
+			$("#h1").removeClass("hid");
 		});
-	$(".header1").mouseout(function(){
-			$(".header2").css("visibility","hidden");
+	$("#s1").mouseout(function(){
+			$("#h1").addClass("hid");
 		});
+	$("#s4").mouseover(function(){
+			$("#h4").removeClass("hid");
 		});
+	$("#s4").mouseout(function(){
+			$("#h4").addClass("hid");
+		});
+	});

@@ -2,7 +2,7 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="sai";
+$pwd="ragasree";
 $db="Hostel";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
@@ -64,7 +64,6 @@ else {
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
 		<script src="js/bootstrap.js"></script>
-
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script>
 		var lat='<?php echo $lat;?>';
@@ -150,18 +149,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					</ul>
 				</div>
 				<div class="row">
-				<div class="col-md-3 screen1 col-lg-3 slum">
+				<div class="col-md-3 screen1 col-lg-3 slum" id="s1">
 					<div class="header ">
 						<h4 class="oned">General Secretary</h4>
 					</div>
 						<div class="slider">
-							<div class="header1">
+							<div id="s1">
+							<div class="header1" >
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row1["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row1["Name"])));?></p>
 							</div>
+						</div>
 							<div class="header2">
-								<div class="heal">
+								<div class="heal" id="h1" class="hid">
 									<p>Roll no:<?php
 										echo $row1["username"];?></p>
 									<p>Room no:<?php
@@ -181,10 +182,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<div class="slider">
 							<div class="header1">
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row2["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row2["Name"])));?></p>
 							</div>
-							<div class="header2">
+							<div class="header2" id="h2">
 								<div class="heal">
 								<p>Roll no:<?php
 										echo $row2["username"];?></p>
@@ -205,11 +206,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<div class="slider">
 							<div class="header1">
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row3["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row3["Name"])));?></p>
 							</div>
 							<div class="header2">
-								<div class="heal">
+								<div class="heal" id="h3">
 								<p>Roll no:<?php
 										echo $row3["username"];?></p>
 									<p>Room no:<?php
@@ -229,13 +230,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<h4 class="oned">Technical Affairs Secretary</h4>
 					</div>
 						<div class="slider">
+							<div id="s4">
 							<div class="header1">
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row4["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row4["Name"])));?></p>
 							</div>
+						</div>
 							<div class="header2">
-								<div class="heal">
+								<div class="heal" id="h4" class="hid">
 								<p>Roll no:<?php
 										echo $row4["username"];?></p>
 									<p>Room no:<?php
@@ -255,11 +258,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<div class="slider">
 							<div class="header1">
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row5["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row5["Name"])));?></p>
 							</div>
 							<div class="header2">
-								<div class="heal">
+								<div class="heal" id="h5">
 								<p>Roll no:<?php
 										echo $row5["username"];?></p>
 									<p>Room no:<?php
@@ -279,11 +282,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<div class="slider">
 							<div class="header1">
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row6["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row6["Name"])));?></p>
 							</div>
 							<div class="header2">
-								<div class="heal">
+								<div class="heal" id="h6">
 								<p>Roll no:<?php
 										echo $row6["username"];?></p>
 									<p>Room no:<?php
@@ -305,11 +308,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<div class="slider">
 							<div class="header1">
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row7["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row7["Name"])));?></p>
 							</div>
 							<div class="header2">
-								<div class="heal">
+								<div class="heal" id="h7">
 								<p>Roll no:<?php
 										echo $row7["username"];?></p>
 									<p>Room no:<?php
@@ -329,11 +332,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<div class="slider">
 							<div class="header1">
 								<img class="img-circle img-responsive" src="img/photo.png">
-								<h4><?php
-										echo $row8["Name"];?></h4>
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row8["Name"])));?></p>
 							</div>
 							<div class="header2">
-								<div class="heal">
+								<div class="heal" id="h8">
 								<p>Roll no:<?php
 										echo $row8["username"];?></p>
 									<p>Room no:<?php
