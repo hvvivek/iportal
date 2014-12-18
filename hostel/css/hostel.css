@@ -234,7 +234,8 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 .heal
 {
-	margin-left: 20px;
+	margin-top: 8%;
+	font-size: 80%;
 }
 .nav-sidebar>li>a
 {
@@ -263,4 +264,9 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 .navbar a:hover
 {
 	background-color: #27AE60 !important;
+}
+.hw
+{
+	margin-top: 5%;
+	font-size:120%;
 }
