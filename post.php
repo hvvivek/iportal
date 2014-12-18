@@ -22,7 +22,7 @@ if(!mysqli_fetch_assoc($query1))
 <script src="js/index.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
-<link rel="stylesheet" type="text/css" href="css/index.css" >
+
 <style >
 	
 	body
@@ -36,7 +36,7 @@ if(!mysqli_fetch_assoc($query1))
 <div class="container ">
 <div class="col-lg-8 col-lg-offset-2">
 <form role="form" action="" method="post">
-	<div class="form-group">
+	<div class="form-group " >
 		<label for="title">Title</label>
 		<input class="form-control" id="title" type="text" name="title"/>
 	</div>

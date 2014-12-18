@@ -338,7 +338,7 @@ position:absolute;
 {
   display:none;
 }
-form
+.contain2>form
 {
   display: inline-block;
   width: 10%;
