@@ -15,7 +15,7 @@ require 'config.php';
 if($_SESSION)
 {
 $hostel=$_SESSION['hostel'];
-$sql="SELECT * FROM `posts` WHERE hostel='$hostel'";
+$sql="SELECT * FROM `posts` LIMIT 20";
 }
 else
 {
@@ -36,21 +36,46 @@ while($result=mysqli_fetch_assoc($query))
 	?>
 		 </div>
 	</div>
+  <div class="comment_block">
+<?php 
+        $post_id=$result["id"];
+        $sql="SELECT * FROM `comments` WHERE `post_id`='$post_id' LIMIT 10 "; 
+}
+$query=mysqli_query($con,$sql);
+echo "<div class='container'>";
+while($comment_result=mysqli_fetch_assoc($query))
+{
+  ?>
+<div class="well col-lg-8">
+<?php   
+
+ echo $comment_result['comment'];
+?>
+<div class="pull-right">
+<?php   
+ echo $comment_result['commented_by'];
+?></div>
+</div>
+
+
+  <?php } ?>
+
+ </div>
   <div class="comment">
-    <form role="form" method="post"  action="comment.php">
+    <form role="form" method="post"  action="comment.php" id="ajaxcomment">
       <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>
   <div class="form-group col-lg-8">
     <label for="comment">comment</label>
-    <textarea type="text" class="form-control" id="comment" placeholder="Comment"></textarea>
-   <button type="submit" class="btn btn-primary">comment</button>
+    <textarea type="text" class="form-control" id="comment" name="comment" placeholder="Comment"></textarea>
+   <button type="submit" id="submit" class="btn btn-primary">comment</button>
   </div>
   </form>
 
 
   </div>
 </div>
-	<?php
-}
 
-?>
 </br></div>
+
+
+
