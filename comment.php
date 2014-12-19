@@ -28,7 +28,7 @@ if (isset( $_POST) AND isset($_SESSION))
 
 <?php  
 if(isset($comment)){
-echo '<div class="well col-lg-8">';	
+echo '<div class="well col-lg-8  pull-right">';	
 
  echo $comment;}
 ?>

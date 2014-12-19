@@ -1,12 +1,34 @@
-<?php session_start();?><html>
+<?php session_start();?>
+<style>
+body
+{
+  
+  overflow: scroll !important;
+  padding-top:70px !important;
+}
+  .comment_view,.btn
+  {
+    border-radius: 0px !important;
+   background: #2ecc71 !important; 
+  }
+.sidebar
+{
+  position:fixed !important;
+  height:100%;
+  border-right:2px solid #2ecc71 !important; ;
+}
 
-<body style="
-    padding-top: 70px;overflow:scroll;
-">
+.well
+{
+  border-radius: 0px !important;
+ margin-bottom: 10px;
+}
+</style>
 <?php 
 require 'config.php';
 require 'partials/header.php';
   require 'partials/navbar.php';
+  require 'partials/view_sidebar.php';
 ?> 
 
 <?php
@@ -24,10 +46,10 @@ else
 	$sql="SELECT * FROM `posts` LIMIT 20 ";	
 }
 $query=mysqli_query($con,$sql);
-echo "<div class='container'>";
+echo "<div class='container '>";
 while($result=mysqli_fetch_assoc($query))
 {?>
-    <div class="post post<?php echo $result['id']?> col-lg-10">
+    <div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-3 col-sm-offset-2 col-md-offset-2">
     <div class="panel panel-default">
   		<div class="panel-body">
   	<?php	
@@ -39,20 +61,20 @@ while($result=mysqli_fetch_assoc($query))
 	?>
 		 </div>
 	</div>
-  <div  class="comment_section<?php echo$result['id']?>" id="comment_section">
+  <div  class="col-lg-12 comment_section<?php echo$result['id']?>" id="comment_section">
   <div class="comment_block<?php echo$result['id']?>">
 <?php  require 'partials/comments.php';?>
   </div>
   <?php  if(isset($_SESSION['username']))
   {
 ?>
-  <div class="comment">
+  <div class="comment ">
     <form role="form" method="post"  action="comment.php" id="ajaxcomment" class="ajaxcomment" name="<?php echo$result['id']?>">
       <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>
-  <div class="form-group col-lg-8">
+  <div class="form-group col-lg-8 pull-right">
     <label for="comment">comment</label>
-    <textarea type="text" class="form-control" id="comment<?php echo $result["id"] ?>" name="comment" placeholder="Comment"></textarea>
-   <button type="submit" id="submit" class="btn btn-primary">comment</button>
+    <textarea type="text" class="form-control col-lg-12 pull-right" id="comment<?php echo $result["id"] ?>" name="comment" placeholder="Comment"></textarea>
+   <button type="submit" id="submit" class="btn btn-primary pull-right">comment</button>
   </div>
   </form>
 
