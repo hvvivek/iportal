@@ -1,0 +1,70 @@
+/*.text-label {
+    color: #cdcdcd;
+    font-weight: bold;
+}
+.container{
+display:table;
+}
+.input{
+display:table-cell;
+}
+*/
+body {
+	background:#F2F2F2;
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-align: center;	
+}
+.fields{
+	width: 1000px;
+}
+.col{
+	width: 300px;
+}
+
+#content {
+	width: 500px;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	padding: 0;
+	text-align: left;
+}
+
+fieldset {
+	margin-top: 25px;
+	padding: 15px;
+	border: 1px solid #d1d1d1;
+}
+
+.info {
+	text-align: left;
+	padding: 5px;
+	font-size: 11px;
+	position: absolute;
+	display: none;	
+}
+
+.error {
+	background: #f60000;
+	border: 3px solid black;
+
+}
+
+.correct {
+	background: green;
+	border: 3px solid black;
+}
+
+.wrong {
+	font-weight: bold;
+	color: black;
+}
+
+.normal {
+	font-weight: normal;
+	color: black;
+}
+
+
+}
