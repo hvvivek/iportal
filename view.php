@@ -3,7 +3,9 @@
 <body style="
     padding-top: 70px;overflow:scroll;
 ">
-<?php require 'partials/header.php';
+<?php 
+require 'config.php';
+require 'partials/header.php';
   require 'partials/navbar.php';
 ?> 
 
@@ -11,7 +13,7 @@
 
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-require 'config.php';
+
 if($_SESSION)
 {
 $hostel=$_SESSION['hostel'];
@@ -25,27 +27,27 @@ $query=mysqli_query($con,$sql);
 echo "<div class='container'>";
 while($result=mysqli_fetch_assoc($query))
 {?>
-    <div>
+    <div class="post post<?php echo $result['id']?> col-lg-10">
     <div class="panel panel-default">
   		<div class="panel-body">
   	<?php	
 	echo $result['title'].'</br>';
 	echo $result['content'].'</br>';
 	echo $result['posted_by'].'</br>';
-  echo '<div class="btn btn-primary comment_view pull-right">viewcomments</div>';
+  echo '<div class="btn btn-primary comment_view pull-right" name="'.$result['id'].'">viewcomments</div>';
 	echo '</br></br>';
 	?>
 		 </div>
 	</div>
-  <div  id="comment_section">
-  <div class="comment_block">
+  <div  class="comment_section<?php echo$result['id']?>" id="comment_section">
+  <div class="comment_block<?php echo$result['id']?>">
 <?php  require 'partials/comments.php';?>
   </div>
   <?php  if(isset($_SESSION['username']))
   {
 ?>
   <div class="comment">
-    <form role="form" method="post"  action="comment.php" id="ajaxcomment">
+    <form role="form" method="post"  action="comment.php" id="ajaxcomment" class="ajaxcomment" name="<?php echo$result['id']?>">
       <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>
   <div class="form-group col-lg-8">
     <label for="comment">comment</label>

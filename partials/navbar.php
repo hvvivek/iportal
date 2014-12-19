@@ -16,7 +16,17 @@
             <input type="text" class="form-control" placeholder="Search">
           </div>
         </form>
+    <?php 
+
+  if(canpost($con))
+  {
+    echo '<li><a href="post.php">Post Article</a></li>';
+ }
+ 
+    ?>
+<li><a href="view.php">View Posts</a></li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
          
           <?php if($_SESSION)

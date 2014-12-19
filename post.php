@@ -1,12 +1,25 @@
-<?php
-session_start();
+<?php session_start();?>
+<style>
+	
+	body
+	{
+		padding:70px;
+		width:90%;
+		overflow: hidden;
+	}
+</style>
+<?php 
 require 'config.php';
+require 'partials/header.php';
+  require 'partials/navbar.php';
+
+
 if (!$_SESSION)
 {
 	header("Location:index.php");
 }
 $value=$_SESSION['username'];
-$sql1="SELECT * FROM `Sec` WHERE username='$value' ";
+$sql1="SELECT * FROM `sec` WHERE username='$value' ";
 $query1=mysqli_query($con,$sql1);
 if(!mysqli_fetch_assoc($query1))
 {
@@ -16,23 +29,6 @@ if(!mysqli_fetch_assoc($query1))
 
 ?>
 
-<html>
-<head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/index.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
-
-<style >
-	
-	body
-	{
-		margin:0px;
-		height:100%;
-	}
-</style>
-</head>
-<body style="background:white !important;">
 <div class="container ">
 <div class="col-lg-8 col-lg-offset-2">
 <form role="form" action="" method="post">

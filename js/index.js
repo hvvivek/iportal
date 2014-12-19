@@ -1,7 +1,9 @@
 $(document).ready(function(){
-
-    $("#ajaxcomment").submit(function(e)
+    $('.ajaxcomment').submit(function(e)
 {
+	
+	val=$(this).attr('name');
+	alert(val);
    e.preventDefault();
   var postdata = $(this).serializeArray();
   $.ajax(
@@ -12,14 +14,16 @@ $(document).ready(function(){
     success:function(data) 
     {
        console.log(data);
-       $('.comment_block').append(data);
+       $('.comment_block'+val).append(data);
     },
     error: function(jqXHR, textStatus, errorThrown) 
     {
     }
   });
+    
 });
- $("#ajaxcomment").submit(); 
+
+ $(this).submit(); 
 
 $.fn.clicktoggle = function(a, b) {
     return this.each(function() {
@@ -40,9 +44,13 @@ $.fn.clicktoggle = function(a, b) {
 
 
 $('.comment_view').clicktoggle(function(){
-		$('#comment_section').slideDown();},
+		var val=$(this).attr('name');
+		$('.comment_section'+val).slideDown();
+
+	},
 		function(){
-		$('#comment_section').slideUp();}
+			var val=$(this).attr('name');
+		$('.comment_section'+val).slideUp();}
 
 );
 

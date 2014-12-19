@@ -11,7 +11,7 @@ if($oauth->user['loggedIn']){
   $userdetails=getuserdetails($oauth->user['username'],$con);
   $_SESSION['hostel']= $userdetails['hostel'];
   $_SESSION['email']= $userdetails['email'];
-  mysqli_close($con);
+  
 }
 else {
   //echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
