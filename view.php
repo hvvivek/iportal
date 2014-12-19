@@ -51,7 +51,7 @@ while($result=mysqli_fetch_assoc($query))
       <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>
   <div class="form-group col-lg-8">
     <label for="comment">comment</label>
-    <textarea type="text" class="form-control" id="comment" name="comment" placeholder="Comment"></textarea>
+    <textarea type="text" class="form-control" id="comment<?php echo $result["id"] ?>" name="comment" placeholder="Comment"></textarea>
    <button type="submit" id="submit" class="btn btn-primary">comment</button>
   </div>
   </form>

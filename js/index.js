@@ -3,7 +3,7 @@ $(document).ready(function(){
 {
 	
 	val=$(this).attr('name');
-	alert(val);
+	//alert(val);
    e.preventDefault();
   var postdata = $(this).serializeArray();
   $.ajax(
@@ -15,6 +15,7 @@ $(document).ready(function(){
     {
        console.log(data);
        $('.comment_block'+val).append(data);
+       $('#comment'+val).val('');
     },
     error: function(jqXHR, textStatus, errorThrown) 
     {
