@@ -9,8 +9,8 @@
 
 <?php
 
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 require 'config.php';
 if($_SESSION)
 {
@@ -32,13 +32,18 @@ while($result=mysqli_fetch_assoc($query))
 	echo $result['title'].'</br>';
 	echo $result['content'].'</br>';
 	echo $result['posted_by'].'</br>';
+  echo '<div class="btn btn-primary comment_view pull-right">viewcomments</div>';
 	echo '</br></br>';
 	?>
 		 </div>
 	</div>
+  <div  id="comment_section">
   <div class="comment_block">
 <?php  require 'partials/comments.php';?>
   </div>
+  <?php  if(isset($_SESSION['username']))
+  {
+?>
   <div class="comment">
     <form role="form" method="post"  action="comment.php" id="ajaxcomment">
       <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>
@@ -52,41 +57,10 @@ while($result=mysqli_fetch_assoc($query))
 
   </div>
 </div>
+  <?php }  ?>
+</div>
 	<?php
 }
 
 ?>
 </br></div>
-
-
-
-<script>
-
-$(document).ready(function(){
-
-    $("#ajaxcomment").submit(function(e)
-{
-   e.preventDefault();
-  var postdata = $(this).serializeArray();
-  $.ajax(
-  {
-    url : 'comment.php',
-    type: "POST",
-    data : postdata,
-    success:function(data) 
-    {
-       console.log(data);
-       $('.comment_block').append(data);
-    },
-    error: function(jqXHR, textStatus, errorThrown) 
-    {
-    }
-  });
-});
-  
-$("#ajaxcomment").submit(); 
-
-
-
-});
-</script>
