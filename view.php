@@ -36,6 +36,17 @@ require 'partials/header.php';
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
+function candelete($user)
+{
+  if($_SESSION['username']==$user)
+  {
+    return true;
+  }
+  else
+    return false;
+}
+
+
 if($_SESSION)
 {
 $hostel=$_SESSION['hostel'];

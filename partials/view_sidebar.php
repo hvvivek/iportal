@@ -10,4 +10,4 @@
 						<li class="bull"><a href='#' class="kill">Alumni</a></li>
 						<li ><div id="googleMap" class="col-md-12"></div></li>
 					</ul>
-				</div>
+</div>
