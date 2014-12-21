@@ -2,7 +2,7 @@
 
 $host="localhost";  
 $username="root";  
-$password="ragasree"; 
+$password="a"; 
 $con=mysqli_connect($host,$username,$password,"Blog") or die('can not connect');
 
 function getuserdetails($value,$con)
