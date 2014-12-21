@@ -1,58 +1,52 @@
-<?php session_start();?><html>
-<head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/index.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
-<link rel="stylesheet" type="text/css" href="css/index.css" >
-</head>
-<body style="
-    padding-top: 70px;
-">
-<nav class="navbar navbar-fixed-top navbar-collapse" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-<li class="navbar-brand"><a href="#" class="holy" >INFORMATION PORTAL</a></li>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Hostel</a></li>
-        <li><a href="#">Eateries</a></li>
-	 <li><a href="#">Other details</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-         
-          <?php if($_SESSION)
-          { ?>
-          <li class="dropdown">
-          <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
-          <ul class="dropdown-menu signin_div">
-            <li class="shit"><a href="#">My profile</a></li>
-            <li class="shit"><a href="#">Settings</a></li>
-            <li class="divider"></li>
-            <li class="shit"><a href="includes/signout.php">Sign Out</a></li>
-          </ul>
-          </li>
-          <?php  } else{ ?>
-          <li><a href="<?php echo $oauth->signinURL; ?>">Signin</a></li>
-          <?php  }?>
-        </ul>
-    </div>
-</div>
-  </nav>
+<?php session_start();?>
+<style>
+body
+{
+  
+  overflow: scroll !important;
+  padding-top:70px !important;
+}
+  .comment_view,.btn
+  {
+    border-radius: 0px !important;
+   background: #2ecc71 !important; 
+  }
+.sidebar
+{
+  position:fixed !important;
+  height:100%;
+  border-right:2px solid #2ecc71 !important; ;
+}
 
+.well
+{
+  border-radius: 0px !important;
+ margin-bottom: 10px;
+}
+</style>
+<?php 
+require 'config.php';
+require 'partials/header.php';
+  require 'partials/navbar.php';
+  require 'partials/view_sidebar.php';
+?> 
 
 <?php
 
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
-require 'config.php';
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+function candelete($user)
+{
+  if($_SESSION['username']==$user)
+  {
+    return true;
+  }
+  else
+    return false;
+}
+
+
 if($_SESSION)
 {
 $hostel=$_SESSION['hostel'];
@@ -63,18 +57,43 @@ else
 	$sql="SELECT * FROM `posts` LIMIT 20 ";	
 }
 $query=mysqli_query($con,$sql);
-echo "<div class='container'>";
+echo "<div class='container '>";
 while($result=mysqli_fetch_assoc($query))
-{?><div class="panel panel-default">
+{?>
+    <div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-3 col-sm-offset-2 col-md-offset-2">
+    <div class="panel panel-default">
   		<div class="panel-body">
   	<?php	
 	echo $result['title'].'</br>';
 	echo $result['content'].'</br>';
 	echo $result['posted_by'].'</br>';
+  echo '<div class="btn btn-primary comment_view pull-right" name="'.$result['id'].'">viewcomments</div>';
 	echo '</br></br>';
 	?>
 		 </div>
 	</div>
+  <div  class="col-lg-12 comment_section<?php echo$result['id']?>" id="comment_section">
+  <div class="comment_block<?php echo$result['id']?>">
+<?php  require 'partials/comments.php';?>
+  </div>
+  <?php  if(isset($_SESSION['username']))
+  {
+?>
+  <div class="comment ">
+    <form role="form" method="post"  action="comment.php" id="ajaxcomment" class="ajaxcomment" name="<?php echo$result['id']?>">
+      <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>
+  <div class="form-group col-lg-8 pull-right">
+    <label for="comment">comment</label>
+    <textarea type="text" class="form-control col-lg-12 pull-right" id="comment<?php echo $result["id"] ?>" name="comment" placeholder="Comment"></textarea>
+   <button type="submit" id="submit" class="btn btn-primary pull-right">comment</button>
+  </div>
+  </form>
+
+
+  </div>
+</div>
+  <?php }  ?>
+</div>
 	<?php
 }
 

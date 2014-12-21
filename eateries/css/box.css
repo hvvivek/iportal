@@ -1,0 +1,14 @@
+body {
+  background-color: #fff;
+}
+
+div {
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow:120px 80px 40px 20px #9882FF;
+    
+}
