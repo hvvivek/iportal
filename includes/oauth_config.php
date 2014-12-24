@@ -14,4 +14,4 @@ define('CMD_SIGNOUT','signout/');
 define('CMD_REQUEST_TOKEN','request_token/');
 define('CMD_REQUEST_ACCESS','request_access/');
 
-define('PRIVATE_SITE', true);
+define('PRIVATE_SITE', false);

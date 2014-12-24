@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-<li class="navbar-brand"><a href="#" class="holy" >INFORMATION PORTAL</a></li>
+<li class="navbar-brand"><a href="index.php" class="holy" >INFORMATION PORTAL</a></li>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">

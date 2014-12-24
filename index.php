@@ -19,6 +19,7 @@ else {
 
 require 'partials/header.php';
 require 'partials/navbar.php';
+
 ?>
 <div class="contain">
 <div class="big" id="one"><div class="menutitle"></div><div class="inbig"></div><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>

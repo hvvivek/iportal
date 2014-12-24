@@ -65,6 +65,9 @@ else {
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
 		<script src="js/bootstrap.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/ferro.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
+<script src="../js/ferro.js" type="text/javascript"></script>
 		<script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -92,8 +95,10 @@ infowindow.open(map,marker);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+
 	</head>
 	<body>
+	<?php require '../partials/menu.php';  ?>
 		<div class="container-fluid contain">
 		<nav class="navbar navbar-fixed-top" role="navigation">
 		  	<div class="container-fluid did">
