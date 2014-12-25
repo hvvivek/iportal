@@ -1,6 +1,6 @@
 <div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
+						<li class="bull"><a href='#' id="hos"><?php if(isset($name)){echo $name;}?> Hostel</a></li>
 						<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 						<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>
 						<li class="bull"><a href='#' class="kill">Hostel services</a></li>

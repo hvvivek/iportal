@@ -18,6 +18,7 @@ if (isset( $_POST) AND isset($_SESSION))
 		$commented_by=$_SESSION['username'];
 		$sql="INSERT INTO `comments`( `comment`, `commented_by`, `post_id`,`comment_time`) VALUES ('$comment','$commented_by','$post_id',CURRENT_TIMESTAMP)";
 		$query=mysqli_query($con,$sql);
+		$cid=mysqli_fetch_assoc($query);
 		//echo $sql;  
 	
 	}
@@ -35,7 +36,9 @@ echo '<div class="well col-lg-8  pull-right">';
 <div class="pull-right">
 <?php  	
 if(isset($commented_by))
- echo $commented_by;
+ {echo $commented_by;
+ echo "<span commentid='".$cid."' class='delete_comment glyphicon glyphicon-remove pull-right'></span>";
+}
 ?></div>
 </div>
 

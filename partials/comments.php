@@ -13,7 +13,7 @@ while($comment_result=mysqli_fetch_assoc($query1))
 <?php
 if(candelete($comment_result['commented_by']))
 {
- echo "sai<span class='glyphicon glyphicon-remove pull-right'></span>";
+ echo "<span commentid=".$comment_result['id']." class='delete_comment glyphicon glyphicon-remove pull-right'></span>";
 }
 
 echo $comment_result['comment']; ?>
@@ -22,9 +22,10 @@ echo $comment_result['comment']; ?>
 </div>
 
 
-
-
-
 <?php
+
 }
+
 ?>
+
+

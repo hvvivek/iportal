@@ -27,8 +27,8 @@ body
 <?php 
 require 'config.php';
 require 'partials/header.php';
-  require 'partials/navbar.php';
-  require 'partials/view_sidebar.php';
+require 'partials/navbar.php';
+require 'partials/view_sidebar.php';
 ?> 
 
 <?php
@@ -62,6 +62,10 @@ while($result=mysqli_fetch_assoc($query))
 {?>
     <div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-3 col-sm-offset-2 col-md-offset-2">
     <div class="panel panel-default">
+  <?php  if(candelete($result['posted_by']))
+{
+ echo "<span postid=".$result['id']." class='delete_post glyphicon glyphicon-remove pull-right'></span>";
+}?>
   		<div class="panel-body">
   	<?php	
 	echo $result['title'].'</br>';
@@ -99,3 +103,36 @@ while($result=mysqli_fetch_assoc($query))
 
 ?>
 </br></div>
+
+
+<script>
+
+ $('.delete_comment').click(function(e)
+{
+  var s=$(this)
+  commentid=$(this).attr('commentid');
+  $.post("deletecomment.php",
+  {
+    name:commentid,
+  },
+  function(data,status){
+    s.parent().fadeOut();
+  });
+});
+ 
+
+$('.delete_post').click(function(e)
+{
+  var post=$(this)
+  postid=$(this).attr('postid');
+  $.post("deletepost.php",
+  {
+   postid:postid,
+  },
+  function(data,status){
+    post.parent().fadeOut();
+  });
+});
+ 
+
+</script>
