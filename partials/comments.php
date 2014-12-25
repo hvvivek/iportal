@@ -11,12 +11,14 @@ while($comment_result=mysqli_fetch_assoc($query1))
 
  <div class='well col-lg-8 pull-right'>
 <?php
+
+echo $comment_result['comment'];
 if(candelete($comment_result['commented_by']))
 {
- echo "<span commentid=".$comment_result['id']." class='delete_comment glyphicon glyphicon-remove pull-right'></span>";
+ echo "<span commentid=".$comment_result['id']." class='delete_comment glyphicon glyphicon-trash pull-right'></span>";
 }
-
-echo $comment_result['comment']; ?>
+ ?>
+<hr>
 
 	<div class='pull-right'><?php echo $comment_result['commented_by']?></div> 
 </div>

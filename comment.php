@@ -37,7 +37,7 @@ echo '<div class="well col-lg-8  pull-right">';
 <?php  	
 if(isset($commented_by))
  {echo $commented_by;
- echo "<span commentid='".$cid."' class='delete_comment glyphicon glyphicon-remove pull-right'></span>";
+ echo "<span commentid='".$cid."' class='delete_comment glyphicon glyphicon-trash pull-right'></span>";
 }
 ?></div>
 </div>

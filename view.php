@@ -64,7 +64,7 @@ while($result=mysqli_fetch_assoc($query))
     <div class="panel panel-default">
   <?php  if(candelete($result['posted_by']))
 {
- echo "<span postid=".$result['id']." class='delete_post glyphicon glyphicon-remove pull-right'></span>";
+ echo "<span postid=".$result['id']." class='delete_post glyphicon glyphicon-trash pull-right'></span>";
 }?>
   		<div class="panel-body">
   	<?php	
@@ -105,34 +105,3 @@ while($result=mysqli_fetch_assoc($query))
 </br></div>
 
 
-<script>
-
- $('.delete_comment').click(function(e)
-{
-  var s=$(this)
-  commentid=$(this).attr('commentid');
-  $.post("deletecomment.php",
-  {
-    name:commentid,
-  },
-  function(data,status){
-    s.parent().fadeOut();
-  });
-});
- 
-
-$('.delete_post').click(function(e)
-{
-  var post=$(this)
-  postid=$(this).attr('postid');
-  $.post("deletepost.php",
-  {
-   postid:postid,
-  },
-  function(data,status){
-    post.parent().fadeOut();
-  });
-});
- 
-
-</script>

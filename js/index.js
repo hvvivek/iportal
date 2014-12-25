@@ -1,4 +1,49 @@
 $(document).ready(function(){
+
+
+ $('.delete_comment').click(function(e)
+{
+
+	if (confirm("do you want to delete the comment") == true) {
+  var s=$(this)
+  commentid=$(this).attr('commentid');
+  $.post("deletecomment.php",
+  {
+    name:commentid,
+  },
+  function(data,status){
+    s.parent().fadeOut();
+  });
+}
+});
+ 
+
+$('.delete_post').click(function(e)
+{
+ 
+
+    if (confirm("do you want to delete post") == true) {
+       var post=$(this)
+  postid=$(this).attr('postid');
+  $.post("deletepost.php",
+  {
+   postid:postid,
+  },
+  function(data,status){
+    post.parent().fadeOut();
+  });
+    } else {
+        
+    }
+
+});
+ 
+
+
+
+
+
+
     $('.ajaxcomment').submit(function(e)
 {
 	
