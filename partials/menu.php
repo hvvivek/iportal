@@ -4,7 +4,7 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				
-				/*$( "body" ).on( "mouseover", ".ferromenu-controller", function() {
+				$( "body" ).on( "mouseover", ".ferromenu-controller", function() {
 $.fn.ferroMenu.toggleMenu($(this).data("ferromenuitem"));
 });
 				/*$( "body" ).on( "mouseout", ".ferromenu-controller", function() {
