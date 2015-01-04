@@ -1,6 +1,10 @@
-<?php session_start();    
+<?php 
+
+session_start();   
+ 
 require 'includes/signin.php';
 require  'config.php';
+
 if($oauth->authCode){
 $_SESSION['authcode'] = $oauth->authCode;
 
@@ -29,7 +33,6 @@ require 'partials/navbar.php';
 <div class="loading"></div>
 <div class="container1">
 <div class="contain2">
-<div class="blurmenu" ></div>
 <form id="fid1" action="hostel/hostel.php">
 	<input class="input" name="id" value=1>
 	<input class="input" name="name" value="Alakananda">
@@ -151,7 +154,6 @@ require 'partials/navbar.php';
 </form>
 </div>
 <div class="contain3">
-<div class="blurmenu" ></div>
 <a href="#"><div class="small3"><p class="smtext3">Gurunath</p></div></a>
 <a href="#"><div class="small3"><p class="smtext3">IRCTC</p></div></a>
 <a href="#"><div class="small3"><p class="smtext3">Kickstart</p></div></a>
@@ -162,7 +164,6 @@ require 'partials/navbar.php';
 <a href="#"><div class="small3"><p class="smtext3">CC</p></div></a>
 </div>
 <div class="contain4">
-<div class="blurmenu" ></div>
 <a href="#"><div class="small4"><p class="smtext4">Travel</p></div></a>
 <a href="#"><div class="small4"><p class="smtext4">Xerox</p></div></a>
 <a href="#"><div class="small4"><p class="smtext4">Giftshop</p></div></a>

@@ -231,7 +231,9 @@ border:.5px solid #274cf0;
   z-index: 100;
 box-shadow: 0 0 20px #fff;
 -webkit-transition: all .2s;
+/*
 transition: all .2s;
+*/
 -webkit-transform: scale(1.1);
 }
 .blurmenu
@@ -333,9 +335,9 @@ position:absolute;
 
 .small2,.small3,.small4
 {
-  opacity: 0;
-  transition:1s;
+  opacity: 1;
 }
+
 .input
 {
   display:none;
