@@ -142,17 +142,21 @@ border:.5px solid #274cf0;
 {
 background-color:transparent;
 position:absolute;
-width: 80%;
+margin-top:0px;
 margin-left: 15%;
 margin-right:10%;
+padding-top:32px;
 height:100px;
+width: 80%;
 }
 .contain3
 {
 background-color:transparent;
 position:absolute;
+margin-top:0px;
 margin-left:10%;
 margin-right:10%;
+padding-top:10px;
 height:100px;
 width: 80%;
 }
@@ -160,8 +164,10 @@ width: 80%;
 {
 background-color:transparent;
 position:absolute;
+margin-top:0px;
 margin-left:26.5%;
 margin-right:16%;
+padding-top:22px;
 height:100px;
 width:40%;
 }
