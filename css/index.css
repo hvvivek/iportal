@@ -336,7 +336,7 @@ position:absolute;
 .small2,.small3,.small4
 {
   opacity: 0;
-  transition:opacity 2s;
+  transition:opacity 1.5s;
 }
 
 .input

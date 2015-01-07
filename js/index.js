@@ -128,10 +128,19 @@ $('.comment_view').clicktoggle(function(){
 		}
 	},function()
 	{
+		$("#two").hover(function(){
 		$(".contain2").fadeOut("fast");
 		$(".small2").css({'opacity':'0'});
 		$("#one>.inbig").removeClass('hov');
 		$("#one>.menutitle").empty();
+		});
+		
+		$("#thr").hover(function(){
+		$(".contain2").fadeOut("fast");
+		$(".small2").css({'opacity':'0'});
+		$("#one>.inbig").removeClass('hov');
+		$("#one>.menutitle").empty();
+		});
 	});
 	
 	$("#two").hover(function()
@@ -142,7 +151,7 @@ $('.comment_view').clicktoggle(function(){
 		$("#two>.menutitle").html('Eateries');
 		$("#one>.menutitle").empty();
 		$("#thr>.menutitle").empty();
-	
+		
 		if(drop==1){ 
 		$('.loading').animate({width:'100%'},500);
 		$(".contain3").css({'margin-top':'0%'});
@@ -159,10 +168,18 @@ $('.comment_view').clicktoggle(function(){
 		}
 	},function()
 	{
+		$("#one").hover(function(){
 		$(".contain3").fadeOut("fast");
 		$(".small3").css({'opacity':'0'});
 		$("#two>.inbig").removeClass('hov');
 		$("#two>.menutitle").empty();
+		});
+		$("#thr").hover(function(){
+		$(".contain3").fadeOut("fast");
+		$(".small3").css({'opacity':'0'});
+		$("#two>.inbig").removeClass('hov');
+		$("#two>.menutitle").empty();
+		});
 	});
 	
 	$("#thr").hover(function()
@@ -192,10 +209,22 @@ $('.comment_view').clicktoggle(function(){
 		}
 	},function()
 	{
+
+		$("#two").hover(function()
+		{
 		$(".contain4").fadeOut("fast");
 		$(".small4").css({'opacity':'0'});
 		$("#thr>.inbig").removeClass('hov');
 		$("#thr>.menutitle").empty();
+		});
+		
+		$("#one").hover(function()
+		{
+		$(".contain4").fadeOut("fast");
+		$(".small4").css({'opacity':'0'});
+		$("#thr>.inbig").removeClass('hov');
+		$("#thr>.menutitle").empty();
+		});
 	});
 	
 	/*$("#thr").mouseout(function()
