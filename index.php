@@ -25,13 +25,41 @@ require 'partials/header.php';
 require 'partials/navbar.php';
 
 ?>
-<div class="contain">
-<div class="big" id="one"><div class="menutitle"></div><div class="inbig"></div><span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span></div>
-<div class="big" id="two"><div class="menutitle"></div><div class="inbig"></div><span class="glyphicon glyphicon-cutlery editgly" aria-hidden="true"></span></div>
-<div class="big" id="thr"> <div class="menutitle"></div><div class="inbig"></div><span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span></div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="col-md-12">
+<div class="contain" style="margin-top:5%; padding-top:0;height:240px;">
+	<div class="big" id="one">
+		<div class="menutitle"></div>
+		<div class="inbig"></div>
+		<span class="glyphicon glyphicon-home editgly" aria-hidden="true"></span>
+	</div>
+
+	<div class="big" id="two">
+		<div class="menutitle"></div>
+		<div class="inbig"></div>
+		<span class="glyphicon glyphicon-cutlery editgly" aria-hidden="true"></span>
+	</div>
+
+	<div class="big" id="thr"> 
+		<div class="menutitle"></div>
+		<div class="inbig"></div>
+		<span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span>
+	</div>
 </div>
-<div class="loading"></div>
-<div class="container1">
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+	<div class="col-md-10 col-md-offset-1" style="margin-top:5%">
+		<div class="loading"></div>
+	</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="col-md-12">
 <div class="contain2">
 <form id="fid1" action="hostel/hostel.php">
 	<input class="input" name="id" value=1>
@@ -170,8 +198,11 @@ require 'partials/navbar.php';
 <a href="#"><div class="small4"><p class="smtext4">Haircare</p></div></a>
 </div>
 </div>
+</div>
+</div>
+
 <div id="footer">
-			<div class="container-fluid footer-container">
+			<div class="container-fluid">
       				<ul class="nav navbar-nav navbar-left done">
         				<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
         				<li class="book"><a href="#">About us</a></li>

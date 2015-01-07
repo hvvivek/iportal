@@ -114,9 +114,10 @@ $('.comment_view').clicktoggle(function(){
 		$("#thr>.menutitle").empty();
 		
 		if(drop==1){ 
-		$('.loading').animate({width:'100%'},500);
+		$('.loading').animate({width:'95%'},'slow');
 		$('.contain2').css({'margin-top':'0%'});
 		$('.contain2').fadeIn("slow","linear");	
+		// $(".small2").animate({top:15, opacity: 1}, 'slow');
 		$(".small2").css({'opacity':'1'});	
 		drop=0;
 		}
@@ -124,6 +125,7 @@ $('.comment_view').clicktoggle(function(){
 		{	
 			$(".contain2").css({'margin-top':'0%'});
 			$(".contain2").fadeIn("slow","linear");
+			// $(".small2").animate({top:15, opacity: 1}, 'slow');
 			$(".small2").css({'opacity':'1'});
 		}
 	},function()
@@ -153,9 +155,10 @@ $('.comment_view').clicktoggle(function(){
 		$("#thr>.menutitle").empty();
 		
 		if(drop==1){ 
-		$('.loading').animate({width:'100%'},500);
+		$('.loading').animate({width:'100%'},'slow');
 		$(".contain3").css({'margin-top':'0%'});
 		$(".contain3").fadeIn("slow","linear");
+		// $(".small3").animate({top:100, opacity: 1}, 'slow');
 		$(".small3").css({'opacity':'1'});
 		drop=0;
 		}
@@ -163,7 +166,8 @@ $('.comment_view').clicktoggle(function(){
 		{
 			$(".contain3").css({'margin-top':'0%'});
 			$(".contain3").fadeIn("slow","linear");
-			$(".small3").css({'opacity':'1'});
+			// $(".small3").animate({top:15, opacity: 1}, 'slow');
+			 $(".small3").css({'opacity':'1'});
 			
 		}
 	},function()
@@ -193,23 +197,23 @@ $('.comment_view').clicktoggle(function(){
 	
 		if(drop==1)
 		{ 
-			$('.loading').animate({width:'100%'},500);
-			$(".contain4").css({'margin-top':'0%'});
-			$(".contain4").fadeIn("slow","linear");
-			$(".small4").css({'opacity':'1'});
-			
-			drop=0;
+			 $('.loading').animate({width:'100%'},'slow');
+			 $(".contain4").css({'margin-top':'0%'});
+			 $(".contain4").fadeIn("slow","linear");
+			 //$(".small4").animate({top:15, opacity: 1}, 'slow');
+			 $(".small4").css({'opacity':'1'});
+			 drop=0;
 		}
 		else
 		{	
 			$(".contain4").css({'margin-top':'0%'});
 			$(".contain4").fadeIn("slow","linear");
-			$(".small4").css({'opacity':'1'});
+			//$(".small4").animate({top:15, opacity: 1}, 'slow');
+			 $(".small4").css({'opacity':'1'});
 			
 		}
 	},function()
 	{
-
 		$("#two").hover(function()
 		{
 		$(".contain4").fadeOut("fast");
