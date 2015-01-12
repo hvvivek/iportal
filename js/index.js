@@ -114,7 +114,7 @@ $('.comment_view').clicktoggle(function(){
 		$("#thr>.menutitle").empty();
 		
 		if(drop==1){ 
-		$('.loading').animate({width:'95%'},'slow');
+		$('.loading').animate({width:'100%'},'slow');
 		$('.contain2').css({'margin-top':'0%'});
 		$('.contain2').fadeIn("slow","linear");	
 		// $(".small2").animate({top:15, opacity: 1}, 'slow');

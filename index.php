@@ -51,10 +51,10 @@ require 'partials/navbar.php';
 </div>
 </div>
 <div class="container-fluid">
-<div class="row-fluid">
-	<div class="col-md-10 col-md-offset-1" style="margin-top:5%">
-		<div class="loading"></div>
-	</div>
+<div class="row-fluid" style="margin-top:5%;">
+	
+		<div class="loading" style="margin-left:-1%;"></div>
+	
 </div>
 </div>
 <div class="container-fluid">
