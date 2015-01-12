@@ -1,13 +1,10 @@
 <?php 
-
 session_start();   
  
 require 'includes/signin.php';
 require  'config.php';
-
 if($oauth->authCode){
 $_SESSION['authcode'] = $oauth->authCode;
-
 }
 if($oauth->user['loggedIn']){
   $_SESSION['user_id'] = $oauth->user['id'];
@@ -20,10 +17,8 @@ if($oauth->user['loggedIn']){
 else {
   //echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
 }
-
 require 'partials/header.php';
 require 'partials/navbar.php';
-
 ?>
 <div class="container-fluid">
 <div class="row-fluid">
@@ -201,14 +196,20 @@ require 'partials/navbar.php';
 </div>
 </div>
 
-<div id="footer">
-			<div class="container-fluid">
-      				<ul class="nav navbar-nav navbar-left done">
-        				<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
-        				<li class="book"><a href="#">About us</a></li>
-        				<li class="book"><a href="#">Contact us</a></li>
-        			</ul>
-        	</div>
-    	</div>
+<footer class="footer">
+	<div class="container-fluid">
+	<div class="row-fluid" style="margin-top:24px;font-size:110%;">
+		<div class="col-md-3" style="margin-left:0;padding-left:30px;">
+			<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
+		</div>
+		<div class="col-md-1" style="margin-left:0;padding-left:0;">
+			<a href="#"><font color="white">About us</font></a>
+		</div>		
+        <div class="col-md-1" style="margin-left:0;padding-left:0;">
+			<a href="#"><font color="white">Contact us</font></a>
+		</div>
+	</div>
+    </div>
+</footer>
 </body>
 </html>
