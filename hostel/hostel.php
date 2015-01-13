@@ -2,8 +2,8 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="sai";
-$db="hostel";
+$pwd="ragasree";
+$db="i-portal";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
 $name=$_GET["name"];
@@ -158,7 +158,14 @@ require '../partials/menu.php';
 				<li class="bull"><a href='#' class="kill">Techsoc</a></li>
 				<li class="bull"><a href='#' class="kill">Schroeter</a></li>
 				<li class="bull"><a href='#' class="kill">Alumni</a></li>
-				<li class="bull"><a href='#' data-toggle="modal" data-target="#myModal" class="kill">Location</a></li>
+				<form action="map/location.php" id="fmap" method="GET">
+          					<input class="input" name="name" value=<?php echo $name;?>>
+          					<input class="input" name="lat" value=<?php echo $lat;?>>
+							<input class="input" name="lng" value=<?php echo $lng;?>>
+							<ul class="nav nav-sidebar">
+							<li class="bull"><a href="#" class="kill" onclick="document.getElementById('fmap').submit();">Location</a></li> 
+							</ul>
+		 		</form>
 				<!--
 				<li ><div id="googleMap" class="col-md-12"></div></li>
 				-->
