@@ -100,7 +100,6 @@ else {
 <?php 
 require '../partials/menu.php';  
 ?>
-<div class="header">
 	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
 		<div class="container-fluid">
 		    <div class="navbar-header">
@@ -145,11 +144,10 @@ require '../partials/menu.php';
       		</div>	
     	</div>
 	</nav>
-</div>
-<div class="container-fluid">
+<div class="container-fluid contain1">
 	<div class="row">
 		<div class="sidebar col-md-1 col-lg-1">
-			<ul class="nav nav-sidebar">
+			<ul class="nav nav-sidebar side">
 				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>

@@ -268,6 +268,16 @@ z-index:1000;
 	padding-left: 25px!important;
 	border-bottom: 1px solid #27AE60;
 }
+.side
+{
+	position: relative;
+	top:48px;
+}
+.contain1
+{
+	position:relative;
+	top:54px!important;
+}
 .input
 {
 	display:none!important;
