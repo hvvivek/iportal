@@ -157,7 +157,7 @@ require '../partials/menu.php';
 				<li class="bull"><a href='#' class="kill">Techsoc</a></li>
 				<li class="bull"><a href='#' class="kill">Schroeter</a></li>
 				<li class="bull"><a href='#' class="kill">Alumni</a></li>
-				<li class="bull"><a href='#' class="kill">Location</a></li>
+				<li class="bull"><a href='#' data-toggle="modal" data-target="#myModal" class="kill">Location</a></li>
 				<!--
 				<li ><div id="googleMap" class="col-md-12"></div></li>
 				-->
@@ -406,8 +406,22 @@ require '../partials/menu.php';
 		</div>
 	</div>
     </div>
-</footer>		
-<!--		
+</footer>	
+<!--Modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><?php echo $name;?> Hostel</h4>
+      </div>
+      <div class="modal-body">
+        <div id="googleMap" style="height:300px;width:300px"></div>
+      </div>
+    </div>
+  </div>
+</div>	
+<!--Alternative Footer		
 		<div id="footer">
 			<div class="container-fluid footer-container">
       				<ul class="nav navbar-nav navbar-left done">
