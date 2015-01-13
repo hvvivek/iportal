@@ -2,8 +2,9 @@
 
 require 'oauth_config.php';
 $delimiter= $_SERVER[REQUEST_URI];
-$array=explode("/", $delimiter);
-$redirect_uri = "http://$_SERVER[HTTP_HOST]/$array[1]";
+$array=explode("/includes", $delimiter);
+print_r($array);
+$redirect_uri = "http://$_SERVER[HTTP_HOST]/$array[0]";
 
 @session_start();
 session_destroy();

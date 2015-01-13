@@ -58,7 +58,7 @@ if(!mysqli_fetch_assoc($query1))
 </html>
 <?php
 
-if(isset($_POST)&&$_POST['title'] !='')
+if(isset($_POST['title'])&&$_POST['title'] !='')
 {
 
 

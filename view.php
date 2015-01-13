@@ -71,6 +71,7 @@ while($result=mysqli_fetch_assoc($query))
 	echo $result['title'].'</br>';
 	echo $result['content'].'</br>';
 	echo $result['posted_by'].'</br>';
+  echo '<a href="uploads/'.$result['upload'].'" target="blank">'.$result['upload'].'</a></br>';
   echo '<div class="btn btn-primary comment_view pull-right" name="'.$result['id'].'">viewcomments</div>';
 	echo '</br></br>';
 	?>

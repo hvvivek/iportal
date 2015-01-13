@@ -1,41 +1,36 @@
 
- 
+	
+	<script>
+	  $(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+        trigger: "hover",
+        animation: "fly",
+        animationSpeed: "fast"
+      });
+		});
 		
-		<script type="text/javascript">
-			$(document).ready(function() {
-				
-				$( "body" ).on( "mouseover", ".ferromenu-controller", function() {
-$.fn.ferroMenu.toggleMenu($(this).data("ferromenuitem"));
-});
-				/*$( "body" ).on( "mouseout", ".ferromenu-controller", function() {
-$.fn.ferroMenu.toggleMenu($(this).data("ferromenuitem"));
-});*/
-				$('.ferromenu-controller').hover(function(){
-				ferroMenu.toggleMenu("#nav");});
+	</script>
+</head>
+<body>
 
-				$( "#nav" ).ferroMenu({
-					position 	: "left-center",
-					delay 		: 50,
-					rotation 	: 720,
-					margin		: 20,
-					
+  <div class="wrapper">
+    <div class="main">
+	    <a href="#wheel" class="wheel-button nw">
+	      <span class="glyphicon glyphicon-th-large"></span>
+        
+	    </a>
+      <ul id="wheel"  data-angle="NW">
+        <li class="item"><a href="#home">A</a></li>
+        <li class="item"><a href="#home">B</a></li>
+        <li class="item"><a href="#home">C</a></li>
+        <li class="item"><a href="#home">D</a></li>
+        <li class="item"><a href="#home">E</a></li>
+        <li class="item"><a href="#home">F</a></li>
+        <li class="item"><a href="#home">G</a></li>
+        <li class="item"><a href="#home">H</a></li>
+        
+      </ul>
+   
+    </div>
+    </div>
 
-				});
-
-				$(".label").html('<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>');
-				$('.label').css({'top': '33%','position':'relative'});
-			});
-		</script>
-
-	<div id="sai"></div>
-		<ul id="nav">
-
-			<li><a href="#"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span></a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span></a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span></i></a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></i></a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span></i></a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></li>
-			<li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
-		</ul>
-		

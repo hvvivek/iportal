@@ -39,7 +39,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  height: 740px;
+  height: 100%;
 overflow:hidden;
 background:white !important;
 margin-bottom: 60px;
