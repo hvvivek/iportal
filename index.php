@@ -198,7 +198,7 @@ require 'partials/navbar.php';
 
 <footer class="footer">
 	<div class="container-fluid">
-	<div class="row-fluid" style="margin-top:24px;font-size:110%;">
+	<div class="row-fluid" style="margin-top:8px;font-size:110%;">
 		<div class="col-md-3" style="margin-left:0;padding-left:30px;">
 			<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
 		</div>

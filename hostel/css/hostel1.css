@@ -34,10 +34,7 @@
 {
 	border-bottom: 3px solid #27AE60;
 }
-.contain
-{
-	height:53px;
-}
+
 .container img
 {
 	width:100%;
@@ -49,8 +46,7 @@ h2,h3
 }
 body
 {
-	background-color:white!important;	
-	margin-bottom:-60px;
+	background-color:white!important;
 }
 #googleMap
 {
@@ -198,7 +194,7 @@ body
 .sidebar
 {
 	background-color: white;
-	margin-left: -20px;
+	margin-left: -30px;
 	position:fixed!important;
 	border-right: 2px solid #27AE60;
 	height: 100%;
@@ -217,14 +213,29 @@ body
 {
 	width:100%!important;
 }
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
 .footer
 {
 width: 100%;
 bottom:0;
-height:5%;
+height:60px;
 background-color: #2ECC71;
-position:fixed;
-z-index:1000;
+position: absolute;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 .done>li>a{
@@ -243,22 +254,12 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 	margin-top: 8%;
 	font-size: 80%;
 }
-.nav-sidebar>li>a
-{
-	color:#2ECC71;
-	padding-left: 28px!important;
-	margin-right:-5.8%;
-	font-size: 120%;
-	
-}
+
 .kill
 {
 	border-bottom: 1px solid #27AE60;
 }
-.nav-sidebar>li>a:hover
-{
-	background-color: #27AE60 !important;
-}
+
 #hos
 {
 	color:#2ECC71;
@@ -273,10 +274,6 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 	background-color: transparent!important;
 }
 
-.navbar a:hover
-{
-	background-color: #27AE60 !important;
-}
 .hw
 {
 	margin-top: 5%;
@@ -328,7 +325,21 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 	}
 	.sidebar
 	{
-		width:22%!important;
+		position: fixed;
+		top: 51px;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+		display: block;
+		padding: 20px;
+		overflow-x: hidden;
+		overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+		background-color: #f5f5f5;
+		border-right: 1px solid #eee;
+	}
+	.main {
+	margin-left:20px;
+	padding-left: 20px;
 	}
 	.screen1
 	{

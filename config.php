@@ -25,6 +25,8 @@ if($s)
 	return true;
 }
 else
-	{return false;}
+{
+	return false;
+}
 }
 ?>
