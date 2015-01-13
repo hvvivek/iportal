@@ -28,7 +28,6 @@
  }
  
     ?>
-<li><a href="view.php">View Posts</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

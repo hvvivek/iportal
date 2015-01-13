@@ -2,7 +2,7 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="desi5428";
+$pwd="sai";
 $db="hostel";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
@@ -66,7 +66,8 @@ else {
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>				
-<script src="../js/ferro.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
 <script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -125,7 +126,7 @@ require '../partials/menu.php';
 				?>
 				<li class="dropdown"><a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
 					<ul class="dropdown-menu signin_div">
-						<li class="shit"><a href="#">My profile</a></li>
+						<li class="shit"><a href="../profile.php">My profile</a></li>
 						<li class="shit"><a href="#">Settings</a></li>
 						<li class="divider"></li>
 						<li class="shit"><a href="../includes/signout.php">Sign Out</a></li>
