@@ -20,7 +20,7 @@ if (!$_SESSION)
 	header("Location:index.php");
 }
 $value=$_SESSION['username'];
-$sql1="SELECT * FROM `sec` WHERE username='$value' ";
+$sql1="SELECT * FROM `contacts` WHERE username='$value' ";
 $query1=mysqli_query($con,$sql1);
 if(!mysqli_fetch_assoc($query1))
 {
@@ -58,7 +58,7 @@ if(!mysqli_fetch_assoc($query1))
 </html>
 <?php
 
-if(isset($_POST)&&$_POST['title'] !='')
+if(isset($_POST['title'])&&$_POST['title'] !='')
 {
 
 

@@ -22,9 +22,12 @@
   {
     echo '<li><a href="post.php">Post Article</a></li>';
  }
+ else
+ {
+  
+ }
  
     ?>
-<li><a href="view.php">View Posts</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -34,7 +37,7 @@
           <li class="dropdown">
           <a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
           <ul class="dropdown-menu signin_div">
-            <li class="shit"><a href="#">My profile</a></li>
+            <li class="shit"><a href="profile.php">My profile</a></li>
             <li class="shit"><a href="#">Settings</a></li>
             <li class="divider"></li>
             <li class="shit"><a href="includes/signout.php">Sign Out</a></li>

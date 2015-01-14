@@ -2,14 +2,17 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="desi5428";
-$db="hostel";
+$pwd="ragasree";
+$db="i-portal";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
+<<<<<<< HEAD
 $_SESSION['hostel_id']=$id;
 $name=$_GET["name"];
 $lat=$_GET["lat"];
 $lng=$_GET["lng"];
+=======
+>>>>>>> e9f6f9c7a533ce18a77f5f28cf4f0b472bbe60a4
 $sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";
 $sql2="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=2";
 $sql3="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=3";
@@ -34,6 +37,12 @@ $data7=mysqli_query($conn,$sql7);
 $row7=mysqli_fetch_assoc($data7);
 $data8=mysqli_query($conn,$sql8);
 $row8=mysqli_fetch_assoc($data8);
+$sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
+$data=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($data);
+$name=$row["Hostel_Name"];
+$lat=$row["Latitude"];
+$lng=$row["Longitude"];
 ?>							
 <!DOCTYPE html>
 <?php     
@@ -67,9 +76,14 @@ else {
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>				
+<<<<<<< HEAD
 <script src="../js/ferro.js" type="text/javascript"></script>
 <script src="js/dynamicpage.js" type="text/javascript"></script>
 <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+=======
+<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
+>>>>>>> e9f6f9c7a533ce18a77f5f28cf4f0b472bbe60a4
 <script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -102,7 +116,6 @@ else {
 <?php 
 require '../partials/menu.php';  
 ?>
-<div class="header">
 	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
 		<div class="container-fluid">
 		    <div class="navbar-header">
@@ -128,7 +141,7 @@ require '../partials/menu.php';
 				?>
 				<li class="dropdown"><a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
 					<ul class="dropdown-menu signin_div">
-						<li class="shit"><a href="#">My profile</a></li>
+						<li class="shit"><a href="../profile.php">My profile</a></li>
 						<li class="shit"><a href="#">Settings</a></li>
 						<li class="divider"></li>
 						<li class="shit"><a href="../includes/signout.php">Sign Out</a></li>
@@ -147,12 +160,19 @@ require '../partials/menu.php';
       		</div>	
     	</div>
 	</nav>
+<<<<<<< HEAD
 </div>
 <div id="page-wrap">
 <div class="container-fluid">
 	<div class="row">
 		<div class="sidebar col-md-1 col-lg-1">
 			<ul class="nav nav-sidebar" id="my-nav">
+=======
+<div class="container-fluid contain1">
+	<div class="row">
+		<div class="sidebar col-md-1 col-lg-1">
+			<ul class="nav nav-sidebar side">
+>>>>>>> e9f6f9c7a533ce18a77f5f28cf4f0b472bbe60a4
 				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 				<li class="bull"><a href='office_details.php' class="kill">Hostel office-details</a></li>
@@ -161,7 +181,14 @@ require '../partials/menu.php';
 				<li class="bull"><a href='#' class="kill">Techsoc</a></li>
 				<li class="bull"><a href='#' class="kill">Schroeter</a></li>
 				<li class="bull"><a href='#' class="kill">Alumni</a></li>
-				<li class="bull"><a href='#' data-toggle="modal" data-target="#myModal" class="kill">Location</a></li>
+				<form action="map/location.php" id="fmap" method="GET">
+          					<input class="input" name="name" value=<?php echo $name;?>>
+          					<input class="input" name="lat" value=<?php echo $lat;?>>
+							<input class="input" name="lng" value=<?php echo $lng;?>>
+							<ul class="nav nav-sidebar">
+							<li class="bull"><a href="#" class="kill" onclick="document.getElementById('fmap').submit();">Location</a></li> 
+							</ul>
+		 		</form>
 				<!--
 				<li ><div id="googleMap" class="col-md-12"></div></li>
 				-->

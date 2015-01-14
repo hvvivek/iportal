@@ -2,13 +2,12 @@
 <style>
 body
 {
-  
   overflow: scroll !important;
   padding-top:70px !important;
 }
-  .comment_view,.btn
+.comment_view,.btn
   {
-    border-radius: 0px !important;
+  border-radius: 0px !important;
    background: #2ecc71 !important; 
   }
 .sidebar
@@ -25,6 +24,18 @@ body
 }
 </style>
 <?php 
+$post_u=$_SERVER['QUERY_STRING'];
+function mres($value)
+{
+    $search = array("\\",  "\x00", "\n",  "\r",  "'",  '"', "\x1a");
+    $replace = array("\\\\","\\0","\\n", "\\r", "\'", '\"', "\\Z");
+
+    return str_replace($search, $replace, $value);
+}
+$post_user=mres($post_u);
+//echo $post_user;
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 require 'config.php';
 require 'partials/header.php';
 require 'partials/navbar.php';
@@ -33,8 +44,7 @@ require 'partials/view_sidebar.php';
 
 <?php
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+
 
 function candelete($user)
 {
@@ -47,15 +57,9 @@ function candelete($user)
 }
 
 
-if($_SESSION)
-{
-$hostel=$_SESSION['hostel'];
-$sql="SELECT * FROM `posts` WHERE hostel='$hostel'";
-}
-else
-{
-	$sql="SELECT * FROM `posts` LIMIT 20 ";	
-}
+
+$sql="SELECT * FROM `posts` WHERE `posted_by`='$post_user' LIMIT 20 ";	
+//echo $sql;
 $query=mysqli_query($con,$sql);
 echo "<div class='container '>";
 while($result=mysqli_fetch_assoc($query))
@@ -71,6 +75,7 @@ while($result=mysqli_fetch_assoc($query))
 	echo $result['title'].'</br>';
 	echo $result['content'].'</br>';
 	echo $result['posted_by'].'</br>';
+  echo '<a href="uploads/'.$result['upload'].'" target="blank">'.$result['upload'].'</a></br>';
   echo '<div class="btn btn-primary comment_view pull-right" name="'.$result['id'].'">viewcomments</div>';
 	echo '</br></br>';
 	?>
