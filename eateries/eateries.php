@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <?php     
 require '../includes/signin.php';
 require  '../config.php';
@@ -14,7 +17,7 @@ if($oauth->user['loggedIn']){
   mysqli_close($con);
 }
 else {
-  echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
+ // echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
 }
 ?>
 <?php
