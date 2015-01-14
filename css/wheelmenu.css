@@ -1,5 +1,6 @@
 .wheel-button {
   position: relative;
+
 }
 
 .wheel {
@@ -21,6 +22,7 @@
 
 .wheel li a {
   display: block;
+  text-decoration: none;
 }
 
   
@@ -29,6 +31,8 @@
       height: 100%;
       margin: 0 auto; 
       overflow: hidden;
+      position:relative;
+      bottom:20%!important;
     }
    
     
@@ -48,12 +52,12 @@
       text-align: center;
       border-radius: 50px;
       width: 60px;
-height: 60px;
+      height: 60px;
       color: white;
       display: block;
       margin: 70px auto 20px;
       border: 3px solid #92311e;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      box-shadow: 5px black;
       -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
     }
@@ -76,8 +80,8 @@ height: 60px;
       background-color: #E67E22;
       color: #FFFC44;
       position: fixed;
-      bottom: 10px;
-      right: 50px;
+      bottom: 30px;
+      right: 20px;
       z-index:3;
     }
 
@@ -104,7 +108,7 @@ height: 60px;
       text-align: center;
       width: 40px;
       height: 40px;
-      border: 1px solid black;
+      border: 1px solid white;
       box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
       -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
@@ -126,21 +130,28 @@ height: 60px;
     }
     
 #wheel li:nth-child(1) a {
-    background: #ff0000;
+    color: #ff0000;
+    background: white;
 }
 #wheel li:nth-child(2) a {
-    background: #e67e22;
+    color: #e67e22;
+    background: white;
 }#wheel li:nth-child(3) a {
-    background: #2980b9;
+    color: #2980b9;
+    background: white;
 }#wheel li:nth-child(4) a {
-    background: #2ECC71;
+    color: #2ECC71;
+    background: white;
 }#wheel li:nth-child(5) a {
-    background: #fbfbfb;
-    color:black;
+    color: #fbfbfb;
+    background:black
 }#wheel li:nth-child(6) a {
-    background: #9b59b6;
+    color: #9b59b6;
+    background: white;
 }#wheel li:nth-child(7) a {
-    background: #ff0000;
+    color: #ff0000;
+    background: white;
 }#wheel li:nth-child(8) a {
-    background: #ff0000;
+    color: #ff0000;
+    background: white;
 }
