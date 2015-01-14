@@ -7,7 +7,6 @@
 	text-decoration:none;
 	font-weight: bold;
 	color:white;
-	padding-left: 22%;
 }
 #head:hover
 {
@@ -49,8 +48,7 @@ h2,h3
 }
 body
 {
-	background-color:white!important;	
-	margin-bottom:-5%;
+	background-color:white!important;
 }
 #googleMap
 {
@@ -82,6 +80,13 @@ body
 	position:relative;
 	top:40px;
 	right:8%;
+}
+.eatimg
+{
+	border:10px;
+	border-style:solid;
+	border-color:#27AE60;
+	border-radius:10px;
 }
 .img1
 {
@@ -125,7 +130,7 @@ body
 }
 .header {
     width:100%  !important;
-    height:20%;
+    height:8%;
     text-align:center;
     background-color:#2ECC71;
     color:white;
@@ -204,7 +209,10 @@ body
 	height: 100%;
 	width:22%!important;
 	color:#2ECC71;
-	z-index:500;
+}
+.modal-backdrop
+{
+	opacity:0!important;
 }
 .sidebar a
 {
@@ -218,15 +226,13 @@ body
 {
 	width:100%!important;
 }
-.footer
+#footer
 {
 width: 100%;
-bottom:0;
-height:5%;
+bottom:-20%;
 background-color: #2ECC71;
-position:fixed;
+position: absolute;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
-z-index:1000;
 }
 .done>li>a{
 	color: white;
@@ -267,20 +273,6 @@ z-index:1000;
 	font-size: 140%;
 	padding-left: 25px!important;
 	border-bottom: 1px solid #27AE60;
-}
-.side
-{
-	position: relative;
-	top:48px;
-}
-.contain1
-{
-	position:relative;
-	top:54px!important;
-}
-.input
-{
-	display:none!important;
 }
 #hos:hover
 {

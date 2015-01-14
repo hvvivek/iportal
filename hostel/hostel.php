@@ -2,8 +2,8 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="desi5428";
-$db="hostel";
+$pwd="ragasree";
+$db="i-portal";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
 $name=$_GET["name"];
@@ -66,7 +66,8 @@ else {
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>				
-<script src="../js/ferro.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
 <script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -99,7 +100,6 @@ else {
 <?php 
 require '../partials/menu.php';  
 ?>
-<div class="header">
 	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
 		<div class="container-fluid">
 		    <div class="navbar-header">
@@ -125,7 +125,7 @@ require '../partials/menu.php';
 				?>
 				<li class="dropdown"><a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
 					<ul class="dropdown-menu signin_div">
-						<li class="shit"><a href="#">My profile</a></li>
+						<li class="shit"><a href="../profile.php">My profile</a></li>
 						<li class="shit"><a href="#">Settings</a></li>
 						<li class="divider"></li>
 						<li class="shit"><a href="../includes/signout.php">Sign Out</a></li>
@@ -144,11 +144,10 @@ require '../partials/menu.php';
       		</div>	
     	</div>
 	</nav>
-</div>
-<div class="container-fluid">
+<div class="container-fluid contain1">
 	<div class="row">
 		<div class="sidebar col-md-1 col-lg-1">
-			<ul class="nav nav-sidebar">
+			<ul class="nav nav-sidebar side">
 				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>
@@ -157,7 +156,14 @@ require '../partials/menu.php';
 				<li class="bull"><a href='#' class="kill">Techsoc</a></li>
 				<li class="bull"><a href='#' class="kill">Schroeter</a></li>
 				<li class="bull"><a href='#' class="kill">Alumni</a></li>
-				<li class="bull"><a href='#' data-toggle="modal" data-target="#myModal" class="kill">Location</a></li>
+				<form action="map/location.php" id="fmap" method="GET">
+          					<input class="input" name="name" value=<?php echo $name;?>>
+          					<input class="input" name="lat" value=<?php echo $lat;?>>
+							<input class="input" name="lng" value=<?php echo $lng;?>>
+							<ul class="nav nav-sidebar">
+							<li class="bull"><a href="#" class="kill" onclick="document.getElementById('fmap').submit();">Location</a></li> 
+							</ul>
+		 		</form>
 				<!--
 				<li ><div id="googleMap" class="col-md-12"></div></li>
 				-->

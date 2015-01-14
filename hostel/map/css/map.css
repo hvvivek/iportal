@@ -7,7 +7,6 @@
 	text-decoration:none;
 	font-weight: bold;
 	color:white;
-	padding-left: 22%;
 }
 #head:hover
 {
@@ -49,8 +48,7 @@ h2,h3
 }
 body
 {
-	background-color:white!important;	
-	margin-bottom:-5%;
+	background-color:white!important;
 }
 #googleMap
 {
@@ -150,12 +148,12 @@ body
     overflow:hidden;
     color:#2ECC71!important;
     margin-top: 1%;
-    left:24%;
+    left:7%;
     border:2px solid #2ECC71;
 }
 .screen2,.screen3
 {
-	margin-left: 3%;
+	margin-left: 10%;
 }
 .slider:hover {
     left:-100%;
@@ -204,7 +202,6 @@ body
 	height: 100%;
 	width:22%!important;
 	color:#2ECC71;
-	z-index:500;
 }
 .sidebar a
 {
@@ -218,15 +215,13 @@ body
 {
 	width:100%!important;
 }
-.footer
+#footer
 {
 width: 100%;
-bottom:0;
-height:5%;
+bottom:-20%;
 background-color: #2ECC71;
-position:fixed;
+position: absolute;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
-z-index:1000;
 }
 .done>li>a{
 	color: white;
@@ -268,20 +263,6 @@ z-index:1000;
 	padding-left: 25px!important;
 	border-bottom: 1px solid #27AE60;
 }
-.side
-{
-	position: relative;
-	top:48px;
-}
-.contain1
-{
-	position:relative;
-	top:54px!important;
-}
-.input
-{
-	display:none!important;
-}
 #hos:hover
 {
 	text-decoration: none;
@@ -303,7 +284,7 @@ z-index:1000;
 	{
 		position: relative;!important;
 		top:290px!important;
-		height:400px!important;
+		height:800px!important;
 	}
 	.screen1,.screen2,.screen3
 	{
@@ -361,7 +342,10 @@ z-index:1000;
 {
 	#googleMap
 	{
-		position: relative;!important;
-		top:45px!important;
+		position: relative;
+		top:80px;
+		left:20%;
+		height:400px!important;
+		width:50%!important;
 	}
 }

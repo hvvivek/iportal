@@ -7,7 +7,7 @@
   padding: 0;
   list-style: none;
   width: 40%; 
-  height: 70%;
+  height: 75%;
   visibility: hidden;
   position: relative;
   display: none;
@@ -125,3 +125,22 @@ height: 60px;
       margin: 0 auto;
     }
     
+#wheel li:nth-child(1) a {
+    background: #ff0000;
+}
+#wheel li:nth-child(2) a {
+    background: #e67e22;
+}#wheel li:nth-child(3) a {
+    background: #2980b9;
+}#wheel li:nth-child(4) a {
+    background: #2ECC71;
+}#wheel li:nth-child(5) a {
+    background: #fbfbfb;
+    color:black;
+}#wheel li:nth-child(6) a {
+    background: #9b59b6;
+}#wheel li:nth-child(7) a {
+    background: #ff0000;
+}#wheel li:nth-child(8) a {
+    background: #ff0000;
+}

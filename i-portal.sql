@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 21, 2014 at 06:41 PM
+-- Generation Time: Jan 13, 2015 at 08:17 PM
 -- Server version: 5.5.40-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.5
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `Hostel`
+-- Database: `i-portal`
 --
 
 -- --------------------------------------------------------
@@ -77,10 +77,10 @@ INSERT INTO `Alumni_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Contacts`
+-- Table structure for table `contacts`
 --
 
-CREATE TABLE IF NOT EXISTS `Contacts` (
+CREATE TABLE IF NOT EXISTS `contacts` (
   `Hostel_id` int(1) DEFAULT NULL,
   `S_no` int(11) NOT NULL,
   `username` varchar(8) NOT NULL,
@@ -92,10 +92,10 @@ CREATE TABLE IF NOT EXISTS `Contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Contacts`
+-- Dumping data for table `contacts`
 --
 
-INSERT INTO `Contacts` (`Hostel_id`, `S_no`, `username`, `Name`, `Post`, `Room`, `Contact_no`, `Email_id`) VALUES
+INSERT INTO `contacts` (`Hostel_id`, `S_no`, `username`, `Name`, `Post`, `Room`, `Contact_no`, `Email_id`) VALUES
 (1, 1, 'BE12B010', 'SREEHARSHA.G', 'GenSec', '104', 9962663576, 'sreeharsha68shg@gmail.com'),
 (1, 2, 'EE12B002', 'A.Praneeth Kumar Reddy', 'MessSec', '118', 8939106736, 'praneeth12kr@gmail.com'),
 (1, 3, 'ME12B005', 'Anand Babu', 'SportsSec', '242', 7598459521, 'anand10327babu@gmail.com'),
@@ -196,6 +196,37 @@ INSERT INTO `Contacts` (`Hostel_id`, `S_no`, `username`, `Name`, `Post`, `Room`,
 (16, 3, '', 'Afeef C', 'Sports Secretary', '309', 9444578951, 'afeefc@gmail.com'),
 (16, 4, '', 'Nitin Varma', 'Technical Affairs Secretary', '303', 9884682251, 'nvnitin696@gmail.com'),
 (16, 7, '', 'Muralitharan S', 'Garden Secretary', '116', 8122699238, 'ae14m013@smail.iitm.ac.in');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eateries`
+--
+
+CREATE TABLE IF NOT EXISTS `eateries` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Eatery` varchar(200) NOT NULL,
+  `Position` varchar(50) NOT NULL,
+  `IMenu` varchar(600) NOT NULL,
+  `DMenu` varchar(600) NOT NULL,
+  `MDetails` varchar(30000) NOT NULL,
+  `BImages` varchar(600) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `eateries`
+--
+
+INSERT INTO `eateries` (`ID`, `Eatery`, `Position`, `IMenu`, `DMenu`, `MDetails`, `BImages`) VALUES
+(1, 'La_Salade', '12.987091,80.235666', 'las_menu.png,las_menu_1.png', 'La_salade_Menu.pdf', 'priyeshkumar81@gmail.com,9841577300,Mr.Priyesh', 'las.jpg,las_1.jpg'),
+(2, 'Kickstart', '12.991402,80.234413', 'KS.jpg,KS_1.jpg', 'Kickstart_menu.pdf', 'thekickstartcafe@gmail.com,9840014899,Mr.Pratik', ''),
+(3, 'Andavar', '12.986765,80.235064', 'AM.jpg,AM_1.jpg,AM_2.jpg', 'Andavar_Menu.pdf', 'andavarfresh@gmail.com,9884338585,Mr.Kalaiselvan', ''),
+(4, 'Gurunath', '12.986832,80.235330', 'guru_1.jpg,guru_2.jpg,guru_3.jpg,guru_4.jpg,guru_5.jpg', 'guru_dept.pdf', 'sreegurunath@gmail.com,9444777268,Mr.Nagaraj', ''),
+(5, 'IRCTC', '12.987673,80.237251', 'IRCTC.jpg,IRCTC_1.jpg', 'irctc_menu.pdf', 'cchakrapani2629@irctc.com,9003120270,Mr.Chakarapani', ''),
+(6, 'OAT_Eatery', '12.988664,80.233893', 'OAT_Eatery.jpg', 'OAT_Eatery.pdf', ',9884775423,Mr.Sridhar', ''),
+(7, 'Gurunath_Eatery', '12.986811,80.235400', 'gurue_1.jpg,gurue_2.jpg,gurue_3.jpg,gurue_4.jpg,gurue_5.jpg,gurue_6.jpg,gurue_7.jpg,gurue_8.jpg,gurue_9.jpg,gurue_10.jpg,gurue_11.jpg,gurue_12.jpg', 'guru_dept.pdf', 'sreegurunath@gmail.com,9444777268,Mr.Nagaraj', ''),
+(8, 'Ramu_Tea_Stall', '12.987080,80.236280', '', '', ',9884444489,Mr.Ramu', '');
 
 -- --------------------------------------------------------
 
@@ -393,31 +424,33 @@ INSERT INTO `Genbudget` (`Hostel_id`, `S_no`, `Nature_of_expenses`, `no_of_items
 
 CREATE TABLE IF NOT EXISTS `hostel_list` (
   `Hostel_id` int(11) NOT NULL,
-  `Hostel_Name` varchar(11) NOT NULL
+  `Hostel_Name` varchar(11) NOT NULL,
+  `Latitude` double NOT NULL,
+  `Longitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hostel_list`
 --
 
-INSERT INTO `hostel_list` (`Hostel_id`, `Hostel_Name`) VALUES
-(1, 'Alakananda'),
-(2, 'Brahmaputra'),
-(3, 'Cauvery'),
-(4, 'Ganga'),
-(5, 'Godavari'),
-(6, 'Jamuna'),
-(7, 'Krishna'),
-(8, 'Mahanadi'),
-(9, 'Mandakini'),
-(10, 'Narmada'),
-(11, 'Pampa'),
-(12, 'Saraswathi'),
-(13, 'Sarayu'),
-(14, 'Sharavathi'),
-(15, 'Sindhu'),
-(16, 'Tamirapani'),
-(17, 'Tapti');
+INSERT INTO `hostel_list` (`Hostel_id`, `Hostel_Name`, `Latitude`, `Longitude`) VALUES
+(1, 'Alakananda', 12.9584, 80.238982),
+(2, 'Brahmaputra', 12.983625, 80.234888),
+(3, 'Cauvery', 12.985749, 80.234003),
+(4, 'Ganga', 12.987124, 80.238547),
+(5, 'Godavari', 12.985892, 80.23707),
+(6, 'Jamuna', 12.98619, 80.239186),
+(7, 'Krishna', 12.984275, 80.233223),
+(8, 'Mahanadi', 12.987962, 80.239057),
+(9, 'Mandakini', 12.986791, 80.239421),
+(10, 'Narmada', 12.985579, 80.235429),
+(11, 'Pampa', 12.987763, 80.238424),
+(12, 'Saraswathi', 12.984942, 80.23652),
+(13, 'Sarayu', 12.990948, 80.235382),
+(14, 'Sharavathi', 12.99008, 80.23451),
+(15, 'Sindhu', 12.987884, 80.23819),
+(16, 'Tamirapani', 12.988213, 80.238638),
+(17, 'Tapti', 12.984513, 80.235137);
 
 -- --------------------------------------------------------
 

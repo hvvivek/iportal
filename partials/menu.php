@@ -20,13 +20,13 @@
         
 	    </a>
       <ul id="wheel"  data-angle="NW">
-        <li class="item"><a href="#home">A</a></li>
-        <li class="item"><a href="#home">B</a></li>
-        <li class="item"><a href="#home">C</a></li>
-        <li class="item"><a href="#home">D</a></li>
-        <li class="item"><a href="#home">E</a></li>
-        <li class="item"><a href="#home">F</a></li>
-        <li class="item"><a href="#home">G</a></li>
+        <li class="item"><a href="#home">SL</a></li>
+        <li class="item"><a href="#home">BS</a></li>
+        <li class="item"><a href="#home">NP</a></li>
+        <li class="item"><a href="#home">IP</a></li>
+        <li class="item"><a href="#home">FB</a></li>
+        <li class="item"><a href="#home">EW</a></li>
+        <li class="item"><a href="#home">VC</a></li>
         <li class="item"><a href="#home">H</a></li>
         
       </ul>
