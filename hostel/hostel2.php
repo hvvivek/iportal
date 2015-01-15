@@ -6,9 +6,6 @@ $pwd="desi5428";
 $db="hostel";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
-$name=$_GET["name"];
-$lat=$_GET["lat"];
-$lng=$_GET["lng"];
 $sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";
 $sql2="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=2";
 $sql3="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=3";
@@ -33,6 +30,12 @@ $data7=mysqli_query($conn,$sql7);
 $row7=mysqli_fetch_assoc($data7);
 $data8=mysqli_query($conn,$sql8);
 $row8=mysqli_fetch_assoc($data8);
+$sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
+$data=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($data);
+$name=$row["Hostel_Name"];
+$lat=$row["Latitude"];
+$lng=$row["Longitude"];
 ?>							
 <!DOCTYPE html>
 <?php     

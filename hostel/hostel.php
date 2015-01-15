@@ -6,13 +6,6 @@ $pwd="ragasree";
 $db="i-portal";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
-<<<<<<< HEAD
-$_SESSION['hostel_id']=$id;
-$name=$_GET["name"];
-$lat=$_GET["lat"];
-$lng=$_GET["lng"];
-=======
->>>>>>> e9f6f9c7a533ce18a77f5f28cf4f0b472bbe60a4
 $sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";
 $sql2="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=2";
 $sql3="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=3";
@@ -76,14 +69,11 @@ else {
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>				
-<<<<<<< HEAD
 <script src="../js/ferro.js" type="text/javascript"></script>
 <script src="js/dynamicpage.js" type="text/javascript"></script>
 <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
-=======
 <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
->>>>>>> e9f6f9c7a533ce18a77f5f28cf4f0b472bbe60a4
 <script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -160,19 +150,16 @@ require '../partials/menu.php';
       		</div>	
     	</div>
 	</nav>
-<<<<<<< HEAD
 </div>
 <div id="page-wrap">
 <div class="container-fluid">
 	<div class="row">
 		<div class="sidebar col-md-1 col-lg-1">
 			<ul class="nav nav-sidebar" id="my-nav">
-=======
 <div class="container-fluid contain1">
 	<div class="row">
 		<div class="sidebar col-md-1 col-lg-1">
 			<ul class="nav nav-sidebar side">
->>>>>>> e9f6f9c7a533ce18a77f5f28cf4f0b472bbe60a4
 				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 				<li class="bull"><a href='office_details.php' class="kill">Hostel office-details</a></li>
