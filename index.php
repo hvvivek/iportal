@@ -1,27 +1,184 @@
 <?php 
 session_start();   
- 
 require 'includes/signin.php';
 require  'config.php';
 $conn = mysql_connect($host , $username , $password);
 mysql_select_db("i-portal");
-if($oauth->authCode){
-$_SESSION['authcode'] = $oauth->authCode;
-}
-if($oauth->user['loggedIn']){
-  $_SESSION['user_id'] = $oauth->user['id'];
-  $_SESSION['username'] = $oauth->user['username'];
-  $userdetails=getuserdetails($oauth->user['username'],$con);
-  $_SESSION['hostel']= $userdetails['hostel'];
-  $_SESSION['email']= $userdetails['email'];
-  
-}
-else {
-  //echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
-}
-require 'partials/header.php';
-require 'partials/navbar.php';
 ?>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/dnb.css"> 
+		<script src="js/jquery.min.js"></script>
+		<script src="js/index.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
+		<link rel="stylesheet" type="text/css" href="css/index.css" >
+		<link rel="stylesheet" type="text/css" href="css/ferro.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
+		<script src="js/ferro.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
+        <style>
+            #dnb_sec {
+                -skrollr-animation-name:animation1;
+            }
+
+            @-skrollr-keyframes animation1 {
+                0 {
+                    margin-top:0px;
+                    position:relative;
+                    
+                    <!--Site Color -->
+                    background-color:rgba(26, 188, 156,1.0);
+                    <!--Site Color-->
+                }
+
+                top {
+                    margin-top:0px;
+                    position:fixed;
+                    background-color:rgba(255, 255, 255,0.99);
+                }
+            }
+            
+       </style>
+	   	<script>
+		$(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+        trigger: "hover",
+        animation: "fly",
+        animationSpeed: "fast"
+		});
+			});
+		
+		</script>
+    </head>
+    
+    <body>
+		<div class="wrapper">
+			<div class="main">
+				<a href="#wheel" class="wheel-button nw">
+					<span class="glyphicon glyphicon-th-large"></span>
+        
+				</a>
+				<ul id="wheel"  data-angle="NW">
+						<li class="item"><a href="#home">SL</a></li>
+						<li class="item"><a href="#home">BS</a></li>
+						<li class="item"><a href="#home">NP</a></li>
+						<li class="item"><a href="#home">IP</a></li>
+						<li class="item"><a href="#home">FB</a></li>
+						<li class="item"><a href="#home">EW</a></li>
+						<li class="item"><a href="#home">VC</a></li>
+						<li class="item"><a href="#home">H</a></li>
+        
+				</ul>
+   
+			</div>
+		</div>
+
+        <div id="skrollr-body">
+            
+            <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
+                <nav>
+                    <ul>
+                        <li class='col-xs-5 col-md-3 pull-left'>
+                            <span class='col-xs-12' id='dnb_logo'>
+                                <p><b>Students&nbsp;</b>Portal</p>
+                            </span>
+                        </li>
+                        
+
+                        
+                        <li class='col-xs-5 col-md-6'>
+                            <div class="input-group col-xs-12">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go</button>
+                                </span>
+                                
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+            
+            <div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
+                <nav>
+                    <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+                        Information<b>&nbsp;Portal</b>&nbsp;</div>
+                    </span>
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <?php
+								$query= "SELECT * FROM hostel_list";
+								$result= mysql_query($query);
+								while($hostel= mysql_fetch_array($result))
+									{
+										$hostel_0= explode("_",$hostel['Hostel_Name']);
+										$hostel_1= implode(" ",$hostel_0);
+										$hostel_id= $hostel['Hostel_id'];
+										echo "<li><a href='hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
+									}
+							?>
+                        </ul></span>
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Eateries &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <?php
+								$query= "SELECT * FROM eateries";
+								$result= mysql_query($query);
+								while($eatery= mysql_fetch_array($result))
+									{
+										$eatery_0= explode("_",$eatery['Eatery']);
+										$eatery_1= implode(" ",$eatery_0);
+										$eatery_id= $eatery['ID'];
+										echo "<li><a href='eateries/eateries.php?varname=$eatery_id'>".$eatery_1."</a></li>";
+									}
+							?>
+                        </ul></span>
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Others &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+							<li><a href='#'>Travel</a></li>
+							<li><a href='#'>Xerox</a></li>
+							<li><a href='#'>Giftshop</a></li>
+							<li><a href='#'>Haircare</a></li>
+                        </ul></span>
+                    <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
+                        <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
+                            <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
+								 <?php echo $_SESSION['username']; ?>
+                                <span class="caret"></span>
+							</span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+							<li><a href="../includes/signout.php">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        </div>
+    
+    <script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
+    <script type="text/javascript" src="js/skrollr.js"></script>
+    <script type="text/javascript">skrollr.init();</script>
 <div class="container-fluid">
 <div class="row-fluid">
 <div class="col-md-12">
@@ -304,7 +461,6 @@ require 'partials/navbar.php';
 </div>
 </div>
 </div>
-
 <footer class="footer">
 	<div class="container-fluid">
 	<div class="row-fluid" style="margin-top:8px;font-size:110%;">

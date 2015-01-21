@@ -1,12 +1,13 @@
 .navbar
 {
-	background-color:#2ECC71;
+	background-color:#1abc9c;
 }
 #head
 {
 	text-decoration:none;
 	font-weight: bold;
 	color:white;
+	padding-left: 22%;
 }
 #head:hover
 {
@@ -31,7 +32,7 @@
 }
 .did
 {
-	border-bottom: 3px solid #27AE60;
+	border-bottom: 3px solid #16a085;
 }
 .contain
 {
@@ -48,15 +49,22 @@ h2,h3
 }
 body
 {
-	background-color:white!important;
+	background-color:white!important;	
+	margin-bottom:-5%;
 }
-#googleMap
+#googleMap1
 {
-	height:200px!important;
 	border:2px solid black;
 	color:black !important;
 	text-align: center;
-	margin-left: 3%;
+}
+.eatimg
+{
+	border:6px;
+	border-style:solid;
+	border-color:#1abc9c;
+	border-radius:5px;
+	margin-top:2%;
 }
 .foot
 {
@@ -123,9 +131,9 @@ body
 }
 .header {
     width:100%  !important;
-    height:20%;
+    height:7%;
     text-align:center;
-    background-color:#2ECC71;
+    background-color:#1abc9c;
     color:white;
 }
 .img-circle {
@@ -146,10 +154,10 @@ body
     box-shadow: 0px 2px 6px #999;
     position:relative;
     overflow:hidden;
-    color:#2ECC71!important;
+    color:#1abc9c!important;
     margin-top: 1%;
     left:24%;
-    border:2px solid #2ECC71;
+    border:2px solid #16a085;
 }
 .screen2,.screen3
 {
@@ -172,8 +180,8 @@ body
     text-align:center;
     width:50%;
     float:left;
-    height:140px;
-    color:#2ECC71;
+    height:170px;
+    color:#1abc9c;
     position:relative;
 }
 .header2
@@ -198,14 +206,17 @@ body
 	background-color: white;
 	margin-left: -20px;
 	position:fixed!important;
-	border-right: 2px solid #27AE60;
+	border-right: 2px solid #16a085;
+	border-top: 2px solid #16a085;
+	margin-top:0.05%;
 	height: 100%;
 	width:22%!important;
-	color:#2ECC71;
+	color:#1abc9c;
+	z-index:500;
 }
 .sidebar a
 {
-	color:#2ECC71;
+	color:#1abc9c;
 }
 .sidebar a:hover
 {
@@ -213,15 +224,17 @@ body
 }
 .bull
 {
-	width:100%!important;
+	width:99%!important;
 }
-#footer
+.footer
 {
 width: 100%;
-bottom:-20%;
-background-color: #2ECC71;
-position: absolute;
+bottom:0;
+height:5%;
+background-color: #1abc9c;
+position:fixed;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
+z-index:1000;
 }
 .done>li>a{
 	color: white;
@@ -241,7 +254,7 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 .nav-sidebar>li>a
 {
-	color:#2ECC71;
+	color:#1abc9c;
 	padding-left: 28px!important;
 	margin-right:-5.8%;
 	font-size: 120%;
@@ -249,19 +262,33 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 .kill
 {
-	border-bottom: 1px solid #27AE60;
+	border-bottom: 1px solid #16a085;
 }
 .nav-sidebar>li>a:hover
 {
-	background-color: #27AE60 !important;
+	background-color: #16a085 !important;
 }
 #hos
 {
-	color:#2ECC71;
+	color:#1abc9c;
 	font-weight: bold;
 	font-size: 140%;
 	padding-left: 25px!important;
-	border-bottom: 1px solid #27AE60;
+	border-bottom: 1px solid #16a085;
+}
+.side
+{
+	position: relative;
+	top:48px;
+}
+.contain1
+{
+	position:relative;
+	top:54px!important;
+}
+.input
+{
+	display:none!important;
 }
 #hos:hover
 {
@@ -271,14 +298,14 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 
 .navbar a:hover
 {
-	background-color: #27AE60 !important;
+	background-color: #16a085 !important;
 }
 .hw
 {
 	margin-top: 5%;
 	font-size:120%;
 }
-@media screen and (min-height:769px)
+/*@media screen and (min-height:769px)
 {
 	#googleMap
 	{
@@ -288,8 +315,8 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 	}
 	.screen1,.screen2,.screen3
 	{
-		height:250px;
-		width:20%!important;
+		height:220px;
+		width:17%!important;
 	}
 	.heal
 	{
@@ -303,7 +330,7 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 	}
 	.oned
 	{
-		margin-top: 2%;
+		margin-top: 0%;
 	}
 	.header1
 	{
@@ -336,7 +363,7 @@ box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 		position: relative;
 		left:27%;
 	}
-}
+}*/
 
 @media screen and (max-height:768px)
 {

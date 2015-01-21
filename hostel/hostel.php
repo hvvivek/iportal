@@ -2,9 +2,10 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="ragasree";
+$pwd="Sai@271295";
 $db="i-portal";
-$conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
+$conn = mysql_connect($server,$user,$pwd);
+mysql_select_db("i-portal");
 $id=$_GET["id"];
 $name=$_GET["name"];
 $lat=$_GET["lat"];
@@ -17,57 +18,77 @@ $sql5="SELECT * FROM contacts WHERE Hostel_id='{$id}'and S_no=5";
 $sql6="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=6";
 $sql7="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=7";
 $sql8="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=8";
-$data1=mysqli_query($conn,$sql1);
-$row1=mysqli_fetch_assoc($data1);
-$data2=mysqli_query($conn,$sql2);
-$row2=mysqli_fetch_assoc($data2);
-$data3=mysqli_query($conn,$sql3);
-$row3=mysqli_fetch_assoc($data3);
-$data4=mysqli_query($conn,$sql4);
-$row4=mysqli_fetch_assoc($data4);
-$data5=mysqli_query($conn,$sql5);
-$row5=mysqli_fetch_assoc($data5);
-$data6=mysqli_query($conn,$sql6);
-$row6=mysqli_fetch_assoc($data6);
-$data7=mysqli_query($conn,$sql7);
-$row7=mysqli_fetch_assoc($data7);
-$data8=mysqli_query($conn,$sql8);
-$row8=mysqli_fetch_assoc($data8);
+$data1=mysql_query($sql1);
+$row1=mysql_fetch_assoc($data1);
+$data2=mysql_query($sql2);
+$row2=mysql_fetch_assoc($data2);
+$data3=mysql_query($sql3);
+$row3=mysql_fetch_assoc($data3);
+$data4=mysql_query($sql4);
+$row4=mysql_fetch_assoc($data4);
+$data5=mysql_query($sql5);
+$row5=mysql_fetch_assoc($data5);
+$data6=mysql_query($sql6);
+$row6=mysql_fetch_assoc($data6);
+$data7=mysql_query($sql7);
+$row7=mysql_fetch_assoc($data7);
+$data8=mysql_query($sql8);
+$row8=mysql_fetch_assoc($data8);
 ?>							
 <!DOCTYPE html>
 <?php     
 require '../includes/signin.php';
-require  '../config.php';
-if($oauth->authCode){
-$_SESSION['authcode'] = $oauth->authCode;
-
-}
-if($oauth->user['loggedIn']){
-  $_SESSION['user_id'] = $oauth->user['id'];
-  $_SESSION['username'] = $oauth->user['username'];
-  $userdetails=getuserdetails($oauth->user['username'],$con);
-  $_SESSION['hostel']= $userdetails['hostel'];
-  $_SESSION['email']= $userdetails['email'];
-  mysqli_close($con);
-}
-else {
-  //echo "<a href='$oauth->signinURL'>Sign In</a> "  ;
-}
 ?>
 <html>
 <head>
-<meta chaset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php echo $name;?> hostel</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/hostel.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
-<link rel="stylesheet" type="text/css" href="../css/ferro.css">
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>				
-<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
+		<meta chaset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title><?php echo $name;?> hostel</title>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<link href="css/hostel.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+
+		<link rel="stylesheet" type="text/css" href="css/index.css" >
+		<link rel="stylesheet" type="text/css" href="css/ferro.css" />
+		<link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/dnb.css" /> 
+		<script type="text/javascript" src="../js/index.js"></script>
+		<script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
+		<script src="js/ferro.js" type="text/javascript"></script>
+<style>
+            #dnb_sec {
+                -skrollr-animation-name:animation1;
+            }
+
+            @-skrollr-keyframes animation1 {
+                0 {
+                    margin-top:0px;
+                    position:relative;
+                    
+                    <!--Site Color -->
+                    background-color:rgba(26, 188, 156,1.0);
+                    <!--Site Color-->
+                }
+
+                top {
+                    margin-top:0px;
+                    position:fixed;
+                    background-color:rgba(255, 255, 255,0.99);
+                }
+            }
+            
+</style>
 <script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -95,59 +116,133 @@ else {
 }
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+<script>
+		$(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+        trigger: "hover",
+        animation: "fly",
+        animationSpeed: "fast"
+				});
+		});
+		
+</script>
 </head>
 <body>
-<?php 
-require '../partials/menu.php';  
-?>
-	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
-		<div class="container-fluid">
-		    <div class="navbar-header">
-		    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        			<span class="sr-only">Toggle navigation</span>
-        			<span class="icon-bar"></span>
-        			<span class="icon-bar"></span><!--still unresponsive-->
-      			</button>
-      			<a class="navbar-brand" id="head" href="/iportal/index.php" style="margin-left:0px;padding-left:20px">INFORMATION PORTAL</a>
-    		</div>
-			
-    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        		<form class="navbar-form navbar-left" role="search">
-        			<div class="form-group">
-       	   				<input type="text" class="form-control" placeholder="Search">
-       				</div>
-        			<!--	<button type="submit" class="btn btn-success">Submit</button>-->
-      			</form>
-      			<ul class="nav navbar-nav navbar-right">
-				<?php 
-					if($_SESSION)
-					{ 
-				?>
-				<li class="dropdown"><a href="#" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> <?php echo $_SESSION['username'];   ?><b class="caret"></b></a>
-					<ul class="dropdown-menu signin_div">
-						<li class="shit"><a href="../profile.php">My profile</a></li>
-						<li class="shit"><a href="#">Settings</a></li>
-						<li class="divider"></li>
-						<li class="shit"><a href="../includes/signout.php">Sign Out</a></li>
-					</ul>
-				</li>
-				<?php  
-					}
-					else
-					{ 
-				?>
-				<li><a href="<?php echo $oauth->signinURL; ?>">Signin</a></li>
-				<?php 
-					}
-				?>
+		<div class="wrapper">
+			<div class="main">
+				<a href="#wheel" class="wheel-button nw">
+					<span class="glyphicon glyphicon-th-large"></span>
+				</a>
+				<ul id="wheel"  data-angle="NW">
+						<li class="item"><a href="#home">SL</a></li>
+						<li class="item"><a href="#home">BS</a></li>
+						<li class="item"><a href="#home">NP</a></li>
+						<li class="item"><a href="#home">IP</a></li>
+						<li class="item"><a href="#home">FB</a></li>
+						<li class="item"><a href="#home">EW</a></li>
+						<li class="item"><a href="#home">VC</a></li>
+						<li class="item"><a href="#home">H</a></li>
+        
 				</ul>
-      		</div>	
-    	</div>
-	</nav>
+   
+			</div>
+		</div>
+        <div id="skrollr-body">  
+            <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
+                <nav>
+                    <ul>
+                        <li class='col-xs-5 col-md-3 pull-left'>
+                            <span class='col-xs-12' id='dnb_logo'>
+                                <p><b>Students&nbsp;</b>Portal</p>
+                            </span>
+                        </li>
+                        
+
+                        
+                        <li class='col-xs-5 col-md-6'>
+                            <div class="input-group col-xs-12">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go</button>
+                                </span>
+                                
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+            
+            <div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
+                <nav>
+                    <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+                        Information<b>&nbsp;Portal</b>&nbsp;</div>
+                    </span>
+					<span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+                    </div>
+                    </span>
+
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <?php
+								$query= "SELECT * FROM hostel_list";
+								$result= mysql_query($query);
+								while($hostel= mysql_fetch_array($result))
+									{
+										$hostel_0= explode("_",$hostel['Hostel_Name']);
+										$hostel_1= implode(" ",$hostel_0);
+										$hostel_id= $hostel['Hostel_id'];
+										echo "<li><a href='../hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
+									}
+							?>
+                        </ul></span>
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Eateries &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <?php
+								$query= "SELECT * FROM eateries";
+								$result= mysql_query($query);
+								while($eatery= mysql_fetch_array($result))
+									{
+										$eatery_6= explode("_",$eatery['Eatery']);
+										$eatery_7= implode(" ",$eatery_6);
+										$eatery_id= $eatery['ID'];
+										echo "<li><a href='../eateries/eateries.php?varname=$eatery_id'>".$eatery_7."</a></li>";
+									}
+							?>
+                        </ul></span>
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Others &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+							<li><a href='#'>Travel</a></li>
+							<li><a href='#'>Xerox</a></li>
+							<li><a href='#'>Giftshop</a></li>
+							<li><a href='#'>Haircare</a></li>
+                        </ul></span>
+                    <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
+                        <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
+                            <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
+                                <?php echo $_SESSION['username']; ?>
+                                <span class="caret"></span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+							<li><a href="../includes/signout.php">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+		</div>
 <div class="container-fluid contain1">
 	<div class="row">
-		<div class="sidebar col-md-1 col-lg-1">
-			<ul class="nav nav-sidebar side">
+		<div class="sidebar col-md-2 col-lg-2">
+			<ul class="nav nav-sidebar">
 				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>
@@ -427,6 +522,9 @@ require '../partials/menu.php';
     </div>
   </div>
 </div>	
+<script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
+<script type="text/javascript" src="../js/skrollr.js"></script>
+<script type="text/javascript">skrollr.init();</script>
 <!--Alternative Footer		
 		<div id="footer">
 			<div class="container-fluid footer-container">
