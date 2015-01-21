@@ -129,7 +129,7 @@ mysql_select_db("i-portal");
 										$hostel_0= explode("_",$hostel['Hostel_Name']);
 										$hostel_1= implode(" ",$hostel_0);
 										$hostel_id= $hostel['Hostel_id'];
-										echo "<li><a href='hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
+										echo "<li><a href='hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
 									}
 							?>
                         </ul></span>
