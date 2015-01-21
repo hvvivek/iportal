@@ -7,7 +7,6 @@
 	text-decoration:none;
 	font-weight: bold;
 	color:white;
-	padding-left: 22%;
 }
 #head:hover
 {
@@ -299,7 +298,12 @@ z-index:1000;
 	margin-top: 5%;
 	font-size:120%;
 }
+<<<<<<< HEAD
 /*@media screen and (min-height:769px)
+=======
+
+@media screen and (min-height:769px)
+>>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 {
 	#googleMap
 	{

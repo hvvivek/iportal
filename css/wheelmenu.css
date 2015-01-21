@@ -1,6 +1,7 @@
 /* Required Stylesheets */
 .wheel-button {
   position: relative;
+
 }
 
 .wheel {
@@ -22,6 +23,7 @@
 
 .wheel li a {
   display: block;
+  text-decoration: none;
 }
 
   
@@ -30,6 +32,8 @@
       height: 100%;
       margin: 0 auto; 
       overflow: hidden;
+      position:relative;
+      bottom:20%!important;
     }
    
     
@@ -49,12 +53,12 @@
       text-align: center;
       border-radius: 50px;
       width: 60px;
-height: 60px;
+      height: 60px;
       color: white;
       display: block;
       margin: 70px auto 20px;
       border: 3px solid #92311e;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      box-shadow: 5px black;
       -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
     }
@@ -77,8 +81,14 @@ height: 60px;
       background-color: #E67E22;
       color: #FFFC44;
       position: fixed;
+<<<<<<< HEAD
       bottom: 10px;
       right: 50px;
+=======
+      bottom: 30px;
+      right: 20px;
+      z-index:3;
+>>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
     }
 
     .wheel-button span, .wheel span{
@@ -102,9 +112,15 @@ height: 60px;
       font-weight: bold;
       padding: 10px;
       text-align: center;
+<<<<<<< HEAD
       width: 20px;
       height: 20px;
       border: 1px solid black;
+=======
+      width: 40px;
+      height: 40px;
+      border: 1px solid white;
+>>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
       box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
       -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
@@ -125,3 +141,32 @@ height: 60px;
       margin: 0 auto;
     }
     
+<<<<<<< HEAD
+=======
+#wheel li:nth-child(1) a {
+    color: #ff0000;
+    background: white;
+}
+#wheel li:nth-child(2) a {
+    color: #e67e22;
+    background: white;
+}#wheel li:nth-child(3) a {
+    color: #2980b9;
+    background: white;
+}#wheel li:nth-child(4) a {
+    color: #2ECC71;
+    background: white;
+}#wheel li:nth-child(5) a {
+    color: #fbfbfb;
+    background:black
+}#wheel li:nth-child(6) a {
+    color: #9b59b6;
+    background: white;
+}#wheel li:nth-child(7) a {
+    color: #ff0000;
+    background: white;
+}#wheel li:nth-child(8) a {
+    color: #ff0000;
+    background: white;
+}
+>>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6

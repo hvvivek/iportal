@@ -18,7 +18,7 @@ return $result;
 function canpost($con)
 {
 $valu=$_SESSION['username'];
-$sqlmax="SELECT * FROM `sec` WHERE username ='$valu'";
+$sqlmax="SELECT * FROM `contacts` WHERE username ='$valu'";
 $querymax=mysqli_query($con,$sqlmax);
 $s=mysqli_fetch_assoc($querymax);
 if($s)

@@ -7,9 +7,6 @@ $db="i-portal";
 $conn = mysql_connect($server,$user,$pwd);
 mysql_select_db("i-portal");
 $id=$_GET["id"];
-$name=$_GET["name"];
-$lat=$_GET["lat"];
-$lng=$_GET["lng"];
 $sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";
 $sql2="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=2";
 $sql3="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=3";
@@ -18,6 +15,7 @@ $sql5="SELECT * FROM contacts WHERE Hostel_id='{$id}'and S_no=5";
 $sql6="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=6";
 $sql7="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=7";
 $sql8="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=8";
+<<<<<<< HEAD
 $data1=mysql_query($sql1);
 $row1=mysql_fetch_assoc($data1);
 $data2=mysql_query($sql2);
@@ -34,6 +32,30 @@ $data7=mysql_query($sql7);
 $row7=mysql_fetch_assoc($data7);
 $data8=mysql_query($sql8);
 $row8=mysql_fetch_assoc($data8);
+=======
+$data1=mysqli_query($conn,$sql1);
+$row1=mysqli_fetch_assoc($data1);
+$data2=mysqli_query($conn,$sql2);
+$row2=mysqli_fetch_assoc($data2);
+$data3=mysqli_query($conn,$sql3);
+$row3=mysqli_fetch_assoc($data3);
+$data4=mysqli_query($conn,$sql4);
+$row4=mysqli_fetch_assoc($data4);
+$data5=mysqli_query($conn,$sql5);
+$row5=mysqli_fetch_assoc($data5);
+$data6=mysqli_query($conn,$sql6);
+$row6=mysqli_fetch_assoc($data6);
+$data7=mysqli_query($conn,$sql7);
+$row7=mysqli_fetch_assoc($data7);
+$data8=mysqli_query($conn,$sql8);
+$row8=mysqli_fetch_assoc($data8);
+$sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
+$data=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($data);
+$name=$row["Hostel_Name"];
+$lat=$row["Latitude"];
+$lng=$row["Longitude"];
+>>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 ?>							
 <!DOCTYPE html>
 <?php     
@@ -41,6 +63,7 @@ require '../includes/signin.php';
 ?>
 <html>
 <head>
+<<<<<<< HEAD
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $name;?> hostel</title>
@@ -89,6 +112,23 @@ require '../includes/signin.php';
             }
             
 </style>
+=======
+<meta chaset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $name;?> hostel</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/hostel.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" type="text/css" href="../css/ferro.css">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>				
+<script src="../js/ferro.js" type="text/javascript"></script>
+<script src="js/dynamicpage.js" type="text/javascript"></script>
+<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
+>>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 <script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -144,6 +184,7 @@ require '../includes/signin.php';
 						<li class="item"><a href="#home">H</a></li>
         
 				</ul>
+<<<<<<< HEAD
    
 			</div>
 		</div>
@@ -239,13 +280,24 @@ require '../includes/signin.php';
                 </nav>
             </div>
 		</div>
+=======
+      		</div>	
+    	</div>
+	</nav>
+</div>
+<div id="page-wrap">
+<div class="container-fluid">
+	<div class="row">
+		<div class="sidebar col-md-1 col-lg-1">
+			<ul class="nav nav-sidebar" id="my-nav">
+>>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 <div class="container-fluid contain1">
 	<div class="row">
 		<div class="sidebar col-md-2 col-lg-2">
 			<ul class="nav nav-sidebar">
 				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
-				<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>
+				<li class="bull"><a href='office_details.php' class="kill">Hostel office-details</a></li>
 				<li class="bull"><a href='#' class="kill">Hostel services</a></li>
 				<li class="bull"><a href='#' class="kill">Litsoc</a></li>
 				<li class="bull"><a href='#' class="kill">Techsoc</a></li>
@@ -264,6 +316,8 @@ require '../includes/signin.php';
 				-->
 			</ul>
 		</div>
+		<div id="main-content">
+		<div id="guts">
 		<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-left:7.5%;padding-bottom:10%;">		
 			<div class="row">
 				<div class="col-md-3 screen1 col-lg-3 slum" id="s1">
@@ -492,6 +546,9 @@ require '../includes/signin.php';
 		</div>
 		</div>
 		</div>
+		</div>
+		</div>
+</div>
 </div>
 <footer class="footer">
 	<div class="container-fluid">
@@ -517,7 +574,7 @@ require '../includes/signin.php';
         <h4 class="modal-title" id="myModalLabel"><?php echo $name;?> Hostel</h4>
       </div>
       <div class="modal-body">
-        <div id="googleMap" style="height:300px;width:300px"></div>
+        <div id="googleMap" style="height:500px;"></div>
       </div>
     </div>
   </div>
