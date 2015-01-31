@@ -49,7 +49,36 @@ mysql_select_db("i-portal");
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            
+            /*html { font-size: 62.5%; }
+			body { font-size: 1em;}
+
+			@media (max-width: 300px) {
+				html { font-size: 50%; }
+			}
+
+			@media (min-width: 500px) {
+				html { font-size: 60%; }
+			}
+			@media (min-width: 700px) {
+				html { font-size: 61.5%; }
+			}
+			@media (min-width: 800px) {
+				html { font-size: 69%; }
+			}
+			@media (min-width: 900px) {
+				html { font-size: 76.5%; }
+			}
+
+			@media (min-width: 1000px) {
+				html { font-size: 85%; }
+			}
+
+			@media (min-width: 1100px) {
+				html { font-size: 93.5%; }
+			}
+			@media (min-width: 1200px) {
+				html { font-size: 102%; }
+			}*/
        </style>
 	   	<script>
 		$(document).ready(function(){
@@ -59,7 +88,18 @@ mysql_select_db("i-portal");
         animationSpeed: "fast"
 		});
 			});
-		
+		function wec(){
+			window.location= "../index.php";
+		}
+		$('.heal').css('font-size', ($(window).width()*0.01)+'px');
+		$('.nav-sidebar').css('font-size', ($(window).width()*0.01)+'px');
+		$('#hos').css('font-size', ($(window).width()*0.01)+'px');
+		$('.hw').css('font-size', ($(window).width()*0.01)+'px');
+		$('.b2').css('font-size', ($(window).width()*0.01)+'px');
+		$('.oned').css('font-size', ($(window).width()*0.01)+'px');
+		function wec(){
+			window.location= "index.php";
+		}
 		</script>
     </head>
     
@@ -68,113 +108,22 @@ mysql_select_db("i-portal");
 			<div class="main">
 				<a href="#wheel" class="wheel-button nw">
 					<span class="glyphicon glyphicon-th-large"></span>
-        
 				</a>
 				<ul id="wheel"  data-angle="NW">
-						<li class="item"><a href="#home">SL</a></li>
-						<li class="item"><a href="#home">BS</a></li>
-						<li class="item"><a href="#home">NP</a></li>
-						<li class="item"><a href="#home">IP</a></li>
-						<li class="item"><a href="#home">FB</a></li>
-						<li class="item"><a href="#home">EW</a></li>
-						<li class="item"><a href="#home">VC</a></li>
-						<li class="item"><a href="#home">H</a></li>
-        
+					<li class="item"><a href="#home">SL</a></li>
+					<li class="item"><a href="#home">BS</a></li>
+					<li class="item"><a href="#home">NP</a></li>
+					<li class="item"><a href="#home">IP</a></li>
+					<li class="item"><a href="#home">FB</a></li>
+					<li class="item"><a href="#home">EW</a></li>
+					<li class="item"><a href="#home">VC</a></li>
+					<li class="item"><a href="#home">H</a></li>
 				</ul>
-   
 			</div>
 		</div>
-
-        <div id="skrollr-body">
-            
-            <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
-                <nav>
-                    <ul>
-                        <li class='col-xs-5 col-md-3 pull-left'>
-                            <span class='col-xs-12' id='dnb_logo'>
-                                <p><b>Students&nbsp;</b>Portal</p>
-                            </span>
-                        </li>
-                        
-
-                        
-                        <li class='col-xs-5 col-md-6'>
-                            <div class="input-group col-xs-12">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Go</button>
-                                </span>
-                                
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-            
-            <div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
-                <nav>
-                    <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                        Information<b>&nbsp;Portal</b>&nbsp;</div>
-                    </span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM hostel_list";
-								$result= mysql_query($query);
-								while($hostel= mysql_fetch_array($result))
-									{
-										$hostel_0= explode("_",$hostel['Hostel_Name']);
-										$hostel_1= implode(" ",$hostel_0);
-										$hostel_id= $hostel['Hostel_id'];
-										echo "<li><a href='hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Eateries &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM eateries";
-								$result= mysql_query($query);
-								while($eatery= mysql_fetch_array($result))
-									{
-										$eatery_0= explode("_",$eatery['Eatery']);
-										$eatery_1= implode(" ",$eatery_0);
-										$eatery_id= $eatery['ID'];
-										echo "<li><a href='eateries/eateries.php?varname=$eatery_id'>".$eatery_1."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Others &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-							<li><a href='#'>Travel</a></li>
-							<li><a href='#'>Xerox</a></li>
-							<li><a href='#'>Giftshop</a></li>
-							<li><a href='#'>Haircare</a></li>
-                        </ul></span>
-                    <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
-                        <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
-                            <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
-								 <?php echo $_SESSION['username']; ?>
-                                <span class="caret"></span>
-							</span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Settings</a></li>
-							<li><a href="../includes/signout.php">Sign Out</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        </div>
+		<?php
+		require 'includes/navbar.php'
+        ?>
     
     <script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
     <script type="text/javascript" src="js/skrollr.js"></script>
@@ -194,8 +143,14 @@ mysql_select_db("i-portal");
 		<div class="inbig"></div>
 		<span class="glyphicon glyphicon-cutlery editgly" aria-hidden="true"></span>
 	</div>
+	
+	<div class="big" id="thr">
+		<div class="menutitle"></div>
+		<div class="inbig"></div>
+		<span class="glyphicon glyphicon-glass editgly" aria-hidden="true"></span>
+	</div>
 
-	<div class="big" id="thr"> 
+	<div class="big" id="fou"> 
 		<div class="menutitle"></div>
 		<div class="inbig"></div>
 		<span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span>
@@ -287,40 +242,55 @@ mysql_select_db("i-portal");
 <div class="contain3">
 <div class="blurmenu" ></div>
 <?php
-		$query= "SELECT * FROM eateries";
+		$query= "SELECT * FROM messes";
 		$result= mysql_query($query);
-		while($eatery= mysql_fetch_array($result))
+		while($mess = mysql_fetch_array($result))
 		{
-			$eatery_0= explode("_",$eatery['Eatery']);
-			$eatery_1= implode("",$eatery_0);
-			$eatery_id= $eatery['ID'];
-			echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$eatery_1."</p>"."</div>"."</a>";
+			$mess_0= explode("-",$mess['Mess']);
+			$mess_1= implode("",$mess_0);
+			$mess_id= $mess['ID'];
+			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess_1."</p>"."</div>"."</a>";
 		}
 ?>
 </div>
 <div class="contain4">
-<a href="#"><div class="small4"><p class="smtext4">Travel</p></div></a>
-<a href="#"><div class="small4"><p class="smtext4">Xerox</p></div></a>
-<a href="#"><div class="small4"><p class="smtext4">Giftshop</p></div></a>
-<a href="#"><div class="small4"><p class="smtext4">Haircare</p></div></a>
+<div class="blurmenu" ></div>
+<?php
+		$query= "SELECT * FROM eateries";
+		$result= mysql_query($query);
+		while($eatery = mysql_fetch_array($result))
+		{
+			$eatery_0= explode("_",$eatery['Eatery']);
+			$eatery_1= implode("",$eatery_0);
+			$eatery_id= $eatery['ID'];
+			echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4'>"."<p class='smtext4'>".$eatery_1."</p>"."</div>"."</a>";
+		}
+?>
+</div>
+<div class="contain5">
+<a href="#"><div class="small5"><p class="smtext5">Travel</p></div></a>
+<a href="#"><div class="small5"><p class="smtext5">Xerox</p></div></a>
+<a href="#"><div class="small5"><p class="smtext5">Giftshop</p></div></a>
+<a href="#"><div class="small5"><p class="smtext5">Haircare</p></div></a>
 </div>
 </div>
 </div>
 </div>
-<footer class="footer">
-	<div class="container-fluid">
-	<div class="row-fluid" style="margin-top:8px;font-size:110%;">
-		<div class="col-md-3" style="margin-left:0;padding-left:30px;">
-			<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
-		</div>
-		<div class="col-md-1" style="margin-left:0;padding-left:0;">
-			<a href="#"><font color="white">About us</font></a>
-		</div>		
-        <div class="col-md-1" style="margin-left:0;padding-left:0;">
-			<a href="#"><font color="white">Contact us</font></a>
-		</div>
-	</div>
-    </div>
+		<footer class="footer col-xs-12">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
+						<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
+					</div>
+					<div class="col-xs-2 col-md-1">
+						<a href="#"><font color="white">About us</font></a>
+					</div>		
+					<div class="col-xs-2 col-md-1 offset-1">
+						<a href="#"><font color="white">Contact us</font></a>
+					</div>
+				</div>
+			</div>
+		</footer>
 </footer>
 </body>
 </html>

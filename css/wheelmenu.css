@@ -81,14 +81,10 @@
       background-color: #E67E22;
       color: #FFFC44;
       position: fixed;
-<<<<<<< HEAD
-      bottom: 10px;
-      right: 50px;
-=======
       bottom: 30px;
       right: 20px;
       z-index:3;
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
+
     }
 
     .wheel-button span, .wheel span{
@@ -112,15 +108,9 @@
       font-weight: bold;
       padding: 10px;
       text-align: center;
-<<<<<<< HEAD
-      width: 20px;
-      height: 20px;
-      border: 1px solid black;
-=======
       width: 40px;
       height: 40px;
       border: 1px solid white;
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
       box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
       -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.5);
@@ -139,10 +129,7 @@
       float: left;
       width: 100%;
       margin: 0 auto;
-    }
-    
-<<<<<<< HEAD
-=======
+    }   
 #wheel li:nth-child(1) a {
     color: #ff0000;
     background: white;
@@ -169,4 +156,4 @@
     color: #ff0000;
     background: white;
 }
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
+

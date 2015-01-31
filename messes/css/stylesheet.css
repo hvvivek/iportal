@@ -1,0 +1,25 @@
+#mainheader {
+	width: 25%;
+	height: 10.855%;
+	margin-top: -20px;
+	margin-left: -20px;
+	color: black;
+	background-color: red;
+}
+#mainheader1{
+	width: 15%;
+	height: 10.855%;
+	background-color: white;
+	margin-top: -20px;
+}
+.mainheader{
+	float: left;
+}
+#mainheader2{
+	font-size:5.855%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 2.5%;
+	padding-left: 2.5%;
+	color: black;
+}

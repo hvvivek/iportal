@@ -3,7 +3,7 @@ session_start();
 $server="localhost";
 $user="root";
 $pwd="ragasree";
-$db="hostel";
+$db="i-portal";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_GET["id"];
 $sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";

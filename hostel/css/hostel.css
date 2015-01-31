@@ -49,7 +49,6 @@ h2,h3
 body
 {
 	background-color:white!important;	
-	margin-bottom:-5%;
 }
 #googleMap
 {
@@ -124,7 +123,7 @@ body
 }
 .header {
     width:100%  !important;
-    height:20%;
+    height:6%;
     text-align:center;
     background-color:#1abc9c;
     color:white;
@@ -173,7 +172,7 @@ body
     text-align:center;
     width:50%;
     float:left;
-    height:140px;
+    height:20%;
     color:#1abc9c;
     position:relative;
 }
@@ -196,24 +195,23 @@ body
 }
 .sidebar
 {
-	background-color: white;
-	margin-left: -20px;
+	background-color: white; 
+	margin-left: -1%;
 	position:fixed!important;
 	border-right: 2px solid #16a085;
 	border-top: 2px solid #16a085;
 	margin-top:0.05%;
 	height: 100%;
 	width:22%!important;
-	color:#1abc9c;
 	z-index:500;
 }
 .sidebar a
 {
-	color:#1abc9c;
+	/*color:#1abc9c;*/
 }
 .sidebar a:hover
 {
-	color:black;
+	color:white;
 }
 .bull
 {
@@ -223,7 +221,7 @@ body
 {
 width: 100%;
 bottom:0;
-height:5%;
+height:40px;
 background-color: #1abc9c;
 position:fixed;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
@@ -266,18 +264,18 @@ z-index:1000;
 	color:#1abc9c;
 	font-weight: bold;
 	font-size: 140%;
-	padding-left: 25px!important;
+	padding-left: 10%!important;
 	border-bottom: 1px solid #16a085;
 }
 .side
 {
 	position: relative;
-	top:48px;
+	top:48%;
 }
 .contain1
 {
 	position:relative;
-	top:54px!important;
+	top:10%!important;
 }
 .input
 {
@@ -298,7 +296,7 @@ z-index:1000;
 	margin-top: 5%;
 	font-size:120%;
 }
-<<<<<<< HEAD
+
 /*@media screen and (min-height:769px)
 =======
 
