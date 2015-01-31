@@ -2,7 +2,7 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="Sai@271295";
+$pwd="ragasree";
 $db="i-portal";
 $conn = mysql_connect($server,$user,$pwd);
 mysql_select_db("i-portal");
@@ -14,8 +14,6 @@ $sql4="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=4";
 $sql5="SELECT * FROM contacts WHERE Hostel_id='{$id}'and S_no=5";
 $sql6="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=6";
 $sql7="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=7";
-$sql8="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=8";
-<<<<<<< HEAD
 $data1=mysql_query($sql1);
 $row1=mysql_fetch_assoc($data1);
 $data2=mysql_query($sql2);
@@ -32,7 +30,6 @@ $data7=mysql_query($sql7);
 $row7=mysql_fetch_assoc($data7);
 $data8=mysql_query($sql8);
 $row8=mysql_fetch_assoc($data8);
-=======
 $data1=mysqli_query($conn,$sql1);
 $row1=mysqli_fetch_assoc($data1);
 $data2=mysqli_query($conn,$sql2);
@@ -55,7 +52,6 @@ $row=mysqli_fetch_assoc($data);
 $name=$row["Hostel_Name"];
 $lat=$row["Latitude"];
 $lng=$row["Longitude"];
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 ?>							
 <!DOCTYPE html>
 <?php     
@@ -63,7 +59,6 @@ require '../includes/signin.php';
 ?>
 <html>
 <head>
-<<<<<<< HEAD
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $name;?> hostel</title>
@@ -112,7 +107,6 @@ require '../includes/signin.php';
             }
             
 </style>
-=======
 <meta chaset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $name;?> hostel</title>
@@ -128,7 +122,6 @@ require '../includes/signin.php';
 <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
 <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 <script>
 		var lat='<?php echo $lat;?>';
 		var lng='<?php echo $lng;?>';
@@ -184,8 +177,6 @@ require '../includes/signin.php';
 						<li class="item"><a href="#home">H</a></li>
         
 				</ul>
-<<<<<<< HEAD
-   
 			</div>
 		</div>
         <div id="skrollr-body">  
@@ -280,7 +271,6 @@ require '../includes/signin.php';
                 </nav>
             </div>
 		</div>
-=======
       		</div>	
     	</div>
 	</nav>
@@ -290,7 +280,6 @@ require '../includes/signin.php';
 	<div class="row">
 		<div class="sidebar col-md-1 col-lg-1">
 			<ul class="nav nav-sidebar" id="my-nav">
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 <div class="container-fluid contain1">
 	<div class="row">
 		<div class="sidebar col-md-2 col-lg-2">
