@@ -4,6 +4,7 @@ require 'includes/signin.php';
 require  'config.php';
 $conn = mysql_connect($host , $username , $password);
 mysql_select_db("i-portal");
+require 'partials/footer.php';
 ?>
     <head>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -386,21 +387,5 @@ mysql_select_db("i-portal");
 </div>
 </div>
 </div>
-		<footer class="footer col-xs-12">
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
-						<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
-					</div>
-					<div class="col-xs-2 col-md-1">
-						<a href="#"><font color="white">About us</font></a>
-					</div>		
-					<div class="col-xs-2 col-md-1 offset-1">
-						<a href="#"><font color="white">Contact us</font></a>
-					</div>
-				</div>
-			</div>
-		</footer>
-</footer>
 </body>
 </html>

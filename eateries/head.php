@@ -2,6 +2,7 @@
 session_start();     
 require '../includes/signin.php';
 require  '../config.php';
+require '../partials/footer.php';
 ?>
 <?php
 	$file= $_GET['varname'];
@@ -46,11 +47,20 @@ require  '../config.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $eatery_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/hostel.css" rel="stylesheet">
+		<link href="../css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
+		<script type="text/javascript" src="../js/index.js"></script>
+		<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+		<script src="../js/dynamicpage.js" type="text/javascript"></script>
+		<script type='text/javascript' src='../js/jquery.ba-hashchange.min.js'></script>
+		<script src="../js/ferro.js" type="text/javascript"></script>
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>
@@ -175,8 +185,35 @@ require  '../config.php';
 				html { font-size: 102%; }
 			}
 		</style>
+	<script>
+			$(document).ready(function(){
+				$(".wheel-button").wheelmenu({
+			trigger: "hover",
+			animation: "fly",
+			animationSpeed: "fast"
+					});
+			});
+			
+	</script>
 	</head>
-	<body>            
+	<body>
+		<div class="wrapper">
+			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
+				<a href="#wheel" class="wheel-button nw">
+					<span class="glyphicon glyphicon-th-large"></span>
+				</a>
+				<ul id="wheel"  data-angle="NW">
+						<li class="item"><a href="#home">SL</a></li>
+						<li class="item"><a href="#home">BS</a></li>
+						<li class="item"><a href="#home">NP</a></li>
+						<li class="item"><a href="#home">IP</a></li>
+						<li class="item"><a href="#home">FB</a></li>
+						<li class="item"><a href="#home">EW</a></li>
+						<li class="item"><a href="#home">VC</a></li>
+						<li class="item"><a href="#home">H</a></li>
+				</ul>
+			</div>
+		</div>          
         <div id="skrollr-body">  
             <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
                 <nav>
@@ -208,6 +245,9 @@ require  '../config.php';
                     <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
                         <b>Information&nbsp;Portal</b>&nbsp;</div>
                     </span>
+					<span class='col-xs-1'><div class='btn2 col-xs-12 pull-left'  id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+						</div>
+                    </span>
 					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
                         <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
                     </div>
@@ -236,7 +276,7 @@ require  '../config.php';
 										$mess_6= explode("_",$mess['Mess']);
 										$mess_7= implode(" ",$mess_6);
 										$mess_id= $mess['ID'];
-										echo "<li><a href='messes.php?varname=$mess_id'>".$mess_7."</a></li>";
+										echo "<li><a href='../messes/messes.php?varname=$mess_id'>".$mess_7."</a></li>";
 									}
 							?>
                         </ul></span>
@@ -265,7 +305,7 @@ require  '../config.php';
 							<li><a href='#'>Giftshop</a></li>
 							<li><a href='#'>Haircare</a></li>
                         </ul></span>
-                    <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
+                    <div class="hidden-sm hidden-xs col-md-1 dropdown pull-right">
                         <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
                             <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
                                 <?php echo $_SESSION['username']; ?>
@@ -326,21 +366,6 @@ require  '../config.php';
 		<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 		<script type="text/javascript" src="js/skrollr.js"></script>
 		<script type="text/javascript">skrollr.init();</script>
-		<footer class="footer col-xs-12">
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
-						<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
-					</div>
-					<div class="col-xs-2 col-md-1">
-						<a href="#"><font color="white">About us</font></a>
-					</div>		
-					<div class="col-xs-2 col-md-1">
-						<a href="#"><font color="white">Contact us</font></a>
-					</div>
-				</div>
-			</div>
-		</footer>
 	</body>
 	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0' aria-hidden="true">
 		<div class="modal-dialog">
