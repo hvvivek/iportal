@@ -19,8 +19,6 @@ ul{
   min-width:100%;
   margin:auto;
   box-shadow:0 3px 5px -2px #1abc9c !important;
-
-
 }
 .glyphicon-bell {
   font-size:1.2em;
@@ -77,7 +75,7 @@ width:10.98%;
 height:60%;
 margin:5%;
 position:relative;
-left:17%;
+left:8%;
 text-align:center;
 cursor: pointer;
 
@@ -152,6 +150,17 @@ width: 80%;
 background-color:transparent;
 position:absolute;
 margin-top:0px;
+margin-left:10%;
+margin-right:10%;
+padding-top:20px;
+height:100px;
+width: 80%;
+}
+.contain5
+{
+background-color:transparent;
+position:absolute;
+margin-top:0px;
 margin-left:26.5%;
 margin-right:16%;
 padding-top:20px;
@@ -207,6 +216,21 @@ margin-left:6%;
 margin-top:2%;
 */
 color:white;
+}
+.small5
+{
+border:1px solid white;
+border-radius:100%;
+background-color:#1abc9c;
+display:inline-block;
+width:68px;
+height:68px;
+text-align:center;
+margin-left:6%;
+/*
+margin-top:2%;
+*/
+color:white;
 position:relative;
 left:18%;
 
@@ -222,8 +246,19 @@ font-weight: bold;
 color:#16a085;
 border:.5px solid #274cf0;
 }
+.smtext5
+{
+padding-top:32%;
+font-size:103%;
+font-weight: bold;
+}
+.small5:hover
+{
+color:#16a085;
+border:.5px solid #274cf0;
+}
 
-.small4:hover,.small3:hover,.small2:hover
+.small5:hover,.small4:hover,.small3:hover,.small2:hover
 {
   z-index: 100;
 box-shadow: 0 0 20px #fff;
@@ -262,7 +297,7 @@ text-decoration: none;
 background-color: #1abc9c !important;
 font-weight: bold;
 }
-.contain2,.contain3,.contain4
+.contain2,.contain3,.contain4,.contain5
 {
   transition:1s;
   -webkit-transition:1s;
@@ -293,7 +328,7 @@ visibility:visible;
 
 #one>.editgly
 {
-  padding-right: 10px;
+  /*padding-right: 10px;*/
 }
 
 .menutitle
@@ -334,7 +369,7 @@ background:#1abc9c;
 position:absolute;
 }
 
-.small2,.small3,.small4
+.small2,.small3,.small4,.small5
 {
   opacity: 0;
 

@@ -1,6 +1,6 @@
 .navbar
 {
-	background-color:#1abc9c;
+	background-color:#2ECC71;
 }
 #head
 {
@@ -31,7 +31,7 @@
 }
 .did
 {
-	border-bottom: 3px solid #16a085;
+	border-bottom: 3px solid #27AE60;
 }
 .contain
 {
@@ -48,7 +48,7 @@ h2,h3
 }
 body
 {
-	background-color:white!important;	
+	background-color:white!important;
 }
 #googleMap
 {
@@ -80,6 +80,13 @@ body
 	position:relative;
 	top:40px;
 	right:8%;
+}
+.eatimg
+{
+	border:10px;
+	border-style:solid;
+	border-color:#27AE60;
+	border-radius:10px;
 }
 .img1
 {
@@ -123,9 +130,9 @@ body
 }
 .header {
     width:100%  !important;
-    height:6%;
+    height:8%;
     text-align:center;
-    background-color:#1abc9c;
+    background-color:#2ECC71;
     color:white;
 }
 .img-circle {
@@ -146,10 +153,10 @@ body
     box-shadow: 0px 2px 6px #999;
     position:relative;
     overflow:hidden;
-    color:#1abc9c!important;
+    color:#2ECC71!important;
     margin-top: 1%;
     left:24%;
-    border:2px solid #1abc9c;
+    border:2px solid #2ECC71;
 }
 .screen2,.screen3
 {
@@ -172,8 +179,8 @@ body
     text-align:center;
     width:50%;
     float:left;
-    height:20%;
-    color:#1abc9c;
+    height:140px;
+    color:#2ECC71;
     position:relative;
 }
 .header2
@@ -195,37 +202,37 @@ body
 }
 .sidebar
 {
-	background-color: white; 
-	margin-left: -1%;
+	background-color: white;
+	margin-left: -20px;
 	position:fixed!important;
-	border-right: 2px solid #16a085;
-	border-top: 2px solid #16a085;
-	margin-top:0.05%;
+	border-right: 2px solid #27AE60;
 	height: 100%;
 	width:22%!important;
-	z-index:500;
+	color:#2ECC71;
+}
+.modal-backdrop
+{
+	opacity:0!important;
 }
 .sidebar a
 {
-	/*color:#1abc9c;*/
+	color:#2ECC71;
 }
 .sidebar a:hover
 {
-	color:white;
+	color:black;
 }
 .bull
 {
-	width:99%!important;
+	width:100%!important;
 }
-.footer
+#footer
 {
 width: 100%;
-bottom:0;
-height:40px;
-background-color: #1abc9c;
-position:fixed;
+bottom:-20%;
+background-color: #2ECC71;
+position: absolute;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
-z-index:1000;
 }
 .done>li>a{
 	color: white;
@@ -245,7 +252,7 @@ z-index:1000;
 }
 .nav-sidebar>li>a
 {
-	color:#1abc9c;
+	color:#2ECC71;
 	padding-left: 28px!important;
 	margin-right:-5.8%;
 	font-size: 120%;
@@ -253,33 +260,19 @@ z-index:1000;
 }
 .kill
 {
-	border-bottom: 1px solid #16a085;
+	border-bottom: 1px solid #27AE60;
 }
 .nav-sidebar>li>a:hover
 {
-	background-color: #16a085 !important;
+	background-color: #27AE60 !important;
 }
 #hos
 {
-	color:#1abc9c;
+	color:#2ECC71;
 	font-weight: bold;
 	font-size: 140%;
-	padding-left: 10%!important;
-	border-bottom: 1px solid #16a085;
-}
-.side
-{
-	position: relative;
-	top:48%;
-}
-.contain1
-{
-	position:relative;
-	top:10%!important;
-}
-.input
-{
-	display:none!important;
+	padding-left: 25px!important;
+	border-bottom: 1px solid #27AE60;
 }
 #hos:hover
 {
@@ -289,19 +282,14 @@ z-index:1000;
 
 .navbar a:hover
 {
-	background-color: #16a085 !important;
+	background-color: #27AE60 !important;
 }
 .hw
 {
 	margin-top: 5%;
 	font-size:120%;
 }
-
 /*@media screen and (min-height:769px)
-=======
-
-@media screen and (min-height:769px)
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 {
 	#googleMap
 	{
@@ -311,8 +299,8 @@ z-index:1000;
 	}
 	.screen1,.screen2,.screen3
 	{
-		height:220px;
-		width:17%!important;
+		height:250px;
+		width:20%!important;
 	}
 	.heal
 	{
@@ -326,7 +314,7 @@ z-index:1000;
 	}
 	.oned
 	{
-		margin-top: 0%;
+		margin-top: 2%;
 	}
 	.header1
 	{
@@ -359,7 +347,7 @@ z-index:1000;
 		position: relative;
 		left:27%;
 	}
-}*/
+}
 
 @media screen and (max-height:768px)
 {
@@ -368,4 +356,4 @@ z-index:1000;
 		position: relative;!important;
 		top:45px!important;
 	}
-}
+}*/

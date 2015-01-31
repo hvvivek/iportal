@@ -9,21 +9,21 @@ require  '../config.php';
 	$file= $_GET['varname'];
 	$conn = mysql_connect($host , $username , $password);
 	mysql_select_db("i-portal");
-	$query= "SELECT * FROM eateries WHERE $file=ID";
+	$query= "SELECT * FROM messes WHERE $file=ID";
 	$result= mysql_query($query);
-	while($eatery= mysql_fetch_array($result))
+	while($mess= mysql_fetch_array($result))
 	{
-		$eatery_0= explode("_",$eatery['Eatery']);
-		$eatery_1= implode(" ",$eatery_0);
-		$eatery_2= explode(",",$eatery['Position']);
-		$eatery_3= explode(",",$eatery['IMenu']);
-		$eatery_4= $eatery['DMenu'];
-		$eatery_5= explode(",",$eatery['MDetails']);
+		$mess_0= explode("_",$mess['Mess']);
+		$mess_1= implode(" ",$mess_0);
+		$mess_2= explode(",",$mess['Position']);
+		$mess_3= explode(",",$mess['IMenu']);
+		$mess_4= $mess['DMenu'];
+		$mess_5= explode(",",$mess['MDetails']);
 	}
-	function download_file($eatery_4)
+	function download_file($mess_4)
 	{
 	
-		$file = $eatery_4;
+		$file = $mess_4;
 	
 			if(file_exists($file))
 				{
@@ -46,13 +46,23 @@ require  '../config.php';
 	<head>
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title><?php echo $eatery_1 ;?></title>
+		<title><?php echo $mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 		<script src="js/bootstrap.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
+		<script type="text/javascript" src="../js/index.js"></script>
+		<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+		<script src="../js/dynamicpage.js" type="text/javascript"></script>
+		<script type='text/javascript' src='../js/jquery.ba-hashchange.min.js'></script>
+		<script src="../js/ferro.js" type="text/javascript"></script>
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>
@@ -62,9 +72,9 @@ require  '../config.php';
 				</tr>
 				<?php
 					echo "<tr>";
-					echo "<th>". $eatery_2[0] ."</th>";
-					echo "<th>". $eatery_2[1] ."</th>";
-					echo "<th>". $eatery_1 ."</th>";
+					echo "<th>". $mess_2[0] ."</th>";
+					echo "<th>". $mess_2[1] ."</th>";
+					echo "<th>". $mess_1 ."</th>";
 					echo "</tr>";
 					echo "</table>";
 				?>
@@ -90,36 +100,6 @@ require  '../config.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			            html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
-			@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 102%; }
-			}
             
 		</style>
 		<script type= "text/javascript">
@@ -185,8 +165,35 @@ require  '../config.php';
 		$('.oned').css('font-size', ($(window).width()*0.01)+'px');
 
 	</script>
+	<script>
+		$(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+        trigger: "hover",
+        animation: "fly",
+        animationSpeed: "fast"
+				});
+		});
+		
+	</script>
 	</head>
 	<body>
+		<div class="wrapper">
+			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
+				<a href="#wheel" class="wheel-button nw">
+					<span class="glyphicon glyphicon-th-large"></span>
+				</a>
+				<ul id="wheel"  data-angle="NW">
+						<li class="item"><a href="#home">SL</a></li>
+						<li class="item"><a href="#home">BS</a></li>
+						<li class="item"><a href="#home">NP</a></li>
+						<li class="item"><a href="#home">IP</a></li>
+						<li class="item"><a href="#home">FB</a></li>
+						<li class="item"><a href="#home">EW</a></li>
+						<li class="item"><a href="#home">VC</a></li>
+						<li class="item"><a href="#home">H</a></li>
+				</ul>
+			</div>
+		</div>
         <div id="skrollr-body">  
             <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
                 <nav>
@@ -218,6 +225,9 @@ require  '../config.php';
                     <span class='col-xs-2' ><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
 						<b>Information&nbsp;Portal</b>&nbsp;</div>
                     </span>
+					<span class='col-xs-1'><div class='btn2 col-xs-12 pull-left'  id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+						</div>
+                    </span>
 					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
                         <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
                     </div>
@@ -235,22 +245,6 @@ require  '../config.php';
 							?>
                         </ul></span>
 					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Messes &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM messes";
-								$result= mysql_query($query);
-								while($mess= mysql_fetch_array($result))
-									{
-										$mess_6= explode("_",$mess['Mess']);
-										$mess_7= implode(" ",$mess_6);
-										$mess_id= $mess['ID'];
-										echo "<li><a href='messes.php?varname=$mess_id'>".$mess_7."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
                         <b>Eateries &nbsp; </b>&nbsp;<span class="caret"></span>
                     </div>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -262,7 +256,23 @@ require  '../config.php';
 										$eatery_6= explode("_",$eatery['Eatery']);
 										$eatery_7= implode(" ",$eatery_6);
 										$eatery_id= $eatery['ID'];
-										echo "<li><a href='eateries.php?varname=$eatery_id'>".$eatery_7."</a></li>";
+										echo "<li><a href='../eateries/eateries.php?varname=$eatery_id'>".$eatery_7."</a></li>";
+									}
+							?>
+                        </ul></span>
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Messes &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <?php
+								$query= "SELECT * FROM messes";
+								$result= mysql_query($query);
+								while($mess= mysql_fetch_array($result))
+									{
+										$mess_6= explode("_",$mess['Mess']);
+										$mess_7= implode(" ",$mess_6);
+										$mess_id= $mess['ID'];
+										echo "<li><a href='../messes/messes.php?varname=$mess_id'>".$mess_7."</a></li>";
 									}
 							?>
                         </ul></span>
@@ -295,11 +305,9 @@ require  '../config.php';
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='#' id="hos"><?php echo $eatery_1; ?></a></li>
-						<li class="bull"><a href='eateries.php?varname=<?php echo $file; ?>' class="kill">Timings</a></li>
-						<li class="bull"><a href='menu.php?varname=<?php echo $file; ?>' class="kill">Menu</a></li>
-						<li class="bull"><a href='head.php?varname=<?php echo $file; ?>' class="kill">Managers</a></li>
-						<li class="bull"><a href='shead.php?varname=<?php echo $file; ?>' class="kill">Student Incharges</a></li>	
+						<li class="bull"><a href='#' id="hos"><?php echo $mess_1; ?></a></li>
+						<li class="bull"><a href='messes.php?varname=<?php echo $file; ?>' class="kill">Timings</a></li>
+						<li class="bull"><a href='menu.php?varname=<?php echo $file; ?>' class="kill">Menu</a></li>	
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
@@ -315,21 +323,21 @@ require  '../config.php';
 					</tr>
 					<tr>
 						<?php
-							$query= "SELECT * FROM eateries WHERE $file=ID";
+							$query= "SELECT * FROM messes WHERE $file=ID";
 								$result= mysql_query($query);
-								while($eatery= mysql_fetch_array($result))
+								while($mess= mysql_fetch_array($result))
 								{
-									$eatery_8= explode("/",$eatery['Timings']);
-									for($a=0;$a<(sizeof($eatery_8));$a++)
+									$mess_8= explode("/",$mess['Timings']);
+									for($a=0;$a<(sizeof($mess_8));$a++)
 									{
 										echo "<tr>";
 										echo "<td>".($a+1)."</td>";
-										$eatery_9= explode("_",$eatery_8[$a]);
-										for($b=0; $b<(sizeof($eatery_9)); $b++)
+										$mess_9= explode("_",$mess_8[$a]);
+										for($b=0; $b<(sizeof($mess_9)); $b++)
 										{
-											$eatery_10= explode(",",$eatery_9[$b]);
-											$eatery_10= implode(" ",$eatery_10);
-											echo "<td>".$eatery_10."</td>";
+											$mess_10= explode(",",$mess_9[$b]);
+											$mess_10= implode(" ",$mess_10);
+											echo "<td>".$mess_10."</td>";
 										}
 										echo "</tr>";
 									}

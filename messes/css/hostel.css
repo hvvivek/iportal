@@ -1,3 +1,4 @@
+
 .navbar
 {
 	background-color:#1abc9c;
@@ -7,6 +8,7 @@
 	text-decoration:none;
 	font-weight: bold;
 	color:white;
+	padding-left: 22%;
 }
 #head:hover
 {
@@ -27,7 +29,7 @@
 }
 .navbar-form
 {
-	margin-right:80px;
+	margin-right:10%;
 }
 .did
 {
@@ -49,14 +51,21 @@ h2,h3
 body
 {
 	background-color:white!important;	
+	margin-bottom:-5%;
 }
-#googleMap
+#googleMap1
 {
-	height:200px!important;
 	border:2px solid black;
 	color:black !important;
 	text-align: center;
-	margin-left: 3%;
+}
+.eatimg
+{
+	border:10%;
+	border-style:solid;
+	border-color:#1abc9c;
+	border-radius:0.4%;
+	margin-top:2%;
 }
 .foot
 {
@@ -149,7 +158,7 @@ body
     color:#1abc9c!important;
     margin-top: 1%;
     left:24%;
-    border:2px solid #1abc9c;
+    border:2px solid #16a085;
 }
 .screen2,.screen3
 {
@@ -195,7 +204,7 @@ body
 }
 .sidebar
 {
-	background-color: white; 
+	background-color: white;
 	margin-left: -1%;
 	position:fixed!important;
 	border-right: 2px solid #16a085;
@@ -203,15 +212,16 @@ body
 	margin-top:0.05%;
 	height: 100%;
 	width:22%!important;
+	color:#1abc9c;
 	z-index:500;
 }
 .sidebar a
 {
-	/*color:#1abc9c;*/
+	color:#1abc9c;
 }
 .sidebar a:hover
 {
-	color:white;
+	color:black;
 }
 .bull
 {
@@ -246,7 +256,7 @@ z-index:1000;
 .nav-sidebar>li>a
 {
 	color:#1abc9c;
-	padding-left: 28px!important;
+	padding-left: 10%!important;
 	margin-right:-5.8%;
 	font-size: 120%;
 	
@@ -296,12 +306,7 @@ z-index:1000;
 	margin-top: 5%;
 	font-size:120%;
 }
-
 /*@media screen and (min-height:769px)
-=======
-
-@media screen and (min-height:769px)
->>>>>>> 87fdf630a2ce73e9f117b007434b2cccaad4d2c6
 {
 	#googleMap
 	{

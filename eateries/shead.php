@@ -129,6 +129,9 @@ require  '../config.php';
 				}
 			});
 			}
+			function wec(){
+			window.location= "../index.php";
+				}
 		</script>
 		<style>
             #dnb_sec {
@@ -151,6 +154,36 @@ require  '../config.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
+			html { font-size: 62.5%; }
+			body { font-size: 1em;}
+
+			@media (max-width: 300px) {
+				html { font-size: 50%; }
+			}
+
+			@media (min-width: 500px) {
+				html { font-size: 60%; }
+			}
+			@media (min-width: 700px) {
+				html { font-size: 61.5%; }
+			}
+			@media (min-width: 800px) {
+				html { font-size: 69%; }
+			}
+			@media (min-width: 900px) {
+				html { font-size: 76.5%; }
+			}
+
+			@media (min-width: 1000px) {
+				html { font-size: 85%; }
+			}
+
+			@media (min-width: 1100px) {
+				html { font-size: 93.5%; }
+			}
+			@media (min-width: 1200px) {
+				html { font-size: 100%; }
+			}
             
 		</style>
 	</head>
@@ -183,14 +216,13 @@ require  '../config.php';
             
             <div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
                 <nav>
-                    <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                        Information<b>&nbsp;Portal</b>&nbsp;</div>
+                    <span class='col-xs-1'><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+                        <b>Information&nbsp;Portal</b>&nbsp;</div>
                     </span>
-					<span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                    </div>
+					<span class='col-xs-1'><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+                     </div>
                     </span>
-
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+					<span class='col-xs-2 dropdown' style="margin-left:4%;"><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
                         <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
                     </div>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -203,6 +235,22 @@ require  '../config.php';
 										$hostel_1= implode(" ",$hostel_0);
 										$hostel_id= $hostel['Hostel_id'];
 										echo "<li><a href='../hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
+									}
+							?>
+                        </ul></span>
+					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                        <b>Messes &nbsp; </b>&nbsp;<span class="caret"></span>
+                    </div>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <?php
+								$query= "SELECT * FROM messes";
+								$result= mysql_query($query);
+								while($mess= mysql_fetch_array($result))
+									{
+										$mess_6= explode("_",$mess['Mess']);
+										$mess_7= implode(" ",$mess_6);
+										$mess_id= $mess['ID'];
+										echo "<li><a href='messes.php?varname=$mess_id'>".$mess_7."</a></li>";
 									}
 							?>
                         </ul></span>
@@ -231,7 +279,7 @@ require  '../config.php';
 							<li><a href='#'>Giftshop</a></li>
 							<li><a href='#'>Haircare</a></li>
                         </ul></span>
-                    <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
+                    <div class="hidden-sm hidden-xs col-md-1 dropdown pull-right">
                         <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
                             <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
                                 <?php echo $_SESSION['username']; ?>
@@ -260,7 +308,7 @@ require  '../config.php';
 				</div>
 			</div>
 		</div>
-       </div>
+	</div>
 	<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-left:7.5%;padding-bottom:10%;">
 		<div class="row">
 			<div class="col-md-3 screen1 col-lg-3 slum" id="s1">
@@ -410,16 +458,16 @@ require  '../config.php';
 		<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 		<script type="text/javascript" src="js/skrollr.js"></script>
 		<script type="text/javascript">skrollr.init();</script>
-		<footer class="footer">
+		<footer class="footer col-xs-12">
 			<div class="container-fluid">
-				<div class="row-fluid" style="margin-top:8px;font-size:110%;">
-					<div class="col-md-3" style="margin-left:0;padding-left:30px;">
+				<div class="row-fluid">
+					<div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
 						<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
 					</div>
-					<div class="col-md-1" style="margin-left:0;padding-left:0;">
+					<div class="col-xs-2 col-md-1">
 						<a href="#"><font color="white">About us</font></a>
 					</div>		
-					<div class="col-md-1" style="margin-left:0;padding-left:0;">
+					<div class="col-xs-2 col-md-1">
 						<a href="#"><font color="white">Contact us</font></a>
 					</div>
 				</div>

@@ -1,3 +1,4 @@
+
 .navbar
 {
 	background-color:#1abc9c;
@@ -24,11 +25,11 @@
 }
 .navbar a:hover
 {
-	color:black;
+	color:white;
 }
 .navbar-form
 {
-	margin-right:80px;
+	margin-right:10%;
 }
 .did
 {
@@ -60,10 +61,10 @@ body
 }
 .eatimg
 {
-	border:6px;
+	border:10%;
 	border-style:solid;
 	border-color:#1abc9c;
-	border-radius:5px;
+	border-radius:0.4%;
 	margin-top:2%;
 }
 .foot
@@ -131,7 +132,7 @@ body
 }
 .header {
     width:100%  !important;
-    height:7%;
+    height:6%;
     text-align:center;
     background-color:#1abc9c;
     color:white;
@@ -180,7 +181,7 @@ body
     text-align:center;
     width:50%;
     float:left;
-    height:170px;
+    height:20%;
     color:#1abc9c;
     position:relative;
 }
@@ -204,7 +205,7 @@ body
 .sidebar
 {
 	background-color: white;
-	margin-left: -20px;
+	margin-left: -1%;
 	position:fixed!important;
 	border-right: 2px solid #16a085;
 	border-top: 2px solid #16a085;
@@ -220,7 +221,7 @@ body
 }
 .sidebar a:hover
 {
-	color:black;
+	color:white;
 }
 .bull
 {
@@ -230,7 +231,7 @@ body
 {
 width: 100%;
 bottom:0;
-height:5%;
+height:40px;
 background-color: #1abc9c;
 position:fixed;
 box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
@@ -255,7 +256,7 @@ z-index:1000;
 .nav-sidebar>li>a
 {
 	color:#1abc9c;
-	padding-left: 28px!important;
+	padding-left: 10%!important;
 	margin-right:-5.8%;
 	font-size: 120%;
 	
@@ -273,18 +274,18 @@ z-index:1000;
 	color:#1abc9c;
 	font-weight: bold;
 	font-size: 140%;
-	padding-left: 25px!important;
+	padding-left: 10%!important;
 	border-bottom: 1px solid #16a085;
 }
 .side
 {
 	position: relative;
-	top:48px;
+	top:48%;
 }
 .contain1
 {
 	position:relative;
-	top:54px!important;
+	top:15%!important;
 }
 .input
 {
