@@ -4,6 +4,7 @@ session_start();
 <?php     
 require '../includes/signin.php';
 require  '../config.php';
+require '../partials/footer.php';
 ?>
 <?php
 	$file= $_GET['varname'];
@@ -48,7 +49,7 @@ require  '../config.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/hostel.css" rel="stylesheet">
+		<link href="../css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
@@ -100,6 +101,36 @@ require  '../config.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
+			html { font-size: 62.5%; }
+			body { font-size: 1em;}
+
+			@media (max-width: 300px) {
+				html { font-size: 50%; }
+			}
+
+			@media (min-width: 500px) {
+				html { font-size: 60%; }
+			}
+			@media (min-width: 700px) {
+				html { font-size: 61.5%; }
+			}
+			@media (min-width: 800px) {
+				html { font-size: 69%; }
+			}
+			@media (min-width: 900px) {
+				html { font-size: 76.5%; }
+			}
+
+			@media (min-width: 1000px) {
+				html { font-size: 85%; }
+			}
+
+			@media (min-width: 1100px) {
+				html { font-size: 93.5%; }
+			}
+			@media (min-width: 1200px) {
+				html { font-size: 100%; }
+			}
             
 		</style>
 		<script type= "text/javascript">
@@ -285,7 +316,7 @@ require  '../config.php';
 							<li><a href='#'>Giftshop</a></li>
 							<li><a href='#'>Haircare</a></li>
                         </ul></span>
-                    <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
+                    <div class="hidden-sm hidden-xs col-md-1 dropdown pull-right">
                         <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
                             <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
                                 <?php echo $_SESSION['username']; ?>
@@ -303,7 +334,7 @@ require  '../config.php';
         </div>
 	<div class="container-fluid contain1">
 			<div class="row">
-				<div class="sidebar col-md-2 col-lg-2 ">
+				<div class="sidebar col-md-3 col-lg-2">
 					<ul class="nav nav-sidebar">
 						<li class="bull"><a href='#' id="hos"><?php echo $mess_1; ?></a></li>
 						<li class="bull"><a href='messes.php?varname=<?php echo $file; ?>' class="kill">Timings</a></li>
@@ -316,33 +347,29 @@ require  '../config.php';
 				<div class="col-md-5 col-lg-5">
 					<table class="table table-striped table-bordered">
 					<tr>
-						<th>S NO</th>
-						<th>Day of the week</th>
+						<th>Meal</th>
 						<th>Open Time</th>
 						<th>Close Time</th>
 					</tr>
 					<tr>
-						<?php
-							$query= "SELECT * FROM messes WHERE $file=ID";
-								$result= mysql_query($query);
-								while($mess= mysql_fetch_array($result))
-								{
-									$mess_8= explode("/",$mess['Timings']);
-									for($a=0;$a<(sizeof($mess_8));$a++)
-									{
-										echo "<tr>";
-										echo "<td>".($a+1)."</td>";
-										$mess_9= explode("_",$mess_8[$a]);
-										for($b=0; $b<(sizeof($mess_9)); $b++)
-										{
-											$mess_10= explode(",",$mess_9[$b]);
-											$mess_10= implode(" ",$mess_10);
-											echo "<td>".$mess_10."</td>";
-										}
-										echo "</tr>";
-									}
-								}
-						?>
+						<th>Breakfast</th>
+						<th>06:45</th>
+						<th>09:15(Bread till 10:00)</th>
+					</tr>
+					<tr>
+						<th>Lunch</th>
+						<th>11:45</th>
+						<th>14:15</th>
+					</tr>
+					<tr>
+						<th>Tea</th>
+						<th></th>
+						<th></th>
+					</tr>
+					<tr>
+						<th>Dinner</th>
+						<th>18:45</th>
+						<th>21:15</th>
 					</tr>
 					</table>
 				</div>
@@ -364,21 +391,6 @@ require  '../config.php';
 						</div>
 					</div>
 				</div>
-		<footer class="footer col-xs-12">
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
-						<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
-					</div>
-					<div class="col-xs-2 col-md-1">
-						<a href="#"><font color="white">About us</font></a>
-					</div>		
-					<div class="col-xs-2 col-md-1">
-						<a href="#"><font color="white">Contact us</font></a>
-					</div>
-				</div>
-			</div>
-		</footer>
 	</body>
 	<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 	<script type="text/javascript" src="js/skrollr.js"></script>

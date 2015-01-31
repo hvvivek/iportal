@@ -57,6 +57,7 @@ $lng=$row["Longitude"];
 <!DOCTYPE html>
 <?php     
 require '../includes/signin.php';
+require '../partials/footer.php'
 ?>
 <html>
 <head>
@@ -75,7 +76,7 @@ require '../includes/signin.php';
         <!-- Latest compiled and minified JavaScript -->
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<link href="css/hostel.css" rel="stylesheet" />
+		<link href="../css/hostel.css" rel="stylesheet" />
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 
 		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
@@ -508,21 +509,6 @@ require '../includes/signin.php';
 			</div>
 		</div>
 	</div>
-		<footer class="footer col-xs-12">
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="col-xs-2 col-sm-2 col-md-3 col-lg-4">
-						<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
-					</div>
-					<div class="col-xs-2 col-md-1">
-						<a href="#"><font color="white">About us</font></a>
-					</div>		
-					<div class="col-xs-2 col-md-1">
-						<a href="#"><font color="white">Contact us</font></a>
-					</div>
-				</div>
-			</div>
-		</footer>
 <!--Modal-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-sm">
