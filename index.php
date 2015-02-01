@@ -2,8 +2,8 @@
 session_start();   
 require 'includes/signin.php';
 require  'config.php';
-$db="i-portal";
-$conn = mysqli_connect($host,$username,$password,$db) or die("Error connecting server");
+mysql_connect($host,$username ,$password);
+mysql_select_db("i-portal");
 ?>
     <head>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -132,13 +132,13 @@ $conn = mysqli_connect($host,$username,$password,$db) or die("Error connecting s
 	<div class="container-fluid contain2-fluid">
 	<?php
 		$sql="SELECT * FROM hostel_list";
-		$query=mysqli_query($conn,$sql);
-		$hostel = mysqli_fetch_assoc($query);
+		$query=mysql_query($sql);
+		$hostel = mysql_fetch_assoc($query);
 		$hostel_id=$hostel['hostel_id'];
 		$nick=$hostel['hostel_nick'];
 		echo "<a href='hostel/hostel.php?varname=$hostel_id'>"."<div class= 'small2'>"."<p class='smtext2'>".$nick."</p>"."</div>"."</a>";
 		$inc=0;
-		while($hostel = mysqli_fetch_assoc($query))
+		while($hostel = mysql_fetch_assoc($query))
 		{
 			$inc++;
 			if($inc==11)
@@ -169,31 +169,35 @@ $conn = mysqli_connect($host,$username,$password,$db) or die("Error connecting s
 	?>
 	</div>
 </div>
-<div class="contain3">
-<?php
+<div class="contain3 container">
+	<?php
 		$query= "SELECT * FROM messes";
 		$result= mysql_query($query);
+		$inc=0;
 		while($mess = mysql_fetch_array($result))
 		{
+			$inc++;
 			$mess_0= explode("-",$mess['Mess']);
 			$mess_1= implode("",$mess_0);
 			$mess_id= $mess['ID'];
 			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess_1."</p>"."</div>"."</a>";
 		}
-?>
+	?>
 </div>
-<div class="contain4">
-<?php
+<div class="contain4 container">
+	<?php
 		$query= "SELECT * FROM eateries";
 		$result= mysql_query($query);
+		$inc=0;
 		while($eatery = mysql_fetch_array($result))
 		{
+			$inc++;
 			$eatery_0= explode("_",$eatery['Eatery']);
 			$eatery_1= implode("",$eatery_0);
 			$eatery_id= $eatery['ID'];
 			echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4'>"."<p class='smtext4'>".$eatery_1."</p>"."</div>"."</a>";
 		}
-?>
+	?>
 </div>
 <div class="contain5">
 <a href="#"><div class="small5"><p class="smtext5">Travel</p></div></a>

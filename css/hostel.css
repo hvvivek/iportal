@@ -156,7 +156,6 @@ body
     overflow:hidden;
     color:#1abc9c!important;
     margin-top: 1%;
-    left:24%;
     border:2px solid #16a085;
 }
 .screen2,.screen3
@@ -298,66 +297,6 @@ body
 	margin-top: 5%;
 	font-size:120%;
 }
-/*@media screen and (min-height:769px)
-{
-	#googleMap
-	{
-		position: relative;!important;
-		top:290px!important;
-		height:400px!important;
-	}
-	.screen1,.screen2,.screen3
-	{
-		height:220px;
-		width:17%!important;
-	}
-	.heal
-	{
-		font-size:120%!important;
-	}
-	.header
-	{
-		font-size:140%!important;
-		font-weight: bold;
-		margin:auto;
-	}
-	.oned
-	{
-		margin-top: 0%;
-	}
-	.header1
-	{
-		font-size:130%!important;
-	}
-	#head{
-		font-size: 150%;
-		padding-left:30px;
-	}
-	#hos
-	{
-		font-size: 180%!important;
-	}
-	.nav-sidebar>li>a
-	{
-		font-size: 150%;
-		margin-right:-4%!important;
-	}
-	.sidebar
-	{
-		width:22%!important;
-	}
-	.screen1
-	{
-		position: relative;
-		left:26%!important;
-	}
-	.screen2
-	{
-		position: relative;
-		left:27%;
-	}
-}*/
-
 @media screen and (max-height:768px)
 {
 	#googleMap
