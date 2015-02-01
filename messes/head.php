@@ -8,21 +8,21 @@ require '../partials/footer.php';
 	$file= $_GET['varname'];
 	$conn = mysql_connect($host , $username , $password);
 	mysql_select_db("i-portal");
-	$query= "SELECT * FROM eateries WHERE $file=ID";
+	$query= "SELECT * FROM messes WHERE $file=ID";
 	$result= mysql_query($query);
-	while($eatery= mysql_fetch_array($result))
+	while($Mess= mysql_fetch_array($result))
 	{
-		$eatery_0= explode("_",$eatery['Eatery']);
-		$eatery_1= implode(" ",$eatery_0);
-		$eatery_2= explode(",",$eatery['Position']);
-		$eatery_3= explode(",",$eatery['IMenu']);
-		$eatery_4= $eatery['DMenu'];
-		$eatery_5= explode(",",$eatery['MDetails']);
+		$Mess_0= explode("_",$Mess['Mess']);
+		$Mess_1= implode(" ",$Mess_0);
+		$Mess_2= explode(",",$Mess['Position']);
+		$Mess_3= explode(",",$Mess['IMenu']);
+		$Mess_4= $Mess['DMenu'];
+		$Mess_5= $Mess['SDetails'];
 	}
-	function download_file($eatery_4)
+	function download_file($Mess_4)
 	{
 	
-		$file = $eatery_4;
+		$file = $Mess_4;
 	
 			if(file_exists($file))
 				{
@@ -45,12 +45,12 @@ require '../partials/footer.php';
 	<head>
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title><?php echo $eatery_1 ;?></title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/hostel.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
+		<title><?php echo $Mess_1 ;?></title>
+		<link href="../eateries/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../eateries/css/hostel.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../eateries/css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
+		<script src="../eateries/js/bootstrap.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
@@ -70,9 +70,9 @@ require '../partials/footer.php';
 				</tr>
 				<?php
 					echo "<tr>";
-					echo "<th>". $eatery_2[0] ."</th>";
-					echo "<th>". $eatery_2[1] ."</th>";
-					echo "<th>". $eatery_1 ."</th>";
+					echo "<th>". $Mess_2[0] ."</th>";
+					echo "<th>". $Mess_2[1] ."</th>";
+					echo "<th>". $Mess_1 ."</th>";
 					echo "</tr>";
 					echo "</table>";
 				?>
@@ -154,7 +154,7 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-          <!--/*  html { font-size: 62.5%; }
+            <!--html { font-size: 62.5%; }
 			body { font-size: 1em;}
 
 			@media (max-width: 300px) {
@@ -183,23 +183,23 @@ require '../partials/footer.php';
 			}
 			@media (min-width: 1200px) {
 				html { font-size: 102%; }
-			}*/-->
+			}-->
 		</style>
-	<script>
-			$(document).ready(function(){
-				$(".wheel-button").wheelmenu({
-			trigger: "hover",
-			animation: "fly",
-			animationSpeed: "fast"
-					});
-			});
-			
-	</script>
+		<script>
+				$(document).ready(function(){
+					$(".wheel-button").wheelmenu({
+				trigger: "hover",
+				animation: "fly",
+				animationSpeed: "fast"
+						});
+				});
+				
+		</script>
 	</head>
-	<body>            
-        <?php
-			require '../includes/navbar.php'
-        ?>
+	<body>
+	<?php
+		include "../includes/navbar.php";
+	?>
 		<div class="wrapper">
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
 				<a href="#wheel" class="wheel-button nw">
@@ -221,47 +221,62 @@ require '../partials/footer.php';
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='#' id="hos"><?php echo $eatery_1; ?></a></li>
-						<li class="bull"><a href='eateries.php?varname=<?php echo $file; ?>' class="kill">Timings</a></li>						
+						<li class="bull"><a href='#' id="hos"><?php echo $Mess_1; ?></a></li>
+						<li class="bull"><a href='messes.php?varname=<?php echo $file; ?>' class="kill">Timings</a></li>						
 						<li class="bull"><a href='menu.php?varname=<?php echo $file; ?>' class="kill">Menu</a></li>
-						<li class="bull"><a href='head.php?varname=<?php echo $file; ?>' class="kill">Managers</a></li>
-						<li class="bull"><a href='shead.php?varname=<?php echo $file; ?>' class="kill">Student Incharges</a></li>
+						<li class="bull"><a href='head.php?varname=<?php echo $file; ?>' class="kill">MMCC Members</a></li>
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		
-			<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-bottom:10%;">
-				<div class="row">
-					<div class="col-md-3 screen1 col-lg-3 slum" id="s1">
-						<div class="header">
-							<p class="oned">Manager</p>
-						</div>
-						<div class="slider">
-							<div id="s1">
-								<div class="header1" >
-									<img class="img-circle img-responsive" src="images/photo.png">
-									<p class="hw"><?php
-										echo $eatery_5[2]; ?>
-									</p>
-								</div>
-							</div>
-							<div class="header2">
-								<div class="heal" id="h1" class="hid">
-									<p class="hw">
-									<?php
-										if(strlen($eatery_5[0])!=0){echo "Email Id: ".$eatery_5[0];}?>
-									</p>
-									<p class="hw"><?php
-										if(strlen($eatery_5[1])!=0){echo "Contact No. : ".$eatery_5[1];}?>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-bottom:10%;">
+				<?php
+					$Mess_10= explode("/",$Mess_5);
+					$a= sizeof($Mess_10);
+					$b= $a%3;
+					$c=($a-$b)/3;
+					for($d=0;$d<$c+1;$d++)
+					{
+						$s= 2*$d;
+						echo "<div class='row' style='margin-top:".$s."%;'>";
+						$g= $d*3;
+						$f= 3+$g ;
+						if($a==(3*$d+$b))
+						{
+							$f=$a;
+						}
+						for($e=$g;$e<$f;$e++)
+						{
+							$Mess_11= $Mess_10[$e];
+							$Mess_12= explode(",",$Mess_11);
+							$Mess_13= explode("_",$Mess_12[0]);
+							$Mess_14= implode(" ",$Mess_13);
+							echo "<div class='col-md-3 screen". (($e%3)+1) ." col-lg-3 slum' id=s".$e." >";
+								echo "<div class='header'>";
+									echo "<p class='oned'>"."Coordinator"."</p>";
+								echo "</div>";
+								echo "<div class='slider'>";
+									echo "<div id='s1'>";
+										echo "<div class='header1'>";
+											echo "<img class='img-circle img-responsive' src='images/photo.png'>";
+											echo "<p class='hw'>".$Mess_14."</p>";
+										echo "</div>";
+									echo "</div>";
+									echo "<div class='header2'>";
+										echo "<div class='heal' id='h1' class='hid'>";
+											echo "<p class='hw'>"."Roll No : ".$Mess_12[1]."</p>";
+											echo "<p class='hw'>"."Contact No. : ".$Mess_12[2]."</p>";
+											echo "<p class='hw'>"."Email ID : ".$Mess_12[3]."</p>";
+										echo "</div>";
+									echo "</div>";
+								echo "</div>";
+							echo "</div>";
+						}
+						echo "</div>";
+					}
+				?>
+		</div>
 		<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 		<script type="text/javascript" src="js/skrollr.js"></script>
 		<script type="text/javascript">skrollr.init();</script>

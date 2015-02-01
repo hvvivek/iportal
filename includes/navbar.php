@@ -40,7 +40,7 @@
     						  $hostel_0= explode("_",$hostel['Hostel_Name']);
         						$hostel_1= implode(" ",$hostel_0);
         						$hostel_id= $hostel['Hostel_id'];
-        						echo "<li><a href='hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
+        						echo "<li><a href='../hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
         					}
         				    ?>
                         </ul>
@@ -59,7 +59,7 @@
 									$mess_6= explode("_",$mess['Mess']);
     								$mess_7= implode(" ",$mess_6);
     								$mess_id= $mess['ID'];
-    								echo "<li><a href='messes/messes.php?varname=$mess_id'>".$mess_7."</a></li>";
+    								echo "<li><a href='../messes/messes.php?varname=$mess_id'>".$mess_7."</a></li>";
     							}
     						?>
                         </ul>
@@ -78,7 +78,7 @@
     							$eatery_0= explode("_",$eatery['Eatery']);
     							$eatery_1= implode(" ",$eatery_0);
     							$eatery_id= $eatery['ID'];
-    							echo "<li><a href='eateries/eateries.php?varname=$eatery_id'>".$eatery_1."</a></li>";
+    							echo "<li><a href='../eateries/eateries.php?varname=$eatery_id'>".$eatery_1."</a></li>";
 							}
 						    ?>
                         </ul>
