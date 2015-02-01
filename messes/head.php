@@ -46,11 +46,11 @@ require '../partials/footer.php';
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $Mess_1 ;?></title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/hostel.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
+		<link href="../eateries/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../eateries/css/hostel.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../eateries/css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
+		<script src="../eateries/js/bootstrap.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
@@ -154,7 +154,7 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            html { font-size: 62.5%; }
+            <!--html { font-size: 62.5%; }
 			body { font-size: 1em;}
 
 			@media (max-width: 300px) {
@@ -183,20 +183,23 @@ require '../partials/footer.php';
 			}
 			@media (min-width: 1200px) {
 				html { font-size: 102%; }
-			}
+			}-->
 		</style>
-	<script>
-			$(document).ready(function(){
-				$(".wheel-button").wheelmenu({
-			trigger: "hover",
-			animation: "fly",
-			animationSpeed: "fast"
-					});
-			});
-			
-	</script>
+		<script>
+				$(document).ready(function(){
+					$(".wheel-button").wheelmenu({
+				trigger: "hover",
+				animation: "fly",
+				animationSpeed: "fast"
+						});
+				});
+				
+		</script>
 	</head>
 	<body>
+	<?php
+		include "../includes/navbar.php";
+	?>
 		<div class="wrapper">
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
 				<a href="#wheel" class="wheel-button nw">
@@ -214,9 +217,6 @@ require '../partials/footer.php';
 				</ul>
 			</div>
 		</div>          
-		<?php
-			include "../includes/navbar.php";
-		?>
 		<div class="container-fluid contain1">
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
@@ -230,8 +230,7 @@ require '../partials/footer.php';
 				</div>
 			</div>
 		</div>
-       </div>
-		<div class="container-fluid">
+		<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-bottom:10%;">
 				<?php
 					$Mess_10= explode("/",$Mess_5);
 					$a= sizeof($Mess_10);
@@ -239,7 +238,8 @@ require '../partials/footer.php';
 					$c=($a-$b)/3;
 					for($d=0;$d<$c+1;$d++)
 					{
-						echo "<div class='row' style='margin-top:2%;'>";
+						$s= 2*$d;
+						echo "<div class='row' style='margin-top:".$s."%;'>";
 						$g= $d*3;
 						$f= 3+$g ;
 						if($a==(3*$d+$b))
@@ -252,7 +252,7 @@ require '../partials/footer.php';
 							$Mess_12= explode(",",$Mess_11);
 							$Mess_13= explode("_",$Mess_12[0]);
 							$Mess_14= implode(" ",$Mess_13);
-							echo "<div class='col-md-2 screen1 col-lg-3 slum' id=s".$e." style='margin-left:1%;'>";
+							echo "<div class='col-md-3 screen". (($e%3)+1) ." col-lg-3 slum' id=s".$e." >";
 								echo "<div class='header'>";
 									echo "<p class='oned'>"."Coordinator"."</p>";
 								echo "</div>";

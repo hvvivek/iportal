@@ -47,7 +47,7 @@ require '../partials/footer.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $eatery_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/hostel.css" rel="stylesheet">
+		<link href="css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
@@ -229,34 +229,39 @@ require '../partials/footer.php';
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
-			<div class="col-md-2 screen1 col-lg-3 slum" id="s1">
-					<div class="header">
-						<p class="oned">Manager</p>
-					</div>
-					<div class="slider">
-						<div id="s1">
-							<div class="header1" >
-								<img class="img-circle img-responsive" src="images/photo.png">
-								<p class="hw"><?php
-									echo $eatery_5[2]; ?>
-								</p>
-							</div>
-						</div>
-						<div class="header2">
-							<div class="heal" id="h1" class="hid">
-								<p class="hw">
-								<?php
-									if(strlen($eatery_5[0])!=0){echo "Email Id: ".$eatery_5[0];}?>
-								</p>
-								<p class="hw"><?php
-									if(strlen($eatery_5[1])!=0){echo "Contact No. : ".$eatery_5[1];}?>
-								</p>
-							</div>
-						</div>
-					</div>
-			</div>
 			</div>
 		</div>
+		
+			<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-bottom:10%;">
+				<div class="row">
+					<div class="col-md-3 screen1 col-lg-3 slum" id="s1">
+						<div class="header">
+							<p class="oned">Manager</p>
+						</div>
+						<div class="slider">
+							<div id="s1">
+								<div class="header1" >
+									<img class="img-circle img-responsive" src="images/photo.png">
+									<p class="hw"><?php
+										echo $eatery_5[2]; ?>
+									</p>
+								</div>
+							</div>
+							<div class="header2">
+								<div class="heal" id="h1" class="hid">
+									<p class="hw">
+									<?php
+										if(strlen($eatery_5[0])!=0){echo "Email Id: ".$eatery_5[0];}?>
+									</p>
+									<p class="hw"><?php
+										if(strlen($eatery_5[1])!=0){echo "Contact No. : ".$eatery_5[1];}?>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 		<script type="text/javascript" src="js/skrollr.js"></script>
 		<script type="text/javascript">skrollr.init();</script>
