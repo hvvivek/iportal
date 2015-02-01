@@ -289,10 +289,8 @@ mysql_select_db($db);
 		while($mess = mysql_fetch_array($result))
 		{
 			$inc++;
-			$mess_0= explode("-",$mess['Mess']);
-			$mess_1= implode("",$mess_0);
 			$mess_id= $mess['ID'];
-			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess_1."</p>"."</div>"."</a>";
+			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 		}
 	?>
 </div>
