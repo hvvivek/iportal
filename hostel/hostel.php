@@ -6,6 +6,7 @@ $pwd="Sai@271295";
 $db="i-portal";
 $conn = mysql_connect($server,$user,$pwd);
 mysql_select_db("i-portal");
+<<<<<<< HEAD
 $id=$_GET["id"];
 $sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";
 $sql2="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=2";
@@ -48,6 +49,10 @@ $row7=mysqli_fetch_assoc($data7);
 $data8=mysqli_query($conn,$sql8);
 $row8=mysqli_fetch_assoc($data8);
 $sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
+=======
+$id=$_GET['varname'];
+$sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
+>>>>>>> 7f774b67a8aee23dbeaffa894c89dc43094f4b22
 $data=mysql_query($sql);
 $row=mysql_fetch_assoc($data);
 $name=$row["Hostel_Name"];
@@ -57,7 +62,6 @@ $lng=$row["Longitude"];
 <!DOCTYPE html>
 <?php     
 require '../includes/signin.php';
-require '../partials/footer.php'
 ?>
 <html>
 <head>
@@ -65,21 +69,14 @@ require '../partials/footer.php'
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $name;?> hostel</title>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-
-        <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
-
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<link href="../css/hostel.css" rel="stylesheet" />
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
-
-		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hostel.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
@@ -181,23 +178,6 @@ require '../partials/footer.php'
 </script>
 </head>
 <body>
-		<div class="wrapper">
-			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-				<a href="#wheel" class="wheel-button nw">
-					<span class="glyphicon glyphicon-th-large"></span>
-				</a>
-				<ul id="wheel"  data-angle="NW">
-						<li class="item"><a href="#home">SL</a></li>
-						<li class="item"><a href="#home">BS</a></li>
-						<li class="item"><a href="#home">NP</a></li>
-						<li class="item"><a href="#home">IP</a></li>
-						<li class="item"><a href="#home">FB</a></li>
-						<li class="item"><a href="#home">EW</a></li>
-						<li class="item"><a href="#home">VC</a></li>
-						<li class="item"><a href="#home">H</a></li>
-				</ul>
-			</div>
-		</div>
         <?php
 			require '../includes/navbar.php'
         ?>
@@ -223,6 +203,7 @@ require '../partials/footer.php'
 	</nav>
 </div>
 <div class="container-fluid">
+<<<<<<< HEAD
 	<div class="row">
 		<div id="main-content">
 			<div class="col-md-11 col-lg-11" style="padding-left:5%;">		
@@ -455,34 +436,119 @@ require '../partials/footer.php'
 					</div>
 			</div>
 		</div>
+=======
+			<?php
+				require 'sidebar.php'
+	        ?>
+		<div class="col-md-10">	
+					<?php
+						$sno=1;
+						while($sno<=8)
+						{
+							$query="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no='{$sno}'";
+							$result=mysql_query($query);
+							$sec=mysql_fetch_assoc($result);
+							if($sno==1||$sno==4||$sno==7)
+							{echo "
+									<div class='col-md-4 screen screen12 slum'>
+										<div class='header'>
+											<p class='oned'>".$sec['post']."</p>
+										</div>
+										<div class='slider'>
+											<div id='s1'>
+												<div class='header1'>
+													<img class='img-circle img-responsive hidden-xs hidden-sm' src='img/photo.png'>
+													<p class='hw'>".ucwords(strtolower(str_replace("."," ",$sec["name"]))).
+													"</p>
+												</div>
+											</div>
+											<div class='header2'>
+												<div class='heal' id='h1' class='hid'>
+													<p>";
+													if(strlen($sec["username"])!=0)
+													{
+														echo "Roll no : ".$sec["username"];
+													}
+													echo "</p>
+												<p>";
+													if(strlen($sec["room"])!=0)
+													{
+														echo "Room no : ".$sec["room"];
+													}
+												echo "</p>
+												<p>";
+													if(strlen($sec["contact_no"])!=0)
+														{
+															echo "Contact no : ".$sec["contact_no"];
+														}
+												echo "</p>
+												<p>";
+													if(strlen($sec["email_id"])!=0)
+													{
+														echo "Email id : ".str_split($sec["email_id"],25)[0];
+													}
+												echo 
+												"</p>
+												</div>
+											</div>
+										</div>
+									</div>";
+								}
+								else
+								{
+									echo "
+									<div class='col-md-4 screen slum'>
+										<div class='header'>
+											<p class='oned'>".$sec['post']."</p>
+										</div>
+										<div class='slider'>
+											<div id='s1'>
+												<div class='header1'>
+													<img class='img-circle img-responsive hidden-xs hidden-sm' src='img/photo.png'>
+													<p class='hw'>".ucwords(strtolower(str_replace("."," ",$sec["name"]))).
+													"</p>
+												</div>
+											</div>
+											<div class='header2'>
+												<div class='heal' id='h1' class='hid'>
+													<p>";
+													if(strlen($sec["username"])!=0)
+													{
+														echo "Roll no : ".$sec["username"];
+													}
+													echo "</p>
+												<p>";
+													if(strlen($sec["room"])!=0)
+													{
+														echo "Room no : ".$sec["room"];
+													}
+												echo "</p>
+												<p>";
+													if(strlen($sec["contact_no"])!=0)
+														{
+															echo "Contact no : ".$sec["contact_no"];
+														}
+												echo "</p>
+												<p>";
+													if(strlen($sec["email_id"])!=0)
+													{
+														echo "Email id : ".$sec["email_id"];
+													}
+												echo 
+												"</p>
+												</div>
+											</div>
+										</div>
+									</div>";
+								}
+							$sno++;
+						}
+					?>
+>>>>>>> 7f774b67a8aee23dbeaffa894c89dc43094f4b22
 	</div>
-<!--Modal-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><?php echo $name;?> Hostel</h4>
-      </div>
-      <div class="modal-body">
-        <div id="googleMap" style="height:500px;"></div>
-      </div>
-    </div>
-  </div>
-</div>	
+</div>
 <script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
 <script type="text/javascript" src="../js/skrollr.js"></script>
-<script type="text/javascript">skrollr.init();</script>
-<!--Alternative Footer		
-		<div id="footer">
-			<div class="container-fluid footer-container">
-      				<ul class="nav navbar-nav navbar-left done">
-        				<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
-        				<li class="book"><a href="#">About us</a></li>
-        				<li class="book"><a href="#">Contact us</a></li>
-        			</ul>
-        	</div>
-    	</div>
--->		
+<script type="text/javascript">skrollr.init();</script>	
 </body>
 </html>

@@ -152,7 +152,6 @@ body
 .screen1,.screen2,.screen3 {
 	background-color:white!important;
     box-shadow: 0px 2px 6px #999;
-    position:relative;
     overflow:hidden;
     color:#1abc9c!important;
     margin-top: 1%;
@@ -182,14 +181,6 @@ body
     height:20%;
     color:#1abc9c;
     position:relative;
-}
-.header2
-{
-	float:left;
-}
-.heal
-{
-	margin-top: 3%;
 }
 .oned{
 	position:relative;
