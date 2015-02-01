@@ -109,37 +109,6 @@ require '../partials/footer.php'
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			/*html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
-			@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 100%; }
-			}*/
-            
 </style>
 <meta chaset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -246,37 +215,8 @@ require '../partials/footer.php'
     	</div>
 	</nav>
 </div>
-<div id="page-wrap">
 <div class="container-fluid">
 	<div class="row">
-		<div class="sidebar col-md-1 col-lg-1">
-			<ul class="nav nav-sidebar" id="my-nav">
-<div class="container-fluid contain1">
-	<div class="row">
-		<div class="sidebar col-md-2 col-lg-2">
-			<ul class="nav nav-sidebar">
-				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
-				<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
-				<li class="bull"><a href='office_details.php' class="kill">Hostel office-details</a></li>
-				<li class="bull"><a href='#' class="kill">Hostel services</a></li>
-				<li class="bull"><a href='#' class="kill">Litsoc</a></li>
-				<li class="bull"><a href='#' class="kill">Techsoc</a></li>
-				<li class="bull"><a href='#' class="kill">Schroeter</a></li>
-				<li class="bull"><a href='#' class="kill">Alumni</a></li>
-				<form action="map/location.php" id="fmap" method="GET">
-          					<input class="input" name="name" value=<?php echo $name;?>>
-          					<input class="input" name="lat" value=<?php echo $lat;?>>
-							<input class="input" name="lng" value=<?php echo $lng;?>>
-							<ul class="nav nav-sidebar">
-							<li class="bull"><a href="#" class="kill" onclick="document.getElementById('fmap').submit();">Location</a></li> 
-							</ul>
-		 		</form>
-				<!--
-				<li ><div id="googleMap" class="col-md-12"></div></li>
-				-->
-			</ul>
-		</div>
-	</div>
 		<div id="main-content">
 			<div class="col-md-11 col-lg-11" style="padding-left:5%;">		
 					<div class="row">
