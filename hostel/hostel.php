@@ -6,15 +6,15 @@ $pwd="Sai@271295";
 $db="i-portal";
 $conn = mysql_connect($server,$user,$pwd);
 mysql_select_db("i-portal");
-$id=$_GET['varname'];
-$sql1="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=1";
-$sql2="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=2";
-$sql3="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=3";
-$sql4="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=4";
-$sql5="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=5";
-$sql6="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=6";
-$sql7="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=7";
-$sql8="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no=8";
+$id=$_GET["id"];
+$sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";
+$sql2="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=2";
+$sql3="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=3";
+$sql4="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=4";
+$sql5="SELECT * FROM contacts WHERE Hostel_id='{$id}'and S_no=5";
+$sql6="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=6";
+$sql7="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=7";
+$sql8="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=8";
 $data1=mysql_query($sql1);
 $row1=mysql_fetch_assoc($data1);
 $data2=mysql_query($sql2);
@@ -31,12 +31,28 @@ $data7=mysql_query($sql7);
 $row7=mysql_fetch_assoc($data7);
 $data8=mysql_query($sql8);
 $row8=mysql_fetch_assoc($data8);
-$sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
+$data1=mysqli_query($conn,$sql1);
+$row1=mysqli_fetch_assoc($data1);
+$data2=mysqli_query($conn,$sql2);
+$row2=mysqli_fetch_assoc($data2);
+$data3=mysqli_query($conn,$sql3);
+$row3=mysqli_fetch_assoc($data3);
+$data4=mysqli_query($conn,$sql4);
+$row4=mysqli_fetch_assoc($data4);
+$data5=mysqli_query($conn,$sql5);
+$row5=mysqli_fetch_assoc($data5);
+$data6=mysqli_query($conn,$sql6);
+$row6=mysqli_fetch_assoc($data6);
+$data7=mysqli_query($conn,$sql7);
+$row7=mysqli_fetch_assoc($data7);
+$data8=mysqli_query($conn,$sql8);
+$row8=mysqli_fetch_assoc($data8);
+$sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
 $data=mysql_query($sql);
 $row=mysql_fetch_assoc($data);
-$name=$row['hostel_name'];
-$lat=$row['latitude'];
-$lng=$row['longitude'];
+$name=$row["Hostel_Name"];
+$lat=$row["Latitude"];
+$lng=$row["Longitude"];
 ?>							
 <!DOCTYPE html>
 <?php     
@@ -109,12 +125,12 @@ require '../partials/footer.php'
 <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
 <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
-		<script type= "text/javascript">
-			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
-			var lng = parseFloat(document.getElementById('myTable').rows[1].cells[1].innerHTML);
-			var name = document.getElementById('myTable').rows[1].cells[2].innerHTML;
-			var myCenter=new google.maps.LatLng(lat,lng);
-			var map;
+<script>
+		var lat='<?php echo $lat;?>';
+		var lng='<?php echo $lng;?>';
+		var myCenter=new google.maps.LatLng(lat,lng);
+		var myCenter=new google.maps.LatLng(lat,lng);
+		var map;
 			function initialize()
 			{
 				var mapProp = {
@@ -134,7 +150,7 @@ require '../partials/footer.php'
 			});
 			marker.setMap(map);
 			var infowindow = new google.maps.InfoWindow({
-			content: name
+			content: <?php echo $name ;?>
 			});
 			infowindow.open(map,marker);
 			}
@@ -151,8 +167,8 @@ require '../partials/footer.php'
 			//google.maps.event.addDomListener(window, 'load', initialize);
 			function wec(){
 			window.location= "../index.php";
-			}
-		</script>
+				}
+	</script>
 <script>
 		$(document).ready(function(){
 			$(".wheel-button").wheelmenu({
@@ -185,7 +201,6 @@ require '../partials/footer.php'
         <?php
 			require '../includes/navbar.php'
         ?>
-<<<<<<< HEAD
 		<div class="container-fluid contain1">
 			<div class="row">
 				<div class="sidebar col-xs-1 col-sm-1 col-md-2 col-lg-2">
@@ -198,7 +213,7 @@ require '../partials/footer.php'
 							<li class="bull"><a href='#' class="kill">Techsoc</a></li>
 							<li class="bull"><a href='#' class="kill">Schroeter</a></li>
 							<li class="bull"><a href='#' class="kill">Alumni</a></li>
-							<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
+						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
 			</div>
@@ -207,67 +222,237 @@ require '../partials/footer.php'
     	</div>
 	</nav>
 </div>
-=======
->>>>>>> 65281c2d8fa92a6fb778773d3b56c118f4d005ae
 <div class="container-fluid">
 	<div class="row">
 		<div id="main-content">
-			<div class="col-md-12 col-lg-11">		
-					<?php
-						$sno=1;
-						while($sno<=2)
-						{
-							$query="SELECT * FROM contacts WHERE hostel_id='{$id}' and s_no='{$sno}'";
-							$result=mysql_query($query);
-							$sec=mysql_fetch_assoc($result);
-							echo "<div class='row'>
-									<div class='col-md-3 screen1 col-lg-3 slum'>
-										<div class='header'>
-											<p class='oned'>".$sec['post']."</p>
-										</div>
-										<div class='slider'>
-											<div id='s1'>
-												<div class='header1'>
-													<img class='img-circle img-responsive hidden-xs hidden-sm' src='img/photo.png'>
-													<p class='hw'>".ucwords(strtolower(str_replace("."," ",$sec["name"]))).
-													"</p>
-												</div>
-											</div>
-											<div class='header2'>
-												<div class='heal' id='h1' class='hid'>
-													<p>";
-													if(strlen($row1["username"])!=0)
-													{
-														echo "Roll no : ".$sec["username"];
-													}
-													echo "</p>
-												<p>";
-													if(strlen($row1["room"])!=0)
-													{
-														echo "Room no : ".$sec["room"];
-													}
-												echo "</p>
-												<p>";
-													if(strlen($row1["contact_no"])!=0)
-														{
-															echo "Contact no : ".$sec["contact_no"];
-														}
-												echo "</p>
-												<p>";
-													if(strlen($row1["email_id"])!=0)
-													{
-														echo "Email id : ".$sec["email_id"];
-													}
-												echo 
-												"</p>
-										</div>
+			<div class="col-md-11 col-lg-11" style="padding-left:5%;">		
+					<div class="row">
+						<div class="col-md-3 screen1 col-lg-3 slum" id="s1">
+							<div class="header">
+								<p class="oned">General Secretary</p>
+							</div>
+						<div class="slider">
+								<div id="s1">
+									<div class="header1" >
+										<img class="img-circle img-responsive hidden-xs hidden-sm" src="img/photo.png">
+										<p class="hw">
+										<?php
+											echo ucwords(strtolower(str_replace("."," ",$row1["Name"])));
+										?>
+										</p>
 									</div>
+								</div>
+							<div class="header2">
+								<div class="heal" id="h1" class="hid">
+										<p>
+										<?php
+											if(strlen($row1["username"])!=0){echo "Roll no : ".$row1["username"];}
+										?>
+										</p>
+										<p>
+										<?php
+											if(strlen($row1["Room"])!=0){echo "Room no : ".$row1["Room"];}
+										?>
+										</p>
+										<p>
+										<?php
+											if(strlen($row1["Contact_no"])!=0){echo "Contact no : ".$row1["Contact_no"];}
+										?>
+										</p>
+										<p>
+										<?php
+											if(strlen($row1["Email_id"])!=0){echo "Email id : ".$row1["Email_id"];}
+										?>
+										</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="col-md-3 screen2 col-lg-3 slum" style="margin-left:5%">
+							<div class="header">
+								<p class="oned">Mess Secretary</p>
+							</div>
+							<div class="slider">
+								<div class="header1">
+									<img class="img-circle img-responsive" src="img/photo.png">
+									<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row2["Name"])));?>
+									</p>
+								</div>
+								<div class="header2" id="h2">
+									<div class="heal">
+									<p>
+										<?php
+											if(strlen($row2["username"])!=0){echo "Roll no : ".$row2["username"];}?></p>
+										<p><?php
+											if(strlen($row2["Room"])!=0){echo "Room no : ".$row2["Room"];}?></p>
+										<p><?php
+											if(strlen($row2["Contact_no"])!=0){echo "Contact no : ".$row2["Contact_no"];}?></p>
+										<p><?php
+											if(strlen($row2["Email_id"])!=0){echo "Email id : ".$row2["Email_id"];}?></p>
 									</div>
-								</div>";
-							$sno++;
-						}
-					?>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 screen3 col-lg-3 slum" style="margin-left:5%">
+							<div class="header">
+								<p class="oned">Sports Secretary</p>
+							</div>
+							<div class="slider">
+								<div class="header1">
+									<img class="img-circle img-responsive" src="img/photo.png">
+									<p class="hw">
+									<?php
+										echo ucwords(strtolower(str_replace("."," ",$row3["Name"])));
+									?>
+									</p>
+								</div>
+								<div class="header2">
+									<div class="heal" id="h3">
+									<p>
+										<?php
+										if(strlen($row3["username"])!=0){echo "Roll no : ".$row3["username"];}?></p>
+									<p><?php
+										if(strlen($row3["Room"])!=0){echo "Room no : ".$row3["Room"];}?></p>
+									<p><?php
+										if(strlen($row3["Contact_no"])!=0){echo "Contact no : ".$row3["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row3["Email_id"])!=0){echo "Email id : ".$row3["Email_id"];}?></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="row" style="margin-top:2%">
+					<div class="col-md-3 screen1 col-lg-3 slum">
+						<div class="header">
+							<p class="oned">Technical Affairs Secretary</p>
+						</div>
+						<div class="slider">
+							<div id="s4">
+								<div class="header1">
+									<img class="img-circle img-responsive" src="img/photo.png">
+									<p class="hw"><?php
+											echo ucwords(strtolower(str_replace("."," ",$row4["Name"])));?></p>
+								</div>
+							</div>
+							<div class="header2">
+								<div class="heal" id="h4" class="hid">
+									<p>
+									<?php
+										if(strlen($row4["username"])!=0){echo "Roll no : ".$row4["username"];}?></p>
+									<p><?php
+										if(strlen($row4["Room"])!=0){echo "Room no : ".$row4["Room"];}?></p>
+									<p><?php
+										if(strlen($row4["Contact_no"])!=0){echo "Contact no : ".$row4["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row4["Email_id"])!=0){echo "Email id : ".$row4["Email_id"];}?></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 screen2 col-lg-3 slum" style="margin-left:5%">
+						<div class="header">
+							<p class="oned">Literary Affairs Secretary</p>
+						</div>
+						<div class="slider">
+							<div class="header1">
+								<img class="img-circle img-responsive" src="img/photo.png">
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row5["Name"])));?></p>
+							</div>
+							<div class="header2">
+								<div class="heal" id="h5">
+									<p>
+									<?php
+										if(strlen($row5["username"])!=0){echo "Roll no : ".$row5["username"];}?></p>
+									<p><?php
+										if(strlen($row5["Room"])!=0){echo "Room no : ".$row5["Room"];}?></p>
+									<p><?php
+										if(strlen($row5["Contact_no"])!=0){echo "Contact no : ".$row5["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row5["Email_id"])!=0){echo "Email id : ".$row5["Email_id"];}?></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 screen3 col-lg-3 slum" style="margin-left:5%">
+						<div class="header">
+							<p class="oned">Social Affairs Secretary</p>
+						</div>
+						<div class="slider">
+							<div class="header1">
+								<img class="img-circle img-responsive" src="img/photo.png" />
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row6["Name"])));?></p>
+							</div>
+							<div class="header2">
+								<div class="heal" id="h6">
+									<p>
+									<?php
+										if(strlen($row6["username"])!=0){echo "Roll no : ".$row6["username"];}?></p>
+									<p><?php
+										if(strlen($row6["Room"])!=0){echo "Room no : ".$row6["Room"];}?></p>
+									<p><?php
+										if(strlen($row6["Contact_no"])!=0){echo "Contact no : ".$row6["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row6["Email_id"])!=0){echo "Email id : ".$row6["Email_id"];}?></p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+			<div class="row" style="margin-top:2%;">
+				<div class="col-md-3 screen1 col-lg-3 slum">
+					<div class="header">
+						<p class="oned">Garden Secretary</p>
+					</div>
+						<div class="slider">
+							<div class="header1">
+								<img class="img-circle img-responsive" src="img/photo.png">
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row7["Name"])));?></p>
+							</div>
+							<div class="header2">
+								<div class="heal" id="h7">
+								<p>
+									<?php
+										if(strlen($row7["username"])!=0){echo "Roll no : ".$row7["username"];}?></p>
+									<p><?php
+										if(strlen($row7["Room"])!=0){echo "Room no : ".$row7["Room"];}?></p>
+									<p><?php
+										if(strlen($row7["Contact_no"])!=0){echo "Contact no : ".$row7["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row7["Email_id"])!=0){echo "Email id : ".$row7["Email_id"];}?></p>
+							</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-3 screen2 col-lg-3 slum" style="margin-left:5%">
+					<div class="header">
+						<p class="oned">Alumni Affairs Secretary</p>
+					</div>
+						<div class="slider">
+							<div class="header1">
+								<img class="img-circle img-responsive" src="img/photo.png">
+								<p class="hw"><?php
+										echo ucwords(strtolower(str_replace("."," ",$row8["Name"])));?></p>
+							</div>
+							<div class="header2">
+								<div class="heal" id="h8">
+								<p>
+									<?php
+										if(strlen($row8["username"])!=0){echo "Roll no : ".$row8["username"];}?></p>
+									<p><?php
+										if(strlen($row8["Room"])!=0){echo "Room no : ".$row8["Room"];}?></p>
+									<p><?php
+										if(strlen($row8["Contact_no"])!=0){echo "Contact no : ".$row8["Contact_no"];}?></p>
+									<p><?php
+										if(strlen($row8["Email_id"])!=0){echo "Email id : ".$row8["Email_id"];}?></p>
+							</div>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
 	</div>
@@ -298,20 +483,6 @@ require '../partials/footer.php'
         			</ul>
         	</div>
     	</div>
--->	
-		<div class="modal fade" aria-hidden="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0'>
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class='modal-header'>
-						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						<h4 id='location0'>Location</h4>
-					</div>
-					<div class="modal-body">
-						<div id='googleMap1' style="width:100%;height:50%">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
+-->		
 </body>
 </html>

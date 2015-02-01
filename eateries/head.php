@@ -229,10 +229,6 @@ require '../partials/footer.php';
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
-			</div>
-		</div>
-       </div>
-		<div class="container-fluid">
 			<div class="col-md-2 screen1 col-lg-3 slum" id="s1">
 					<div class="header">
 						<p class="oned">Manager</p>
@@ -258,6 +254,7 @@ require '../partials/footer.php';
 							</div>
 						</div>
 					</div>
+			</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
