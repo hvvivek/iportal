@@ -179,7 +179,7 @@ body
     text-align:center;
     width:50%;
     float:left;
-    height:20%;
+    height:20%!important;
     color:#1abc9c;
     position:relative;
 }
@@ -357,7 +357,7 @@ body
 }
 .hw
 {
-	margin-top: 5%;
+	margin-top: 8%;
 	font-size:120%;
 }
 @media screen and (max-height:768px)
