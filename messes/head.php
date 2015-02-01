@@ -1,7 +1,5 @@
 <?php
-session_start();
-?>
-<?php     
+session_start();     
 require '../includes/signin.php';
 require  '../config.php';
 require '../partials/footer.php';
@@ -10,21 +8,21 @@ require '../partials/footer.php';
 	$file= $_GET['varname'];
 	$conn = mysql_connect($host , $username , $password);
 	mysql_select_db("i-portal");
-	$query= "SELECT * FROM eateries WHERE $file=ID";
+	$query= "SELECT * FROM messes WHERE $file=ID";
 	$result= mysql_query($query);
-	while($eatery= mysql_fetch_array($result))
+	while($Mess= mysql_fetch_array($result))
 	{
-		$eatery_0= explode("_",$eatery['Eatery']);
-		$eatery_1= implode(" ",$eatery_0);
-		$eatery_2= explode(",",$eatery['Position']);
-		$eatery_3= explode(",",$eatery['IMenu']);
-		$eatery_4= $eatery['DMenu'];
-		$eatery_5= explode(",",$eatery['MDetails']);
+		$Mess_0= explode("_",$Mess['Mess']);
+		$Mess_1= implode(" ",$Mess_0);
+		$Mess_2= explode(",",$Mess['Position']);
+		$Mess_3= explode(",",$Mess['IMenu']);
+		$Mess_4= $Mess['DMenu'];
+		$Mess_5= $Mess['SDetails'];
 	}
-	function download_file($eatery_4)
+	function download_file($Mess_4)
 	{
 	
-		$file = $eatery_4;
+		$file = $Mess_4;
 	
 			if(file_exists($file))
 				{
@@ -41,14 +39,13 @@ require '../partials/footer.php';
 			else
 				echo("file opening failed");
 	
-	}
-	echo $_SESSION['username'];
+	} 
 ?>
 <html>
 	<head>
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title><?php echo $eatery_1 ;?></title>
+		<title><?php echo $Mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="../css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
@@ -73,13 +70,69 @@ require '../partials/footer.php';
 				</tr>
 				<?php
 					echo "<tr>";
-					echo "<th>". $eatery_2[0] ."</th>";
-					echo "<th>". $eatery_2[1] ."</th>";
-					echo "<th>". $eatery_1 ."</th>";
+					echo "<th>". $Mess_2[0] ."</th>";
+					echo "<th>". $Mess_2[1] ."</th>";
+					echo "<th>". $Mess_1 ."</th>";
 					echo "</tr>";
 					echo "</table>";
 				?>
 		</div>
+		<script type= "text/javascript">
+			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
+			var lng = parseFloat(document.getElementById('myTable').rows[1].cells[1].innerHTML);
+			var name = document.getElementById('myTable').rows[1].cells[2].innerHTML;
+			var myCenter=new google.maps.LatLng(lat,lng);
+			var map;
+			function initialize()
+			{
+				var mapProp = {
+			center:myCenter,
+			zoom:15,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+			};
+
+			map=new google.maps.Map(document.getElementById("googleMap1"),mapProp);
+
+			var marker=new google.maps.Marker({
+				position:myCenter,
+			});		
+			google.maps.event.addListenerOnce(map, 'idle', function() {
+				google.maps.event.trigger(map, 'resize');
+				map.setCenter(myCenter);
+			});
+			marker.setMap(map);
+			var infowindow = new google.maps.InfoWindow({
+			content: name
+			});
+			infowindow.open(map,marker);
+			}
+			function access()
+			{
+				$('#Modal0').modal('show');
+				initialize();
+				/*setTimeout(function(){
+					
+					google.maps.event.trigger(map, "resize");
+					map.setCenter(myCenter);
+					},3000);*/
+			}		
+			//google.maps.event.addDomListener(window, 'load', initialize);
+			function ajax_3(param){
+			var id= param;
+			alert(id);
+			$.ajax({
+				url: "download_file.php",
+				type: "post",
+				data: {uploadid: param},
+				success: function(){
+					window.location= 'download_file.php';
+				}
+			});
+			}
+			function wec(){
+			window.location= "../index.php";
+				}
+		</script>
 		<style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
@@ -101,7 +154,7 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			            html { font-size: 62.5%; }
+            html { font-size: 62.5%; }
 			body { font-size: 1em;}
 
 			@media (max-width: 300px) {
@@ -131,71 +184,7 @@ require '../partials/footer.php';
 			@media (min-width: 1200px) {
 				html { font-size: 102%; }
 			}
-            
 		</style>
-		<script type= "text/javascript">
-		var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
-		var lng = parseFloat(document.getElementById('myTable').rows[1].cells[1].innerHTML);
-		var name = document.getElementById('myTable').rows[1].cells[2].innerHTML;
-		var myCenter=new google.maps.LatLng(lat,lng);
-		var map;
-		function initialize()
-		{
-			var mapProp = {
-		center:myCenter,
-		zoom:15,
-		mapTypeId:google.maps.MapTypeId.ROADMAP
-		};
-
-		map=new google.maps.Map(document.getElementById("googleMap1"),mapProp);
-
-		var marker=new google.maps.Marker({
-			position:myCenter,
-		});		
-		google.maps.event.addListenerOnce(map, 'idle', function() {
-			google.maps.event.trigger(map, 'resize');
-			map.setCenter(myCenter);
-		});
-		marker.setMap(map);
-		var infowindow = new google.maps.InfoWindow({
-		content: name
-		});
-		infowindow.open(map,marker);
-		}
-		function access()
-		{
-			$('#Modal0').modal('show');
-			initialize();
-			/*setTimeout(function(){
-				
-				google.maps.event.trigger(map, "resize");
-				map.setCenter(myCenter);
-				},3000);*/
-		}		
-		//google.maps.event.addDomListener(window, 'load', initialize);
-		function ajax_3(param){
-		var id= param;
-		alert(id);
-		$.ajax({
-			url: "download_file.php",
-			type: "post",
-			data: {uploadid: param},
-			success: function(){
-				window.location= 'download_file.php';
-			}
-		});
-		}
-		function wec(){
-			window.location= "../index.php";
-		}
-		$('.heal').css('font-size', ($(window).width()*0.01)+'px');
-		$('.nav-sidebar').css('font-size', ($(window).width()*0.01)+'px');
-		$('#hos').css('font-size', ($(window).width()*0.01)+'px');
-		$('.hw').css('font-size', ($(window).width()*0.01)+'px');
-		$('.b2').css('font-size', ($(window).width()*0.01)+'px');
-		$('.oned').css('font-size', ($(window).width()*0.01)+'px');
-
-	</script>
 	<script>
 			$(document).ready(function(){
 				$(".wheel-button").wheelmenu({
@@ -224,7 +213,7 @@ require '../partials/footer.php';
 						<li class="item"><a href="#home">H</a></li>
 				</ul>
 			</div>
-		</div>
+		</div>          
         <div id="skrollr-body">  
             <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
                 <nav>
@@ -253,8 +242,8 @@ require '../partials/footer.php';
             
             <div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
                 <nav>
-                    <span class='col-xs-2' ><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-						<b>Information&nbsp;Portal</b>&nbsp;</div>
+                    <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
+                        <b>Information&nbsp;Portal</b>&nbsp;</div>
                     </span>
 					<span class='col-xs-1'><div class='btn2 col-xs-12 pull-left'  id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
 						</div>
@@ -303,7 +292,7 @@ require '../partials/footer.php';
 										$eatery_6= explode("_",$eatery['Eatery']);
 										$eatery_7= implode(" ",$eatery_6);
 										$eatery_id= $eatery['ID'];
-										echo "<li><a href='eateries.php?varname=$eatery_id'>".$eatery_7."</a></li>";
+										echo "<li><a href='../eateries/eateries.php?varname=$eatery_id'>".$eatery_7."</a></li>";
 									}
 							?>
                         </ul></span>
@@ -331,75 +320,83 @@ require '../partials/footer.php';
                     </div>
                 </nav>
             </div>
-        </div>
-	<div class="container-fluid contain1">
+		<div class="container-fluid contain1">
 			<div class="row">
-				<div class="sidebar col-md-2 col-lg-2">
+				<div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='#' id="hos"><?php echo $eatery_1; ?></a></li>
-						<li class="bull"><a href='eateries.php?varname=<?php echo $file; ?>' class="kill">Timings</a></li>
+						<li class="bull"><a href='#' id="hos"><?php echo $Mess_1; ?></a></li>
+						<li class="bull"><a href='messes.php?varname=<?php echo $file; ?>' class="kill">Timings</a></li>						
 						<li class="bull"><a href='menu.php?varname=<?php echo $file; ?>' class="kill">Menu</a></li>
-						<li class="bull"><a href='head.php?varname=<?php echo $file; ?>' class="kill">Managers</a></li>
-						<li class="bull"><a href='shead.php?varname=<?php echo $file; ?>' class="kill">Student Incharges</a></li>	
+						<li class="bull"><a href='shead.php?varname=<?php echo $file; ?>' class="kill">Student Incharges</a></li>
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
-				<div class="col-md-4 col-lg-4">
-				</div>
-				<div class="col-md-5 col-lg-5">
-					<table class="table table-striped table-bordered">
-					<tr>
-						<th>S NO</th>
-						<th>Day of the week</th>
-						<th>Open Time</th>
-						<th>Close Time</th>
-					</tr>
-					<tr>
-						<?php
-							$query= "SELECT * FROM eateries WHERE $file=ID";
-								$result= mysql_query($query);
-								while($eatery= mysql_fetch_array($result))
-								{
-									$eatery_8= explode("/",$eatery['Timings']);
-									for($a=0;$a<(sizeof($eatery_8));$a++)
-									{
-										echo "<tr>";
-										echo "<td>".($a+1)."</td>";
-										$eatery_9= explode("_",$eatery_8[$a]);
-										for($b=0; $b<(sizeof($eatery_9)); $b++)
-										{
-											$eatery_10= explode(",",$eatery_9[$b]);
-											$eatery_10= implode(" ",$eatery_10);
-											echo "<td>".$eatery_10."</td>";
-										}
-										echo "</tr>";
-									}
-								}
-						?>
-					</tr>
-					</table>
-				</div>
 			</div>
-
-			</div>
-	</div>
-				<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0' aria-hidden="false">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class='modal-header'>
-								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-								<h4 id='location0'>Location</h4>
-							</div>
-							<div class="modal-body">
-								<div id='googleMap1' style="width:100%;height:50%">
-								</div>
-							</div>
-						</div>
+		</div>
+       </div>
+		<div class="container-fluid">
+				<?php
+					$Mess_10= explode("/",$Mess_5);
+					$a= sizeof($Mess_10);
+					$b= $a%3;
+					$c=($a-$b)/3;
+					for($d=0;$d<$c+1;$d++)
+					{
+						echo "<div class='row' style='margin-top:2%;'>";
+						$g= $d*3;
+						$f= 3+$g ;
+						if($a==(3*$d+$b))
+						{
+							$f=$a;
+						}
+						for($e=$g;$e<$f;$e++)
+						{
+							$Mess_11= $Mess_10[$e];
+							$Mess_12= explode(",",$Mess_11);
+							$Mess_13= explode("_",$Mess_12[0]);
+							$Mess_14= implode(" ",$Mess_13);
+							echo "<div class='col-md-2 screen1 col-lg-3 slum' id=s".$e." style='margin-left:1%;'>";
+								echo "<div class='header'>";
+									echo "<p class='oned'>"."Coordinator"."</p>";
+								echo "</div>";
+								echo "<div class='slider'>";
+									echo "<div id='s1'>";
+										echo "<div class='header1'>";
+											echo "<img class='img-circle img-responsive' src='images/photo.png'>";
+											echo "<p class='hw'>".$Mess_14."</p>";
+										echo "</div>";
+									echo "</div>";
+									echo "<div class='header2'>";
+										echo "<div class='heal' id='h1' class='hid'>";
+											echo "<p class='hw'>"."Roll No : ".$Mess_12[1]."</p>";
+											echo "<p class='hw'>"."Contact No. : ".$Mess_12[2]."</p>";
+											echo "<p class='hw'>"."Email ID : ".$Mess_12[3]."</p>";
+										echo "</div>";
+									echo "</div>";
+								echo "</div>";
+							echo "</div>";
+						}
+						echo "</div>";
+					}
+				?>
+		</div>
+		<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
+		<script type="text/javascript" src="js/skrollr.js"></script>
+		<script type="text/javascript">skrollr.init();</script>
+	</body>
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0' aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class='modal-header'>
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 id='location0'>Location</h4>
+				</div>
+				<div class="modal-body">
+					<div id='googleMap1' style="width:100%;height:50%">
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
 
-	</body>
-	<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
-	<script type="text/javascript" src="js/skrollr.js"></script>
-	<script type="text/javascript">skrollr.init();</script>
-	</html>
+</html>
