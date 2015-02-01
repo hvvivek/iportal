@@ -154,7 +154,7 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-          /*  html { font-size: 62.5%; }
+          <!--/*  html { font-size: 62.5%; }
 			body { font-size: 1em;}
 
 			@media (max-width: 300px) {
@@ -183,7 +183,7 @@ require '../partials/footer.php';
 			}
 			@media (min-width: 1200px) {
 				html { font-size: 102%; }
-			}*/
+			}*/-->
 		</style>
 	<script>
 			$(document).ready(function(){

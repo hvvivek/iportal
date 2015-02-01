@@ -164,7 +164,7 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			/*html { font-size: 62.5%; }
+			<!--/*html { font-size: 62.5%; }
 			body { font-size: 1em;}
 
 			@media (max-width: 300px) {
@@ -193,7 +193,7 @@ require '../partials/footer.php';
 			}
 			@media (min-width: 1200px) {
 				html { font-size: 100%; }
-			}*/
+			}*/-->
             
 		</style>
 		<script>
@@ -227,6 +227,7 @@ require '../partials/footer.php';
 						<li class="item"><a href="#home">H</a></li>
 				</ul>
 			</div>
+		</div>
 		<div class="container-fluid contain1">
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
@@ -241,7 +242,6 @@ require '../partials/footer.php';
 				</div>
 			</div>
 		</div>
-	</div>
 	<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-left:7.5%;padding-bottom:10%;">
 		<div class="row">
 			<div class="col-md-3 screen1 col-lg-3 slum" id="s1">

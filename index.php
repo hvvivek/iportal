@@ -3,7 +3,8 @@ session_start();
 require 'includes/signin.php';
 require  'config.php';
 $db="i-portal";
-$conn = mysqli_connect($host,$username,$password,$db) or die("Error connecting server");
+$conn = mysql_connect($host,$username,$password);
+mysql_select_db($db);
 ?>
     <head>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -132,13 +133,13 @@ $conn = mysqli_connect($host,$username,$password,$db) or die("Error connecting s
 	<div class="container-fluid contain2-fluid">
 	<?php
 		$sql="SELECT * FROM hostel_list";
-		$query=mysqli_query($conn,$sql);
-		$hostel = mysqli_fetch_assoc($query);
+		$query=mysql_query($sql);
+		$hostel = mysql_fetch_assoc($query);
 		$hostel_id=$hostel['hostel_id'];
 		$nick=$hostel['hostel_nick'];
 		echo "<a href='hostel/hostel.php?varname=$hostel_id'>"."<div class= 'small2'>"."<p class='smtext2'>".$nick."</p>"."</div>"."</a>";
 		$inc=0;
-		while($hostel = mysqli_fetch_assoc($query))
+		while($hostel = mysql_fetch_assoc($query))
 		{
 			$inc++;
 			if($inc==11)

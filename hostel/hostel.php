@@ -2,7 +2,7 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="ragasree";
+$pwd="Sai@271295";
 $db="i-portal";
 $conn = mysql_connect($server,$user,$pwd);
 mysql_select_db("i-portal");
@@ -125,36 +125,50 @@ require '../partials/footer.php'
 <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
 <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
-<script>
-		var lat='<?php echo $lat;?>';
-		var lng='<?php echo $lng;?>';
-		var myCenter=new google.maps.LatLng(lat,lng);
-		function initialize()
-		{
-			var mapProp = {
+		<script type= "text/javascript">
+			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
+			var lng = parseFloat(document.getElementById('myTable').rows[1].cells[1].innerHTML);
+			var name = document.getElementById('myTable').rows[1].cells[2].innerHTML;
+			var myCenter=new google.maps.LatLng(lat,lng);
+			var map;
+			function initialize()
+			{
+				var mapProp = {
 			center:myCenter,
 			zoom:15,
 			mapTypeId:google.maps.MapTypeId.ROADMAP
 			};
 
-			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			map=new google.maps.Map(document.getElementById("googleMap1"),mapProp);
 
 			var marker=new google.maps.Marker({
-			position:myCenter,
+				position:myCenter,
+			});		
+			google.maps.event.addListenerOnce(map, 'idle', function() {
+				google.maps.event.trigger(map, 'resize');
+				map.setCenter(myCenter);
 			});
-
 			marker.setMap(map);
 			var infowindow = new google.maps.InfoWindow({
-			content:'<?php echo $name;?>'
+			content: name
 			});
-
 			infowindow.open(map,marker);
-}
-	google.maps.event.addDomListener(window, 'load', initialize);
+			}
+			function access()
+			{
+				$('#Modal0').modal('show');
+				initialize();
+				/*setTimeout(function(){
+					
+					google.maps.event.trigger(map, "resize");
+					map.setCenter(myCenter);
+					},3000);*/
+			}		
+			//google.maps.event.addDomListener(window, 'load', initialize);
 			function wec(){
 			window.location= "../index.php";
 			}
-</script>
+		</script>
 <script>
 		$(document).ready(function(){
 			$(".wheel-button").wheelmenu({
@@ -199,14 +213,7 @@ require '../partials/footer.php'
 							<li class="bull"><a href='#' class="kill">Techsoc</a></li>
 							<li class="bull"><a href='#' class="kill">Schroeter</a></li>
 							<li class="bull"><a href='#' class="kill">Alumni</a></li>
-							<form action="map/location.php" id="fmap" method="GET">
-								<input class="input" name="name" value=<?php echo $name;?>>
-								<input class="input" name="lat" value=<?php echo $lat;?>>
-								<input class="input" name="lng" value=<?php echo $lng;?>>
-								<ul class="nav nav-sidebar">
-									<li class="bull"><a href="#" class="kill" onclick="document.getElementById('fmap').submit();">Location</a></li> 
-								</ul>
-						</form>
+							<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
 			</div>
@@ -476,6 +483,20 @@ require '../partials/footer.php'
         			</ul>
         	</div>
     	</div>
--->		
+-->	
+		<div class="modal fade" aria-hidden="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0'>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class='modal-header'>
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 id='location0'>Location</h4>
+					</div>
+					<div class="modal-body">
+						<div id='googleMap1' style="width:100%;height:50%">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
 </body>
 </html>
