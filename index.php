@@ -2,9 +2,14 @@
 session_start();   
 require 'includes/signin.php';
 require  'config.php';
+<<<<<<< HEAD
 $db="i-portal";
 $conn = mysql_connect($host,$username,$password);
 mysql_select_db($db);
+=======
+mysql_connect($host,$username ,$password);
+mysql_select_db("i-portal");
+>>>>>>> 65281c2d8fa92a6fb778773d3b56c118f4d005ae
 ?>
     <head>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -170,31 +175,35 @@ mysql_select_db($db);
 	?>
 	</div>
 </div>
-<div class="contain3">
-<?php
+<div class="contain3 container">
+	<?php
 		$query= "SELECT * FROM messes";
 		$result= mysql_query($query);
+		$inc=0;
 		while($mess = mysql_fetch_array($result))
 		{
+			$inc++;
 			$mess_0= explode("-",$mess['Mess']);
 			$mess_1= implode("",$mess_0);
 			$mess_id= $mess['ID'];
 			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess_1."</p>"."</div>"."</a>";
 		}
-?>
+	?>
 </div>
-<div class="contain4">
-<?php
+<div class="contain4 container">
+	<?php
 		$query= "SELECT * FROM eateries";
 		$result= mysql_query($query);
+		$inc=0;
 		while($eatery = mysql_fetch_array($result))
 		{
+			$inc++;
 			$eatery_0= explode("_",$eatery['Eatery']);
 			$eatery_1= implode("",$eatery_0);
 			$eatery_id= $eatery['ID'];
 			echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4'>"."<p class='smtext4'>".$eatery_1."</p>"."</div>"."</a>";
 		}
-?>
+	?>
 </div>
 <div class="contain5">
 <a href="#"><div class="small5"><p class="smtext5">Travel</p></div></a>
