@@ -2,21 +2,14 @@
 session_start();   
 require 'includes/signin.php';
 require  'config.php';
-$conn = mysql_connect($host , $username , $password);
-mysql_select_db("i-portal");
-require 'partials/footer.php';
+$db="i-portal";
+$conn = mysqli_connect($host,$username,$password,$db) or die("Error connecting server");
 ?>
     <head>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-        <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="js/jquery.min.js"></script>
@@ -50,36 +43,6 @@ require 'partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
-			@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 102%; }
-			}
        </style>
 	   	<script>
 		$(document).ready(function(){
@@ -109,132 +72,22 @@ require 'partials/footer.php';
 			<div class="main">
 				<a href="#wheel" class="wheel-button nw">
 					<span class="glyphicon glyphicon-th-large"></span>
-        
 				</a>
 				<ul id="wheel"  data-angle="NW">
-						<li class="item"><a href="#home">SL</a></li>
-						<li class="item"><a href="#home">BS</a></li>
-						<li class="item"><a href="#home">NP</a></li>
-						<li class="item"><a href="#home">IP</a></li>
-						<li class="item"><a href="#home">FB</a></li>
-						<li class="item"><a href="#home">EW</a></li>
-						<li class="item"><a href="#home">VC</a></li>
-						<li class="item"><a href="#home">H</a></li>
-        
+					<li class="item"><a href="#home">SL</a></li>
+					<li class="item"><a href="#home">BS</a></li>
+					<li class="item"><a href="#home">NP</a></li>
+					<li class="item"><a href="#home">IP</a></li>
+					<li class="item"><a href="#home">FB</a></li>
+					<li class="item"><a href="#home">EW</a></li>
+					<li class="item"><a href="#home">VC</a></li>
+					<li class="item"><a href="#home">H</a></li>
 				</ul>
-   
 			</div>
 		</div>
-
-        <div id="skrollr-body">
-            
-            <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
-                <nav>
-                    <ul>
-                        <li class='col-xs-5 col-md-3 pull-left'>
-                            <span class='col-xs-12' id='dnb_logo'>
-                                <p><b>Students&nbsp;</b>Portal</p>
-                            </span>
-                        </li>
-                        
-
-                        
-                        <li class='col-xs-5 col-md-6'>
-                            <div class="input-group col-xs-12">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Go</button>
-                                </span>
-                                
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-            
-            <div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
-                <nav>
-                    <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' onclick = "wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                        <b>Information &nbsp;Portal</b>&nbsp;</div>
-                    </span>
-					<span class='col-xs-1'><div class='btn2 col-xs-12 pull-left'  id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                     </div>
-                    </span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM hostel_list";
-								$result= mysql_query($query);
-								while($hostel= mysql_fetch_array($result))
-									{
-										$hostel_0= explode("_",$hostel['Hostel_Name']);
-										$hostel_1= implode(" ",$hostel_0);
-										$hostel_id= $hostel['Hostel_id'];
-										echo "<li><a href='hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Messes &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM messes";
-								$result= mysql_query($query);
-								while($mess= mysql_fetch_array($result))
-									{
-										$mess_6= explode("_",$mess['Mess']);
-										$mess_7= implode(" ",$mess_6);
-										$mess_id= $mess['ID'];
-										echo "<li><a href='messes/messes.php?varname=$mess_id'>".$mess_7."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Eateries &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM eateries";
-								$result= mysql_query($query);
-								while($eatery= mysql_fetch_array($result))
-									{
-										$eatery_0= explode("_",$eatery['Eatery']);
-										$eatery_1= implode(" ",$eatery_0);
-										$eatery_id= $eatery['ID'];
-										echo "<li><a href='eateries/eateries.php?varname=$eatery_id'>".$eatery_1."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Others &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-							<li><a href='#'>Travel</a></li>
-							<li><a href='#'>Xerox</a></li>
-							<li><a href='#'>Giftshop</a></li>
-							<li><a href='#'>Haircare</a></li>
-                        </ul></span>
-                    <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
-                        <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
-                            <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
-								 <?php echo $_SESSION['username']; ?>
-                                <span class="caret"></span>
-							</span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Settings</a></li>
-							<li><a href="../includes/signout.php">Sign Out</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        </div>
+		<?php
+		require 'includes/navbar.php'
+        ?>
     
     <script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
     <script type="text/javascript" src="js/skrollr.js"></script>
@@ -242,7 +95,7 @@ require 'partials/footer.php';
 <div class="container-fluid">
 <div class="row-fluid">
 <div class="col-md-12">
-<div class="contain" style="margin-top:5%; padding-top:0;height:240px;">
+<div class="contain" style="margin-top:4%; padding-top:0;height:240px;">
 	<div class="big" id="one">
 		<div class="menutitle"></div>
 		<div class="inbig"></div>
@@ -271,87 +124,52 @@ require 'partials/footer.php';
 </div>
 </div>
 <div class="container-fluid">
-<div class="row-fluid" style="margin-top:5%;">
-	
+	<div class="row-fluid" style="margin-top:2%;">
 		<div class="loading" style="margin-left:-1%;"></div>
-	
+	</div>
 </div>
-</div>
-<div class="container-fluid">
-<div class="row-fluid">
-<div class="col-md-12">
-<div class="contain2">
-<form id="fid1" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=1>
-	<a href="#" onclick="document.getElementById('fid1').submit();"><div class="small2"><p class="smtext2">Alak</p></div></a>
-</form>
-<form id="fid2" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=2>
-	<a href="#" onclick="document.getElementById('fid2').submit();"><div class="small2"><p class="smtext2">Brahms</p></div></a>
-</form>
-<form id="fid3" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=3>
-	<a href="#" onclick="document.getElementById('fid3').submit();"><div class="small2"><p class="smtext2">Cauvery</p></div></a>
-</form>
-<form id="fid4" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=4>
-	<a href="#" onclick="document.getElementById('fid4').submit();"><div class="small2"><p class="smtext2">Ganga</p></div></a>
-</form>
-<form id="fid5" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=5>
-	<a href="#" onclick="document.getElementById('fid5').submit();"><div class="small2"><p class="smtext2">Godav</p></div></a>
-</form>
-<form id="fid6" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=6>
-	<a href="#" onclick="document.getElementById('fid6').submit();"><div class="small2"><p class="smtext2">Jam</p></div></a>
-</form>
-<form id="fid7" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=7>
-	<a href="#" onclick="document.getElementById('fid7').submit();"><div class="small2"><p class="smtext2">Krishna</p></div></a>
-</form>
-<form id="fid8" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=8>
-	<a href="#" onclick="document.getElementById('fid8').submit();"><div class="small2"><p class="smtext2">Mahanadi</p></div></a>
-</form>
-<form id="fid9" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=9>
-	<a href="#" onclick="document.getElementById('fid9').submit();"><div class="small2"><p class="smtext2">Mandak</p></div></a>
-</form>
-<form id="fid10" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=10>
-	<a href="#" onclick="document.getElementById('fid10').submit();"><div class="small2"><p class="smtext2">Narmada</p></div></a>
-</form>
-<form id="fid17" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=11>
-	<a href="#" onclick="document.getElementById('fid17').submit();"><div class="small2"><p class="smtext2">Pampa</p></div></a>
-</form>
-<form id="fid12" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=12>
-	<a href="#" onclick="document.getElementById('fid12').submit();"><div class="small2"><p class="smtext2">Saras</p></div></a>
-</form>
-<form id="fid13" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=13>
-	<a href="#" onclick="document.getElementById('fid13').submit();"><div class="small2"><p class="smtext2">Sarayu</p></div></a>
-</form>
-<form id="fid14" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=14>
-	<a href="#" onclick="document.getElementById('fid14').submit();"><div class="small2"><p class="smtext2">Sharav</p></div></a>
-</form>
-<form id="fid15" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=15>
-	<a href="#" onclick="document.getElementById('fid15').submit();"><div class="small2"><p class="smtext2">Sindhu</p></div></a>
-</form>
-<form id="fid16" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=16>
-	<a href="#" onclick="document.getElementById('fid16').submit();"><div class="small2"><p class="smtext2">Tambi</p></div></a>
-</form>
-<form id="fid17" action="hostel/hostel.php" method="GET">
-	<input class="input" name="id" value=17>
-	<a href="#" onclick="document.getElementById('fid17').submit();"><div class="small2"><p class="smtext2">Tapti</p></div></a>
-</form>
+<div class="contain2 container">
+	<div class="container-fluid contain2-fluid">
+	<?php
+		$sql="SELECT * FROM hostel_list";
+		$query=mysqli_query($conn,$sql);
+		$hostel = mysqli_fetch_assoc($query);
+		$hostel_id=$hostel['hostel_id'];
+		$nick=$hostel['hostel_nick'];
+		echo "<a href='hostel/hostel.php?varname=$hostel_id'>"."<div class= 'small2'>"."<p class='smtext2'>".$nick."</p>"."</div>"."</a>";
+		$inc=0;
+		while($hostel = mysqli_fetch_assoc($query))
+		{
+			$inc++;
+			if($inc==11)
+			{
+				$hostel_id=$hostel['hostel_id'];
+				$nick=$hostel['hostel_nick'];
+				echo "<a href='hostel/hostel.php?varname=$hostel_id'>"."<div class= 'small2 child1 child2 child31'>"."<p class='smtext2'>".$nick."</p>"."</div>"."</a>";
+			}
+			else if($inc==10)
+			{
+				$hostel_id=$hostel['hostel_id'];
+				$nick=$hostel['hostel_nick'];
+				echo "<a href='hostel/hostel.php?varname=$hostel_id'>"."<div class= 'small2 child1 child2 child3 child32'>"."<p class='smtext2'>".$nick."</p>"."</div>"."</a>";
+			}
+			else if($inc==15)
+			{
+				$hostel_id=$hostel['hostel_id'];
+				$nick=$hostel['hostel_nick'];
+				echo "<a href='hostel/hostel.php?varname=$hostel_id'>"."<div class= 'small2 child1 child21 child3'>"."<p class='smtext2'>".$nick."</p>"."</div>"."</a>";
+			}
+			else
+			{
+				$hostel_id=$hostel['hostel_id'];
+				$nick=$hostel['hostel_nick'];
+				echo "<a href='hostel/hostel.php?varname=$hostel_id'>"."<div class= 'small2 child1 child2 child3'>"."<p class='smtext2'>".$nick."</p>"."</div>"."</a>";
+			}
+		}
+	?>
+	</div>
 </div>
 <div class="contain3">
-<div class="blurmenu" ></div>
 <?php
 		$query= "SELECT * FROM messes";
 		$result= mysql_query($query);
@@ -365,7 +183,6 @@ require 'partials/footer.php';
 ?>
 </div>
 <div class="contain4">
-<div class="blurmenu" ></div>
 <?php
 		$query= "SELECT * FROM eateries";
 		$result= mysql_query($query);

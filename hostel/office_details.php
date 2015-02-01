@@ -2,7 +2,7 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="desi5428";
+$pwd="ragasree";
 $db="hostel";
 $conn = mysqli_connect($server,$user,$pwd,$db) or die("Error connecting server");
 $id=$_SESSION["hostel_id"];

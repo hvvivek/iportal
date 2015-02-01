@@ -164,7 +164,7 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			html { font-size: 62.5%; }
+			/*html { font-size: 62.5%; }
 			body { font-size: 1em;}
 
 			@media (max-width: 300px) {
@@ -193,7 +193,7 @@ require '../partials/footer.php';
 			}
 			@media (min-width: 1200px) {
 				html { font-size: 100%; }
-			}
+			}*/
             
 		</style>
 		<script>
@@ -207,7 +207,10 @@ require '../partials/footer.php';
 			
 		</script>
 	</head>
-	<body>
+	<body>            
+        <?php
+			require '../includes/navbar.php'
+        ?>
 		<div class="wrapper">
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
 				<a href="#wheel" class="wheel-button nw">
@@ -224,113 +227,6 @@ require '../partials/footer.php';
 						<li class="item"><a href="#home">H</a></li>
 				</ul>
 			</div>
-		</div>            
-        <div id="skrollr-body">  
-            <div class='col-xs-12' id='dnb_primary' data-0="top:0px;" data-40="top:-140px;">
-                <nav>
-                    <ul>
-                        <li class='col-xs-5 col-md-3 pull-left'>
-                            <span class='col-xs-12' id='dnb_logo'>
-                                <p><b>Students&nbsp;</b>Portal</p>
-                            </span>
-                        </li>
-                        
-
-                        
-                        <li class='col-xs-5 col-md-6'>
-                            <div class="input-group col-xs-12">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Go</button>
-                                </span>
-                                
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-            
-            <div id = 'dnb_sec' class='dnb_secondary col-xs-12'>
-                <nav>
-                    <span class='col-xs-1'><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                        <b>Information&nbsp;Portal</b>&nbsp;</div>
-                    </span>
-					<span class='col-xs-1'><div class='btn2 col-xs-12 pull-left' onclick="wec();" id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                     </div>
-                    </span>
-					<span class='col-xs-2 dropdown' style="margin-left:4%;"><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Hostels &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM hostel_list";
-								$result= mysql_query($query);
-								while($hostel= mysql_fetch_array($result))
-									{
-										$hostel_0= explode("_",$hostel['Hostel_Name']);
-										$hostel_1= implode(" ",$hostel_0);
-										$hostel_id= $hostel['Hostel_id'];
-										echo "<li><a href='../hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Messes &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM messes";
-								$result= mysql_query($query);
-								while($mess= mysql_fetch_array($result))
-									{
-										$mess_6= explode("_",$mess['Mess']);
-										$mess_7= implode(" ",$mess_6);
-										$mess_id= $mess['ID'];
-										echo "<li><a href='../messes/messes.php?varname=$mess_id'>".$mess_7."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Eateries &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <?php
-								$query= "SELECT * FROM eateries";
-								$result= mysql_query($query);
-								while($eatery= mysql_fetch_array($result))
-									{
-										$eatery_6= explode("_",$eatery['Eatery']);
-										$eatery_7= implode(" ",$eatery_6);
-										$eatery_id= $eatery['ID'];
-										echo "<li><a href='eateries.php?varname=$eatery_id'>".$eatery_7."</a></li>";
-									}
-							?>
-                        </ul></span>
-					<span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Others &nbsp; </b>&nbsp;<span class="caret"></span>
-                    </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-							<li><a href='#'>Travel</a></li>
-							<li><a href='#'>Xerox</a></li>
-							<li><a href='#'>Giftshop</a></li>
-							<li><a href='#'>Haircare</a></li>
-                        </ul></span>
-                    <div class="hidden-sm hidden-xs col-md-1 dropdown pull-right">
-                        <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
-                            <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
-                                <?php echo $_SESSION['username']; ?>
-                                <span class="caret"></span>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Settings</a></li>
-							<li><a href="../includes/signout.php">Sign Out</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
 		<div class="container-fluid contain1">
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
