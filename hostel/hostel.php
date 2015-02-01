@@ -6,7 +6,7 @@ $pwd="Sai@271295";
 $db="i-portal";
 $conn = mysql_connect($server,$user,$pwd);
 mysql_select_db("i-portal");
-<<<<<<< HEAD
+<<<<<<< ours
 $id=$_GET["id"];
 $sql1="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=1";
 $sql2="SELECT * FROM contacts WHERE Hostel_id='{$id}' and S_no=2";
@@ -52,7 +52,7 @@ $sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
 =======
 $id=$_GET['varname'];
 $sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
->>>>>>> 7f774b67a8aee23dbeaffa894c89dc43094f4b22
+>>>>>>> theirs
 $data=mysql_query($sql);
 $row=mysql_fetch_assoc($data);
 $name=$row["Hostel_Name"];
@@ -203,7 +203,7 @@ require '../includes/signin.php';
 	</nav>
 </div>
 <div class="container-fluid">
-<<<<<<< HEAD
+<<<<<<< ours
 	<div class="row">
 		<div id="main-content">
 			<div class="col-md-11 col-lg-11" style="padding-left:5%;">		
@@ -544,7 +544,7 @@ require '../includes/signin.php';
 							$sno++;
 						}
 					?>
->>>>>>> 7f774b67a8aee23dbeaffa894c89dc43094f4b22
+>>>>>>> theirs
 	</div>
 </div>
 <script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
