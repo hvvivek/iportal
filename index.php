@@ -286,11 +286,14 @@ mysql_select_db($db);
 		$query= "SELECT * FROM messes";
 		$result= mysql_query($query);
 		$inc=0;
+		$mess_id= $mess['ID'];
+		$mess = mysql_fetch_array($result);
+		echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 		while($mess = mysql_fetch_array($result))
 		{
 			$inc++;
 			$mess_id= $mess['ID'];
-			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
+			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 		}
 	?>
 </div>
