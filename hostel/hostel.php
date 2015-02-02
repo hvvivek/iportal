@@ -140,7 +140,7 @@ require '../includes/signin.php';
 			<?php
 				require 'sidebar.php'
 	        ?>
-		<div class="col-md-10">	
+		<div class="col-md-10 col-md-offset-2 col-sm-offset-2 col-sm-10">	
 					<?php
 						$sno=1;
 						while($sno<=8)
@@ -150,7 +150,7 @@ require '../includes/signin.php';
 							$sec=mysql_fetch_assoc($result);
 							if($sno==1||$sno==4||$sno==7)
 							{echo "
-									<div class='col-md-4 screen screen12 slum'>
+									<div class='col-md-4 col-sm-6 screen screen12 slum'>
 										<div class='header'>
 											<p class='oned'>".$sec['post']."</p>
 										</div>
@@ -165,28 +165,16 @@ require '../includes/signin.php';
 											<div class='header2'>
 												<div class='heal' id='h1' class='hid'>
 													<p>";
-													if(strlen($sec["username"])!=0)
-													{
 														echo "Roll no : ".$sec["username"];
-													}
 													echo "</p>
 												<p>";
-													if(strlen($sec["room"])!=0)
-													{
-														echo "Room no : ".$sec["room"];
-													}
+													echo "Room no : ".$sec["room"];
 												echo "</p>
 												<p>";
-													if(strlen($sec["contact_no"])!=0)
-														{
-															echo "Contact no : ".$sec["contact_no"];
-														}
+													echo "Contact no : ".$sec["contact_no"];
 												echo "</p>
 												<p>";
-													if(strlen($sec["email_id"])!=0)
-													{
-														echo "Email id : ".str_split($sec["email_id"],25)[0];
-													}
+													echo "Email id : ".str_split($sec["email_id"],25)[0];
 												echo 
 												"</p>
 												</div>
@@ -197,7 +185,7 @@ require '../includes/signin.php';
 								else
 								{
 									echo "
-									<div class='col-md-4 screen slum'>
+									<div class='col-md-4 col-sm-6 screen slum'>
 										<div class='header'>
 											<p class='oned'>".$sec['post']."</p>
 										</div>
@@ -212,28 +200,16 @@ require '../includes/signin.php';
 											<div class='header2'>
 												<div class='heal' id='h1' class='hid'>
 													<p>";
-													if(strlen($sec["username"])!=0)
-													{
-														echo "Roll no : ".$sec["username"];
-													}
+													echo "Roll no : ".$sec["username"];
 													echo "</p>
 												<p>";
-													if(strlen($sec["room"])!=0)
-													{
-														echo "Room no : ".$sec["room"];
-													}
+													echo "Room no : ".$sec["room"];
 												echo "</p>
 												<p>";
-													if(strlen($sec["contact_no"])!=0)
-														{
-															echo "Contact no : ".$sec["contact_no"];
-														}
+													echo "Contact no : ".$sec["contact_no"];
 												echo "</p>
 												<p>";
-													if(strlen($sec["email_id"])!=0)
-													{
-														echo "Email id : ".$sec["email_id"];
-													}
+													echo "Email id : ".$sec["email_id"];
 												echo 
 												"</p>
 												</div>
@@ -248,6 +224,9 @@ require '../includes/signin.php';
 </div>
 <script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
 <script type="text/javascript" src="../js/skrollr.js"></script>
-<script type="text/javascript">skrollr.init();</script>	
+<script type="text/javascript">skrollr.init();</script>
+<?php
+	require '../partials/footer.php';
+?>
 </body>
 </html>
