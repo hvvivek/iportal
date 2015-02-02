@@ -2,7 +2,7 @@
 session_start();
 $server="localhost";
 $user="root";
-$pwd="ragasree";
+$pwd="sai";
 $db="i-portal";
 $conn = mysql_connect($server,$user,$pwd);
 mysql_select_db("i-portal");
