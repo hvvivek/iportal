@@ -30,7 +30,7 @@ $('.delete_post').click(function(e)
    postid:postid,
   },
   function(data,status){
-    post.parent().fadeOut();
+    post.parent().parent().fadeOut();
   });
     } else {
         
