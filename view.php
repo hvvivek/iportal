@@ -24,6 +24,11 @@ body
 }
 </style>
 <?php 
+if(!$_SERVER['QUERY_STRING'])
+{
+  echo "please proveide correct url";
+}
+else{
 $post_u=$_SERVER['QUERY_STRING'];
 function mres($value)
 {
@@ -106,7 +111,7 @@ while($result=mysqli_fetch_assoc($query))
 	<?php
 }
 
-?>
+}?>
 </br></div>
 
 

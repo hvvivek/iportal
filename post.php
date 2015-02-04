@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php session_start();
+
+//print_r($_SESSION);?>
+
 <style>
 	
 	body
@@ -66,6 +69,7 @@ $content=$_POST['content'];
 $title=$_POST['title'];
 $username=$_SESSION['username'];
 $hostel=$_SESSION['hostel'];
+//echo '<script>alert('.$username.')</script>';
 function is_valid_type($file)
 {
 	
