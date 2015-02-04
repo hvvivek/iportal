@@ -131,7 +131,7 @@ body
 }
 .header {
     width:100%  !important;
-    height:6%;
+    height:55px;
     text-align:center;
     background-color:#1abc9c;
     color:white;
@@ -216,7 +216,7 @@ body
 .footer
 {
 	width: 100%;
-	bottom:-140px;
+	bottom:-155px;
 	height:40px;
 	background-color: #1abc9c;
 	position:absolute;
@@ -434,6 +434,11 @@ body
 		width:260px!important;
 		padding: 0px!important
 	}
+	.heal
+	{
+		margin-top:10%!important;
+		margin-bottom:12%;
+	}
 	.screen
 	{
 		margin-top:4%;
@@ -445,6 +450,11 @@ body
 	{
 		width:250px!important;
 		padding: 0px!important
+	}
+	.heal
+	{
+		margin-top:10%!important;
+		margin-bottom:12%;
 	}
 	.screen
 	{
@@ -470,6 +480,11 @@ body
 		width:230px!important;
 		padding: 0px!important
 	}
+	.heal
+	{
+		margin-top:10%!important;
+		margin-bottom:12%;
+	}
 	.screen
 	{
 		margin-top:4%;
@@ -482,6 +497,11 @@ body
 		width:220px!important;
 		padding: 0px!important
 	}
+	.heal
+	{
+		margin-top:10%!important;
+		margin-bottom:12%;
+	}
 	.screen
 	{
 		margin-top:4%;
@@ -493,6 +513,12 @@ body
 	{
 		width:210px!important;
 		padding: 0px!important
+	}
+	.heal
+	{
+		margin-top:10%!important;
+		margin-bottom:12%;
+		font-size:70%!important;
 	}
 	.screen
 	{
@@ -508,7 +534,9 @@ body
 	}
 	.heal
 	{
-		margin-top:4%!important;
+		margin-top:10%!important;
+		margin-bottom:12%;
+		font-size:70%!important;
 	}
 	.screen
 	{
@@ -632,4 +660,12 @@ body
 		position: relative;!important;
 		top:45px!important;
 	}
+}
+.padnone
+{
+	padding-top:2.5%;
+}
+.padaffairs
+{
+	padding-bottom:.5%;
 }
