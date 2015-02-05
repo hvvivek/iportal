@@ -1,3 +1,6 @@
+
+
+
 <div  class="col-md-4 col-lg-2">
 <div class="points_info">
 <p>
@@ -17,6 +20,10 @@ else
 ?>
 </p>
 <br>
+
+<?php  
+if (candelete($postuser))
+	{?>
 <button class="edit_p btn btn-primary">Update</button>
 </div>
 <div class="edit_points" class="form-group col-md-4 col-lg-4">
@@ -25,6 +32,7 @@ else
 		<input type="submit" class="btn btn-primary">
 	</form>
 </div>
+<?php }?>
 	
 
 </div>
