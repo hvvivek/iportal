@@ -4,10 +4,10 @@
 		<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
 		<li class="bull"><a href='office_details.php' class="kill">Hostel office-details</a></li>
 		<li class="bull"><a href='#' class="kill">Hostel services</a></li>
-		<li class="bull"><a href='#' class="kill">Litsoc</a></li>
-		<li class="bull"><a href='#' class="kill">Techsoc</a></li>
-		<li class="bull"><a href='#' class="kill">Schroeter</a></li>
-		<li class="bull"><a href='#' class="kill">Alumni</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=litsoc' class="kill">Litsoc</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=techsoc' class="kill">Techsoc</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=sports' class="kill">Schroeter</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=alumni' class="kill">Alumni</a></li>
 		<form action="map/location.php" id="fmap" method="GET">
 			<input class="input" name="name" value=<?php echo $name;?>>
 			<input class="input" name="lat" value=<?php echo $lat;?>>
