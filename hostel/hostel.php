@@ -1,39 +1,19 @@
 <?php
 session_start();
-<<<<<<< HEAD
-require '../includes/signin.php';
 require  '../config.php';
 require '../partials/footer.php';
-$id=$_GET['varname'];
-$conn = mysql_connect($server,$user,$pwd);
+$id=$_GET['id'];
+$conn = mysql_connect($host,$username,$password);
 mysql_select_db("i-portal");
 $sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
 $sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
 $data=mysql_query($sql);
 $row=mysql_fetch_assoc($data);
-$name=$row["hostel_id"];
+$name=$row["hostel_name"];
 $lat=$row["lat"];
 $lng=$row["long"];
-=======
-$server="localhost";
-$user="root";
-$pwd="ragasree";
-$db="i-portal";
-$conn = mysql_connect($server,$user,$pwd);
-mysql_select_db("i-portal");
-$id=$_GET['varname'];
-$sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
-$data=mysql_query($sql);
-$row=mysql_fetch_assoc($data);
-$name=$row["hostel_name"];
-$lat=$row["latitude"];
-$lng=$row["longitude"];
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 ?>							
 <!DOCTYPE html>
-<?php     
-require '../includes/signin.php';
-?>
 <html>
 	<head>
 		<meta chaset="utf-8">
@@ -45,7 +25,7 @@ require '../includes/signin.php';
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<link href="../css/hostel.css" rel="stylesheet" />
+		<link href="../eateries/css/hostel.css" rel="stylesheet" />
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" type="text/css" href="css/hostel.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
@@ -56,7 +36,6 @@ require '../includes/signin.php';
 		<script src="js/dynamicpage.js" type="text/javascript"></script>
 		<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
 		<script src="../js/ferro.js" type="text/javascript"></script>
-<<<<<<< HEAD
 <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
@@ -79,21 +58,6 @@ require '../includes/signin.php';
                 }
             }
 </style>
-<meta chaset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php echo $name;?> hostel</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/hostel.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
-<link rel="stylesheet" type="text/css" href="../css/ferro.css">
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>				
-<script src="../js/ferro.js" type="text/javascript"></script>
-<script src="js/dynamicpage.js" type="text/javascript"></script>
-<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
-<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>
@@ -110,7 +74,7 @@ require '../includes/signin.php';
 					echo "</table>";
 				?>
 		</div>
-		<script>
+		<script type= "text/javascript">
 			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
 			var lng = parseFloat(document.getElementById('myTable').rows[1].cells[1].innerHTML);
 			var name = document.getElementById('myTable').rows[1].cells[2].innerHTML;
@@ -123,30 +87,9 @@ require '../includes/signin.php';
 			zoom:15,
 			mapTypeId:google.maps.MapTypeId.ROADMAP
 			};
-=======
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>	
-		<script src="../js/ferro.js" type="text/javascript"></script>
-		<script src="js/dynamicpage.js" type="text/javascript"></script>
-		<style>
-	            #dnb_sec {
-	                -skrollr-animation-name:animation1;
-	            }
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 
-	            @-skrollr-keyframes animation1 {
-	                0 {
-	                    margin-top:0px;
-	                    position:relative;
-	                    
-	                    <!--Site Color -->
-	                    background-color:rgba(26, 188, 156,1.0);
-	                    <!--Site Color-->
-	                }
+			map=new google.maps.Map(document.getElementById("googleMap1"),mapProp);
 
-<<<<<<< HEAD
 			var marker=new google.maps.Marker({
 				position:myCenter,
 			});		
@@ -160,62 +103,47 @@ require '../includes/signin.php';
 			});
 			infowindow.open(map,marker);
 			}
-=======
-	                top {
-	                    margin-top:0px;
-	                    position:fixed;
-	                    background-color:rgba(305, 305, 305,0.99);
-	                }
-	            }
-		</style>
-		<script>
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 			function access()
 			{
 				$('#Modal0').modal('show');
 				initialize();
-<<<<<<< HEAD
 				/*setTimeout(function(){
 					
 					google.maps.event.trigger(map, "resize");
 					map.setCenter(myCenter);
 					},3000);*/
+			}		
+			//google.maps.event.addDomListener(window, 'load', initialize);
+			function ajax_3(param){
+			var id= param;
+			alert(id);
+			$.ajax({
+				url: "download_file.php",
+				type: "post",
+				data: {uploadid: param},
+				success: function(){
+					window.location= 'download_file.php';
+				}
+			});
 			}
 			function wec(){
 			window.location= "../index.php";
-				}
-		</script>
-<script>
-		$(document).ready(function(){
-			$(".wheel-button").wheelmenu({
-        trigger: "hover",
-        animation: "fly",
-        animationSpeed: "fast"
-=======
-			}		
-			function wec()
-			{
-				window.location= "../index.php";
 			}
 		</script>
 		<script>
-			$(document).ready(function()
-			{
-				$(".wheel-button").wheelmenu(
-				{
-		        	trigger: "hover",
-		        	animation: "fly",
-		        	animationSpeed: "fast"
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
-				});
+			$(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+			trigger: "hover",
+			animation: "fly",
+			animationSpeed: "fast"
+					});
 			});
-				
+		
 		</script>
 	</head>
 <body>
 	    <?php
 			require '../includes/navbar.php'
-<<<<<<< HEAD
         ?>
 		<div class="container-fluid contain1">
 			<div class="row">
@@ -234,13 +162,7 @@ require '../includes/signin.php';
 				</div>
 			</div>
 		</div>
-=======
-	    ?>
 		<div class="container-fluid">
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
-			<?php
-				require 'sidebar.php'
-			?>
 			<div class="col-md-10 col-md-offset-2 col-sm-offset-2 col-sm-10">	
 				<?php
 					$sno=1;
@@ -377,14 +299,6 @@ require '../includes/signin.php';
 									</div>
 								</div>";
 						}
-<<<<<<< HEAD
-					?>
-</div>
-<script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
-<script type="text/javascript" src="../js/skrollr.js"></script>
-<script type="text/javascript">skrollr.init();</script>	
-</body>
-=======
 						$sno++;
 					}
 				?>
@@ -396,6 +310,19 @@ require '../includes/signin.php';
 		<?php
 			require '../partials/footer.php';
 		?>
+		<div class="modal fade" aria-hidden="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0'>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class='modal-header'>
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 id='location0'>Location</h4>
+					</div>
+					<div class="modal-body">
+						<div id='googleMap1' style="width:100%;height:50%">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 </html>

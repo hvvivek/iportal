@@ -89,10 +89,10 @@
                         <a class="cursor dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Others<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-    						<li><a href='#'>Travel</a></li>
-    						<li><a href='#'>Xerox</a></li>
-                        	<li><a href='#'>Giftshop</a></li>
-							<li><a href='#'>Haircare</a></li>
+    						<li><a href='../others/others.php?varname=1'>Travel</a></li>
+    						<li><a href='../others/others.php?varname=2'>Xerox</a></li>
+                        	<li><a href='../others/others.php?varname=3'>Giftshop</a></li>
+							<li><a href='../others/others.php?varname=4'>Haircare</a></li>
                         </ul>
                     </div>
                 </li>

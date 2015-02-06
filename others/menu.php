@@ -227,8 +227,9 @@ require '../partials/footer.php';
 			<div class="row">
 				<div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='others.php?varname=<?php echo $file; ?>' id="hos"><?php echo $others_1; ?></a></li>	
-						<li class="menu"><a href='menu.php?varname=<?php echo $file; ?>'>Services</a></li>
+						<li class="bull"><a href='others.php?varname=<?php echo $file; ?>' id="hos"><?php echo $others_1; ?></a></li>
+						<li class="bull"><a href="others.php?varname=<?php echo $file; ?>">Timings</a></li>						
+						<li class="bull"><a href='menu.php?varname=<?php echo $file; ?>'>Services</a></li>
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
