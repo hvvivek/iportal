@@ -37,9 +37,9 @@
         					$result= mysql_query($query);
         					while($hostel= mysql_fetch_array($result))
     						{
-    						  $hostel_0= explode("_",$hostel['Hostel_Name']);
+    						  $hostel_0= explode("_",$hostel['hostel_name']);
         						$hostel_1= implode(" ",$hostel_0);
-        						$hostel_id= $hostel['Hostel_id'];
+        						$hostel_id= $hostel['hostel_id'];
         						echo "<li><a href='../hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
         					}
         				    ?>

@@ -177,10 +177,10 @@ mysql_select_db($db);
 							<a class="cursor dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">Others<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-								<li><a href='#'>Travel</a></li>
-								<li><a href='#'>Xerox</a></li>
-								<li><a href='#'>Giftshop</a></li>
-								<li><a href='#'>Haircare</a></li>
+								<li><a href='others/others.php?varname=1'>Travel</a></li>
+								<li><a href='others/others.php?varname=2'>Xerox</a></li>
+								<li><a href='others/others.php?varname=3'>Giftshop</a></li>
+								<li><a href='others/others.php?varname=4'>Haircare</a></li>
 							</ul>
 						</div>
 					</li>
@@ -312,10 +312,10 @@ mysql_select_db($db);
 	?>
 </div>
 <div class="contain5">
-<a href="#"><div class="small5"><p class="smtext5">Travel</p></div></a>
-<a href="#"><div class="small5"><p class="smtext5">Xerox</p></div></a>
-<a href="#"><div class="small5"><p class="smtext5">Giftshop</p></div></a>
-<a href="#"><div class="small5"><p class="smtext5">Haircare</p></div></a>
+<a href="others/others.php?varname=1"><div class="small5"><p class="smtext5">Travel</p></div></a>
+<a href="others/others.php?varname=2"><div class="small5"><p class="smtext5">Xerox</p></div></a>
+<a href="others/others.php?varname=3"><div class="small5"><p class="smtext5">Giftshop</p></div></a>
+<a href="others/others.php?varname=4"><div class="small5"><p class="smtext5">Haircare</p></div></a>
 </div>
 </div>
 </div>
