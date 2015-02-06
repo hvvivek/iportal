@@ -1,20 +1,5 @@
 <?php
 session_start();
-<<<<<<< HEAD
-require '../includes/signin.php';
-require  '../config.php';
-require '../partials/footer.php';
-$id=$_GET['varname'];
-$conn = mysql_connect($server,$user,$pwd);
-mysql_select_db("i-portal");
-$sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
-$sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
-$data=mysql_query($sql);
-$row=mysql_fetch_assoc($data);
-$name=$row["hostel_id"];
-$lat=$row["lat"];
-$lng=$row["long"];
-=======
 $server="localhost";
 $user="root";
 $pwd="ragasree";
@@ -28,7 +13,6 @@ $row=mysql_fetch_assoc($data);
 $name=$row["hostel_name"];
 $lat=$row["latitude"];
 $lng=$row["longitude"];
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 ?>							
 <!DOCTYPE html>
 <?php     
@@ -56,74 +40,6 @@ require '../includes/signin.php';
 		<script src="js/dynamicpage.js" type="text/javascript"></script>
 		<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
 		<script src="../js/ferro.js" type="text/javascript"></script>
-<<<<<<< HEAD
-<style>
-            #dnb_sec {
-                -skrollr-animation-name:animation1;
-            }
-
-            @-skrollr-keyframes animation1 {
-                0 {
-                    margin-top:0px;
-                    position:relative;
-                    
-                    <!--Site Color -->
-                    background-color:rgba(26, 188, 156,1.0);
-                    <!--Site Color-->
-                }
-
-                top {
-                    margin-top:0px;
-                    position:fixed;
-                    background-color:rgba(255, 255, 255,0.99);
-                }
-            }
-</style>
-<meta chaset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php echo $name;?> hostel</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/hostel.css" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
-<link rel="stylesheet" type="text/css" href="../css/ferro.css">
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>				
-<script src="../js/ferro.js" type="text/javascript"></script>
-<script src="js/dynamicpage.js" type="text/javascript"></script>
-<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
-<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
-		<div style="display:none">
-			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
-				<tr>
-					<th>lat</th>
-					<th>lng</th>
-					<th>name</th>
-				</tr>
-				<?php
-					echo "<tr>";
-					echo "<th>". $lat ."</th>";
-					echo "<th>". $lng ."</th>";
-					echo "<th>". $name ."</th>";
-					echo "</tr>";
-					echo "</table>";
-				?>
-		</div>
-		<script>
-			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
-			var lng = parseFloat(document.getElementById('myTable').rows[1].cells[1].innerHTML);
-			var name = document.getElementById('myTable').rows[1].cells[2].innerHTML;
-			var myCenter=new google.maps.LatLng(lat,lng);
-			var map;
-			function initialize()
-			{
-				var mapProp = {
-			center:myCenter,
-			zoom:15,
-			mapTypeId:google.maps.MapTypeId.ROADMAP
-			};
-=======
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.js"></script>
@@ -134,8 +50,6 @@ require '../includes/signin.php';
 	            #dnb_sec {
 	                -skrollr-animation-name:animation1;
 	            }
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
-
 	            @-skrollr-keyframes animation1 {
 	                0 {
 	                    margin-top:0px;
@@ -145,22 +59,6 @@ require '../includes/signin.php';
 	                    background-color:rgba(26, 188, 156,1.0);
 	                    <!--Site Color-->
 	                }
-
-<<<<<<< HEAD
-			var marker=new google.maps.Marker({
-				position:myCenter,
-			});		
-			google.maps.event.addListenerOnce(map, 'idle', function() {
-				google.maps.event.trigger(map, 'resize');
-				map.setCenter(myCenter);
-			});
-			marker.setMap(map);
-			var infowindow = new google.maps.InfoWindow({
-			content: name
-			});
-			infowindow.open(map,marker);
-			}
-=======
 	                top {
 	                    margin-top:0px;
 	                    position:fixed;
@@ -169,29 +67,10 @@ require '../includes/signin.php';
 	            }
 		</style>
 		<script>
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 			function access()
 			{
 				$('#Modal0').modal('show');
 				initialize();
-<<<<<<< HEAD
-				/*setTimeout(function(){
-					
-					google.maps.event.trigger(map, "resize");
-					map.setCenter(myCenter);
-					},3000);*/
-			}
-			function wec(){
-			window.location= "../index.php";
-				}
-		</script>
-<script>
-		$(document).ready(function(){
-			$(".wheel-button").wheelmenu({
-        trigger: "hover",
-        animation: "fly",
-        animationSpeed: "fast"
-=======
 			}		
 			function wec()
 			{
@@ -206,7 +85,6 @@ require '../includes/signin.php';
 		        	trigger: "hover",
 		        	animation: "fly",
 		        	animationSpeed: "fast"
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 				});
 			});
 				
@@ -215,29 +93,8 @@ require '../includes/signin.php';
 <body>
 	    <?php
 			require '../includes/navbar.php'
-<<<<<<< HEAD
-        ?>
-		<div class="container-fluid contain1">
-			<div class="row">
-				<div class="sidebar col-xs-1 col-sm-1 col-md-2 col-lg-2">
-					<ul class="nav nav-sidebar">
-							<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
-							<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
-							<li class="bull"><a href='head.php?varname=<?php echo $id; ?>' class="kill">Hostel office-details</a></li>
-							<li class="bull"><a href='Hostel_Services.php?varname=<?php echo $id; ?>' class="kill">Hostel services</a></li>
-							<li class="bull"><a href='#' class="kill">Litsoc</a></li>
-							<li class="bull"><a href='#' class="kill">Techsoc</a></li>
-							<li class="bull"><a href='#' class="kill">Schroeter</a></li>
-							<li class="bull"><a href='#' class="kill">Alumni</a></li>
-						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-=======
 	    ?>
 		<div class="container-fluid">
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 			<?php
 				require 'sidebar.php'
 			?>
@@ -377,14 +234,6 @@ require '../includes/signin.php';
 									</div>
 								</div>";
 						}
-<<<<<<< HEAD
-					?>
-</div>
-<script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
-<script type="text/javascript" src="../js/skrollr.js"></script>
-<script type="text/javascript">skrollr.init();</script>	
-</body>
-=======
 						$sno++;
 					}
 				?>
@@ -397,5 +246,4 @@ require '../includes/signin.php';
 			require '../partials/footer.php';
 		?>
 	</body>
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 </html>
