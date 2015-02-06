@@ -152,23 +152,6 @@ require '../partials/menu.php';
 </div>
 <div id="page-wrap">
 <div class="container-fluid">
-	<div class="row">
-		<div class="sidebar col-md-1 col-lg-1">
-			<ul class="nav nav-sidebar" id="my-nav">
-				<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
-				<li class="bull"><a href='hostel2.php' class="kill">Hostel secretaries details</a></li>
-				<li class="bull"><a href='#' class="kill">Hostel office-details</a></li>
-				<li class="bull"><a href='#' class="kill">Hostel services</a></li>
-				<li class="bull"><a href='#' class="kill">Litsoc</a></li>
-				<li class="bull"><a href='#' class="kill">Techsoc</a></li>
-				<li class="bull"><a href='#' class="kill">Schroeter</a></li>
-				<li class="bull"><a href='#' class="kill">Alumni</a></li>
-				<li class="bull"><a href='#' data-toggle="modal" data-target="#myModal" class="kill">Location</a></li>
-				<!--
-				<li ><div id="googleMap" class="col-md-12"></div></li>
-				-->
-			</ul>
-		</div>
 		<div id="main-content">
 		<div id="guts">
 			<div class=" col-sm-8 col-sm-offset-3 col-md-8 col-md-offset-3 col-lg-8 col-lg-offset-3" style="padding-top:5%;padding-left:7.5%;padding-bottom:10%;">
@@ -193,46 +176,6 @@ require '../partials/menu.php';
 		</div>
 		</div>
 </div>
-</div>
-<footer class="footer">
-	<div class="container-fluid">
-	<div class="row-fluid" style="margin-top:8px;font-size:110%;">
-		<div class="col-md-3" style="margin-left:0;padding-left:30px;">
-			<a href="#"><font color="white">Copyrights @ Institute WebOps 14-15</font></a>
-		</div>
-		<div class="col-md-1" style="margin-left:0;padding-left:0;">
-			<a href="#"><font color="white">About us</font></a>
-		</div>		
-        <div class="col-md-1" style="margin-left:0;padding-left:0;">
-			<a href="#"><font color="white">Contact us</font></a>
-		</div>
-	</div>
-    </div>
-</footer>	
-<!--Modal-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><?php echo $name;?> Hostel</h4>
-      </div>
-      <div class="modal-body">
-        <div id="googleMap" style="height:500px;"></div>
-      </div>
-    </div>
-  </div>
-</div>	
-<!--Alternative Footer		
-		<div id="footer">
-			<div class="container-fluid footer-container">
-      				<ul class="nav navbar-nav navbar-left done">
-        				<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
-        				<li class="book"><a href="#">About us</a></li>
-        				<li class="book"><a href="#">Contact us</a></li>
-        			</ul>
-        	</div>
-    	</div>
--->				
+</div>		
 </body>
 </html>

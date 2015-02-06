@@ -282,24 +282,48 @@ mysql_select_db($db);
 	</div>
 </div>
 <div class="contain3 container">
+	<div class="container-fluid contain2-fluid">
 	<?php
 		$query= "SELECT * FROM messes";
 		$result= mysql_query($query);
+		$mess_id= $mess['ID'];
+		$mess = mysql_fetch_array($result);
+		echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child child6'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 		$inc=0;
 		while($mess = mysql_fetch_array($result))
 		{
 			$inc++;
-			$mess_0= explode("-",$mess['Mess']);
-			$mess_1= implode("",$mess_0);
-			$mess_id= $mess['ID'];
-			echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3'>"."<p class='smtext3'>".$mess_1."</p>"."</div>"."</a>";
+			$mess_id= $mess['ID'];	
+			if($inc==5)
+			{
+				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3 child5'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
+			}		
+			else if($inc==8)
+			{
+				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3 child41'>"."<p class='smtext3 text'>".$mess['mess_nick']."</p>"."</div>"."</a>";
+			}
+			else if($inc==9)
+			{
+				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3'>"."<p class='smtext3 text'>".$mess['mess_nick']."</p>"."</div>"."</a>";
+			}
+			else
+			{
+				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
+			}
 		}
 	?>
+	</div>
 </div>
 <div class="contain4 container">
+	<div class="container-fluid contain2-fluid">
 	<?php
 		$query= "SELECT * FROM eateries";
 		$result= mysql_query($query);
+		$eatery = mysql_fetch_array($result);
+		$eatery_0= explode("_",$eatery['Eatery']);
+		$eatery_1= implode("",$eatery_0);
+		$eatery_id= $eatery['ID'];
+		echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4 childleft1'>"."<p class='smtext4'>".$eatery_1."</p>"."</div>"."</a>";		
 		$inc=0;
 		while($eatery = mysql_fetch_array($result))
 		{
@@ -307,15 +331,37 @@ mysql_select_db($db);
 			$eatery_0= explode("_",$eatery['Eatery']);
 			$eatery_1= implode("",$eatery_0);
 			$eatery_id= $eatery['ID'];
-			echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4'>"."<p class='smtext4'>".$eatery_1."</p>"."</div>"."</a>";
+			if($inc>4 && $inc<8)
+			{
+				if($inc==5)
+				{
+					echo "<br><a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4 child1 child2 child3 childleft2'>"."<p class='smtext4 childp'>".$eatery_1."</p>"."</div>"."</a>";
+				}
+				else
+				{
+					echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4 child1 child2 child3 childright3'>"."<p class='smtext4 childp'>".$eatery_1."</p>"."</div>"."</a>";
+				}
+			}
+			else
+			{
+				echo "<a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4 child1 child2 child3'>"."<p class='smtext4'>".$eatery_1."</p>"."</div>"."</a>";
+			}
 		}
 	?>
+	</div>
 </div>
 <div class="contain5">
+<<<<<<< HEAD
 <a href="others/others.php?varname=1"><div class="small5"><p class="smtext5">Travel</p></div></a>
 <a href="others/others.php?varname=2"><div class="small5"><p class="smtext5">Xerox</p></div></a>
 <a href="others/others.php?varname=3"><div class="small5"><p class="smtext5">Giftshop</p></div></a>
 <a href="others/others.php?varname=4"><div class="small5"><p class="smtext5">Haircare</p></div></a>
+=======
+<a href="#"><div class="small5"><p class="smtext5">Travel</p></div></a>
+<a href="#"><div class="small5 child7"><p class="smtext5">Xerox</p></div></a>
+<a href="#"><div class="small5 child7"><p class="smtext5">Giftshop</p></div></a>
+<a href="#"><div class="small5 child7"><p class="smtext5">Haircare</p></div></a>
+>>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 </div>
 </div>
 </div>

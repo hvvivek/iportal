@@ -1,35 +1,22 @@
-<?php session_start();?>
-<style>
-body
-{
-  overflow: scroll !important;
-  padding-top:70px !important;
-}
-.comment_view,.btn
-  {
-  border-radius: 0px !important;
-   background: #2ecc71 !important; 
-  }
-.sidebar
-{
-  position:fixed !important;
-  height:100%;
-  border-right:2px solid #2ecc71 !important; ;
-}
+<?php session_start();
 
-.well
-{
-  border-radius: 0px !important;
- margin-bottom: 10px;
-}
+//print_r($_SESSION);?>
+
+<style>
+	
+	body
+	{
+		padding:70px;
+		width:90%;
+		overflow: hidden;
+	}
+	.edit_points
+	{
+		display: none;
+	}
 </style>
+
 <?php 
-if(!$_SERVER['QUERY_STRING'])
-{
-  echo "please proveide correct url";
-}
-else{
-$post_u=$_SERVER['QUERY_STRING'];
 function mres($value)
 {
     $search = array("\\",  "\x00", "\n",  "\r",  "'",  '"', "\x1a");
@@ -37,15 +24,14 @@ function mres($value)
 
     return str_replace($search, $replace, $value);
 }
-$post_user=mres($post_u);
-//echo $post_user;
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+//$post_user=mres($post_u);
 require 'config.php';
 require 'partials/header.php';
 require 'partials/navbar.php';
-require 'partials/view_sidebar.php';
-?> 
+//require 'partials/view_sidebar.php';
+
+
+  ?>
 
 <?php
 
@@ -61,15 +47,46 @@ function candelete($user)
     return false;
 }
 
+$hostel=$_GET['hostel'];
+$sqlhostel="SELECT * FROM hostel_list WHERE hostel_id='$hostel'";
+//echo $sqlhostel;
+$datahostel=mysqli_query($con,$sqlhostel);
+$rowhostel=mysqli_fetch_assoc($datahostel);
+$hostel_name=$rowhostel["hostel_name"];
+//echo $hostel_name;
+$ev=$_GET['sec'];
+if($_GET['sec']=="tecsoc")
+{
+	$sec_post="techsec";
+}
+if($_GET['sec']=="litsoc")
+{
+	$sec_post="litsec";
+}
 
+if($_GET['sec']=="sports")
+{
+	$sec_post="sportsec";
+}
+if($_GET['sec']=="alumni")
+{
+	$sec_post="Alumnisec";
+}
 
-$sql="SELECT * FROM `posts` WHERE `posted_by`='$post_user' LIMIT 20 ";	
+$sqlpost="SELECT * FROM `contacts` WHERE `hostel_id`='$hostel' AND `post`='$sec_post' ";
+//echo $sqlpost; 
+$datapost=mysqli_query($con,$sqlpost);
+$resultpost=mysqli_fetch_assoc($datapost);
+$postuser=$resultpost['username'];;
+//echo $postuser;
+
+$sql="SELECT * FROM `posts` WHERE `posted_by`='$postuser' LIMIT 20 ";	
 //echo $sql;
 $query=mysqli_query($con,$sql);
 echo "<div class='container '>";
 while($result=mysqli_fetch_assoc($query))
 {?>
-    <div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-3 col-sm-offset-2 col-md-offset-2">
+    <div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-1 col-sm-offset-2 col-md-offset-2">
     <div class="panel panel-default">
   <?php  if(candelete($result['posted_by']))
 {
@@ -109,9 +126,14 @@ while($result=mysqli_fetch_assoc($query))
   <?php }  ?>
 </div>
 	<?php
-}
+
 
 }?>
 </br></div>
 
 
+<?php 
+
+require 'includes/points.php';
+
+?>
