@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jan 13, 2015 at 08:17 PM
--- Server version: 5.5.40-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.5
+-- Host: 127.0.0.1
+-- Generation Time: Feb 06, 2015 at 07:47 PM
+-- Server version: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Alumni_budget`
+-- Table structure for table `alumni_budget`
 --
 
-CREATE TABLE IF NOT EXISTS `Alumni_budget` (
+CREATE TABLE IF NOT EXISTS `alumni_budget` (
   `Hostel_id` int(1) DEFAULT NULL,
   `S_no` int(1) DEFAULT NULL,
   `Nature_of_expense` varchar(185) DEFAULT NULL,
@@ -35,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `Alumni_budget` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Alumni_budget`
+-- Dumping data for table `alumni_budget`
 --
 
-INSERT INTO `Alumni_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`, `Cost_per_person`) VALUES
+INSERT INTO `alumni_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`, `Cost_per_person`) VALUES
 (1, 1, 'Group photo of pass out batch of 2014 ', 300, NULL),
 (1, 2, 'Website Domain renewal ', 3500, NULL),
 (1, 3, 'Miscellaneous ', 1500, NULL),
@@ -81,21 +81,21 @@ INSERT INTO `Alumni_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`, `
 --
 
 CREATE TABLE IF NOT EXISTS `contacts` (
-  `Hostel_id` int(1) DEFAULT NULL,
-  `S_no` int(11) NOT NULL,
+  `hostel_id` int(1) DEFAULT NULL,
+  `s_no` int(11) NOT NULL,
   `username` varchar(8) NOT NULL,
-  `Name` varchar(25) DEFAULT NULL,
-  `Post` varchar(27) DEFAULT NULL,
-  `Room` varchar(6) NOT NULL,
-  `Contact_no` bigint(10) DEFAULT NULL,
-  `Email_id` varchar(29) DEFAULT NULL
+  `name` varchar(25) DEFAULT NULL,
+  `post` varchar(27) DEFAULT NULL,
+  `room` varchar(6) NOT NULL,
+  `contact_no` bigint(10) DEFAULT NULL,
+  `email_id` varchar(29) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `contacts`
 --
 
-INSERT INTO `contacts` (`Hostel_id`, `S_no`, `username`, `Name`, `Post`, `Room`, `Contact_no`, `Email_id`) VALUES
+INSERT INTO `contacts` (`hostel_id`, `s_no`, `username`, `name`, `post`, `room`, `contact_no`, `email_id`) VALUES
 (1, 1, 'BE12B010', 'SREEHARSHA.G', 'GenSec', '104', 9962663576, 'sreeharsha68shg@gmail.com'),
 (1, 2, 'EE12B002', 'A.Praneeth Kumar Reddy', 'MessSec', '118', 8939106736, 'praneeth12kr@gmail.com'),
 (1, 3, 'ME12B005', 'Anand Babu', 'SportsSec', '242', 7598459521, 'anand10327babu@gmail.com'),
@@ -195,7 +195,8 @@ INSERT INTO `contacts` (`Hostel_id`, `S_no`, `username`, `Name`, `Post`, `Room`,
 (16, 2, '', 'Raunaq Banga', 'Mess Secretary', '435', 7200495724, 'spykid21@gmail.com'),
 (16, 3, '', 'Afeef C', 'Sports Secretary', '309', 9444578951, 'afeefc@gmail.com'),
 (16, 4, '', 'Nitin Varma', 'Technical Affairs Secretary', '303', 9884682251, 'nvnitin696@gmail.com'),
-(16, 7, '', 'Muralitharan S', 'Garden Secretary', '116', 8122699238, 'ae14m013@smail.iitm.ac.in');
+(16, 7, '', 'Muralitharan S', 'Garden Secretary', '116', 8122699238, 'ae14m013@smail.iitm.ac.in'),
+(NULL, 0, 'EE13B051', NULL, NULL, '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -204,37 +205,38 @@ INSERT INTO `contacts` (`Hostel_id`, `S_no`, `username`, `Name`, `Post`, `Room`,
 --
 
 CREATE TABLE IF NOT EXISTS `eateries` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+`ID` int(11) NOT NULL,
   `Eatery` varchar(200) NOT NULL,
+  `Timings` varchar(300) NOT NULL,
   `Position` varchar(50) NOT NULL,
   `IMenu` varchar(600) NOT NULL,
   `DMenu` varchar(600) NOT NULL,
   `MDetails` varchar(30000) NOT NULL,
-  `BImages` varchar(600) NOT NULL,
-  PRIMARY KEY (`ID`)
+  `SDetails` varchar(30000) NOT NULL,
+  `BImages` varchar(600) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `eateries`
 --
 
-INSERT INTO `eateries` (`ID`, `Eatery`, `Position`, `IMenu`, `DMenu`, `MDetails`, `BImages`) VALUES
-(1, 'La_Salade', '12.987091,80.235666', 'las_menu.png,las_menu_1.png', 'La_salade_Menu.pdf', 'priyeshkumar81@gmail.com,9841577300,Mr.Priyesh', 'las.jpg,las_1.jpg'),
-(2, 'Kickstart', '12.991402,80.234413', 'KS.jpg,KS_1.jpg', 'Kickstart_menu.pdf', 'thekickstartcafe@gmail.com,9840014899,Mr.Pratik', ''),
-(3, 'Andavar', '12.986765,80.235064', 'AM.jpg,AM_1.jpg,AM_2.jpg', 'Andavar_Menu.pdf', 'andavarfresh@gmail.com,9884338585,Mr.Kalaiselvan', ''),
-(4, 'Gurunath', '12.986832,80.235330', 'guru_1.jpg,guru_2.jpg,guru_3.jpg,guru_4.jpg,guru_5.jpg', 'guru_dept.pdf', 'sreegurunath@gmail.com,9444777268,Mr.Nagaraj', ''),
-(5, 'IRCTC', '12.987673,80.237251', 'IRCTC.jpg,IRCTC_1.jpg', 'irctc_menu.pdf', 'cchakrapani2629@irctc.com,9003120270,Mr.Chakarapani', ''),
-(6, 'OAT_Eatery', '12.988664,80.233893', 'OAT_Eatery.jpg', 'OAT_Eatery.pdf', ',9884775423,Mr.Sridhar', ''),
-(7, 'Gurunath_Eatery', '12.986811,80.235400', 'gurue_1.jpg,gurue_2.jpg,gurue_3.jpg,gurue_4.jpg,gurue_5.jpg,gurue_6.jpg,gurue_7.jpg,gurue_8.jpg,gurue_9.jpg,gurue_10.jpg,gurue_11.jpg,gurue_12.jpg', 'guru_dept.pdf', 'sreegurunath@gmail.com,9444777268,Mr.Nagaraj', ''),
-(8, 'Ramu_Tea_Stall', '12.987080,80.236280', '', '', ',9884444489,Mr.Ramu', '');
+INSERT INTO `eateries` (`ID`, `Eatery`, `Timings`, `Position`, `IMenu`, `DMenu`, `MDetails`, `SDetails`, `BImages`) VALUES
+(1, 'La_Salade', 'Monday_03:00,PM_12:00,AM/Tuesday_03:00,PM_12:00,AM/Wednesday_03:00,PM_12:00,AM/Thursday_03:00,PM_12:00,AM/Friday_03:00,PM_12:00,AM/Saturday_03:00,PM_12:00,AM/Sunday_03:00,PM_12:00,AM', '12.987091,80.235666', 'las_menu.png,las_menu_1.png', 'La_salade_Menu.pdf', 'priyeshkumar81@gmail.com,9841577300,Mr.Priyesh', 'Sasidhar_Kasi,ME10B085,Jamuna,kasisasidhar5@gmail.com/Ankit_Tandekar,BE12B001,Alakananda,ankittandekar@gmail.com/Kishore_K_S,CE13B025,Saraswathi,kishoreks1995@gmail.com', 'las.jpg,las_1.jpg'),
+(2, 'Kickstart', 'Monday_11:30,AM_02:00,AM/Tuesday_11:30,AM_02:00,AM/Wednesday_11:30,AM_02:00,AM/Thursday_11:30,AM_02:00,AM/Friday_11:30,AM_02:00,AM/Saturday_11:30,AM_02:00,AM/Sunday_11:30,AM_02:00,AM', '12.991402,80.234413', 'KS.jpg,KS_1.jpg', 'Kickstart_menu.pdf', 'thekickstartcafe@gmail.com,9840014899,Mr.Pratik', 'L.Leela_Sailaja,CH11B032,Sharavati,leelasailajalalam@gmail.com/Ankita_Naik,MM12B045,Sharavati,ankinikee@gmail.com/Yashasweee_Pal,MM13B036,Sharavati,yashasweepal95@gmail.com', ''),
+(3, 'Andavar', 'Monday_08:00,AM_10:30,PM/Tuesday_08:00,AM_10:30,PM/Wednesday_08:00,AM_10:30,PM/Thursday_08:00,AM_10:30,PM/Friday_08:00,AM_10:30,PM/Saturday_08:00,AM_10:30,PM/Sunday_08:00,AM_10:30,PM', '12.986765,80.235064', 'AM.jpg,AM_1.jpg,AM_2.jpg', 'Andavar_Menu.pdf', 'andavarfresh@gmail.com,9884338585,Mr.Kalaiselvan', 'Sasidhar_Kasi,ME10B085,Jamuna,kasisasidhar5@gmail.com/Aditya_Malpani,AE12B040,Godavari,aditya8993@gmail.com/A_L_P_Rayudu,NA12B001,Alakananda,abbireddynani@gmail.com', ''),
+(4, 'Gurunath', 'Monday_09:00,AM_09:00,PM/Tuesday_09:00,AM_09:00,PM/Wednesday_09:00,AM_09:00,PM/Thursday_09:00,AM_09:00,PM/Friday_09:00,AM_09:00,PM/Saturday_09:00,AM_09:00,PM/Sunday_09:00,AM_09:00,PM', '12.986832,80.235330', 'guru_1.jpg,guru_2.jpg,guru_3.jpg,guru_4.jpg,guru_5.jpg', 'guru_dept.pdf', 'sreegurunath@gmail.com,9444777268,Mr.Nagaraj', 'L.Leela_Sailaja,CH11B032,Sharavati,leelasailajalalam@gmail.com/Ankit_Tandekar,BE12B001,Alakananda,ankittandekar@gmail.com/Kishore_K_S,CE13B025,Saraswathi,kishoreks1995@gmail.com', ''),
+(5, 'IRCTC', 'Monday_Open,24*7_Never,Closes/Tuesday_Open,24*7_Never,Closes/Wednesday_Open,24*7_Never,Closes/Thursday_Open,24*7_Never,Closes/Friday_Open,24*7_Never,Closes/Saturday_Open,24*7_Never,Closes/Sunday_Open,24*7_Never,Closes', '12.987673,80.237251', 'IRCTC.jpg,IRCTC_1.jpg', 'irctc_menu.pdf', 'cchakrapani2629@irctc.com,9003120270,Mr.Chakarapani', 'Sasidhar_Kasi,ME10B085,Jamuna,kasisasidhar5@gmail.com/Aditya_Malpani,AE12B040,Godavari,aditya8993@gmail.com/A_L_P_Rayudu,NA12B001,Alakananda,abbireddynani@gmail.com', ''),
+(6, 'OAT_Eatery', 'Friday_8:00,PM,(If,movie,is,screened)_Closes,after,the,movie/Saturday_8:00,PM_Closes,after,the,movie', '12.988664,80.233893', 'OAT_Eatery.jpg', 'OAT_Eatery.pdf', ',9884775423,Mr.Sridhar', '', ''),
+(7, 'Gurunath_Eatery', 'Monday_09:00,AM_01:00,AM/Tuesday_09:00,AM_01:00,AM/Wednesday_09:00,AM_01:00,AM/Thursday_09:00,AM_01:00,AM/Friday_09:00,AM_01:00,AM/Saturday_09:00,AM_01:00,AM/Sunday_09:00,AM_01:00,AM', '12.986811,80.235400', 'gurue_1.jpg,gurue_2.jpg,gurue_3.jpg,gurue_4.jpg,gurue_5.jpg,gurue_6.jpg,gurue_7.jpg,gurue_8.jpg,gurue_9.jpg,gurue_10.jpg,gurue_11.jpg,gurue_12.jpg', 'guru_dept.pdf', 'sreegurunath@gmail.com,9444777268,Mr.Nagaraj', 'Sasidhar_Kasi,ME10B085,Jamuna,kasisasidhar5@gmail.com/Ankit_Tandekar,BE12B001,Alakananda,ankittandekar@gmail.com/Kishore_K_S,CE13B025,Saraswathi,kishoreks1995@gmail.com', ''),
+(8, 'Ramu_Tea_Stall', 'Monday_12:00,PM_04:00,AM/Tuesday_12:00,PM_04:00,AM/Wednesday_12:00,PM_04:00,AM/Thursday_12:00,PM_04:00,AM/Friday_12:00,PM_04:00,AM/Saturday_12:00,PM_04:00,AM/Sunday_12:00,PM_04:00,AM', '12.987080,80.236280', '', '', ',9884444489,Mr.Ramu', 'Sasidhar_Kasi,ME10B085,Jamuna,kasisasidhar5@gmail.com/Roja_Immanni,NA11B013,Sharavati/N.Shakthi_Priya,,,sakthipriya6788@gmail.com', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Garden_budget`
+-- Table structure for table `garden_budget`
 --
 
-CREATE TABLE IF NOT EXISTS `Garden_budget` (
+CREATE TABLE IF NOT EXISTS `garden_budget` (
   `Hostel_id` int(1) DEFAULT NULL,
   `S_no` int(2) DEFAULT NULL,
   `Nature_of_expense` varchar(72) DEFAULT NULL,
@@ -242,10 +244,10 @@ CREATE TABLE IF NOT EXISTS `Garden_budget` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Garden_budget`
+-- Dumping data for table `garden_budget`
 --
 
-INSERT INTO `Garden_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`) VALUES
+INSERT INTO `garden_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`) VALUES
 (1, 1, ' Levelling with red soil', 2000),
 (1, 2, ' For planting trees and shrubs:', 6000),
 (1, 3, ' Lavender shrubs with designed leafs at four corners', 1600),
@@ -304,10 +306,10 @@ INSERT INTO `Garden_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Genbudget`
+-- Table structure for table `genbudget`
 --
 
-CREATE TABLE IF NOT EXISTS `Genbudget` (
+CREATE TABLE IF NOT EXISTS `genbudget` (
   `Hostel_id` int(1) DEFAULT NULL,
   `S_no` int(2) DEFAULT NULL,
   `Nature_of_expenses` varchar(60) DEFAULT NULL,
@@ -320,10 +322,10 @@ CREATE TABLE IF NOT EXISTS `Genbudget` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Genbudget`
+-- Dumping data for table `genbudget`
 --
 
-INSERT INTO `Genbudget` (`Hostel_id`, `S_no`, `Nature_of_expenses`, `no_of_items`, `per_item_cost`, `total_cost`, `2014-15`, `2015-16`, `Cost_per_person`) VALUES
+INSERT INTO `genbudget` (`Hostel_id`, `S_no`, `Nature_of_expenses`, `no_of_items`, `per_item_cost`, `total_cost`, `2014-15`, `2015-16`, `Cost_per_person`) VALUES
 (2, 1, 'Water dipenser', '4', '8000', '32000', '16000', '16000', NULL),
 (2, 2, 'Washing Machine', '4', '12000', '48000', '24000', '24000', NULL),
 (2, 3, 'Cages for water dispenser', '4', '4500', '18000', '13000', '5000', NULL),
@@ -423,42 +425,113 @@ INSERT INTO `Genbudget` (`Hostel_id`, `S_no`, `Nature_of_expenses`, `no_of_items
 --
 
 CREATE TABLE IF NOT EXISTS `hostel_list` (
-  `Hostel_id` int(11) NOT NULL,
-  `Hostel_Name` varchar(11) NOT NULL,
-  `Latitude` double NOT NULL,
-  `Longitude` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+`hostel_id` int(11) NOT NULL,
+  `hostel_name` varchar(11) NOT NULL,
+  `lat` double NOT NULL,
+  `long` double NOT NULL,
+  `hostel_nick` varchar(10) NOT NULL,
+  `DOffice` varchar(400) NOT NULL,
+  `Numbers` varchar(40) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `hostel_list`
 --
 
-INSERT INTO `hostel_list` (`Hostel_id`, `Hostel_Name`, `Latitude`, `Longitude`) VALUES
-(1, 'Alakananda', 12.9584, 80.238982),
-(2, 'Brahmaputra', 12.983625, 80.234888),
-(3, 'Cauvery', 12.985749, 80.234003),
-(4, 'Ganga', 12.987124, 80.238547),
-(5, 'Godavari', 12.985892, 80.23707),
-(6, 'Jamuna', 12.98619, 80.239186),
-(7, 'Krishna', 12.984275, 80.233223),
-(8, 'Mahanadi', 12.987962, 80.239057),
-(9, 'Mandakini', 12.986791, 80.239421),
-(10, 'Narmada', 12.985579, 80.235429),
-(11, 'Pampa', 12.987763, 80.238424),
-(12, 'Saraswathi', 12.984942, 80.23652),
-(13, 'Sarayu', 12.990948, 80.235382),
-(14, 'Sharavathi', 12.99008, 80.23451),
-(15, 'Sindhu', 12.987884, 80.23819),
-(16, 'Tamirapani', 12.988213, 80.238638),
-(17, 'Tapti', 12.984513, 80.235137);
+INSERT INTO `hostel_list` (`hostel_id`, `hostel_name`, `lat`, `long`, `hostel_nick`, `DOffice`, `Numbers`) VALUES
+(1, 'Alakananda', 12.985312, 80.23917, 'Alak', 'Dr.Somashekar_S_Hiremath,9444004681/Mr.V_Jambunatham/Mr.A.E_Selvakumar/Mr.Subbaiah', '8561,8560'),
+(2, 'Brahmaputra', 12.983625, 80.234888, 'Brahms', 'Dr.Dilip_Kumar_Chand,9444009070/Mr.Kalaiselvan/Mr.Joseph/Mr.Raja_Mani', '8581,8580'),
+(3, 'Cauvery', 12.985749, 80.234003, 'Cauvery', 'Mr.G_R_Rao,9444009072/Mr.Larsen_Mehta/Mr.Prabhudas/Mr.Sanmugham', '8661,8660'),
+(4, 'Ganga', 12.987124, 80.238547, 'Ganga', 'Dr.Arul_Prakash,9444009074/Mr.Vincent/Mr.Joshua/Mr.Mallakontaia', '8641,8640'),
+(5, 'Godavari', 12.985892, 80.23707, 'Godav', 'Mr.G.Appa_Rao,9444047421/Mr.A.D_Shankar/Mr.SMA_Ram/Mr.A_Prabhudas', '8661/8662,8660'),
+(6, 'Jamuna', 12.98619, 80.239186, 'Jam', 'Dr.Kesavan_V,', ''),
+(7, 'Krishna', 12.984275, 80.233223, 'Krishna', 'Dr.ShivaNagendra_SM,9444009580/Mr.Tirupal/Mr.Narsaiah/Mr.Ramaiah', '8701,8700'),
+(8, 'Mahanadi', 12.987962, 80.239057, 'Mahanadi', 'Dr.Dhiman_Chatterjee,9444393520/Mr.Sridharan/Mr.Chinnaiah/Mr.Paul', ''),
+(9, 'Mandakini', 12.986791, 80.239421, 'Mandak', 'Mr.M.V.Satyanarayana,9444009082/Mr.P.Gopinathan_Pillai/Mr.P_Partha_Sarathy/Mr.B.Ramanjaiah', '8731,8732'),
+(10, 'Narmada', 12.985579, 80.235429, 'Narmada', '', ''),
+(11, 'Pampa', 12.987763, 80.238424, 'Pampa', 'Dr.Asokan_T,9444393521/Mr.Velu/Mr.Ramu/Mr.Venkaiah', '8000'),
+(12, 'Saraswathi', 12.984942, 80.23652, 'Saras', 'Dr.Shaligram_Tiwari,9444009086/Mr.A_D_Shankar/Mr.K_Venkatasubbaiah/Mr.Y_Babu', '8771,8770'),
+(13, 'Sarayu', 12.990948, 80.235382, 'Sarayu', 'Dr.R_Madhumathi,Ext-4565(No-Mobile)/Mrs.Kalpana/Miss.Revathi/Mrs.Ananthi/Mrs.Tulasi', '8791,8790'),
+(14, 'Sharavathi', 12.99008, 80.23451, 'Sharav', 'Mrs.Usha_Mohan,9444009092/Mrs.Susheela/Mrs.Amrutha/Mrs.Kalavathi', '8811,8810'),
+(15, 'Sindhu', 12.987884, 80.23819, 'Sindhu', 'Dr.Boby_George,9444009088/Mr.L_Srinivasa_Rajan/Mr.Bhashara_Rao/Mr.V_Veeran', '8861,8860'),
+(16, 'Tamirapani', 12.988213, 80.238638, 'Tambi', 'Mr.Nandan_Kumar_Sinha,9444393523/Mr.S_Loganathan/Mr.G_Prabhucharan/Mr.N_Balaraman/Mr.M_Devakanam', '8941,8940'),
+(17, 'Tapti', 12.984513, 80.235137, 'Tapti', 'Mr.Prafulla_Kumar_Behera,9444009089/Mr.K.Mayavan/Mr.C.V.Balachandran/Mr.N.Somaiah', '8841,8840');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Mess_budget`
+-- Table structure for table `hostel_services`
 --
 
-CREATE TABLE IF NOT EXISTS `Mess_budget` (
+CREATE TABLE IF NOT EXISTS `hostel_services` (
+`ID` int(30) NOT NULL,
+  `Service` varchar(100) NOT NULL,
+  `Number` varchar(30) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `hostel_services`
+--
+
+INSERT INTO `hostel_services` (`ID`, `Service`, `Number`) VALUES
+(1, 'Civil', '8186'),
+(2, 'Electrical', '8187/8188'),
+(3, 'Water_Supply', '8190'),
+(4, 'Internet', '5999'),
+(5, 'Institute_Hospital', '8330/8331'),
+(6, 'Security_Section(Office)', '8260/8280'),
+(7, 'State_Bank_Of_India', '9400'),
+(8, 'Gymkhana', '8520'),
+(9, 'CCW_Office', '8500'),
+(10, 'Canara_Bank', '9405'),
+(11, 'Post_Office', '9444'),
+(12, 'Central_Library', '4950'),
+(13, 'Tata_Book_House', '9430'),
+(14, 'Public_Health', '8191'),
+(15, 'Horticulture_Complaints', '8194'),
+(16, 'Helpline', '044-26444444');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messes`
+--
+
+CREATE TABLE IF NOT EXISTS `messes` (
+`ID` int(11) NOT NULL,
+  `Mess` varchar(200) NOT NULL,
+  `Timings` varchar(300) NOT NULL,
+  `Position` varchar(50) NOT NULL,
+  `IMenu` varchar(600) NOT NULL,
+  `DMenu` varchar(600) NOT NULL,
+  `MDetails` varchar(30000) NOT NULL,
+  `SDetails` varchar(30000) NOT NULL,
+  `BImages` varchar(600) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `messes`
+--
+
+INSERT INTO `messes` (`ID`, `Mess`, `Timings`, `Position`, `IMenu`, `DMenu`, `MDetails`, `SDetails`, `BImages`) VALUES
+(1, 'SGR-SI', '', '12.987106,80.235941', 'SGR_1.png,SGR_2.png,SGR_3.png,SGR_4.png', 'SGR.pdf', '', 'A.Praneeth_Kumar_Reddy,,8939106736,,/Satya,,9445944098,,', ''),
+(2, 'RR-SI', '', '12.987106,80.235941', 'rr_1.png,rr_2.png,rr_3.png,rr_4.png', 'RR-SI.pdf', '', 'Mourya.T.R,,9500140725,,/Elias_Jesu_Packiam_D,,7418275657,,/N_Venkatesh,,9043561842,,', ''),
+(3, 'HF-SI', '', '12.987106,80.235941', 'HF_1.png,HF_2.png,HF_3.png,HF_4.png', 'HF-SI.pdf', '', 'E_Vishwanath,,9677155634,,/Shon_Yadav,,7667134393,,', ''),
+(4, 'HM-Cauvery', '', '12.985681,80.233542', 'cauvery_1.png,cauvery_2.png,cauvery_3.png,cauvery_4.png', 'Cauvery.pdf', '', 'Snehasagar,,9003295682,,/Vignesh_Raja_S,,9944102004,,', ''),
+(5, 'ADiet-Mandakini', '', '12.986725,80.240315', 'mandak_1.png,mandak_2.png,mandak_3.png', 'Mandakini-SI.pdf', '', 'Malay_Kumar_Shah,,9043576467,,/PRATIEK_P.NAGRALE,,9003194174,,', ''),
+(6, 'CT-Krishna', '', '12.984598,80.233046', 'krishna_1.png,krishna_2.png,krishna_3.png,krishna_4.png,krishna_5.png', 'Krishna-CT.pdf', '', 'Parani_Kumar_M,,9600325739,,/A.L.P.Rayudu,,7299858690,,', ''),
+(7, 'Zenith-NI', '', '12.987170,80.235932', 'Zenith_1.png,Zenith_2.png,Zenith_3.png,Zenith_4.png', 'Zenith-NI.pdf', '', 'Gaurav_Agrawal,,9952034589,,/Prathamesh_M_Khatavkar,,9962100641,,/Rahman,,7845991785,,/Rinkesh Virani,,9884299313,,', ''),
+(8, 'SK-NI', '', '12.987157,80.236163', 'SK_1.png,SK_2.png,SK_3.png,SK_4.png', 'SK-NI.pdf', '', 'Siddhant_Keshkar,,8056038156,,/Vikram Singh,,9444231704,,/Sahil_Gupta,,9940248870,,/Kamlesh_Kumar,,9566101827,,\r\n', ''),
+(9, 'Vindhya-GF', '', '12.990413,80.234918', 'Vindhya-GF_1.png,Vindhya-GF_2.png,Vindhya-GF_3.png,Vindhya-GF_4.png', 'Vindhya-GF.pdf', '', 'Abeynaya_G,,9487666458,,/	Srinagalakshmi_Nammi,,9498065663,,/Sai_Rajarajeshwari,,9884179591,,/Sindhuja,,9159528484,,\r\n', ''),
+(10, 'Vindhya-FF', '', '12.990413,80.234918', 'Vindhya-FF_1.png,Vindhya-FF_2.png,Vindhya-FF_3.png,Vindhya-FF_4.png', 'Vindhya-FF.pdf', '', 'Urvi_N_Shah,,9884340048,,/Anjali_Anil_Adekar,,9884299811,,/Rutvi,,9176484971,,/Sellam,,8939524544,,/Priyamvada_Modak,,9003107428,,/Arpita,,9445223504,,', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mess_budget`
+--
+
+CREATE TABLE IF NOT EXISTS `mess_budget` (
   `Hostel_id` int(1) DEFAULT NULL,
   `S_no` int(2) DEFAULT NULL,
   `Nature_of_expense` varchar(27) DEFAULT NULL,
@@ -466,10 +539,10 @@ CREATE TABLE IF NOT EXISTS `Mess_budget` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Mess_budget`
+-- Dumping data for table `mess_budget`
 --
 
-INSERT INTO `Mess_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`) VALUES
+INSERT INTO `mess_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`) VALUES
 (1, 1, 'Independence Day Sweets', 6000),
 (1, 2, 'Ganesh Chathurdhi Sweets', 6000),
 (1, 3, 'Deepavali Sweets', 10000),
@@ -528,10 +601,38 @@ INSERT INTO `Mess_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Sports_cap`
+-- Table structure for table `others`
 --
 
-CREATE TABLE IF NOT EXISTS `Sports_cap` (
+CREATE TABLE IF NOT EXISTS `others` (
+`ID` int(11) NOT NULL,
+  `Others` varchar(200) NOT NULL,
+  `Timings` varchar(300) NOT NULL,
+  `Position` varchar(50) NOT NULL,
+  `IMenu` varchar(600) NOT NULL,
+  `DMenu` varchar(600) NOT NULL,
+  `MDetails` varchar(30000) NOT NULL,
+  `SDetails` varchar(30000) NOT NULL,
+  `BImages` varchar(600) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `others`
+--
+
+INSERT INTO `others` (`ID`, `Others`, `Timings`, `Position`, `IMenu`, `DMenu`, `MDetails`, `SDetails`, `BImages`) VALUES
+(1, 'Travel_Agency', 'Monday_09:00,AM_07:30,PM/Tuesday_09:00,AM_07:30,PM/Wednesday_09:00,AM_07:30,PM/Thursday_09:00,AM_07:30,PM/Friday_09:00,AM_07:30,PM/Saturday_09:00,AM_07:30,PM/Sunday_09:00,AM_07:30,PM', '12.987066,80.235327', 'travel_agency.jpg', 'travel_agency.pdf', '', '', ''),
+(2, 'Xerox_Centre', 'Monday_08:30,AM_09:30,PM/Tuesday_08:30,AM_09:30,PM/Wednesday_08:30,AM_09:30,PM/Thursday_08:30,AM_09:30,PM/Friday_08:30,AM_09:30,PM/Saturday_08:30,AM_09:30,PM/Sunday_08:30,AM_09:30,PM', '12.987123,80.235327', 'xerox.jpg', 'Xerox.pdf', '', '', ''),
+(3, 'Giftshop', 'Monday_09:00,AM_07:00,PM/Tuesday_09:00,AM_07:00,PM/Wednesday_09:00,AM_07:00,PM/Thursday_09:00,AM_07:00,PM/Friday_09:00,AM_07:00,PM/Saturday_09:00,AM_07:00,PM/Sunday_09:00,AM_07:00,PM', '12.986957,80.235072', 'giftshop.jpg', 'giftshop.pdf', '', '', ''),
+(4, 'Haircare', 'Monday_09:00,AM_07:30,PM/Tuesday_09:00,AM_07:30,PM/Wednesday_09:00,AM_07:30,PM/Thursday_09:00,AM_07:30,PM/Friday_09:00,AM_07:30,PM/Saturday_09:00,AM_07:30,PM/Sunday_09:00,AM_07:30,PM', '12.987150,80.235281', 'haircare.jpg', 'haircare.pdf', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sports_cap`
+--
+
+CREATE TABLE IF NOT EXISTS `sports_cap` (
   `Hostel_id` int(1) DEFAULT NULL,
   `S.no` int(2) DEFAULT NULL,
   `Sport` varchar(23) DEFAULT NULL,
@@ -542,10 +643,10 @@ CREATE TABLE IF NOT EXISTS `Sports_cap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `Sports_cap`
+-- Dumping data for table `sports_cap`
 --
 
-INSERT INTO `Sports_cap` (`Hostel_id`, `S.no`, `Sport`, `Captain`, `Room_No`, `Phone_no`, `Email_id`) VALUES
+INSERT INTO `sports_cap` (`Hostel_id`, `S.no`, `Sport`, `Captain`, `Room_No`, `Phone_no`, `Email_id`) VALUES
 (1, 1, 'Cricket', 'Tirth Shah', 210, '', ''),
 (1, 2, 'Footer', 'Abdussalam', 237, '', ''),
 (1, 3, 'Hockey', 'Anudeep', 105, '', ''),
@@ -636,11 +737,88 @@ INSERT INTO `Sports_cap` (`Hostel_id`, `S.no`, `Sport`, `Captain`, `Room_No`, `P
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `table 11`
+--
+
+CREATE TABLE IF NOT EXISTS `table 11` (
+  `COL 1` varchar(15) DEFAULT NULL,
+  `COL 2` varchar(33) DEFAULT NULL,
+  `COL 3` varchar(33) DEFAULT NULL,
+  `COL 4` varchar(34) DEFAULT NULL,
+  `COL 5` varchar(32) DEFAULT NULL,
+  `COL 6` varchar(32) DEFAULT NULL,
+  `COL 7` varchar(34) DEFAULT NULL,
+  `COL 8` varchar(33) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `table 11`
+--
+
+INSERT INTO `table 11` (`COL 1`, `COL 2`, `COL 3`, `COL 4`, `COL 5`, `COL 6`, `COL 7`, `COL 8`) VALUES
+('', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+('Breakfast', 'Dosa with Masal', 'Idly + vada', 'Onion uthappam', 'pongal + vada', 'Maggi - 30% vegetable', 'Rava upma/Semiya upma', 'Rava dosa'),
+('', 'sambar', 'sambar', 'sambar', 'sambar', '', 'sambar', 'sambar'),
+('', 'Coconut chutney', 'tomato chutney', 'groundnut chutney', 'Coconut chutney', 'Tomato Sauce', 'tomato chutney', 'coconut chutney'),
+('', 'Tea/Coffee/Milk', 'Tea/Coffee/Milk', 'Tea/Coffee/Milk', 'Tea/Coffee/Milk', 'Tea/Coffee/Milk', 'Tea/Coffee/Milk', 'Tea/Coffee/Milk'),
+('', 'Bread/Butter/Jam', 'Bread/Butter/Jam', 'Bread/Butter/Jam', 'Bread/Butter/Jam', 'Bread/Butter/Jam', 'Bread/Butter/Jam', 'Bread/Butter/Jam'),
+('Extras', 'Boiled Egg', 'Boiled egg', 'Boiled Egg', 'Boiled Egg', 'Boiled Egg', 'Boiled Egg', 'Boiled Egg'),
+('', 'corn flakes', 'corn flakes', 'corn flakes', 'corn flakes', 'corn flakes', 'corn flakes', 'corn flakes'),
+('', 'boost', 'boost', 'boost', 'boost', 'boost', 'boost', 'boost'),
+('', '', '', '', '', '', '', ''),
+('lunch', 'Phulka', 'Rice', 'Rice', 'Rice', 'Rice', 'Rice', 'Rice'),
+('', 'veg salad[tomato/beetroot/carrot]', 'veg salad[cucumber/onion/radish],', 'veg salad[cucumber/tomato/carrot],', 'veg salad[onion/radish/carrot],', 'veg salad[cucumber/onion/carrot]', 'veg salad[onion/radish/beetroot]', 'veg salad[onion/radish/carrot]'),
+('', '', 'curd', 'curd', 'curd', 'curd', 'curd', 'curd'),
+('', '', 'moong daal', 'Daal(tomato daal)', 'Daal(mixed daal)', 'Daal(palak daal)', 'Mix Veg Kuruma- less aloo', 'Daal(daal makhani)'),
+('', 'paneer butter masala', 'green peas masala', 'Channa masala', '(bhindhi fry) - dry', '(Potato Podimas)', 'carrot beans-poriyal', 'veg curry(Beans & Alu)'),
+('', 'raitha', 'Lady''s finger sambar', 'sambar(avaraka)', 'sambar(mix veg)', 'sambar(raddish)', 'sambar(drumstick)', 'sambar(Avarakka)'),
+('', 'papad/fryums', 'rasam', 'fryums', 'papad', 'fryums', 'papad', 'papad/fryums'),
+('', 'pickle', 'papad', 'pickle', 'pickle', 'pickle', 'pickle', 'pickle'),
+('', 'sugar', 'pickle', 'sugar', 'sugar', 'sugar', 'sugar', 'sugar'),
+('', 'salt', 'sugar', 'salt', 'salt', 'salt', 'salt', 'salt'),
+('', 'sweet(Double ka meetha)/ice crem', 'salt', 'karakulambu', 'morekulambu', 'rasam', 'karakulambu', 'morekulambu'),
+('', 'veg-biryani/Veg pulav', 'oil chapathi', 'poori', 'pudhina chapathi', 'oil chapathi', 'poori', 'oil chapathi'),
+('', 'Lime Juce', '', '', '', '', '', ''),
+('', '', '', '', '', '', '', ''),
+('Extras', 'omlet', 'Scrambled egg', 'omlet', 'Scrambled egg', 'omlet', 'Scrambled egg', 'chilli chicken'),
+('', 'kadai panneer', 'cauliflower munchurian', 'veg munchurian', 'gobi munchurian', 'vegmunchurian', 'panneer munchurian', 'veg manchurian'),
+('', 'Fresh juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice'),
+('', 'Chicken 65', 'chicken masala', 'Baby corn masala', 'Panner butter masala', 'Garlic chicken (dry)', 'Mushroom masala', 'lassi'),
+('', 'egg masala', 'egg fried rice', 'Pepper chicken', 'chilli chicken', 'egg masala', 'chicken chettinadu', 'chicken fried rice'),
+('', '', '', '', '', '', '', ''),
+('tea time', 'coffee', 'coffee', 'coffee', 'coffee', 'coffee', 'coffee', 'coffee'),
+('', 'tea', 'tea', 'tea', 'tea', 'tea', 'tea', 'tea'),
+('', 'milk', 'milk', 'milk', 'milk', 'milk', 'milk', 'milk'),
+('', '', '', '', '', '', '', ''),
+('tea time extras', 'samosa', 'sundal', 'papdi chat', 'cutlet', 'bajji', 'samosa', 'cutlet'),
+('', 'mirchi bajji', 'pani poori', 'bajji', 'dahipoori', 'pani poori', 'bread pakoda', 'parupu vada'),
+('', 'bhelpoori', 'vada', 'pani poori', 'kachori', 'samosa masala chat', 'bajji', 'samosa masala chat'),
+('', '', '', '', '', '', '', ''),
+('Dinner', 'Rice', 'Rice', 'Rice', 'Rice', 'Rice', 'Rice', 'sambar rice'),
+('', 'Daal rasam', 'Pepper rasam', 'Jeera rasam', 'Tomato rasam', 'Daal rasam', 'Pepper rasam', 'curd rice'),
+('', 'sambar(lady finger)', 'sambar(mix veg)', 'sambar(raddish)', 'sambar((brinjal)', 'sambar(avaraka)', 'sambar(drumstick )', 'veriety rice - 1'),
+('', 'veg salad[onion/radish/carrot]', 'veg salad[onion/radish/beetroot]', 'veg salad[cucumber/onion/carrot]', 'veg salad[cucumber/onion/radish]', 'veg salad[onion/radish/carrot]', 'veg salad[cucumber/tomato/carrot]', 'potato chips'),
+('', 'Seasonal Fruit', 'fruit(water melon)', 'Banana(morries)', 'Fruitsalad', 'Banana(morries)', 'Papaya', 'Pineapple'),
+('', 'butter milk', 'butter milk', 'butter milk', 'butter milk', 'butter milk', 'butter milk', ''),
+('', 'papad/fryums', 'papad/fryums', 'papad/fryums', 'papad/fryums', 'papad/fryums', 'papad/fryums', 'veg salad[tomato/beetroot/carrot]'),
+('', 'Poori', 'Chapathi', 'Dosa', 'Phulka', 'Uthappam', 'Pudina chapathi', 'boost/bourvita'),
+('', 'channa masala', 'Mix Veg Gravy', 'Groundnut chutney', 'Alu mutter', 'Kara chutney', ' Gobi masala', ''),
+('', 'salt, pickle', 'salt, pickle', 'salt, pickle', 'salt, pickle', 'salt, pickle', 'salt, pickle', 'salt, pickle'),
+('', '', '', '', '', '', '', ''),
+('Extras', 'Scrambled egg', 'omlet', 'Scrambled egg', 'omlet', 'Scrambled egg', 'omlet', 'Scrambled egg'),
+('', 'Fresh juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice', 'Fresh Juice'),
+('', 'Egg masala', 'Palak pakoda', 'Baby corn masala', 'Basundi', 'Chicken 65', 'Ice cream - chocolate/butterscotch', 'Pepper chicken'),
+('', 'panneer munchurian', 'gobi munchurian', 'veg munchurian', 'gobi munchurian', 'veg munchurian', 'Chilli panner', 'veg munchurian'),
+('', 'chicken fried rice', 'kadai chicken', 'chicken 65', 'chilli chicken', 'egg masala', 'chicken chettinadu', 'chicken 65');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(6) NOT NULL AUTO_INCREMENT,
+`id` int(6) NOT NULL,
   `user_id` int(6) DEFAULT NULL,
   `username` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `fullname` varchar(80) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -664,10 +842,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `avatar_file_name` varchar(255) DEFAULT NULL,
   `avatar_content_type` varchar(255) DEFAULT NULL,
   `avatar_file_size` int(11) DEFAULT NULL,
-  `avatar_updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQUE` (`username`),
-  UNIQUE KEY `username` (`username`)
+  `avatar_updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15265 ;
 
 --
@@ -15823,6 +15998,80 @@ INSERT INTO `users` (`id`, `user_id`, `username`, `fullname`, `room`, `hostel`, 
 (15263, NULL, 'EE14M051', 'DEEPAK TRIPATHI', 755, 'TAMIRAPARANI', '', '0000-00-00 00:00:00', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2014-12-02 04:29:45', NULL, 0, NULL, NULL, NULL, NULL, NULL),
 (15264, NULL, 'EE14M039', 'PRADEEP KUMAR', 755, 'TAMIRAPARANI', '', '0000-00-00 00:00:00', NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2014-12-02 04:29:45', NULL, 0, NULL, NULL, NULL, NULL, NULL);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `eateries`
+--
+ALTER TABLE `eateries`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `hostel_list`
+--
+ALTER TABLE `hostel_list`
+ ADD PRIMARY KEY (`hostel_id`);
+
+--
+-- Indexes for table `hostel_services`
+--
+ALTER TABLE `hostel_services`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `messes`
+--
+ALTER TABLE `messes`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `others`
+--
+ALTER TABLE `others`
+ ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `UNIQUE` (`username`), ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `eateries`
+--
+ALTER TABLE `eateries`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `hostel_list`
+--
+ALTER TABLE `hostel_list`
+MODIFY `hostel_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT for table `hostel_services`
+--
+ALTER TABLE `hostel_services`
+MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `messes`
+--
+ALTER TABLE `messes`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `others`
+--
+ALTER TABLE `others`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15265;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

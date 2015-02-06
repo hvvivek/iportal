@@ -75,10 +75,10 @@
     						$result= mysql_query($query);
     						while($eatery= mysql_fetch_array($result))
     						{
-    							$eatery_0= explode("_",$eatery['Eatery']);
-    							$eatery_1= implode(" ",$eatery_0);
+    							$eatery_100= explode("_",$eatery['Eatery']);
+    							$eatery_101= implode(" ",$eatery_100);
     							$eatery_id= $eatery['ID'];
-    							echo "<li><a href='../eateries/eateries.php?varname=$eatery_id'>".$eatery_1."</a></li>";
+    							echo "<li><a href='../eateries/eateries.php?varname=$eatery_id'>".$eatery_101."</a></li>";
 							}
 						    ?>
                         </ul>

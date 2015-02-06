@@ -25,7 +25,7 @@ $lng=$row["long"];
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<link href="../eateries/css/hostel.css" rel="stylesheet" />
+		<link href="css/hostel.css" rel="stylesheet" />
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" type="text/css" href="css/hostel.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>

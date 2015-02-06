@@ -252,7 +252,7 @@ require '../partials/footer.php';
 								echo "<div class='slider'>";
 									echo "<div id='s1'>";
 										echo "<div class='header1'>";
-											echo "<img class='img-circle img-responsive' src='images/photo.png'>";
+											echo "<img class='img-circle img-responsive' src='img/photo.png'>";
 											echo "<p class='hw'>".$hostel_14."</p>";
 										echo "</div>";
 									echo "</div>";

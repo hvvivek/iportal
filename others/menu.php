@@ -251,7 +251,7 @@ require '../partials/footer.php';
 					$a= sizeof($others_3);
 					for($b=0;$b<=$a-1;$b++)
 					{
-						echo "<div class ='eatimg'>";
+						echo "<div class ='eatimg' style='margin-bottom:2%;'>";
 						echo "<img src= images/".$others_3[$b]." class='img-responsive' alt='Responsive image'>";
 						echo "</div>";
 					}
