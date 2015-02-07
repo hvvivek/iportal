@@ -179,8 +179,10 @@ function candelete($user)
 $sql="SELECT * FROM `posts` WHERE `posted_by`='$post_user' LIMIT 20 ";	
 //echo $sql;
 $query=mysqli_query($con,$sql);
+
 echo "<div class='container-fluid'>";
 require 'hostel/sidebar.php';
+if(mysqli_num_rows($query)>0){
 while($result=mysqli_fetch_assoc($query))
 {?>
     echo "<div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-3 col-sm-offset-2 col-md-offset-2">
@@ -224,6 +226,26 @@ while($result=mysqli_fetch_assoc($query))
 </div>
 	<?php
 }
+}
+
+else
+{
+
+?>
+<div class="col-md-6 col-md-offset-2">
+<h1>No posts</h1>
+  
+
+</div>
+  
+<?php
+ 
+}
+
+}
+
+?>
+</br></div>
 }?>
 </br></div>
     <div class="modal fade" aria-hidden="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0'>

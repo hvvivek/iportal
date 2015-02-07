@@ -14,6 +14,23 @@
 	{
 		display: none;
 	}
+	.points_info>p
+	{
+		margin: 0 0 10px;
+border-bottom: 1px solid gray;
+padding-top: 20px;
+padding-bottom: 20px;
+text-align: center;
+}
+
+.points_div
+{
+	position: absolute !important;
+left: 80%;
+top: 20%;
+border: 1px solid green;
+}
+
 </style>
 
 <?php 
@@ -86,7 +103,7 @@ $query=mysqli_query($con,$sql);
 echo "<div class='container '>";
 while($result=mysqli_fetch_assoc($query))
 {?>
-    <div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-1 col-sm-offset-2 col-md-offset-2">
+    <div class="post post<?php echo $result['id']?> col-lg-7 col-lg-offset-2 col-sm-offset-2 col-md-offset-2">
     <div class="panel panel-default">
   <?php  if(candelete($result['posted_by']))
 {
