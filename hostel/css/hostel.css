@@ -50,7 +50,7 @@ h2,h3
 body
 {
 	background-color:white!important;	
-	margin-bottom:-5%;
+	overflow-x:hidden; 
 }
 .eatimg
 {
@@ -400,8 +400,12 @@ body
 	}
 	.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:19%!important;
 	}
 }
 @media screen and (min-width:1312px) and (max-width:1357px)
@@ -417,8 +421,12 @@ body
 	}
 	.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:19%!important;
 	}
 }
 @media screen and (min-width:1266px) and (max-width:1311px)
@@ -430,8 +438,12 @@ body
 	}
 	.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:18%!important;
 	}
 	.screen
 	{
@@ -445,10 +457,14 @@ body
 		width:250px!important;
 		padding: 0px!important
 	}
-	.heal
+.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:18%!important;
 	}
 	.screen
 	{
@@ -466,6 +482,15 @@ body
 	{
 		margin-top:4%;
 	}
+	.heal
+	{
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:18%!important;
+	}
 }
 @media screen and (min-width:1130px) and (max-width:1174px)
 {
@@ -476,8 +501,12 @@ body
 	}
 	.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:18%!important;
 	}
 	.screen
 	{
@@ -491,10 +520,14 @@ body
 		width:220px!important;
 		padding: 0px!important
 	}
-	.heal
+.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:18%!important;
 	}
 	.screen
 	{
@@ -506,13 +539,21 @@ body
 	.slum
 	{
 		width:210px!important;
-		padding: 0px!important
+		padding: 0px!important;
+		font-size:80%;
 	}
 	.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
 		font-size:70%!important;
+	}
+	.heal
+	{
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:16%!important;
 	}
 	.screen
 	{
@@ -524,13 +565,21 @@ body
 	.slum
 	{
 		width:200px!important;
-		padding: 0px!important
+		padding: 0px!important;
+		font-size:80%;
 	}
 	.heal
 	{
-		margin-top:10%!important;
-		margin-bottom:12%;
 		font-size:70%!important;
+	}
+	.heal
+	{
+		margin-top:4%!important;
+		margin-bottom:6%;
+	}
+	.header2,.header1
+	{
+		height:16%!important;
 	}
 	.screen
 	{
@@ -702,4 +751,24 @@ body
 .actived
 {
 	color:white!important;
+}
+.btn1
+{
+	background-color:#16a085;
+	opacity: 0.8
+}
+.btn1:hover
+{
+	opacity:1;
+}
+.btnh
+{
+	font-size:75%;
+	color:white;
+	text-decoration: none;
+}
+.btnh:hover
+{
+	color:white;
+	text-decoration: none;
 }

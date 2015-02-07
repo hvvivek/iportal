@@ -26,6 +26,7 @@ mysql_select_db($db);
         <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+                font-size: 1.1em;
             }
 
             @-skrollr-keyframes animation1 {

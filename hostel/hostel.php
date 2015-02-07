@@ -44,6 +44,7 @@ $lng=$row["long"];
 <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+                font-size: 1.1em;
             }
             @-skrollr-keyframes animation1 {
                 0 {
@@ -196,7 +197,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>
@@ -228,7 +229,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>
@@ -262,7 +263,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>
@@ -294,7 +295,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 													echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>

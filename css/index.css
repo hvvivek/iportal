@@ -289,6 +289,14 @@ font-weight: bold;
   -webkit-transition:1s;
   display: none;
 }
+@media screen and  (max-width:1200) and (min-width:1100px)
+{
+  .inbig
+  {
+    position: relative;
+    left:7%;
+  }
+}
 .inbig
 {
 position: relative;
@@ -297,8 +305,8 @@ transition:.3s;
 height: 120px;
 width: 120px;
 border: 1px solid #16a085;
-left: 10%;
-top: 9%;
+left: 11%;
+top: 11%;
 visibility:hidden;
 }
 
