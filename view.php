@@ -33,6 +33,7 @@ $lng=$row["long"];
     <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
     <script src="js/ferro.js" type="text/javascript"></script>
 <style>
+#comment_section{display: none;}
             #dnb_sec {
                 -skrollr-animation-name:animation1;
             }
@@ -50,6 +51,11 @@ $lng=$row["long"];
                     position:fixed;
                     background-color:rgba(255, 255, 255,0.99);
                 }
+            }
+
+           .container
+            {
+
             }
 </style>
     <div style="display:none">
@@ -180,12 +186,12 @@ $sql="SELECT * FROM `posts` WHERE `posted_by`='$post_user' LIMIT 20 ";
 //echo $sql;
 $query=mysqli_query($con,$sql);
 
-echo "<div class='container-fluid'>";
+echo "<div class='container-fluid' style='padding-top:120px'>";
 require 'hostel/sidebar.php';
 if(mysqli_num_rows($query)>0){
 while($result=mysqli_fetch_assoc($query))
 {?>
-    echo "<div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-3 col-sm-offset-2 col-md-offset-2">
+    <div class="post post<?php echo $result['id']?> col-lg-8 col-lg-offset-3 col-sm-offset-2 col-md-offset-2">
     <div class="panel panel-default">
   <?php  if(candelete($result['posted_by']))
 {
@@ -200,6 +206,7 @@ while($result=mysqli_fetch_assoc($query))
   echo '<div class="btn btn-primary comment_view pull-right" name="'.$result['id'].'">viewcomments</div>';
 	echo '</br></br>';
 	?>
+
 		 </div>
 	</div>
   <div  class="col-lg-12 comment_section<?php echo$result['id']?>" id="comment_section">
@@ -209,6 +216,7 @@ while($result=mysqli_fetch_assoc($query))
   <?php  if(isset($_SESSION['username']))
   {
 ?>
+
   <div class="comment ">
     <form role="form" method="post"  action="comment.php" id="ajaxcomment" class="ajaxcomment" name="<?php echo$result['id']?>">
       <input value='<?php echo $result["id"] ?>' name="post_id" style="display:none"/>

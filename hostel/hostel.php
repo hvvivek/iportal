@@ -186,7 +186,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=$id'>View Blog</a>
+												<a href='../view.php?".$sec["username"]."'>View Blog</a>
 											</div>
 										</div>
 									</div>
@@ -218,7 +218,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=$id'>View Blog</a>
+												<a href='../view.php?".$sec["username"]."'>View Blog</a>
 											</div>
 										</div>
 									</div>
@@ -252,7 +252,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=$id'>View Blog</a>
+												<a href='../view.php?".$sec["username"]."'>View Blog</a>
 											</div>
 										</div>
 									</div>
@@ -283,7 +283,8 @@ $lng=$row["long"];
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
-												<a href='../view.php?id=$id'>View Blog</a>
+													echo "</p>
+												<a href='../view.php?".$sec["username"]."'>View Blog</a>
 											</div>
 										</div>
 									</div>
