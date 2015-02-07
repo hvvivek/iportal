@@ -42,7 +42,6 @@ require '../partials/footer.php';
 				echo("file opening failed");
 	
 	}
-	echo $_SESSION['username'];
 ?>
 <html>
 	<head>
@@ -50,7 +49,7 @@ require '../partials/footer.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $others_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/hostel.css" rel="stylesheet">
+		<link href="../eateries/css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
@@ -224,10 +223,11 @@ require '../partials/footer.php';
 		</div>
 	<div class="container-fluid contain1">
 			<div class="row">
-				<div class="sidebar col-md-2 col-lg-2">
+				<div class="sidebar col-xs-1 col-sm-1 col-md-2 col-lg-2">
 					<ul class="nav nav-sidebar">
-						<li class="bull"><a href='#' id="hos"><?php echo $others_1; ?></a></li>	
-						<li class="menu"><a href='menu.php?varname=<?php echo $file; ?>'>Services</a></li>
+						<li class="bull"><a href='#' id="hos"><?php echo $others_1; ?></a></li>
+						<li class="bull"><a href="others.php?varname=<?php echo $file; ?>"></li>
+						<li class="bull"><a href='menu.php?varname=<?php echo $file; ?>'>Services</a></li>
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>

@@ -8,13 +8,6 @@
 		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=techsoc' class="kill">Techsoc</a></li>
 		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=sports' class="kill">Schroeter</a></li>
 		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=alumni' class="kill">Alumni</a></li>
-		<form action="map/location.php" id="fmap" method="GET">
-			<input class="input" name="name" value=<?php echo $name;?>>
-			<input class="input" name="lat" value=<?php echo $lat;?>>
-			<input class="input" name="lng" value=<?php echo $lng;?>>
-			<ul class="nav nav-sidebar">
-				<li class="bull"><a href="#" class="kill" onclick="document.getElementById('fmap').submit();">Location</a></li> 
-			</ul>
-		</form>
+		<li class="bull"><a href="#" class="kill" onclick="access();">Location</a></li> 
 	</ul>
 </div>

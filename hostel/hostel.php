@@ -1,23 +1,25 @@
 <?php
 session_start();
-$server="localhost";
-$user="root";
-$pwd="ragasree";
-$db="i-portal";
-$conn = mysql_connect($server,$user,$pwd);
-mysql_select_db("i-portal");
+require  '../config.php';
 $id=$_GET['varname'];
+$conn = mysql_connect($host,$username,$password);
+mysql_select_db("i-portal");
+$sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
 $sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
 $data=mysql_query($sql);
 $row=mysql_fetch_assoc($data);
 $name=$row["hostel_name"];
-$lat=$row["latitude"];
-$lng=$row["longitude"];
-?>							
-<!DOCTYPE html>
-<?php     
-require '../includes/signin.php';
+$lat=$row["lat"];
+$lng=$row["long"];
 ?>
+<div style="display:none">
+<?php
+	echo $lat;
+	echo $lng;
+	echo $name;
+?>
+</div>							
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta chaset="utf-8">
@@ -29,7 +31,7 @@ require '../includes/signin.php';
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-		<link href="../css/hostel.css" rel="stylesheet" />
+		<link href="../eateries/css/hostel.css" rel="stylesheet" />
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" type="text/css" href="css/hostel.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
@@ -40,64 +42,115 @@ require '../includes/signin.php';
 		<script src="js/dynamicpage.js" type="text/javascript"></script>
 		<script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
 		<script src="../js/ferro.js" type="text/javascript"></script>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>	
-		<script src="../js/ferro.js" type="text/javascript"></script>
-		<script src="js/dynamicpage.js" type="text/javascript"></script>
-		<style>
-	            #dnb_sec {
-	                -skrollr-animation-name:animation1;
-	            }
-	            @-skrollr-keyframes animation1 {
-	                0 {
-	                    margin-top:0px;
-	                    position:relative;
-	                    
-	                    <!--Site Color -->
-	                    background-color:rgba(26, 188, 156,1.0);
-	                    <!--Site Color-->
-	                }
-	                top {
-	                    margin-top:0px;
-	                    position:fixed;
-	                    background-color:rgba(305, 305, 305,0.99);
-	                }
-	            }
-		</style>
-		<script>
+<style>
+            #dnb_sec {
+                -skrollr-animation-name:animation1;
+            }
+            @-skrollr-keyframes animation1 {
+                0 {
+                    margin-top:0px;
+                    position:relative;
+                    
+                    <!--Site Color -->
+                    background-color:rgba(26, 188, 156,1.0);
+                    <!--Site Color-->
+                }
+                top {
+                    margin-top:0px;
+                    position:fixed;
+                    background-color:rgba(255, 255, 255,0.99);
+                }
+            }
+</style>
+		<div style="display:none">
+			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
+				<tr>
+					<th>lat</th>
+					<th>lng</th>
+					<th>name</th>
+				</tr>
+				<?php
+					echo "<tr>";
+					echo "<th>". $lat ."</th>";
+					echo "<th>". $lng ."</th>";
+					echo "<th>". $name ."</th>";
+					echo "</tr>";
+					echo "</table>";
+				?>
+		</div>
+		<script type= "text/javascript">
+			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
+			var lng = parseFloat(document.getElementById('myTable').rows[1].cells[1].innerHTML);
+			var name = document.getElementById('myTable').rows[1].cells[2].innerHTML;
+			var myCenter=new google.maps.LatLng(lat,lng);
+			var map;
+			function initialize()
+			{
+				var mapProp = {
+			center:myCenter,
+			zoom:15,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+			};
+			map=new google.maps.Map(document.getElementById("googleMap1"),mapProp);
+			var marker=new google.maps.Marker({
+				position:myCenter,
+			});		
+			google.maps.event.addListenerOnce(map, 'idle', function() {
+				google.maps.event.trigger(map, 'resize');
+				map.setCenter(myCenter);
+			});
+			marker.setMap(map);
+			var infowindow = new google.maps.InfoWindow({
+			content: name
+			});
+			infowindow.open(map,marker);
+			}
 			function access()
 			{
 				$('#Modal0').modal('show');
 				initialize();
+				/*setTimeout(function(){
+					
+					google.maps.event.trigger(map, "resize");
+					map.setCenter(myCenter);
+					},3000);*/
 			}		
-			function wec()
-			{
-				window.location= "../index.php";
+			//google.maps.event.addDomListener(window, 'load', initialize);
+			function ajax_3(param){
+			var id= param;
+			alert(id);
+			$.ajax({
+				url: "download_file.php",
+				type: "post",
+				data: {uploadid: param},
+				success: function(){
+					window.location= 'download_file.php';
+				}
+			});
+			}
+			function wec(){
+			window.location= "../index.php";
 			}
 		</script>
 		<script>
-			$(document).ready(function()
-			{
-				$(".wheel-button").wheelmenu(
-				{
-		        	trigger: "hover",
-		        	animation: "fly",
-		        	animationSpeed: "fast"
-				});
+			$(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+			trigger: "hover",
+			animation: "fly",
+			animationSpeed: "fast"
+					});
 			});
-				
+		
 		</script>
 	</head>
 <body>
 	    <?php
 			require '../includes/navbar.php'
-	    ?>
+        ?>
 		<div class="container-fluid">
-			<?php
-				require 'sidebar.php'
-			?>
+		<?php
+			require 'sidebar.php'
+        ?>
 			<div class="col-md-10 col-md-offset-2 col-sm-offset-2 col-sm-10">	
 				<?php
 					$sno=1;
@@ -238,12 +291,25 @@ require '../includes/signin.php';
 					}
 				?>
 			</div>
-		</div>
 		<script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
 		<script type="text/javascript" src="../js/skrollr.js"></script>
 		<script type="text/javascript">skrollr.init();</script>
 		<?php
 			require '../partials/footer.php';
 		?>
+		<div class="modal fade" aria-hidden="false" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0'>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class='modal-header'>
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 id='location0'>Location</h4>
+					</div>
+					<div class="modal-body">
+						<div id='googleMap1' style="width:100%;height:50%">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
