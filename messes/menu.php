@@ -54,7 +54,7 @@ require '../partials/footer.php';
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css">
 		<script  type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
 		<script  type="text/javascript" src="../js/ferro.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
@@ -65,7 +65,7 @@ require '../partials/footer.php';
 		<script src="../js/dynamicpage.js" type="text/javascript"></script>
 		<script type='text/javascript' src='../js/jquery.ba-hashchange.min.js'></script>
 		<script src="../js/ferro.js" type="text/javascript"></script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>

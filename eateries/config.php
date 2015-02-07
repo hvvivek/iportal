@@ -1,6 +1,6 @@
 <?php
 define ("dbhost","localhost");
 define ("dbuser","root");
-define ("dbpass","ragasree");
+define ("dbpass","yousuckballs");
 define ("db","eateries");
 ?>

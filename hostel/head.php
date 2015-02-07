@@ -46,9 +46,9 @@ require '../partials/footer.php';
 		<title><?php echo $name ;?></title>
 		<link href="../eateries/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="../eateries/css/hostel.css" rel="stylesheet" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="../eateries/js/bootstrap.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css" />
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
