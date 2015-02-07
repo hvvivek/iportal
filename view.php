@@ -1,18 +1,19 @@
 <?php
-session_start();
-$id=$_GET['id'];
-$id= explode(',',$id);
-$id_0= $id[1];
-$id= $id[0];
-require 'config.php';
-$conn = mysql_connect($host,$username,$password);
-mysql_select_db("i-portal");
-$sql1="SELECT * FROM hostel_list WHERE hostel_id='{$id_0}'";
-$data1=mysql_query($sql1);
-$row=mysql_fetch_assoc($data1);
-$name=$row["hostel_name"];
-$lat=$row["lat"];
-$lng=$row["long"];
+	session_start();
+	$id=$_GET['id'];
+	$id= explode(',',$id);
+	$id_0= $id[1];
+	$id= $id[0];
+	require 'config.php';
+	$conn = mysql_connect($host,$username,$password);
+	mysql_select_db("i-portal");
+	$sql1="SELECT * FROM hostel_list WHERE hostel_id='{$id_0}'";
+	$data1=mysql_query($sql1);
+	$row=mysql_fetch_assoc($data1);
+	$name=$row["hostel_name"];
+	$lat=$row["lat"];
+	$lng=$row["long"];
+	require '../partials/footer.php';
 ?>
 <html>
  <head>
@@ -142,17 +143,17 @@ $lng=$row["long"];
     
     </script>
     <style>
-.comment_view
-  {
-  border-radius: 0px !important;
-   background: #2ecc71 !important; 
-  }
-.well
-{
-  border-radius: 0px !important;
- margin-bottom: 10px;
-}
-</style>
+		.comment_view
+		  {
+		  border-radius: 0px !important;
+		   background: #2ecc71 !important; 
+		  }
+		.well
+		{
+		  border-radius: 0px !important;
+		 margin-bottom: 10px;
+		}
+	</style>
   </head>
 <?php 
 if(!$_SERVER['QUERY_STRING'])

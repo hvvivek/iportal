@@ -49,7 +49,7 @@ require '../partials/footer.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/hostel.css" rel="stylesheet">
+		<link href="../eateries/css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css">
 		<script  type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
@@ -247,12 +247,12 @@ require '../partials/footer.php';
 				echo "</form>";
 			?>
 			</div>
-			<div class="img" style="max-height:0%;margin-left:25%;margin-top:2%">
+			<div class="img" style="max-height:0%;margin-left:18%;margin-top:2%">
 				<?php
 					$a= sizeof($mess_3);
 					for($b=0;$b<=$a-1;$b++)
 					{
-						echo "<div class ='eatimg' style='margin-bottom:1%;'>";
+						echo "<div class ='eatimg' style='margin-bottom:3%;'>";
 						echo "<img src= images/".$mess_3[$b]." class='img-responsive' alt='Responsive image'>";
 						echo "</div>";
 					}

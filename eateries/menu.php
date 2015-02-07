@@ -49,7 +49,7 @@ require '../partials/footer.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $eatery_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/hostel.css" rel="stylesheet">
+		<link href="css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css">
 		<script  type="text/javascript" src="../js/jquery.wheelmenu.js"></script>

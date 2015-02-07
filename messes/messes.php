@@ -49,7 +49,7 @@ require '../partials/footer.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../css/hostel.css" rel="stylesheet">
+		<link href="../eateries/css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
