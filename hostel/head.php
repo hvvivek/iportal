@@ -46,9 +46,9 @@ require '../partials/footer.php';
 		<title><?php echo $name ;?></title>
 		<link href="../eateries/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="../eateries/css/hostel.css" rel="stylesheet" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="../eateries/js/bootstrap.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css" />
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
@@ -120,6 +120,7 @@ require '../partials/footer.php';
 		<style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+                font-size: 1.1em;
             }
 
             @-skrollr-keyframes animation1 {
@@ -138,36 +139,6 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            <!--html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
-			@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 102%; }
-			}-->
 		</style>
 		<script>
 				$(document).ready(function(){
@@ -191,13 +162,9 @@ require '../partials/footer.php';
 				</a>
 				<ul id="wheel"  data-angle="NW">
 						<li class="item"><a href="#home">SL</a></li>
-						<li class="item"><a href="#home">BS</a></li>
-						<li class="item"><a href="#home">NP</a></li>
 						<li class="item"><a href="#home">IP</a></li>
 						<li class="item"><a href="#home">FB</a></li>
 						<li class="item"><a href="#home">EW</a></li>
-						<li class="item"><a href="#home">VC</a></li>
-						<li class="item"><a href="#home">H</a></li>
 				</ul>
 			</div>
 		</div>          
@@ -206,13 +173,13 @@ require '../partials/footer.php';
 				<div class="sidebar col-xs-1 col-sm-1 col-md-2 col-lg-2">
 					<ul class="nav nav-sidebar">
 							<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
-							<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
+							<li class="bull"><a href='hostel.php?varname=<?php echo $file;?>' class="kill">Hostel secretaries details</a></li>
 							<li class="bull"><a href='head.php?varname=<?php echo $file; ?>' class="kill">Hostel office-details</a></li>
-							<li class="bull"><a href='Hostel_Services.php?varname=<?php echo $file; ?>' class="kill">Hostel services</a></li>
-							<li class="bull"><a href='#' class="kill">Litsoc</a></li>
-							<li class="bull"><a href='#' class="kill">Techsoc</a></li>
-							<li class="bull"><a href='#' class="kill">Schroeter</a></li>
-							<li class="bull"><a href='#' class="kill">Alumni</a></li>
+							<li class="bull"><a href='hostel_services.php?varname=<?php echo $file; ?>' class="kill">Hostel services</a></li>
+							<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=litsoc' class="kill">Litsoc</a></li>
+							<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=techsoc' class="kill">Techsoc</a></li>
+							<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=sports' class="kill">Schroeter</a></li>
+							<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=alumni' class="kill">Alumni</a></li>
 							<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>

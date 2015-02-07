@@ -2,8 +2,7 @@
 
 $host="localhost";  
 $username="root";  
-$password="Sai@271295"; 
-
+$password="yousuckballs"; 
 $con=mysqli_connect($host,$username,$password,"i-portal") or die('can not connect');
 
 function getuserdetails($value,$con)
