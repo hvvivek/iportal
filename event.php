@@ -10,7 +10,9 @@
 	$name=$row["hostel_name"];
 	$lat=$row["lat"];
 	$lng=$row["long"];
-	require '../partials/footer.php';
+	require 'partials/footer.php';
+	$a= $_SERVER['DOCUMENT_ROOT'];
+	echo $a;
 ?>
 <html>
  <head>

@@ -44,6 +44,7 @@ $lng=$row["long"];
 <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+                font-size: 1.1em;
             }
             @-skrollr-keyframes animation1 {
                 0 {
@@ -147,9 +148,19 @@ $lng=$row["long"];
 			require '../includes/navbar.php'
         ?>
 		<div class="container-fluid">
-		<?php
-			require 'sidebar.php'
-        ?>
+		<div class="sidebar col-md-2 col-sm-2">
+	<ul class="nav nav-sidebar">
+		<li class="bull bull1"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
+		<li class="bull active"><a href='#' class="kill actived">Hostel secretaries details</a></li>
+		<li class="bull"><?php echo "<a href='office_details.php?varname=$id'";?> class="kill">Hostel office-details</a></li>
+		<li class="bull"><a href='hostel_services.php' class="kill">Hostel services</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=litsoc' class="kill">Litsoc</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=techsoc' class="kill">Techsoc</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=sports' class="kill">Schroeter</a></li>
+		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=alumni' class="kill">Alumni</a></li>
+		<li class="bull"><a href="#" class="kill" onclick="access();">Location</a></li> 
+	</ul>
+</div>
 			<div class="col-md-10 col-md-offset-2 col-sm-offset-2 col-sm-10">	
 				<?php
 					$sno=1;
@@ -186,7 +197,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>
@@ -218,7 +229,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>
@@ -252,7 +263,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>
@@ -284,7 +295,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 													echo "</p>
-												<a href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a>
+												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
 										</div>
 									</div>

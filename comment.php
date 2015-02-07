@@ -2,8 +2,6 @@
 session_start();
 if(!$_SESSION)
 {
-	//echo "no sessions";
-	//header("Location:index.php");
 }
 if (isset( $_POST) AND isset($_SESSION))
 	{
