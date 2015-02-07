@@ -5,7 +5,6 @@ $id=$_GET['varname'];
 $conn = mysql_connect($host,$username,$password);
 mysql_select_db("i-portal");
 $sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
-$sql="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
 $data=mysql_query($sql);
 $row=mysql_fetch_assoc($data);
 $name=$row["hostel_name"];
@@ -187,6 +186,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
+												<a href='../view.php?id=$id'>View Blog</a>
 											</div>
 										</div>
 									</div>
@@ -218,6 +218,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
+												<a href='../view.php?id=$id'>View Blog</a>
 											</div>
 										</div>
 									</div>
@@ -251,6 +252,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
+												<a href='../view.php?id=$id'>View Blog</a>
 											</div>
 										</div>
 									</div>
@@ -282,6 +284,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
 												echo "</p>
+												<a href='../view.php?id=$id'>View Blog</a>
 											</div>
 										</div>
 									</div>
