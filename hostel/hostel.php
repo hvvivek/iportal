@@ -186,7 +186,10 @@ $lng=$row["long"];
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
-												echo "</p>
+												echo "</p>";
+												echo "<a  class='btn btn-success' href='../view.php?".$sec['username']."'>View Blog</a>";
+												echo "
+
 											</div>
 										</div>
 									</div>
@@ -203,7 +206,7 @@ $lng=$row["long"];
 										<div id='s1'>
 											<div class='header1'>
 												<img class='img-circle img-responsive hidden-xs hidden-sm' src='img/photo.png'>
-													<p class='hw'>".ucwords(strtolower(str_replace("."," ",$sec["name"]))).
+													<p   class='hw'>".ucwords(strtolower(str_replace("."," ",$sec["name"]))).
 													"</p>
 											</div>
 										</div>
@@ -217,7 +220,9 @@ $lng=$row["long"];
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
-												echo "</p>
+												echo "</p>";
+												echo "<a   class='btn btn-success' href='../view.php?".$sec['username']."'>View Blog</a>";
+												echo "
 											</div>
 										</div>
 									</div>
@@ -250,7 +255,9 @@ $lng=$row["long"];
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
-												echo "</p>
+												echo "</p>";
+												echo "<a  class='btn btn-success' href='../view.php?".$sec['username']."'>View Blog</a>";
+												echo "
 											</div>
 										</div>
 									</div>
@@ -281,7 +288,9 @@ $lng=$row["long"];
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
 												echo "Email id : ".str_split($sec["email_id"],30)[0];
-												echo "</p>
+												echo "</p>";
+												echo "<a  class='btn btn-success' href='../view.php?".$sec['username']."'>View Blog</a>";
+												echo "
 											</div>
 										</div>
 									</div>
