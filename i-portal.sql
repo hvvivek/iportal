@@ -2,10 +2,17 @@
 -- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
+<<<<<<< HEAD
 -- Host: 127.0.0.1
 -- Generation Time: Feb 06, 2015 at 07:47 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
+=======
+-- Host: localhost
+-- Generation Time: Feb 07, 2015 at 12:24 PM
+-- Server version: 5.5.38-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.5
+>>>>>>> bba283467a1903efbdae8c4fbb89d4de14cab78f
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -73,6 +80,28 @@ INSERT INTO `alumni_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`, `
 (8, 5, 'Miscellaneous', 2000, NULL),
 (8, 6, 'Last year T-Shirt bill Payment', 17500, NULL),
 (8, 7, 'Total', 94000, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `comment` text NOT NULL,
+  `commented_by` varchar(10) NOT NULL,
+  `comment_time` datetime NOT NULL,
+  `post_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `comment`, `commented_by`, `comment_time`, `post_id`) VALUES
+(2, 'helo', 'ME12B113', '2015-02-03 23:14:09', 33);
 
 -- --------------------------------------------------------
 
@@ -196,7 +225,12 @@ INSERT INTO `contacts` (`hostel_id`, `s_no`, `username`, `name`, `post`, `room`,
 (16, 3, '', 'Afeef C', 'Sports Secretary', '309', 9444578951, 'afeefc@gmail.com'),
 (16, 4, '', 'Nitin Varma', 'Technical Affairs Secretary', '303', 9884682251, 'nvnitin696@gmail.com'),
 (16, 7, '', 'Muralitharan S', 'Garden Secretary', '116', 8122699238, 'ae14m013@smail.iitm.ac.in'),
+<<<<<<< HEAD
 (NULL, 0, 'EE13B051', NULL, NULL, '', NULL, NULL);
+=======
+(NULL, 0, 'EE13B051', NULL, NULL, '', NULL, NULL),
+(100, 0, 'ME12B113', 'saikiran', 'techsec', '', NULL, NULL);
+>>>>>>> bba283467a1903efbdae8c4fbb89d4de14cab78f
 
 -- --------------------------------------------------------
 
@@ -425,6 +459,7 @@ INSERT INTO `genbudget` (`Hostel_id`, `S_no`, `Nature_of_expenses`, `no_of_items
 --
 
 CREATE TABLE IF NOT EXISTS `hostel_list` (
+<<<<<<< HEAD
 `hostel_id` int(11) NOT NULL,
   `hostel_name` varchar(11) NOT NULL,
   `lat` double NOT NULL,
@@ -433,11 +468,20 @@ CREATE TABLE IF NOT EXISTS `hostel_list` (
   `DOffice` varchar(400) NOT NULL,
   `Numbers` varchar(40) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+=======
+  `hostel_id` int(11) NOT NULL,
+  `hostel_name` varchar(11) NOT NULL,
+  `lat` double NOT NULL,
+  `long` double NOT NULL,
+  `hostel_nick` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+>>>>>>> bba283467a1903efbdae8c4fbb89d4de14cab78f
 
 --
 -- Dumping data for table `hostel_list`
 --
 
+<<<<<<< HEAD
 INSERT INTO `hostel_list` (`hostel_id`, `hostel_name`, `lat`, `long`, `hostel_nick`, `DOffice`, `Numbers`) VALUES
 (1, 'Alakananda', 12.985312, 80.23917, 'Alak', 'Dr.Somashekar_S_Hiremath,9444004681/Mr.V_Jambunatham/Mr.A.E_Selvakumar/Mr.Subbaiah', '8561,8560'),
 (2, 'Brahmaputra', 12.983625, 80.234888, 'Brahms', 'Dr.Dilip_Kumar_Chand,9444009070/Mr.Kalaiselvan/Mr.Joseph/Mr.Raja_Mani', '8581,8580'),
@@ -456,10 +500,31 @@ INSERT INTO `hostel_list` (`hostel_id`, `hostel_name`, `lat`, `long`, `hostel_ni
 (15, 'Sindhu', 12.987884, 80.23819, 'Sindhu', 'Dr.Boby_George,9444009088/Mr.L_Srinivasa_Rajan/Mr.Bhashara_Rao/Mr.V_Veeran', '8861,8860'),
 (16, 'Tamirapani', 12.988213, 80.238638, 'Tambi', 'Mr.Nandan_Kumar_Sinha,9444393523/Mr.S_Loganathan/Mr.G_Prabhucharan/Mr.N_Balaraman/Mr.M_Devakanam', '8941,8940'),
 (17, 'Tapti', 12.984513, 80.235137, 'Tapti', 'Mr.Prafulla_Kumar_Behera,9444009089/Mr.K.Mayavan/Mr.C.V.Balachandran/Mr.N.Somaiah', '8841,8840');
+=======
+INSERT INTO `hostel_list` (`hostel_id`, `hostel_name`, `lat`, `long`, `hostel_nick`) VALUES
+(1, 'Alakananda', 12.9584, 80.238982, 'Alak'),
+(2, 'Brahmaputra', 12.983625, 80.234888, 'Brahms'),
+(3, 'Cauvery', 12.985749, 80.234003, 'Cauvery'),
+(4, 'Ganga', 12.987124, 80.238547, 'Ganga'),
+(5, 'Godavari', 12.985892, 80.23707, 'Godav'),
+(6, 'Jamuna', 12.98619, 80.239186, 'Jam'),
+(7, 'Krishna', 12.984275, 80.233223, 'Krishna'),
+(8, 'Mahanadi', 12.987962, 80.239057, 'Mahanadi'),
+(9, 'Mandakini', 12.986791, 80.239421, 'Mandak'),
+(10, 'Narmada', 12.985579, 80.235429, 'Narmada'),
+(11, 'Pampa', 12.987763, 80.238424, 'Pampa'),
+(12, 'Saraswathi', 12.984942, 80.23652, 'Saras'),
+(13, 'Sarayu', 12.990948, 80.235382, 'Sarayu'),
+(14, 'Sharavathi', 12.99008, 80.23451, 'Sharav'),
+(15, 'Sindhu', 12.987884, 80.23819, 'Sindhu'),
+(16, 'Tamirapani', 12.988213, 80.238638, 'Tambi'),
+(17, 'Tapti', 12.984513, 80.235137, 'Tapti');
+>>>>>>> bba283467a1903efbdae8c4fbb89d4de14cab78f
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `hostel_services`
 --
 
@@ -490,6 +555,40 @@ INSERT INTO `hostel_services` (`ID`, `Service`, `Number`) VALUES
 (14, 'Public_Health', '8191'),
 (15, 'Horticulture_Complaints', '8194'),
 (16, 'Helpline', '044-26444444');
+=======
+-- Table structure for table `messes`
+--
+
+CREATE TABLE IF NOT EXISTS `messes` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Mess` varchar(200) DEFAULT NULL,
+  `Timings` varchar(300) DEFAULT NULL,
+  `Position` varchar(50) DEFAULT NULL,
+  `IMenu` varchar(600) DEFAULT NULL,
+  `DMenu` varchar(600) DEFAULT NULL,
+  `MDetails` varchar(30000) DEFAULT NULL,
+  `SDetails` varchar(30000) DEFAULT NULL,
+  `BImages` varchar(600) DEFAULT NULL,
+  `mess_nick` varchar(10) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `messes`
+--
+
+INSERT INTO `messes` (`ID`, `Mess`, `Timings`, `Position`, `IMenu`, `DMenu`, `MDetails`, `SDetails`, `BImages`, `mess_nick`) VALUES
+(1, 'SGR-SI', '', '12.987106,80.235941', 'SGR_1.png,SGR_2.png,SGR_3.png,SGR_4.png', 'SGR.pdf', '', 'A.Praneeth_Kumar_Reddy,,8939106736,,/Satya,,9445944098,,', '', 'SGR-SI'),
+(2, 'RR-SI', '', '12.987106,80.235941', 'rr_1.png,rr_2.png,rr_3.png,rr_4.png', 'RR-SI.pdf', '', 'Mourya.T.R,,9500140725,,/Elias_Jesu_Packiam_D,,7418275657,,/N_Venkatesh,,9043561842,,', '', 'RR-SI'),
+(3, 'HF-SI', '', '12.987106,80.235941', 'HF_1.png,HF_2.png,HF_3.png,HF_4.png', 'HF-SI.pdf', '', 'E_Vishwanath,,9677155634,,/Shon_Yadav,,7667134393,,', '', 'HF-SI'),
+(4, 'HM-Cauvery', '', '12.985681,80.233542', 'cauvery_1.png,cauvery_2.png,cauvery_3.png,cauvery_4.png', 'Cauvery.pdf', '', 'Snehasagar,,9003295682,,/Vignesh_Raja_S,,9944102004,,', '', 'HM'),
+(5, 'ADiet-Mandakini', '', '12.986725,80.240315', 'mandak_1.png,mandak_2.png,mandak_3.png', 'Mandakini-SI.pdf', '', 'Malay_Kumar_Shah,,9043576467,,/PRATIEK_P.NAGRALE,,9003194174,,', '', 'ADIET'),
+(6, 'CT-Krishna', '', '12.984598,80.233046', 'krishna_1.png,krishna_2.png,krishna_3.png,krishna_4.png,krishna_5.png', 'Krishna-CT.pdf', '', 'Parani_Kumar_M,,9600325739,,/A.L.P.Rayudu,,7299858690,,', '', 'Krishna'),
+(7, 'Zenith-NI', '', '12.987170,80.235932', 'Zenith_1.png,Zenith_2.png,Zenith_3.png,Zenith_4.png', 'Zenith-NI.pdf', '', 'Gaurav_Agrawal,,9952034589,,/Prathamesh_M_Khatavkar,,9962100641,,/Rahman,,7845991785,,/Rinkesh Virani,,9884299313,,', '', 'ZEN-NI'),
+(8, 'SK-NI', '', '12.987157,80.236163', 'SK_1.png,SK_2.png,SK_3.png,SK_4.png', 'SK-NI.pdf', '', 'Siddhant_Keshkar,,8056038156,,/Vikram Singh,,9444231704,,/Sahil_Gupta,,9940248870,,/Kamlesh_Kumar,,9566101827,,\n', '', 'SK-NI'),
+(9, 'Vindhya-GF', '', '12.990413,80.234918', 'Vindhya-GF_1.png,Vindhya-GF_2.png,Vindhya-GF_3.png,Vindhya-GF_4.png', 'Vindhya-GF.pdf', '', 'Abeynaya_G,,9487666458,,/	Srinagalakshmi_Nammi,,9498065663,,/Sai_Rajarajeshwari,,9884179591,,/Sindhuja,,9159528484,,\n', '', 'VindhyaG'),
+(10, 'Vindhya-FF', '', '12.990413,80.234918', 'Vindhya-FF_1.png,Vindhya-FF_2.png,Vindhya-FF_3.png,Vindhya-FF_4.png', 'Vindhya-FF.pdf', '', 'Urvi_N_Shah,,9884340048,,/Anjali_Anil_Adekar,,9884299811,,/Rutvi,,9176484971,,/Sellam,,8939524544,,/Priyamvada_Modak,,9003107428,,/Arpita,,9445223504,,', '', 'VindhyaF');
+>>>>>>> bba283467a1903efbdae8c4fbb89d4de14cab78f
 
 -- --------------------------------------------------------
 
@@ -601,6 +700,7 @@ INSERT INTO `mess_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`) VAL
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Table structure for table `others`
 --
 
@@ -618,6 +718,57 @@ CREATE TABLE IF NOT EXISTS `others` (
 
 --
 -- Dumping data for table `others`
+=======
+-- Table structure for table `points`
+--
+
+CREATE TABLE IF NOT EXISTS `points` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hostel_id` int(11) NOT NULL,
+  `post` varchar(60) NOT NULL,
+  `points` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `points`
+--
+
+INSERT INTO `points` (`id`, `hostel_id`, `post`, `points`) VALUES
+(3, 100, 'tecsoc', 0),
+(4, 100, 'tecsoc', 0),
+(5, 100, 'tecsoc', 120),
+(6, 100, 'tecsoc', 420);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `posted_by` varchar(10) NOT NULL,
+  `hostel` varchar(20) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `upload` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `content`, `posted_by`, `hostel`, `created_at`, `upload`) VALUES
+(33, 'hello three', '<p>nakjdnas</p>\r\n', 'ME12B113', '', '2015-02-03 22:59:55', '7.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Sports_cap`
+>>>>>>> bba283467a1903efbdae8c4fbb89d4de14cab78f
 --
 
 INSERT INTO `others` (`ID`, `Others`, `Timings`, `Position`, `IMenu`, `DMenu`, `MDetails`, `SDetails`, `BImages`) VALUES

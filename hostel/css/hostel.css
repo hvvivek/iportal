@@ -52,12 +52,6 @@ body
 	background-color:white!important;	
 	margin-bottom:-5%;
 }
-#googleMap1
-{
-	border:2px solid black;
-	color:black !important;
-	text-align: center;
-}
 .eatimg
 {
 	border:10%;
@@ -216,7 +210,7 @@ body
 .footer
 {
 	width: 100%;
-	bottom:-155px;
+	bottom:-250px;
 	height:40px;
 	background-color: #1abc9c;
 	position:absolute;
@@ -668,4 +662,44 @@ body
 .padaffairs
 {
 	padding-bottom:.5%;
+}
+.active
+{
+	background-color: #16a085;
+}
+.active :hover
+{
+	background-color: #16a085;
+}
+.active :visited
+{
+	background-color: #16a085;
+}
+.active :link
+{
+	background-color: #16a085;
+}
+.active :active
+{
+	background-color: #16a085;
+}
+.actived :hover
+{
+	background-color: #16a085;
+}
+.actived :visited
+{
+	background-color: #16a085;
+}
+.actived :link
+{
+	background-color: #16a085!important;
+}
+.actived :active
+{
+	background-color: #16a085;
+}
+.actived
+{
+	color:white!important;
 }

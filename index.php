@@ -352,9 +352,15 @@ mysql_select_db($db);
 </div>
 <div class="contain5">
 <a href="others/others.php?varname=1"><div class="small5"><p class="smtext5">Travel</p></div></a>
+<<<<<<< HEAD
 <a href="others/others.php?varname=2"><div class="small5"><p class="smtext5">Xerox</p></div></a>
 <a href="others/others.php?varname=3"><div class="small5"><p class="smtext5">Giftshop</p></div></a>
 <a href="others/others.php?varname=4"><div class="small5"><p class="smtext5">Haircare</p></div></a>
+=======
+<a href="others/others.php?varname=2"><div class="small5 child7"><p class="smtext5">Xerox</p></div></a>
+<a href="others/others.php?varname=3"><div class="small5 child7"><p class="smtext5">Giftshop</p></div></a>
+<a href="others/others.php?varname=4"><div class="small5 child7"><p class="smtext5">Haircare</p></div></a>
+>>>>>>> bba283467a1903efbdae8c4fbb89d4de14cab78f
 </div>
 </div>
 </div>
