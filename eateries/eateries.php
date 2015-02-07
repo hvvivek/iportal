@@ -42,7 +42,7 @@ require '../partials/footer.php';
 				echo("file opening failed");
 	
 	}
-	echo $_SESSION['username'];
+
 ?>
 <html>
 	<head>
