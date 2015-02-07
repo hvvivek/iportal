@@ -712,46 +712,6 @@ body
 {
 	padding-bottom:.5%;
 }
-.active
-{
-	background-color: #16a085;
-}
-.active :hover
-{
-	background-color: #16a085;
-}
-.active :visited
-{
-	background-color: #16a085;
-}
-.active :link
-{
-	background-color: #16a085;
-}
-.active :active
-{
-	background-color: #16a085;
-}
-.actived :hover
-{
-	background-color: #16a085;
-}
-.actived :visited
-{
-	background-color: #16a085;
-}
-.actived :link
-{
-	background-color: #16a085!important;
-}
-.actived :active
-{
-	background-color: #16a085;
-}
-.actived
-{
-	color:white!important;
-}
 .btn1
 {
 	background-color:#16a085;
