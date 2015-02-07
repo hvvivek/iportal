@@ -84,16 +84,20 @@ INSERT INTO `Alumni_budget` (`Hostel_id`, `S_no`, `Nature_of_expense`, `Cost`, `
 --
 
 CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(5) NOT NULL ,
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `comment` text NOT NULL,
   `commented_by` varchar(10) NOT NULL,
   `comment_time` datetime NOT NULL,
-  `post_id` int(11) NOT NULL
+  `post_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `comments`
 --
+
+INSERT INTO `comments` (`id`, `comment`, `commented_by`, `comment_time`, `post_id`) VALUES
+(1, 'helo', 'ME12B113', '2015-02-03 23:14:09', 33);
 
 
 -- --------------------------------------------------------
