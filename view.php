@@ -1,10 +1,13 @@
 <?php
 session_start();
 $id=$_GET['id'];
+$id= explode(',',$id);
+$id_0= $id[1];
+$id= $id[0];
 require 'config.php';
 $conn = mysql_connect($host,$username,$password);
 mysql_select_db("i-portal");
-$sql1="SELECT * FROM hostel_list WHERE hostel_id='{$id}'";
+$sql1="SELECT * FROM hostel_list WHERE hostel_id='{$id_0}'";
 $data1=mysql_query($sql1);
 $row=mysql_fetch_assoc($data1);
 $name=$row["hostel_name"];
@@ -186,7 +189,7 @@ $sql="SELECT * FROM `posts` WHERE `posted_by`='$post_user' LIMIT 20 ";
 //echo $sql;
 $query=mysqli_query($con,$sql);
 
-echo "<div class='container-fluid' style='padding-top:120px'>";
+echo "<div class='container-fluid contain1'>";
 require 'hostel/sidebar.php';
 if(mysqli_num_rows($query)>0){
 while($result=mysqli_fetch_assoc($query))
@@ -270,5 +273,8 @@ else
         </div>
       </div>
     </div>
+	<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
+	<script type="text/javascript" src="js/skrollr.js"></script>
+	<script type="text/javascript">skrollr.init();</script>
 </body>
 </html>
