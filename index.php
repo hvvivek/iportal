@@ -125,10 +125,10 @@ mysql_select_db($db);
 								$result= mysql_query($query);
 								while($hostel= mysql_fetch_array($result))
 								{
-								  $hostel_0= explode("_",$hostel['Hostel_Name']);
+								  $hostel_0= explode("_",$hostel['hostel_name']);
 									$hostel_1= implode(" ",$hostel_0);
-									$hostel_id= $hostel['Hostel_id'];
-									echo "<li><a href='hostel/hostel.php?id=$hostel_id'>".$hostel_1."</a></li>";
+									$hostel_id= $hostel['hostel_id'];
+									echo "<li><a href='hostel/hostel.php?varname=$hostel_id'>".$hostel_1."</a></li>";
 								}
 								?>
 							</ul>
@@ -351,17 +351,10 @@ mysql_select_db($db);
 	</div>
 </div>
 <div class="contain5">
-<<<<<<< HEAD
 <a href="others/others.php?varname=1"><div class="small5"><p class="smtext5">Travel</p></div></a>
 <a href="others/others.php?varname=2"><div class="small5"><p class="smtext5">Xerox</p></div></a>
 <a href="others/others.php?varname=3"><div class="small5"><p class="smtext5">Giftshop</p></div></a>
 <a href="others/others.php?varname=4"><div class="small5"><p class="smtext5">Haircare</p></div></a>
-=======
-<a href="#"><div class="small5"><p class="smtext5">Travel</p></div></a>
-<a href="#"><div class="small5 child7"><p class="smtext5">Xerox</p></div></a>
-<a href="#"><div class="small5 child7"><p class="smtext5">Giftshop</p></div></a>
-<a href="#"><div class="small5 child7"><p class="smtext5">Haircare</p></div></a>
->>>>>>> 0a40b4faf38de222db5992cac0a31865a2cffd7b
 </div>
 </div>
 </div>

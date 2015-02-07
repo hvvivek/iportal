@@ -2,7 +2,7 @@
 session_start();
 require  '../config.php';
 require '../partials/footer.php';
-$id=$_GET['id'];
+$id=$_GET['varname'];
 $conn = mysql_connect($host,$username,$password);
 mysql_select_db("i-portal");
 $sql="SELECT * FROM hostel_list WHERE Hostel_id='{$id}'";
@@ -27,7 +27,6 @@ $lng=$row["long"];
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<link href="css/hostel.css" rel="stylesheet" />
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
-		<link rel="stylesheet" type="text/css" href="css/hostel.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
