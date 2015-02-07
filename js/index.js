@@ -107,8 +107,8 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$("#one>.inbig").addClass('hov');
 		$("#two>.inbig").removeClass('hov');
-		$("#thr>.inbig").removeClass('hov');
-		$("#fou>.inbig").removeClass('hov');
+		$("#thr>.inbig1").removeClass('hov');
+		$("#fou>.inbig1").removeClass('hov');
 	
 		$("#one>.menutitle").html('Hostels');
 		$("#two>.menutitle").empty();
@@ -157,8 +157,8 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$("#one>.inbig").removeClass('hov');
 		$("#two>.inbig").addClass('hov');
-		$("#thr>.inbig").removeClass('hov');
-		$("#fou>.inbig").removeClass('hov');
+		$("#thr>.inbig1").removeClass('hov');
+		$("#fou>.inbig1").removeClass('hov');
 		$("#two>.menutitle").html('Messes');
 		$("#one>.menutitle").empty();
 		$("#fou>.menutitle").empty();
@@ -206,8 +206,8 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$("#one>.inbig").removeClass('hov');
 		$("#two>.inbig").removeClass('hov');
-		$("#thr>.inbig").addClass('hov');
-		$("#fou>.inbig").removeClass('hov');
+		$("#thr>.inbig1").addClass('hov');
+		$("#fou>.inbig1").removeClass('hov');
 		$("#thr>.menutitle").html('Eateries');
 		$("#fou>.menutitle").empty();
 		$("#two>.menutitle").empty();
@@ -236,7 +236,7 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$(".contain4").fadeOut("fast");
 		$(".small4").css({'opacity':'0'});
-		$("#thr>.inbig").removeClass('hov');
+		$("#thr>.inbig1").removeClass('hov');
 		$("#thr>.menutitle").empty();
 		});
 		
@@ -244,7 +244,7 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$(".contain4").fadeOut("fast");
 		$(".small4").css({'opacity':'0'});
-		$("#thr>.inbig").removeClass('hov');
+		$("#thr>.inbig1").removeClass('hov');
 		$("#thr>.menutitle").empty();
 		});
 		$("#fou").hover(function()
@@ -259,8 +259,8 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$("#one>.inbig").removeClass('hov');
 		$("#two>.inbig").removeClass('hov');
-		$("#thr>.inbig").removeClass('hov');
-		$("#fou>.inbig").addClass('hov');
+		$("#thr>.inbig1").removeClass('hov');
+		$("#fou>.inbig1").addClass('hov');
 		$("#fou>.menutitle").html('Others');
 		$("#thr>.menutitle").empty();
 		$("#two>.menutitle").empty();
@@ -289,7 +289,7 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$(".contain5").fadeOut("fast");
 		$(".small5").css({'opacity':'0'});
-		$("#thr>.inbig").removeClass('hov');
+		$("#thr>.inbig1").removeClass('hov');
 		$("#thr>.menutitle").empty();
 		});
 		
@@ -297,14 +297,14 @@ $('.comment_view').clicktoggle(function(){
 		{
 		$(".contain5").fadeOut("fast");
 		$(".small5").css({'opacity':'0'});
-		$("#fou>.inbig").removeClass('hov');
+		$("#fou>.inbig1").removeClass('hov');
 		$("#fou>.menutitle").empty();
 		});
 		$("#thr").hover(function()
 		{
 		$(".contain5").fadeOut("fast");
 		$(".small5").css({'opacity':'0'});
-		$("#fou>.inbig").removeClass('hov');
+		$("#fou>.inbig1").removeClass('hov');
 		$("#fou>.menutitle").empty();
 		});
 	});

@@ -296,6 +296,11 @@ font-weight: bold;
     position: relative;
     left:7%;
   }
+  .inbig1
+  {
+    position: relative;
+    left:7%;
+  }
 }
 .inbig
 {
@@ -306,11 +311,22 @@ height: 120px;
 width: 120px;
 border: 1px solid #16a085;
 left: 11%;
-top: 11%;
+top: 10%;
 visibility:hidden;
 }
-
-.inbig.hov
+.inbig1
+{
+position: relative;
+border-radius: 50%;
+transition:.3s;
+height: 120px;
+width: 120px;
+border: 1px solid #16a085;
+left: 8%;
+top: 10%;
+visibility:hidden;
+}
+.inbig.hov,.inbig1.hov
 {
 
 position: relative;
@@ -504,7 +520,10 @@ border-top: 1px solid #16a085 !important;
 }
 @media screen and (min-width:1400px) and (max-width:1550px)
 {
-   
+   .contain2
+  {
+    margin-left:10%;
+  }
   .childleft1
   {
     margin-left:21%;
@@ -527,6 +546,10 @@ border-top: 1px solid #16a085 !important;
 }
 @media screen and (min-width:1150px) and (max-width:1322px)
 {
+  .contain2
+  {
+    margin-left:3%;
+  }
   .childleft1
   {
     margin-left:20%;

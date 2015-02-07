@@ -77,13 +77,9 @@ mysql_select_db($db);
 				</a>
 				<ul id="wheel"  data-angle="NW">
 					<li class="item"><a href="#home">SL</a></li>
-					<li class="item"><a href="#home">BS</a></li>
-					<li class="item"><a href="#home">NP</a></li>
 					<li class="item"><a href="#home">IP</a></li>
 					<li class="item"><a href="#home">FB</a></li>
 					<li class="item"><a href="#home">EW</a></li>
-					<li class="item"><a href="#home">VC</a></li>
-					<li class="item"><a href="#home">H</a></li>
 				</ul>
 			</div>
 		</div>
@@ -223,13 +219,13 @@ mysql_select_db($db);
 	
 	<div class="big" id="thr">
 		<div class="menutitle"></div>
-		<div class="inbig"></div>
+		<div class="inbig1"></div>
 		<span class="glyphicon glyphicon-glass editgly" aria-hidden="true"></span>
 	</div>
 
 	<div class="big" id="fou"> 
 		<div class="menutitle"></div>
-		<div class="inbig"></div>
+		<div class="inbig1"></div>
 		<span class="glyphicon glyphicon-briefcase editgly" aria-hidden="true"></span>
 	</div>
 </div>
