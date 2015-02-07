@@ -195,7 +195,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0]);
+												echo "Email id : ".$sec["email_id"];
 												echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
@@ -227,7 +227,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0]);
+												echo "Email id : ".$sec["email_id"];
 												echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
@@ -261,7 +261,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0]);
+												echo "Email id : ".$sec["email_id"];
 												echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
@@ -293,7 +293,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0]);
+												echo "Email id : ".$sec["email_id"];
 													echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
