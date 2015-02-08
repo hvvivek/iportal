@@ -7,10 +7,10 @@ $conn = mysql_connect($host,$username,$password);
 mysql_select_db($db);
 ?>
     <head>
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="js/jquery.min.js"></script>
@@ -19,7 +19,7 @@ mysql_select_db($db);
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
 		<link rel="stylesheet" type="text/css" href="css/index.css" >
 		<link rel="stylesheet" type="text/css" href="css/ferro.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
+		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
 		<script src="js/ferro.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
