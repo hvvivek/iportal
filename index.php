@@ -22,8 +22,9 @@ mysql_select_db($db);
 		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
 		<script src="js/ferro.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
-     <link href="logo.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
+<title>Information Portal</title>
+     <link href="css/logo.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
   <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
