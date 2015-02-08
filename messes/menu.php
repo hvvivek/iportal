@@ -49,7 +49,7 @@ require '../partials/footer.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../eateries/css/hostel.css" rel="stylesheet">
+		<link href="css/hostel.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css">
 		<script  type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
@@ -85,6 +85,7 @@ require '../partials/footer.php';
 		<style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+				font-size:1.1em;
             }
 
             @-skrollr-keyframes animation1 {
@@ -103,36 +104,6 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
-			@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 100%; }
-			}
             
 		</style>
 		<script type= "text/javascript">

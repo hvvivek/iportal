@@ -49,16 +49,14 @@ require '../partials/footer.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="../eateries/css/hostel.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
+		<link href="css/hostel.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/dnb.css"> 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 		<script src="js/bootstrap.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
+		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/> 
 		<script type="text/javascript" src="../js/index.js"></script>
 		<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
 		<script src="../js/dynamicpage.js" type="text/javascript"></script>
@@ -83,6 +81,7 @@ require '../partials/footer.php';
 		<style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+				font-size:1.1em;
             }
 
             @-skrollr-keyframes animation1 {
@@ -101,9 +100,7 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			<!--html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
+			<!--
 			@media (max-width: 300px) {
 				html { font-size: 50%; }
 			}
@@ -188,13 +185,6 @@ require '../partials/footer.php';
 		function wec(){
 			window.location= "../index.php";
 		}
-		$('.heal').css('font-size', ($(window).width()*0.01)+'px');
-		$('.nav-sidebar').css('font-size', ($(window).width()*0.01)+'px');
-		$('#hos').css('font-size', ($(window).width()*0.01)+'px');
-		$('.hw').css('font-size', ($(window).width()*0.01)+'px');
-		$('.b2').css('font-size', ($(window).width()*0.01)+'px');
-		$('.oned').css('font-size', ($(window).width()*0.01)+'px');
-
 	</script>
 	<script>
 		$(document).ready(function(){
@@ -208,6 +198,9 @@ require '../partials/footer.php';
 	</script>
 	</head>
 	<body>
+		<?php
+			include "../includes/navbar.php";
+		?>
 		<div class="wrapper">
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
 				<a href="#wheel" class="wheel-button nw">
@@ -225,9 +218,6 @@ require '../partials/footer.php';
 				</ul>
 			</div>
 		</div>
-		<?php
-			include "../includes/navbar.php";
-		?>
 	<div class="container-fluid contain1">
 			<div class="row">
 				<div class="sidebar col-md-3 col-lg-2">
