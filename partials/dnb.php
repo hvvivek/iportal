@@ -119,7 +119,7 @@ Note: A Sass implementation can make this easier. Please look into that if you c
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             <li><a href="#">Profile</a></li>
                             <li><a href="#">Settings</a></li>
-							<li><a href="../includes/signout.php">Sign Out</a></li>
+							<li class="signout"><a href="../includes/signout.php">Sign Out</a></li>
                         </ul>
                     </div>
                 </nav>
