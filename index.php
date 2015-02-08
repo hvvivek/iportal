@@ -192,7 +192,7 @@ mysql_select_db($db);
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Settings</a></li>
-						<li><a href="../includes/signout.php">Sign Out</a></li>
+						<li><a href="includes/signout.php">Sign Out</a></li>
 					</ul>
 				</div>
 			</nav>
