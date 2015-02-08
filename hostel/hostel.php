@@ -24,14 +24,14 @@ $lng=$row["long"];
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $name;?> hostel</title>
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 		<link href="../eateries/css/hostel.css" rel="stylesheet" />
-		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" type="text/css" href="css/hostel.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
@@ -151,9 +151,9 @@ $lng=$row["long"];
 		<div class="sidebar col-md-2 col-sm-2">
 	<ul class="nav nav-sidebar">
 		<li class="bull bull1"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
-		<li class="bull active"><a href='#' class="kill actived">Hostel secretaries details</a></li>
-		<li class="bull"><?php echo "<a href='office_details.php?varname=$id'";?> class="kill">Hostel office-details</a></li>
-		<li class="bull"><a href='hostel_services.php' class="kill">Hostel services</a></li>
+		<li class="bull active"><a href='hostel.php?varname=<?php echo $id?>' class="kill actived">Hostel secretaries details</a></li>
+		<li class="bull"><?php echo "<a href='head.php?varname=$id'";?> class="kill">Hostel office-details</a></li>
+		<li class="bull"><a href='hostel_services.php?varname=<?php echo $id?>' class="kill">Hostel services</a></li>
 		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=litsoc' class="kill">Litsoc</a></li>
 		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=techsoc' class="kill">Techsoc</a></li>
 		<li class="bull"><a href='../event.php?hostel=<?php echo $_GET['varname']?>&sec=sports' class="kill">Schroeter</a></li>
@@ -195,7 +195,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0];
+												echo "Email id : ".$sec["email_id"];
 												echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
@@ -227,7 +227,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0];
+												echo "Email id : ".$sec["email_id"];
 												echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
@@ -261,7 +261,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0];
+												echo "Email id : ".$sec["email_id"];
 												echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>
@@ -293,7 +293,7 @@ $lng=$row["long"];
 												echo "</p><p>";
 												echo "Contact no : ".$sec["contact_no"];
 												echo "</p><p>";
-												echo "Email id : ".str_split($sec["email_id"],30)[0];
+												echo "Email id : ".$sec["email_id"];
 													echo "</p>
 												<button class='btn btn1'><a class='btnh' href='../view.php?id=".$sec["username"].",".$id."'>View Blog</a></button>
 											</div>

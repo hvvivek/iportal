@@ -140,36 +140,6 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            <!--html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
-			@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 102%; }
-			}-->
 		</style>
 		<script>
 				$(document).ready(function(){
@@ -208,7 +178,7 @@ require '../partials/footer.php';
 				<div class="sidebar col-xs-1 col-sm-1 col-md-2 col-lg-2">
 					<ul class="nav nav-sidebar">
 							<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
-							<li class="bull"><a href='#' class="kill">Hostel secretaries details</a></li>
+							<li class="bull"><a href='hostel.php?varname=<?php echo $file?>' class="kill">Hostel secretaries details</a></li>
 							<li class="bull"><a href='head.php?varname=<?php echo $file; ?>' class="kill">Hostel office-details</a></li>
 							<li class="bull"><a href='Hostel_Services.php?varname=<?php echo $file; ?>' class="kill">Hostel services</a></li>
 							<li class="bull"><a href='#' class="kill">Litsoc</a></li>
