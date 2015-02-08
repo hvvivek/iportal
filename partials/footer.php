@@ -8,7 +8,7 @@
 					<a href="#"><font color="white">About us</font></a>
 				</div>		
 				<div class="col-xs-2 col-md-1 col-lg-1" style="padding-top: 0.4%;">
-					<a href="#"><font color="white">Contact us</font></a>
+					<a href="../contact.php"><font color="white">Contact us</font></a>
 				</div>
 			</div>
 		</div>
