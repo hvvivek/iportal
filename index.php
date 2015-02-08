@@ -7,10 +7,10 @@ $conn = mysql_connect($host,$username,$password);
 mysql_select_db($db);
 ?>
     <head>
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/dnb.css"> 
 		<script src="js/jquery.min.js"></script>
@@ -19,11 +19,12 @@ mysql_select_db($db);
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" >
 		<link rel="stylesheet" type="text/css" href="css/index.css" >
 		<link rel="stylesheet" type="text/css" href="css/ferro.css">
-		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
+		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
 		<script src="js/ferro.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
-        <style>
+     <link href="logo.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
                 font-size: 1.1em;
@@ -76,10 +77,10 @@ mysql_select_db($db);
 					<span class="glyphicon glyphicon-th-large"></span>
 				</a>
 				<ul id="wheel"  data-angle="NW">
-					<li class="item"><a href="#home">SL</a></li>
-					<li class="item"><a href="#home">IP</a></li>
-					<li class="item"><a href="#home">FB</a></li>
-					<li class="item"><a href="#home">EW</a></li>
+					<li class="item"><a data-toggle="tooltip" title="Student Library" href="studentslibrary.html">SL</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/iportal/index.php" data-toggle="tooltip" title="Information-Portal">IP</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/feedback" data-toggle="tooltip" title="Feedback-Portal">FB</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/executive" data-toggle="tooltip" title="Executive-Wing">EW</a></li>
 				</ul>
 			</div>
 		</div>
@@ -192,7 +193,7 @@ mysql_select_db($db);
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Settings</a></li>
-						<li><a href="../includes/signout.php">Sign Out</a></li>
+						<li><a href="includes/signout.php">Sign Out</a></li>
 					</ul>
 				</div>
 			</nav>
