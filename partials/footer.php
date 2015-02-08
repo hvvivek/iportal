@@ -1,4 +1,5 @@
-	<footer class="footer col-md-12">
+
+  <footer class="footer col-md-12">
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="col-xs-2 col-sm-2 col-md-3 col-lg-3 " style="padding-top: 0.4%; margin-left:-1%;">
@@ -12,4 +13,4 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+  </footer>

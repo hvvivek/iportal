@@ -22,8 +22,9 @@ mysql_select_db($db);
 		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>				
 		<script src="js/ferro.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
-     <link href="logo.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
+<title>Information Portal</title>
+     <link href="css/logo.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
   <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
@@ -284,28 +285,31 @@ mysql_select_db($db);
 	<?php
 		$query= "SELECT * FROM messes";
 		$result= mysql_query($query);
-		$mess_id= $mess['ID'];
 		$mess = mysql_fetch_array($result);
+		$mess_id= $mess['ID'];
 		echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child child6'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 		$inc=0;
 		while($mess = mysql_fetch_array($result))
 		{
 			$inc++;
-			$mess_id= $mess['ID'];	
 			if($inc==5)
 			{
+				$mess_id= $mess['ID'];
 				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3 child5'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 			}		
 			else if($inc==8)
 			{
+				$mess_id= $mess['ID'];
 				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3 child41'>"."<p class='smtext3 text'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 			}
 			else if($inc==9)
 			{
+				$mess_id= $mess['ID'];	
 				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3'>"."<p class='smtext3 text'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 			}
 			else
 			{
+				$mess_id= $mess['ID'];
 				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3'>"."<p class='smtext3'>".$mess['mess_nick']."</p>"."</div>"."</a>";
 			}
 		}
