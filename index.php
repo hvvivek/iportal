@@ -47,6 +47,10 @@ mysql_select_db($db);
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
+      .ceatery
+      {
+        padding-left:100px!important;
+      }
        </style>
 	   	<script>
 		$(document).ready(function(){
@@ -317,7 +321,7 @@ mysql_select_db($db);
 	</div>
 </div>
 <div class="contain4 container">
-	<div class="container-fluid contain2-fluid">
+	<div class="container-fluid contain2-fluid ceatery">
 	<?php
 		$query= "SELECT * FROM eateries";
 		$result= mysql_query($query);
@@ -333,9 +337,9 @@ mysql_select_db($db);
 			$eatery_0= explode("_",$eatery['Eatery']);
 			$eatery_1= implode("",$eatery_0);
 			$eatery_id= $eatery['ID'];
-			if($inc>4 && $inc<8)
+			if($inc>3 && $inc<8)
 			{
-				if($inc==5)
+				if($inc==4)
 				{
 					echo "<br><a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4 child1 child2 child3 childleft2'>"."<p class='smtext4 childp'>".$eatery_1."</p>"."</div>"."</a>";
 				}
