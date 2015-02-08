@@ -81,6 +81,7 @@ require '../partials/footer.php';
 		<style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+				font-size:1.1em;
             }
 
             @-skrollr-keyframes animation1 {
@@ -99,8 +100,6 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			html { font-size: 58%; }
-			body { font-size: 0.9em;}
 			<!--
 			@media (max-width: 300px) {
 				html { font-size: 50%; }

@@ -46,9 +46,9 @@ require '../partials/footer.php';
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $Mess_1 ;?></title>
-		<link href="../eateries/css/bootstrap.min.css" rel="stylesheet">
-		<link href="../eateries/css/hostel.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../eateries/css/dnb.css"> 
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/hostel.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/dnb.css"> 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="../eateries/js/bootstrap.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -136,6 +136,7 @@ require '../partials/footer.php';
 		<style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
+				font-size:0.9em;
             }
 
             @-skrollr-keyframes animation1 {
@@ -154,10 +155,10 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            <!--html { font-size: 62.5%; }
-			body { font-size: 1em;}
+            html { font-size: 62.5%; }
+			body { font-size: 0.9em;}
 
-			@media (max-width: 300px) {
+			<!--@media (max-width: 300px) {
 				html { font-size: 50%; }
 			}
 
