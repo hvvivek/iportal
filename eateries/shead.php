@@ -214,18 +214,15 @@ require '../partials/footer.php';
 		<div class="wrapper">
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
 				<a href="#wheel" class="wheel-button nw">
-					<span class="glyphicon glyphicon-th-large"></span>
+					<span class="glyphicon glyphicon-refresh"></span>
 				</a>
 				<ul id="wheel"  data-angle="NW">
-						<li class="item"><a href="#home">SL</a></li>
-						<li class="item"><a href="#home">BS</a></li>
-						<li class="item"><a href="#home">NP</a></li>
-						<li class="item"><a href="#home">IP</a></li>
-						<li class="item"><a href="#home">FB</a></li>
-						<li class="item"><a href="#home">EW</a></li>
-						<li class="item"><a href="#home">VC</a></li>
-						<li class="item"><a href="#home">H</a></li>
+					<li class="item"><a data-toggle="tooltip" title="Student Library" href="studentslibrary.html">SL</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/iportal/index.php" data-toggle="tooltip" title="Information-Portal">IP</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/feedback" data-toggle="tooltip" title="Feedback-Portal">FB</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/executive" data-toggle="tooltip" title="Executive-Wing">EW</a></li>
 				</ul>
+				
 			</div>
 		</div>
 		<div class="container-fluid contain1">

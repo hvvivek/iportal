@@ -2,7 +2,7 @@
 
 $host="localhost";  
 $username="root";  
-$password="yousuckballs"; 
+$password="sai"; 
 
 $con=mysqli_connect($host,$username,$password,"i-portal") or die('can not connect');
 
