@@ -140,7 +140,6 @@ $lng=$row["long"];
 			animationSpeed: "fast"
 					});
 			});
-		
 		</script>
 	</head>
 <body>
