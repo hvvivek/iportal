@@ -50,9 +50,8 @@ require '../partials/footer.php';
 		<title><?php echo $mess_1 ;?></title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/hostel.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
+		<link rel="stylesheet" type="text/css" href="../css/dnb.css"> 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
 		<script src="js/bootstrap.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
@@ -100,9 +99,9 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			<!--html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
+			html { font-size: 58%; }
+			body { font-size: 0.9em;}
+			<!--
 			@media (max-width: 300px) {
 				html { font-size: 50%; }
 			}
