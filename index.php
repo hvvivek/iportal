@@ -23,7 +23,8 @@ mysql_select_db($db);
 		<script src="js/ferro.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/wheelmenu.css" />
-        <style>
+     <link href="" rel="shortcut icon" typw="image/vnd.microsoft.icon">
+  <style>
             #dnb_sec {
                 -skrollr-animation-name:animation1;
                 font-size: 1.1em;
@@ -76,10 +77,10 @@ mysql_select_db($db);
 					<span class="glyphicon glyphicon-th-large"></span>
 				</a>
 				<ul id="wheel"  data-angle="NW">
-					<li class="item"><a href="#home">SL</a></li>
-					<li class="item"><a href="#home">IP</a></li>
-					<li class="item"><a href="#home">FB</a></li>
-					<li class="item"><a href="#home">EW</a></li>
+					<li class="item"><a data-toggle="tooltip" title="Student Library" href="studentslibrary.html">SL</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/iportal/index.php" data-toggle="tooltip" title="Information-Portal">IP</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/feedback" data-toggle="tooltip" title="Feedback-Portal">FB</a></li>
+					<li class="item"><a href="https://students.iitm.ac.in/executive" data-toggle="tooltip" title="Executive-Wing">EW</a></li>
 				</ul>
 			</div>
 		</div>
