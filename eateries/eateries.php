@@ -188,12 +188,6 @@ require '../partials/footer.php';
 		function wec(){
 			window.location= "../index.php";
 		}
-		$('.heal').css('font-size', ($(window).width()*0.01)+'px');
-		$('.nav-sidebar').css('font-size', ($(window).width()*0.01)+'px');
-		$('#hos').css('font-size', ($(window).width()*0.01)+'px');
-		$('.hw').css('font-size', ($(window).width()*0.01)+'px');
-		$('.b2').css('font-size', ($(window).width()*0.01)+'px');
-		$('.oned').css('font-size', ($(window).width()*0.01)+'px');
 
 	</script>
 	<script>
@@ -209,7 +203,7 @@ require '../partials/footer.php';
 	</head>
 	<body>            
         <?php
-			require '../includes/navbar.php'
+			require '../includes/navbar.php';
         ?>
 		<div class="wrapper">
 			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">

@@ -13,7 +13,7 @@
 	$name=$row["hostel_name"];
 	$lat=$row["lat"];
 	$lng=$row["long"];
-	require '../partials/footer.php';
+	require 'partials/footer.php';
 ?>
 <html>
  <head>
