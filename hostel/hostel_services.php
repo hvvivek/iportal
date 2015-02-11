@@ -1,6 +1,5 @@
 <?php
-session_start();     
-require '../includes/signin.php';
+session_start();
 require  '../config.php';
 require '../partials/footer.php';
 ?>

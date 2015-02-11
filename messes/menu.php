@@ -1,8 +1,7 @@
 <?php
 session_start();
 ?>
-<?php     
-require '../includes/signin.php';
+<?php
 require  '../config.php';
 require '../partials/footer.php';
 ?>
@@ -104,7 +103,10 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            
+     .footer
+{
+bottom:-2000px;
+}       
 		</style>
 		<script type= "text/javascript">
 			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
