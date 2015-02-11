@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 session_start();
-=======
-session_start();     
->>>>>>> 782aca78b7de2c7a807e84627dd7f62f3ef91f04
 require  '../config.php';
 ?>
 <?php
@@ -131,7 +127,7 @@ require  '../config.php';
             }
             .footer
             {
-            	bottom:-400px;
+            	bottom:-500px;
             }
 		</style>
 		<script>

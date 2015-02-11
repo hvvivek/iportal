@@ -1,11 +1,5 @@
 <?php
 session_start();
-?>
-<<<<<<< HEAD
-<?php
-=======
-<?php     
->>>>>>> 782aca78b7de2c7a807e84627dd7f62f3ef91f04
 require  '../config.php';
 require '../partials/footer.php';
 ?>
@@ -106,17 +100,10 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-<<<<<<< HEAD
      .footer
 {
 bottom:-2000px;
 }       
-=======
-           .footer
-           {
-           	bottom:-1500px;
-           }
->>>>>>> 782aca78b7de2c7a807e84627dd7f62f3ef91f04
 		</style>
 		<script type= "text/javascript">
 			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
