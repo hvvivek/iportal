@@ -138,8 +138,8 @@
     color: white;
     background:#16a085;
 }#wheel li:nth-child(3) a {
-    color: white;
-    background: black;
+    color: black;
+    background: white;
 }#wheel li:nth-child(4) a {
     color: white;
     background:#9b59b6;

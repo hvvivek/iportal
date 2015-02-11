@@ -6,7 +6,7 @@ require 'partials/header.php';
 require 'partials/navbar.php';
 require 'partials/view_sidebar.php';
 $sec=$_SESSION['username'];
-$sqlsec="SELECT * FROM  sec WHERE username='$sec'";
+$sqlsec="SELECT * FROM  contacts WHERE username='$sec'";
 $secquery=mysqli_query($con,$sqlsec);
 $secresult=mysqli_fetch_assoc($secquery);
 if (isset($_POST['submit']))
