@@ -12,7 +12,7 @@
 	$lng=$row["long"];
 	require 'partials/footer.php';
 	$a= $_SERVER['DOCUMENT_ROOT'];
-	echo $a;
+	//echo $a;
 ?>
 <html>
  <head>
@@ -57,9 +57,8 @@
             }
 
            .container
-            {
-
-            }
+         {   position: absolute;
+              top: 50px;}
 </style>
     <div style="display:none">
       <table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
@@ -302,7 +301,7 @@ function mres($value)
 					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 						<li><a href="#">Profile</a></li>
 						<li><a href="#">Settings</a></li>
-						<li><a href="../includes/signout.php">Sign Out</a></li>
+						<li><a href="includes/signout.php">Sign Out</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -333,22 +332,22 @@ $rowhostel=mysqli_fetch_assoc($datahostel);
 $hostel_name=$rowhostel["hostel_name"];
 //echo $hostel_name;
 $ev=$_GET['sec'];
-if($_GET['sec']=="tecsoc")
+if($_GET['sec']=="techsoc")
 {
-	$sec_post="techsec";
+	$sec_post="Technical Affairs";
 }
 if($_GET['sec']=="litsoc")
 {
-	$sec_post="litsec";
+	$sec_post="Literary Affairs";
 }
 
 if($_GET['sec']=="sports")
 {
-	$sec_post="sportsec";
+	$sec_post="Sports Secretary";
 }
 if($_GET['sec']=="alumni")
 {
-	$sec_post="Alumnisec";
+	$sec_post="Alumni Affairs";
 }
 
 $sqlpost="SELECT * FROM `contacts` WHERE `hostel_id`='$hostel' AND `post`='$sec_post' ";
@@ -362,6 +361,8 @@ $sql="SELECT * FROM `posts` WHERE `posted_by`='$postuser' LIMIT 20 ";
 //echo $sql;
 $query=mysqli_query($con,$sql);
 echo "<div class='container '>";
+if(mysqli_num_rows($query)>0)
+{
 while($result=mysqli_fetch_assoc($query))
 {?>
     <div class="post post<?php echo $result['id']?> col-lg-7 col-lg-offset-2 col-sm-offset-2 col-md-offset-2">
@@ -406,7 +407,15 @@ while($result=mysqli_fetch_assoc($query))
 	<?php
 
 
-}?>
+}
+}
+else
+{
+  echo '<h2>The respective sectretary has not added anything yet</h1>';
+}
+
+?>
+
 </br></div>
 
 
@@ -432,5 +441,9 @@ require 'includes/points.php';
 	<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 	<script type="text/javascript" src="js/skrollr.js"></script>
 	<script type="text/javascript">skrollr.init();</script>
+<script>
+ 
+</script>
+
 </body>
 </html>

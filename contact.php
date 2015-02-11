@@ -27,6 +27,11 @@ mysql_select_db($db);
      <link href="css/logo.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
 <title>Contact us</title>
   <style>
+body
+{
+margin-bottom:0px!important;
+overflow:scroll!important;
+}
 #dnb_sec {
 -skrollr-animation-name:animation1;
 font-size:1.1em;
@@ -43,9 +48,13 @@ position:fixed;
 background-color:rgba(255, 255, 255,0.99);
 }
 }
+.padnone
+{
+padding-top:0.5%!important;
+}
 .footer
 {
-bottom:2px!important;
+bottom:-100px!important;
 }
 </style>
       <script>
@@ -190,12 +199,12 @@ bottom:2px!important;
 <div>
 <div class='col-md-4 col-sm-6 screen screen12 slum'>
                   <div class='header'>
-                    <p class='oned padnone'>Webops Co-ord</p>
+                  <p class='oned padnone'>Institute Webops<br>Co-ordinator</p>
                   </div>
                   <div class='slider'>
                     <div id='s1'>
                       <div class='header1'>
-                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='img/srikar.png'>
+                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='css/srikar.jpg'>
                           <p   class='hw'>Srikar Pothumahanti</p>
                       </div>
                     </div>
@@ -212,12 +221,12 @@ bottom:2px!important;
                 </div>
 <div class='col-md-4 col-sm-6 screen screen12 slum'>
                   <div class='header'>
-                    <p class='oned padnone'>Webops Co-ord</p>
+                    <p class='oned padnone'>Institute Webops<br>Co-ordinator</p>
                   </div>
                   <div class='slider'>
                     <div id='s1'>
                       <div class='header1'>
-                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='img/akhil.png'>
+                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='css/akhil.jpg'>
                           <p class='hw'>Akhil Sai Bandarupalli</p>
                       </div>
                     </div>
@@ -234,19 +243,19 @@ bottom:2px!important;
                 </div>
 <div class='col-md-4 col-sm-6 screen screen12 slum'>
                   <div class='header'>
-                    <p class='oned padnone'>Webops Super Co-ord</p>
+                  <p class='oned padnone'>Institute Webops Super<br>Co-ordinator</p>
                   </div>
                   <div class='slider'>
                     <div id='s1'>
                       <div class='header1'>
-                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='img/jsk.png'>
+                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='css/jsk.jpg'>
                           <p   class='hw'>Jaya SaiKiran</p>
                       </div>
                     </div>
                     <div class='header2'>
                       <div class='heal' id='h1' class='hid'>
-                        <p>Roll no:<ME12B113/p>
-                        <p>Room no:<3007</p>
+                        <p>Roll no:ME12B113</p>
+                        <p>Room no:3007</p>
                         <p>Hostel:Narmada<p>
                         <p>Contact no:9677152479</p>
                         <p>Email id:saikiranp321@gmail.com</p>
@@ -256,12 +265,12 @@ bottom:2px!important;
                 </div>
 <div class='col-md-4 col-sm-6 screen screen12 slum'>
                   <div class='header'>
-                    <p class='oned padnone'>Webops Core</p>
+                    <p class='oned padnone'>Institute Webops<br>Core</p>
                   </div>
                   <div class='slider'>
                     <div id='s1'>
                       <div class='header1'>
-                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='img/dharani.png'>
+                        <img class='img-circle img-responsive hidden-xs hidden-sm' src='css/dharani.jpg'>
                           <p class='hw'>Dharani Manne</p>
                       </div>
                     </div>

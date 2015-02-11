@@ -91,6 +91,7 @@ html,body{
     font-size: 1.1em;
     text-align: left;
     margin-bottom: 0px;
+    font-weight:bold;
 }
 .btn2 a{
     color: white;

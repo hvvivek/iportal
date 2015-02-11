@@ -156,12 +156,12 @@
 	</style>
   </head>
 <?php 
-if(!$_SERVER['QUERY_STRING'])
+if(!$id)
 {
   echo "please proveide correct url";
 }
 else{
-$post_u=$_SERVER['QUERY_STRING'];
+$post_u=$id;
 function mres($value)
 {
     $search = array("\\",  "\x00", "\n",  "\r",  "'",  '"', "\x1a");
@@ -170,6 +170,7 @@ function mres($value)
     return str_replace($search, $replace, $value);
 }
 $post_user=mres($post_u);
+
 //echo $post_user;
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
@@ -319,8 +320,9 @@ while($result=mysqli_fetch_assoc($query))
   	<?php	
 	echo $result['title'].'</br>';
 	echo $result['content'].'</br>';
+  echo '<hr>';
 	echo $result['posted_by'].'</br>';
-  echo '<a href="uploads/'.$result['upload'].'" target="blank">'.$result['upload'].'</a></br>';
+  echo '<a href="uploads/'.$result['upload'].'" target="blank">'.$result['upload'].'</a>';
   echo '<div class="btn btn-primary comment_view pull-right" name="'.$result['id'].'">viewcomments</div>';
 	echo '</br></br>';
 	?>
