@@ -55,7 +55,7 @@ mysql_select_db($db);
 	{
 		.smtext2,.smtext3,.smtext4,.smtext5
 		{
-			font-size:90%!important;
+			font-size:83%!important;
 		}
 	}
        </style>
