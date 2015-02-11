@@ -1,6 +1,5 @@
 <?php
 session_start();     
-require '../includes/signin.php';
 require  '../config.php';
 require '../partials/footer.php';
 ?>
@@ -46,21 +45,23 @@ require '../partials/footer.php';
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $Mess_1 ;?></title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/hostel.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../css/dnb.css"> 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="../eateries/js/bootstrap.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
-		<script type="text/javascript" src="../js/index.js"></script>
-		<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-		<script src="../js/dynamicpage.js" type="text/javascript"></script>
-		<script type='text/javascript' src='../js/jquery.ba-hashchange.min.js'></script>
-		<script src="../js/ferro.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="../eateries/css/hostel.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="../hostel/css/hostel.css">
+    <link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+    <script src="js/dynamicpage.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+    <script src="../js/ferro.js" type="text/javascript"></script>
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>
@@ -155,36 +156,6 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-            html { font-size: 62.5%; }
-			body { font-size: 0.9em;}
-
-			<!--@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 102%; }
-			}-->
 		</style>
 		<script>
 				$(document).ready(function(){
@@ -218,8 +189,7 @@ require '../partials/footer.php';
 				</ul>
 			</div>
 		</div>          
-		<div class="container-fluid contain1">
-			<div class="row">
+		<div class="container-fluid">
 				<div class="sidebar col-md-2 col-lg-2 ">
 					<ul class="nav nav-sidebar">
 						<li class="bull"><a href='#' id="hos"><?php echo $Mess_1; ?></a></li>
@@ -229,18 +199,16 @@ require '../partials/footer.php';
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
-			</div>
-		</div>
-		<div class="col-md-11 col-lg-11" style="padding-top:2%;padding-bottom:10%;">
-				<?php
+		<div class="col-md-10 col-md-offset-2 col-sm-offset-2 col-sm-10">
+		<?php
 					$Mess_10= explode("/",$Mess_5);
 					$a= sizeof($Mess_10);
 					$b= $a%3;
 					$c=($a-$b)/3;
+					$count=0;
 					for($d=0;$d<$c+1;$d++)
 					{
 						$s= 2*$d;
-						echo "<div class='row' style='margin-top:".$s."%;'>";
 						$g= $d*3;
 						$f= 3+$g ;
 						if($a==(3*$d+$b))
@@ -249,11 +217,13 @@ require '../partials/footer.php';
 						}
 						for($e=$g;$e<$f;$e++)
 						{
+							$count++;
 							$Mess_11= $Mess_10[$e];
 							$Mess_12= explode(",",$Mess_11);
 							$Mess_13= explode("_",$Mess_12[0]);
 							$Mess_14= implode(" ",$Mess_13);
-							echo "<div class='col-md-3 screen". (($e%3)+1) ." col-lg-3 slum' id=s".$e." >";
+							if($count==1)
+							{echo "<div class='col-md-4 col-sm-6 screen screen12 slum'>";
 								echo "<div class='header'>";
 									echo "<p class='oned'>"."Coordinator"."</p>";
 								echo "</div>";
@@ -273,6 +243,29 @@ require '../partials/footer.php';
 									echo "</div>";
 								echo "</div>";
 							echo "</div>";
+							}
+							else
+							{echo "<div class='col-md-4 col-sm-6 screen slum'>";
+								echo "<div class='header'>";
+									echo "<p class='oned'>"."Coordinator"."</p>";
+								echo "</div>";
+								echo "<div class='slider'>";
+									echo "<div id='s1'>";
+										echo "<div class='header1'>";
+											echo "<img class='img-circle img-responsive' src='images/photo.png'>";
+											echo "<p class='hw'>".$Mess_14."</p>";
+										echo "</div>";
+									echo "</div>";
+									echo "<div class='header2'>";
+										echo "<div class='heal' id='h1' class='hid'>";
+											echo "<p class='hw'>"."Roll No : ".$Mess_12[1]."</p>";
+											echo "<p class='hw'>"."Contact No. : ".$Mess_12[2]."</p>";
+											echo "<p class='hw'>"."Email ID : ".$Mess_12[3]."</p>";
+										echo "</div>";
+									echo "</div>";
+								echo "</div>";
+							echo "</div>";
+							}	
 						}
 						echo "</div>";
 					}

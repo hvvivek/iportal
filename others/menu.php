@@ -2,7 +2,6 @@
 session_start();
 ?>
 <?php     
-require '../includes/signin.php';
 require  '../config.php';
 require '../partials/footer.php';
 ?>
@@ -48,24 +47,23 @@ require '../partials/footer.php';
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $others_1 ;?></title>
-		<link href="css/bootstrap.min.css" rel="stylesheet" />
-		<link href="../eateries/css/hostel.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
-		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css">
-		<script  type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-		<script  type="text/javascript" src="../js/ferro.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
-		<script type="text/javascript" src="../js/index.js"></script>
-		<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-		<script src="../js/dynamicpage.js" type="text/javascript"></script>
-		<script type='text/javascript' src='../js/jquery.ba-hashchange.min.js'></script>
-		<script src="../js/ferro.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="../eateries/css/hostel.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="../hostel/css/hostel.css">
+    <link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+    <script src="js/dynamicpage.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+    <script src="../js/ferro.js" type="text/javascript"></script>
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>
@@ -103,37 +101,10 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
-			<!--         html { font-size: 62.5%; }
-			body { font-size: 1em;}
-
-			@media (max-width: 300px) {
-				html { font-size: 50%; }
-			}
-
-			@media (min-width: 500px) {
-				html { font-size: 60%; }
-			}
-			@media (min-width: 700px) {
-				html { font-size: 61.5%; }
-			}
-			@media (min-width: 800px) {
-				html { font-size: 69%; }
-			}
-			@media (min-width: 900px) {
-				html { font-size: 76.5%; }
-			}
-
-			@media (min-width: 1000px) {
-				html { font-size: 85%; }
-			}
-
-			@media (min-width: 1100px) {
-				html { font-size: 93.5%; }
-			}
-			@media (min-width: 1200px) {
-				html { font-size: 102%; }
-			}*/-->
-            
+            .footer
+            {
+            	bottom:-1000px;
+            }
 		</style>
 		<script type= "text/javascript">
 			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
@@ -223,9 +194,8 @@ require '../partials/footer.php';
 				</ul>
 			</div>
 		</div>
-		<div class="container-fluid contain1">
-			<div class="row">
-				<div class="sidebar col-md-2 col-lg-2 ">
+		<div class="container-fluid">
+				<div class="sidebar col-md-2">
 					<ul class="nav nav-sidebar">
 						<li class="bull"><a href='others.php?varname=<?php echo $file; ?>' id="hos"><?php echo $others_1; ?></a></li>
 						<li class="bull"><a href="others.php?varname=<?php echo $file; ?>">Timings</a></li>						
@@ -233,8 +203,6 @@ require '../partials/footer.php';
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
-			</div>
-		</div>
 		<div class="container-fluid">
 			<div class="dpdf" >
 			<?php
@@ -258,6 +226,7 @@ require '../partials/footer.php';
 				?>
 			</div>
 		</div>
+	</div>
 	</body>
 	<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 	<script type="text/javascript" src="js/skrollr.js"></script>

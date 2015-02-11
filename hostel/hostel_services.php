@@ -1,8 +1,6 @@
 <?php
 session_start();     
-require '../includes/signin.php';
 require  '../config.php';
-require '../partials/footer.php';
 ?>
 <?php
 	$file= $_GET['varname'];
@@ -19,47 +17,29 @@ require '../partials/footer.php';
 		$hostel_6= $hostel['Numbers'];
 		$hostel_6= explode(",",$hostel_6);
 	}
-	function download_file($hostel_4)
-	{
-	
-		$file = $hostel_4;
-	
-			if(file_exists($file))
-				{
-					header('Content-Description:File Transfer');
-					header('Content-Type: application/octet-stream');
-					header('Content-Disposition: attachment; filename='.basename($file));
-					header('Expires: 0');
-					header('Cache-Control: must-revalidate');
-					header('Pragma: public');
-					header('Content-Length :'.filesize($file));
-					readfile($file);
-					exit;
-				}
-			else
-				echo("file opening failed");
-	
-	} 
 ?>
 <html>
 	<head>
 		<meta chaset="utf-8">			
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $name;?> hostel</title>
-		<link href="../eateries/css/bootstrap.min.css" rel="stylesheet" />
-		<link href="../eateries/css/hostel.css" rel="stylesheet" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="../eateries/js/bootstrap.js"></script>
-		<script src="http://maps.googleapis.com/maps/api/js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" type="text/css" href="../css/ferro.css" />
-		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css" />
-		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
-		<script type="text/javascript" src="../js/index.js"></script>
-		<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-		<script src="../js/dynamicpage.js" type="text/javascript"></script>
-		<script type='text/javascript' src='../js/jquery.ba-hashchange.min.js'></script>
-		<script src="../js/ferro.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="../eateries/css/hostel.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="css/hostel.css">
+    <link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+    <script src="js/dynamicpage.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+    <script src="../js/ferro.js" type="text/javascript"></script>
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>
@@ -141,6 +121,14 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
+            .tcontain
+            {
+            	margin-top:5%;
+            }
+            .footer
+            {
+            	bottom:-400px;
+            }
 		</style>
 		<script>
 				$(document).ready(function(){
@@ -157,22 +145,8 @@ require '../partials/footer.php';
 	<?php
 		include "../includes/navbar.php";
 	?>
-		<div class="wrapper">
-			<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-				<a href="#wheel" class="wheel-button nw">
-					<span class="glyphicon glyphicon-th-large"></span>
-				</a>
-				<ul id="wheel"  data-angle="NW">
-						<li class="item"><a href="#home">SL</a></li>
-						<li class="item"><a href="#home">IP</a></li>
-						<li class="item"><a href="#home">FB</a></li>
-						<li class="item"><a href="#home">EW</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="container-fluid contain1">
-			<div class="row">
-				<div class="sidebar col-xs-1 col-sm-1 col-md-2 col-lg-2">
+			<div class="container-fluid">
+				<div class="sidebar col-md-2">
 					<ul class="nav nav-sidebar">
 							<li class="bull"><a href='#' id="hos"><?php echo $name;?> Hostel</a></li>
 							<li class="bull"><a href='hostel.php?varname=<?php echo $file?>' class="kill">Hostel secretaries details</a></li>
@@ -185,11 +159,7 @@ require '../partials/footer.php';
 							<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
-			</div>
-		<div>
-				<div class="col-md-4 col-lg-4">
-				</div>
-				<div class="col-md-6 col-lg-6" style="margin-top:-7%;">
+				<div class="col-md-offset-4 col-md-6 col-lg-offset-4 col-lg-6 tcontain">
 					<p style="text-align:center; font-size:20px; margin-bottom:1%;">Any technical problem contact these numbers in IIT Madras.</p>
 					<table class='table table-striped table-bordered'>
 						<tr>
@@ -225,13 +195,15 @@ require '../partials/footer.php';
 								$a= $a+1;
 							}
 						?>
-					</table>
+						</table>
+					</div>
 				</div>
-			</div>
-		</div>
 		<script type="text/javascript" src="../js/skrollr.stylesheets.js"></script>
 		<script type="text/javascript" src="../js/skrollr.js"></script>
 		<script type="text/javascript">skrollr.init();</script>
+		<?php
+                require '../partials/footer.php';
+              ?>
 	</body>
 	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" behaviourId='Modal0' id='Modal0' aria-hidden="true">
 		<div class="modal-dialog">

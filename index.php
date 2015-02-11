@@ -51,6 +51,13 @@ mysql_select_db($db);
       {
         padding-left:100px!important;
       }
+      @-moz-document url-prefix()
+	{
+		.smtext2,.smtext3,.smtext4,.smtext5
+		{
+			font-size:90%!important;
+		}
+	}
        </style>
 	   	<script>
 		$(document).ready(function(){

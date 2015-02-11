@@ -59,6 +59,13 @@
            .container
          {   position: absolute;
               top: 50px;}
+@-moz-document url-prefix()
+{
+  .sidebar
+  {
+    margin-top:0.05%;
+  }
+}
 </style>
     <div style="display:none">
       <table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
