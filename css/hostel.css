@@ -203,6 +203,13 @@ body
 	color:#1abc9c;
 	z-index:500;
 }
+@-moz-document url-prefix()
+{
+  .sidebar
+  {
+    margin-top:7%;
+  }
+}
 .sidebar a
 {
 	color:#1abc9c;
