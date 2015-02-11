@@ -1,7 +1,11 @@
 <?php
 session_start();
 ?>
+<<<<<<< HEAD
 <?php
+=======
+<?php     
+>>>>>>> 782aca78b7de2c7a807e84627dd7f62f3ef91f04
 require  '../config.php';
 require '../partials/footer.php';
 ?>
@@ -47,24 +51,23 @@ require '../partials/footer.php';
 		<meta chaset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $mess_1 ;?></title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/hostel.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/dnb.css"> 
-		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css">
-		<script  type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-		<script  type="text/javascript" src="../js/ferro.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
-		<script type="text/javascript" src="../js/index.js"></script>
-		<script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
-		<script src="../js/dynamicpage.js" type="text/javascript"></script>
-		<script type='text/javascript' src='../js/jquery.ba-hashchange.min.js'></script>
-		<script src="../js/ferro.js" type="text/javascript"></script>
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
+		<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="../eateries/css/hostel.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="../hostel/css/hostel.css">
+    <link rel="stylesheet" type="text/css" href="../css/ferro.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/wheelmenu.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/dnb.css" /> 
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/jquery.wheelmenu.js"></script>
+    <script src="js/dynamicpage.js" type="text/javascript"></script>
+    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+    <script src="../js/ferro.js" type="text/javascript"></script>
 		<div style="display:none">
 			<table class="table table-striped table-bordered" style="margin-top:50px" id="myTable">
 				<tr>
@@ -103,10 +106,17 @@ require '../partials/footer.php';
                     background-color:rgba(255, 255, 255,0.99);
                 }
             }
+<<<<<<< HEAD
      .footer
 {
 bottom:-2000px;
 }       
+=======
+           .footer
+           {
+           	bottom:-1500px;
+           }
+>>>>>>> 782aca78b7de2c7a807e84627dd7f62f3ef91f04
 		</style>
 		<script type= "text/javascript">
 			var lat = parseFloat(document.getElementById('myTable').rows[1].cells[0].innerHTML);
@@ -196,8 +206,7 @@ bottom:-2000px;
 		<?php
 			include "../includes/navbar.php";
 		?>
-		<div class="container-fluid contain1">
-			<div class="row">
+		<div class="container-fluid">
 				<div class="sidebar col-md-2 col-lg-2">
 					<ul class="nav nav-sidebar">
 						<li class="bull"><a href='#' id="hos"><?php echo $mess_1; ?></a></li>
@@ -207,8 +216,6 @@ bottom:-2000px;
 						<li class="bull"><a href="#" onclick="access();" class="kill">Location</a></li>
 					</ul>
 				</div>
-			</div>
-		</div>
 		<div class="container-fluid">
 			<div class="dpdf" >
 			<?php
@@ -232,6 +239,7 @@ bottom:-2000px;
 				?>
 			</div>
 		</div>
+	</div>
 	</body>
 	<script type="text/javascript" src="js/skrollr.stylesheets.js"></script>
 	<script type="text/javascript" src="js/skrollr.js"></script>
