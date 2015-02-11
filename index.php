@@ -311,12 +311,12 @@ mysql_select_db($db);
 			else if($inc==8)
 			{
 				$mess_id= $mess['ID'];
-				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3 child41'>"."<p class='smtext3 text'>".$mess['mess_nick']."</p>"."</div>"."</a>";
+				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3 child41'>"."<p class='smtext3 text'>".$mess['mess_nick']."<br>GF</p>"."</div>"."</a>";
 			}
 			else if($inc==9)
 			{
 				$mess_id= $mess['ID'];	
-				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3'>"."<p class='smtext3 text'>".$mess['mess_nick']."</p>"."</div>"."</a>";
+				echo "<a href='messes/messes.php?varname=$mess_id'>"."<div class= 'small3 child1 child2 child3'>"."<p class='smtext3 text'>".$mess['mess_nick']."<br>FF</p>"."</div>"."</a>";
 			}
 			else
 			{
@@ -348,7 +348,7 @@ mysql_select_db($db);
 			{
 				if($inc==4)
 				{
-					echo "<br><a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4 child1 child2 child3 childleft2'>"."<p class='smtext4 childp'>".$eatery_1."</p>"."</div>"."</a>";
+					echo "<br><a href='eateries/eateries.php?varname=$eatery_id'>"."<div class= 'small4 child1 child2 child3 childleft2'>"."<p class='smtext4 childp'>".$eatery_1."<br>eatery</p>"."</div>"."</a>";
 				}
 				else
 				{
